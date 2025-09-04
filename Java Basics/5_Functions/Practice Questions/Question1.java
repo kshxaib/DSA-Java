@@ -1,3 +1,5 @@
+// Write a Java method to compute the averageof three numbers.
+
 public class Question1 {
     public static int calculateAvg(int n1, int n2, int n3){
         int average = (n1 + n2 + n3)/3;

@@ -1,3 +1,5 @@
+// Write a Java method to compute the sum of the digits in an integer
+
 public class Question5 {
     public static void checkSum(int number){
         int sum = 0;

@@ -1,3 +1,5 @@
+// Write a program to print the multiplication table of a number N, entered by the  user.
+
 import java.util.*;
 
 public class Question4 {

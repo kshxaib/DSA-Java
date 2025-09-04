@@ -1,3 +1,5 @@
+// Write a program to find the factorialof any number entered by the user
+
 import java.util.*;
 
 public class Question3 {

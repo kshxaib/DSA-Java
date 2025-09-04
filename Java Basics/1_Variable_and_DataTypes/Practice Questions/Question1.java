@@ -1,3 +1,5 @@
+// In a program, input 3 numbers: A, B and C. Youhave to output the average of these 3 numbers
+
 import java.util.*;
 
 public class Question1 {

@@ -1,3 +1,6 @@
+// Writeaprogramthatreadsasetof integers,and then prints the sum of the
+//  even and odd integers.
+
 import java.util.*;
 
 public class Question2 {

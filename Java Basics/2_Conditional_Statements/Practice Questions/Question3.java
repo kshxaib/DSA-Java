@@ -1,3 +1,5 @@
+// Write a Java program to in put week number(1-7) and print day of week name using switch case.
+
 import java.util.*;
 
 public class Question3 {
