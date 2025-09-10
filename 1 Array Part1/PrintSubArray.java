@@ -23,3 +23,6 @@ public class PrintSubArray {
         subArry(Array);
     }
 }
+
+// Time Complexity: O(n³)
+// Space Complexity: O(1)
