@@ -23,4 +23,6 @@ public class clearLastIBits {
         // 1111 (15)
         // & 1100 (mask)
         // = 1100 (12)
-        System.out.println(clearLastIBits(n, i
+        System.out.println(clearLastIBits(n, i));
+    }
+}
