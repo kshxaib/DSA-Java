@@ -1,0 +1,53 @@
+📌 Time Complexity & Space Complexity
+
+1. Time Complexity: Time complexity measures how the running time of an algorithm grows with 
+the size of the input n.
+
+🔹 Notations
+Big-O (O): Worst case (upper bound).
+Omega (Ω): Best case (lower bound).
+Theta (Θ): Average/exact bound.
+
+🔹 Common Time Complexities
+O(1) – Constant Time
+Running time does not depend on input size.
+Example: Accessing an element in an array.
+
+O(log n) – Logarithmic Time
+Input size reduces by half each step.
+Example: Binary Search.
+
+O(n) – Linear Time
+Running time grows directly with input size.
+Example: Traversing an array.
+
+O(n log n) – Linearithmic Time
+Common in efficient divide-and-conquer algorithms.
+Example: Merge Sort, Quick Sort (average case).
+
+O(n²) – Quadratic Time
+Usually from two nested loops.
+Example: Bubble Sort, Insertion Sort.
+
+O(2ⁿ) – Exponential Time
+Time doubles with each extra input element.
+Example: Recursive Fibonacci (naive).
+
+O(n!) – Factorial Time
+Extremely slow; tries all permutations.
+Example: Traveling Salesman (brute force).
+
+2. Space Complexity: Space complexity measures the amount of memory an algorithm needs as a 
+function of input size n.
+
+2. Trade-off Between Time & Space
+Sometimes faster execution requires more memory, or less memory leads to slower execution.
+
+Example:
+Merge Sort → O(n log n) time, O(n) space.
+Quick Sort → O(n log n) time, O(log n) space (in-place).
+
+📖 Key Points for Revision
+✅ Always aim for the lowest time complexity possible.
+✅ Optimize space when working with limited memory.
+✅ Remember: O(1) < O(log n) < O(n) < O(n log n) < O(n²) < O(2ⁿ) < O(n!)
