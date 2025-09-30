@@ -1,0 +1,7 @@
+Backtracking is a general algorithmic technique used for solving problems by trying out all 
+possible solutions and discarding (backtracking) those which do not satisfy the problem constraints.
+
+It’s basically a trial-and-error approach.
+    - Similar to recursion, but with extra steps to undo choices when a path fails.
+    - Used when the problem requires finding all possible solutions or an optimal solution 
+      under given constraints.
