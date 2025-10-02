@@ -1,0 +1,31 @@
+ArrayList in Java
+Introduction:
+ArrayList is a resizable array implementation of the List interface in Java.
+Unlike arrays, it can grow or shrink dynamically when elements are added or removed.
+Part of the java.util package.
+
+
+import java.util.ArrayList;
+
+ArrayList<String> list = new ArrayList<String>();  // generic type (recommended)
+ArrayList<Integer> numbers = new ArrayList<>();   // type inference (Java 7+)
+
+
+Performance:
+Access (get/set by index) → O(1) (fast)
+Insert/Delete at end → O(1) amortized
+Insert/Delete in middle → O(n) (shifting required)
+
+
+When to Use ArrayList?
+When you need fast random access by index.
+When the size of the list is not fixed and can grow/shrink.
+When you don’t perform many insertions/deletions in the middle (use LinkedList for that).
+
+
+Differences: Array vs ArrayList
+Feature	     Array	                    ArrayList
+Size	     Fixed	                    Dynamic
+Type	     Primitive & Objects	    Only Objects (Wrapper for primitives)
+Performance	 Faster for fixed size	    More flexible, slightly slower
+Utilities	 No built-in methods	    Rich methods from List interface
