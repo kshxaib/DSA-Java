@@ -171,7 +171,56 @@ public class LinkedList {
         return indexInRest + 1;
     }
 
-    // Main method to test Linked List operations
+    public void reverseLinkedList(){
+        Node prev = null;
+        Node current = head;
+        tail = head;
+        Node next;
+
+        while (current != null) {
+            next = current.next;
+            current.next = prev;
+            prev = current;
+            current = next;
+        }
+        head = prev;
+    }
+
+    public void deleteNthNodeFromEnd(int n){
+        int size = 0;
+        Node temp = head;
+
+        while(temp != null){
+            temp = temp.next;
+            size++;
+        }
+
+        if(n==size){
+            head = head.next;
+            return;
+        }
+
+        int i = 1;
+        int indexToChangeNextPointer = size - n;
+        Node prev = head;
+        while (i < indexToChangeNextPointer) {
+            prev = prev.next;
+            i++;
+        }
+        prev.next = prev.next.next;
+    }
+
+    public Node findMidNode(){
+        Node slow = head;
+        Node fast = head;
+
+        while (fast != null && fast.next != null) {
+            slow = slow.next; //+1
+            fast = fast.next.next; //+2
+        }
+        return slow; //middle node
+    }
+
     public static void main(String[] args) {
         LinkedList ll = new LinkedList();
 
@@ -183,13 +232,16 @@ public class LinkedList {
         ll.addInMiddle(2, 3);  // Insert 3 at index 2 → 1 -> 2 -> 3 -> 4 -> 5
 
         // Remove nodes
-        ll.removeFirst();      // removes 1
-        ll.removeLast();       // removes 5
+        // ll.removeFirst();      // removes 1
+        // ll.removeLast();       // removes 5
 
         // Print list and size
+        ll.reverseLinkedList();
         ll.printLinkedList();  // Output → 2 -> 3 -> 4 -> null
+        
+        ll.deleteNthNodeFromEnd(3);
+        
         System.out.println("Size of Linked List: " + ll.size);
-
         // Search examples
         System.out.println(ll.performIterativeSearch(3));     // Output → 1
         System.out.println(ll.performRecursiveSearch(head, 4)); // Output → 2
