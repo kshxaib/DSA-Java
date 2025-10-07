@@ -2,11 +2,11 @@ public class DoubleLL {
 
     // Node class represents a single node in the doubly linked list
     public static class Node {
-        int data;   // stores data
-        Node next;  // points to next node
-        Node prev;  // points to previous node
+        int data;   // stores the data
+        Node next;  // pointer to the next node
+        Node prev;  // pointer to the previous node
 
-        // Constructor to initialize node
+        // Constructor to initialize a node
         public Node(int data) {
             this.data = data;
             this.next = null;
@@ -14,9 +14,9 @@ public class DoubleLL {
         }
     }
 
-    // Head -> first node of list
-    // Tail -> last node of list
-    // Size -> total nodes in list
+    // Head points to the first node
+    // Tail points to the last node
+    // Size keeps count of total nodes
     public static Node head;
     public static Node tail;
     public static int size;
@@ -26,14 +26,14 @@ public class DoubleLL {
         Node newNode = new Node(data);
         size++;
 
-        // If list is empty
+        // Case 1: If list is empty
         if (head == null) {
             head = newNode;
             tail = newNode;
             return;
         }
 
-        // Link new node with current head
+        // Case 2: Link new node before head
         newNode.next = head;
         head.prev = newNode;
         head = newNode; // Move head to new node
@@ -44,14 +44,14 @@ public class DoubleLL {
         Node newNode = new Node(data);
         size++;
 
-        // If list is empty
+        // Case 1: If list is empty
         if (head == null) {
             head = newNode;
             tail = newNode;
             return;
         }
 
-        // Link new node after tail
+        // Case 2: Link new node after tail
         tail.next = newNode;
         newNode.prev = tail;
         tail = newNode; // Move tail to new node
@@ -59,7 +59,7 @@ public class DoubleLL {
 
     // Remove a node from the beginning of the list
     public void removeFirst() {
-        if (size == 0) { // No nodes to remove
+        if (size == 0) { // Empty list
             System.out.println("No nodes to remove.");
             return;
         } else if (size == 1) { // Only one node
@@ -77,7 +77,7 @@ public class DoubleLL {
 
     // Remove a node from the end of the list
     public void removeLast() {
-        if (size == 0) { // No nodes to remove
+        if (size == 0) { // Empty list
             System.out.println("No nodes to remove.");
             return;
         } else if (size == 1) { // Only one node
@@ -93,6 +93,24 @@ public class DoubleLL {
         size--;
     }
 
+    // Reverse the doubly linked list
+    public void reverseDLL() {
+        Node curr = head;
+        Node prev = null;
+        Node next;
+
+        // Traverse and swap next/prev pointers of each node
+        while (curr != null) {
+            next = curr.next;  // store next node
+            curr.next = prev;  // reverse next pointer
+            curr.prev = next;  // reverse prev pointer
+            prev = curr;       // move prev one step ahead
+            curr = next;       // move curr one step ahead
+        }
+
+        head = prev; // update head to new first node
+    }
+
     // Print the doubly linked list
     public void printLL() {
         Node temp = head;
@@ -103,22 +121,27 @@ public class DoubleLL {
         System.out.println("null");
     }
 
+    // Main function to test all operations
     public static void main(String[] args) {
         DoubleLL dll = new DoubleLL();
 
-        // Adding elements at beginning
+        // Adding elements at the beginning
         dll.addFirst(3);
         dll.addFirst(2);
         dll.addFirst(1);
 
         // Uncomment to test other operations
-        // dll.removeFirst(); 
+        // dll.removeFirst();
         // dll.addLast(4);
-        dll.removeLast();
+        // dll.removeLast();
 
-        // Print final list and its size
+        // Print list and size
         dll.printLL();
         System.out.println("Size of list: " + dll.size);
+
+        // Reverse and print again
+        dll.reverseDLL();
+        dll.printLL();
     }
 }
 
@@ -126,25 +149,26 @@ public class DoubleLL {
 Revision Notes:
 
 Doubly Linked List (DLL):
-- Each node has 3 parts: data, next (pointer to next node), and prev (pointer to previous node).
-- Allows traversal in both directions (forward and backward).
+- Each node has three parts: data, next (pointer to next node), and prev (pointer to previous node).
+- Allows traversal in both forward and backward directions.
 
 Operations:
-1. addFirst(data): Inserts new node at beginning.
-2. addLast(data): Inserts new node at end.
-3. removeFirst(): Removes first node.
-4. removeLast(): Removes last node.
-5. printLL(): Displays the linked list.
+1. addFirst(data): Inserts new node at the beginning.
+2. addLast(data): Inserts new node at the end.
+3. removeFirst(): Deletes the first node.
+4. removeLast(): Deletes the last node.
+5. reverseDLL(): Reverses the entire list.
+6. printLL(): Prints all nodes.
 
 Example Flow:
-addFirst(3) -> [3]
-addFirst(2) -> [2 <-> 3]
-addFirst(1) -> [1 <-> 2 <-> 3]
-removeLast() -> [1 <-> 2]
+addFirst(3) → [3]
+addFirst(2) → [2 <-> 3]
+addFirst(1) → [1 <-> 2 <-> 3]
+removeLast() → [1 <-> 2]
 
 Time Complexity:
-- addFirst / addLast / removeFirst / removeLast: O(1)
-- printLL: O(n)
+- addFirst, addLast, removeFirst, removeLast: O(1)
+- reverseDLL, printLL: O(n)
 
 Space Complexity: O(1)
 */
