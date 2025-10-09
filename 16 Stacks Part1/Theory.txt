@@ -1,0 +1,75 @@
+Stack – Theory Notes for Revision
+
+1. Definition
+A stack is a linear data structure that follows the LIFO (Last In, First Out) principle.
+The last element inserted is the first one to be removed.
+Example: Like a stack of plates — you add and remove from the top.
+
+2. Basic Operations
+Operation     Description                            Time Complexity
+--------------------------------------------------------------------
+push(x)       Inserts element x at the top           O(1)
+pop()         Removes the top element                O(1)
+peek()/top()  Returns the top element (no removal)   O(1)
+isEmpty()     Checks if stack is empty               O(1)
+size()        Returns number of elements             O(1)
+
+3. Implementation
+- Using Arrays: Fixed size, faster access.
+- Using Linked List: Dynamic size, better memory usage.
+
+4. Example (Array-based Stack in Java)
+--------------------------------------------------
+class Stack {
+    int top;
+    int maxSize;
+    int[] arr;
+
+    Stack(int size) {
+        maxSize = size;
+        arr = new int[maxSize];
+        top = -1;
+    }
+
+    void push(int x) {
+        if (top == maxSize - 1) {
+            System.out.println("Stack Overflow");
+            return;
+        }
+        arr[++top] = x;
+    }
+
+    int pop() {
+        if (top == -1) {
+            System.out.println("Stack Underflow");
+            return -1;
+        }
+        return arr[top--];
+    }
+
+    int peek() {
+        if (top == -1) {
+            System.out.println("Stack is Empty");
+            return -1;
+        }
+        return arr[top];
+    }
+
+    boolean isEmpty() {
+        return top == -1;
+    }
+}
+
+5. Applications of Stack
+- Expression evaluation (infix, postfix, prefix)
+- Undo/Redo in editors
+- Function call stack (recursion)
+- Parentheses balancing
+- Backtracking algorithms
+- Depth First Search (DFS)
+
+6. Important Points
+- Stack works on LIFO principle.
+- Overflow: pushing into full stack.
+- Underflow: popping from empty stack.
+- Can be implemented using Array, Linked List, or built-in Stack class (e.g., java.util.Stack).
