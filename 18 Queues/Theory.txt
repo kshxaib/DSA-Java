@@ -31,5 +31,5 @@ The last position connects back to the first, forming a circle — utilizes spac
 Priority Queue:
 Each element has a priority; elements with higher priority are served before lower ones.
 
-Dequeue (Double-Ended Queue):
+Deque (Double-Ended Queue):
 Insertion and deletion can happen at both ends (front and rear).
