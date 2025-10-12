@@ -1,104 +1,62 @@
 import java.util.*;
 import java.util.LinkedList;
 
-// Problem: Implement Stack using Two Queues
+// Problem: Implement Stack using Deque
 /*
-📌 Problem Statement:
-Implement a stack using **two queues**.  
-The stack must follow **LIFO (Last In First Out)** principle, while using only queue operations.
+Problem Statement:
+Implement a stack using a Deque (Double Ended Queue) in Java.  
+The stack should follow the LIFO (Last In First Out) principle.
 
 Operations to implement:
-1. **push(x)** → Insert element x into the stack.
-2. **pop()** → Remove the top element from the stack.
-3. **peek()** → Return the top element without removing it.
-4. **isEmpty()** → Check if the stack is empty.
+1. push(x) → Insert element x into the stack.
+2. pop() → Remove the top element from the stack.
+3. peek() → Return the top element without removing it.
+4. isEmpty() → Check if the stack is empty.
 
- Concept:
-- Maintain two queues: `queue1` and `queue2`.
-- **Push operation:** Add element to the non-empty queue.
-- **Pop operation:** Transfer elements from the non-empty queue to the empty queue **except the last element**, which is the top of the stack.
-- **Peek operation:** Similar to pop, but after retrieving the last element, put it back into the other queue.
+Concept:
+- A Deque allows insertion and deletion from both ends.
+- To simulate a stack:
+  - Use addLast() to push an element onto the stack.
+  - Use removeLast() to pop the top element.
+  - Use getLast() to peek the top element.
 */
 
-public class StackUsingTwoQueues {
+public class StackUsingDeque {
 
-    // Inner class representing the Stack
-    public static class Stack{
-        static Queue<Integer> queue1 = new LinkedList<>();
-        static Queue<Integer> queue2 = new LinkedList<>();
+    // Inner class representing the stack
+    static class Stack {
+        Deque<Integer> deque = new LinkedList<>(); // Deque used to store stack elements
 
-        // 🔹 Check if stack is empty
-        public static boolean isEmpty(){
-            return queue1.isEmpty() && queue2.isEmpty();
+        // Check if stack is empty
+        public boolean isEmpty() {
+            return deque.isEmpty();
         }
 
-        // 🔹 Push element into stack
-        public static void push(int data){
-            // Add to non-empty queue; if both empty, add to queue2 by default
-            if(!queue1.isEmpty()){
-                queue1.add(data);
-            } else {
-                queue2.add(data);
-            }
+        // Push element into stack
+        public void push(int data) {
+            deque.addLast(data); // Add element at the end (top of stack)
         }
 
-        // 🔹 Pop element from stack
-        public static int pop(){
-            if(isEmpty()){
+        // Pop element from stack
+        public int pop() {
+            if (isEmpty()) {
                 System.out.println("Stack is empty, cannot remove.");
                 return -1;
             }
-
-            int top = -1;
-
-            // Transfer elements from non-empty queue to empty queue, leaving last element
-            if(!queue1.isEmpty()){
-                while(!queue1.isEmpty()){
-                    top = queue1.remove();
-                    if(queue1.isEmpty()){
-                        break; // Last element found, this is top
-                    }
-                    queue2.add(top);
-                }
-            } else {
-                while(!queue2.isEmpty()){
-                    top = queue2.remove();
-                    if(queue2.isEmpty()){
-                        break; // Last element found
-                    }
-                    queue1.add(top);
-                }
-            }
-
-            return top; // Return top element
+            return deque.removeLast(); // Remove last element (top of stack)
         }
 
-        // 🔹 Peek top element of stack without removing
-        public static int peek(){
-            if(isEmpty()){
-                System.out.println("Stack is empty, cannot remove.");
+        // Peek top element without removing
+        public int peek() {
+            if (isEmpty()) {
+                System.out.println("Stack is empty, cannot peek.");
                 return -1;
             }
-
-            int top = -1;
-
-            if(!queue1.isEmpty()){
-                while(!queue1.isEmpty()){
-                    top = queue1.remove();
-                    queue2.add(top); // Put back all elements into the other queue
-                }
-            } else {
-                while(!queue2.isEmpty()){
-                    top = queue2.remove();
-                    queue1.add(top); // Restore all elements
-                }
-            }
-
-            return top; // Top element of stack
+            return deque.getLast(); // Return last element (top of stack)
         }
     }
 
-    public static void main(String args[]){
+    public static void main(String[] args) {
         Stack stack = new Stack();
 
         // Push elements into stack
@@ -106,42 +64,40 @@ public class StackUsingTwoQueues {
         stack.push(2);
         stack.push(3);
 
-        // Pop and display all elements (LIFO order)
-        while(!stack.isEmpty()){
+        // Pop and display all elements in LIFO order
+        while (!stack.isEmpty()) {
             System.out.println(stack.pop());
         }
     }
 }
 
 /*
-📌 Dry Run:
+Dry Run:
 
 Push sequence: 1, 2, 3
 
-Step 1: push 1 → queue2 = [1]
-Step 2: push 2 → queue2 = [1, 2]
-Step 3: push 3 → queue2 = [1, 2, 3]
+Step 1: push 1 → deque = [1]
+Step 2: push 2 → deque = [1, 2]
+Step 3: push 3 → deque = [1, 2, 3]
 
 Pop sequence:
-- Transfer all but last from queue2 to queue1 → last element 3 is popped
-- Next pop: transfer 1 → 2 from queue1 to queue2 → last element 2 popped
-- Next pop: transfer 1 from queue2 to queue1 → last element 1 popped
+pop() → 3
+pop() → 2
+pop() → 1
 
 Output:
 3
 2
 1
 
----
-
-📊 Time Complexity:
+Time Complexity:
 - push() → O(1)
-- pop()  → O(n) (transfer elements)
-- peek() → O(n) (transfer elements)
+- pop() → O(1)
+- peek() → O(1)
 
-📊 Space Complexity:
-O(n) — For two queues storing n elements
+Space Complexity:
+O(n) — Deque storing n elements
 
-✅ Concept Used:
-Simulating Stack (LIFO) using two Queues (FIFO)
+Concept Used:
+Simulating Stack (LIFO) using Deque (double-ended queue)
 */
