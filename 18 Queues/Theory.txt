@@ -1,0 +1,35 @@
+Definition:
+A Queue is a linear data structure that follows the FIFO (First In, First Out) principle,
+the element inserted first is removed first.
+
+Example in real life:
+A queue at a ticket counter or printer queue — first person/job in line is served first.
+
+Characteristics of Queue
+Ordered: Elements are processed in the order they are added.
+FIFO Structure: First element added is the first to be removed.
+
+Two main operations:
+enqueue() → Insert element at the rear.
+dequeue() → Remove element from the front.
+
+Basic Queue Operations
+Operation	      Description
+enqueue(item)	  Adds an element to the rear of the queue
+dequeue()	      Removes and returns the front element
+peek() / front()  Returns the element at the front without removing it
+isEmpty()	      Checks if the queue is empty
+isFull()	      Checks if the queue is full (for fixed-size implementations)
+
+Types of Queues
+Simple Queue (Linear Queue):
+Follows FIFO; once the rear reaches the end, no new element can be inserted without deletion.
+
+Circular Queue:
+The last position connects back to the first, forming a circle — utilizes space efficiently.
+
+Priority Queue:
+Each element has a priority; elements with higher priority are served before lower ones.
+
+Dequeue (Double-Ended Queue):
+Insertion and deletion can happen at both ends (front and rear).
