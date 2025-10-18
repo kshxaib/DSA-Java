@@ -1,20 +1,20 @@
-// Problem: Count the Total Number of Nodes in a Binary Tree
+// Problem: Calculate the Sum of All Nodes in a Binary Tree
 /*
-This program constructs a Binary Tree manually and counts the **total number of nodes**
+This program constructs a Binary Tree manually and calculates the **sum of all nodes**
 present in the tree using recursion.
 
 Goal:
 - Build a binary tree manually
-- Use recursion to count all nodes (including root, internal, and leaf nodes)
+- Use recursion to compute the sum of all node values
 
 Concepts:
-1. Node Counting Logic:
-   - For each node → total nodes = left subtree nodes + right subtree nodes + 1 (for the current node)
+1. Node Sum Logic:
+   - For each node → total sum = sum of left subtree + sum of right subtree + current node’s value
 2. Base Case:
-   - If the node is null → count = 0
+   - If the node is null → contribute 0 to the sum
 3. Recursive Case:
-   - Recursively count nodes in left and right subtrees
-   - Add 1 for the current node
+   - Recursively calculate sums of left and right subtrees
+   - Add current node’s data to total
 */
 
 public class SumOfNodes {
@@ -31,16 +31,19 @@ public class SumOfNodes {
         }
     }
 
-    // Step 1: Function to count total nodes in the binary tree
-    public static int calcSum(Node root){
-        if(root  == null){
+    // Step 1: Function to calculate the sum of all nodes in the binary tree
+    public static int calcSum(Node root) {
+        // Base Case: Empty tree contributes 0 to the sum
+        if (root == null) {
             return 0;
         }
 
+        // Recursive calls to calculate sum of left and right subtrees
         int leftSum = calcSum(root.left);
         int rightSum = calcSum(root.right);
 
-        int sum = (leftSum + rightSum) + root.data;
+        // Step 2: Total sum = left sum + right sum + current node value
+        int sum = leftSum + rightSum + root.data;
         return sum;
     }
 
@@ -53,7 +56,7 @@ public class SumOfNodes {
         root.right.left = new Node(6);
         root.right.right = new Node(7);
 
-        System.out.println("Total number of nodes in the Binary Tree: " + calcSum(root));
+        System.out.println("Sum of all nodes in the Binary Tree: " + calcSum(root));
     }
 }
 
@@ -70,20 +73,20 @@ Tree Structure:
        4  5  6  7
 
 Recursive Process:
-countNodes(1)
- → countNodes(2)
-     → countNodes(4) → returns 1
-     → countNodes(5) → returns 1
-     → total = 1 + 1 + 1 = 3
- → countNodes(3)
-     → countNodes(6) → returns 1
-     → countNodes(7) → returns 1
-     → total = 1 + 1 + 1 = 3
- → total = 3 + 3 + 1 = 7
+calcSum(1)
+ → calcSum(2)
+     → calcSum(4) → returns 4
+     → calcSum(5) → returns 5
+     → total = 4 + 5 + 2 = 11
+ → calcSum(3)
+     → calcSum(6) → returns 6
+     → calcSum(7) → returns 7
+     → total = 6 + 7 + 3 = 16
+ → total = 11 + 16 + 1 = 28
 
 -------------------------------------------
 Final Output:
-Total number of nodes in the Binary Tree: 7
+Sum of all nodes in the Binary Tree: 28
 -------------------------------------------
 
 Time Complexity: O(n)
