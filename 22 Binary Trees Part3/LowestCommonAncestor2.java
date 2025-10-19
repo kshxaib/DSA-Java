@@ -26,7 +26,7 @@ Concepts:
      For nodes (4, 5) → LCA = 2  
      For nodes (4, 7) → LCA = 1
 
-3. Approach (Root-to-Node Paths):
+3. Approach (Using Root-to-Node Paths):
    - Find the path from the root to node n1 and store it in a list (path1).
    - Find the path from the root to node n2 and store it in another list (path2).
    - Traverse both lists until values differ — the last common node before divergence is the LCA.
@@ -53,30 +53,59 @@ public class LowestCommonAncestor2 {
         }
     }
 
-    public static Node LCA(Node root, int n1, int n2){
-        if(root == null){
-            return null;
+    // Step 2: Function to store path from root to the target node 'n'
+    public static boolean getPath(Node root, int n, ArrayList<Node> path) {
+        // Base case: if tree is empty
+        if (root == null) {
+            return false;
         }
 
-        if(root.data == n1 || root.data == n2){
-            return root;
+        // Add current node to the path
+        path.add(root);
+
+        // If current node matches the target node
+        if (root.data == n) {
+            return true;
         }
 
-        Node leftLCA = LCA(root.left, n1, n2);
-        Node rightLCA = LCA(root.right, n1, n2);
+        // Recursively search in left and right subtrees
+        boolean foundLeft = getPath(root.left, n, path);
+        boolean foundRight = getPath(root.right, n, path);
 
-        if(rightLCA == null){
-            return leftLCA;
+        // If node is found in either subtree
+        if (foundLeft || foundRight) {
+            return true;
         }
 
-        if(leftLCA == null){
-            return rightLCA;
-        }
-
-        return root;
+        // Otherwise, backtrack (remove last node)
+        path.remove(path.size() - 1);
+        return false;
     }
 
-    // Step 4: Build tree and test function
+    // Step 3: Function to find the Lowest Common Ancestor
+    public static Node LCA(Node root, int n1, int n2) {
+        ArrayList<Node> path1 = new ArrayList<>();
+        ArrayList<Node> path2 = new ArrayList<>();
+
+        // Find paths from root to both nodes
+        getPath(root, n1, path1);
+        getPath(root, n2, path2);
+
+        // Compare both paths to find the last common node
+        int i = 0;
+        while (i < path1.size() && i < path2.size()) {
+            if (path1.get(i) != path2.get(i)) {
+                break;
+            }
+            i++;
+        }
+
+        // i-1 gives the last common node before paths diverge
+        Node lca = path1.get(i - 1);
+        return lca;
+    }
+
+    // Step 4: Build tree and test LCA function
     public static void main(String args[]) {
         /*
                     1
@@ -86,6 +115,7 @@ public class LowestCommonAncestor2 {
                4  5  6  7
         */
 
+        // Build tree manually
         Node root = new Node(1);
         root.left = new Node(2);
         root.right = new Node(3);
@@ -94,9 +124,13 @@ public class LowestCommonAncestor2 {
         root.right.left = new Node(6);
         root.right.right = new Node(7);
 
-        int n1 = 4, n2 = 6;
+        // Input nodes
+        int n1 = 4, n2 = 7;
 
+        // Call LCA function
         Node lca = LCA(root, n1, n2);
+
+        // Output result
         System.out.println("Lowest Common Ancestor of " + n1 + " and " + n2 + " is: " + lca.data);
     }
 }
@@ -136,6 +170,6 @@ Time Complexity: O(n)
 - Each node is visited once while finding both paths.
 
 Space Complexity: O(n)
-- Space for path lists and recursive stack.
+- Space for storing paths and recursive stack.
 -------------------------------------------
 */
