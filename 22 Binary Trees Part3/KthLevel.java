@@ -87,8 +87,9 @@ public class KthLevel {
         root.right.right = new Node(7);
 
         // Example: Expected output for level 3 → 4 5 6 7
-        System.out.println("Nodes at Level 3:");
-        printKthLevel(root, 3, 1);
+        int k = 3;
+        System.out.println("Nodes at Level " + k + ":");
+        printKthLevel(root, k, 1);
     }
 }
 
