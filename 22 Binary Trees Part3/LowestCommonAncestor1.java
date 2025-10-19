@@ -37,7 +37,7 @@ Concepts:
 
 import java.util.ArrayList;
 
-public class LowestCommonAncestor {
+public class LowestCommonAncestor1 {
 
     // Step 1: Define Node structure for Binary Tree
     static class Node {
