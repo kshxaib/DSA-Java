@@ -1,0 +1,34 @@
+BINARY SEARCH TREES (BST)
+
+1. Definition
+A Binary Search Tree (BST) is a special type of binary tree in which each node follows a specific 
+ordering property:
+
+The left subtree of a node contains only nodes with values less than the node’s key.
+The right subtree of a node contains only nodes with values greater than the node’s key.
+Both left and right subtrees must also be BSTs.
+
+Eg:     8
+       / \
+      3   10
+     / \    \
+    1   6    14
+       / \   /
+      4   7 13
+
+
+2. Complexity Summary
+Operation	  Average Case	  Worst Case
+Search	      O(log n)	      O(n)
+Insertion	  O(log n)	      O(n)
+Deletion	  O(log n)	      O(n)
+Traversal	  O(n)	          O(n)
+
+
+Key Points for Revision
+
+BST property: Left < Root < Right
+Inorder traversal → Sorted output
+Insertion/Deletion depends on height (h)
+Unbalanced BST → acts like a linked list
+Balancing techniques (AVL/Red-Black) maintain O(log n) operations
