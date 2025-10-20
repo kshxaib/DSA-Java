@@ -1,3 +1,36 @@
+/*
+-------------------------------------------
+Program: Print Nodes in a Given Range from a Binary Search Tree (BST)
+-------------------------------------------
+
+Goal:
+- Construct a Binary Search Tree (BST) by inserting values.
+- Print all nodes whose values lie within a given range [k1, k2].
+
+Concepts:
+1. Binary Search Tree (BST):
+   - A binary tree where:
+        • Left child < Parent node
+        • Right child > Parent node
+   - Allows efficient range-based searches.
+
+2. Range Printing Logic:
+   - For each node, check:
+        • If node.data lies in [k1, k2] → print it.
+        • If node.data < k1 → explore right subtree (since all left values are smaller).
+        • If node.data > k2 → explore left subtree (since all right values are greater).
+
+3. Inorder-Based Traversal:
+   - Since Inorder Traversal (Left → Root → Right) prints sorted values,
+     this ensures nodes are printed in increasing order.
+
+4. Key Steps:
+   - Step 1: Create a `Node` class with `data`, `left`, and `right`.
+   - Step 2: Implement `insert()` to build the BST.
+   - Step 3: Implement `printInRange()` to print nodes within [k1, k2].
+   - Step 4: Test by constructing a BST and printing the result.
+-------------------------------------------
+*/
 
 public class PrintInRange {
 
@@ -36,24 +69,29 @@ public class PrintInRange {
         return root;
     }
 
-    public static void printInRange(Node root, int k1, int k2){
-        if(root == null){
+    // Step 3: Function to print all nodes in range [k1, k2]
+    public static void printInRange(Node root, int k1, int k2) {
+        if (root == null) {
             return;
         }
 
-        if(root.data >= k1 && root.data <= k2){
-            printInRange(root.left, k1, k2);
-            System.out.print(root.data + " ");
+        // Case 1: Node lies within the range
+        if (root.data >= k1 && root.data <= k2) {
+            printInRange(root.left, k1, k2);     // Explore left subtree
+            System.out.print(root.data + " ");   // Print node
+            printInRange(root.right, k1, k2);    // Explore right subtree
+        } 
+        // Case 2: Node value smaller than k1 → check right subtree only
+        else if (root.data < k1) {
             printInRange(root.right, k1, k2);
+        } 
+        // Case 3: Node value greater than k2 → check left subtree only
+        else {
+            printInRange(root.left, k1, k2);
         }
-         else if(root.data < k1){
-            printInRange(root.left, k1, k2);
-         } else {
-            printInRange(root.right, k1, k2);
-         }
     }
-    
-    // Step 5: Main function to build and test the BST
+
+    // Step 4: Main function to build and test the BST
     public static void main(String[] args) {
         int values[] = {8, 5, 3, 1, 4, 6, 10, 11, 14};   // Values to insert into BST
         Node root = null;                                // Initially empty tree
@@ -63,7 +101,9 @@ public class PrintInRange {
             root = insert(root, values[i]);              // Assign returned root each time
         }
 
-        printInRange(root, 5, 12);
+        int k1 = 5, k2 = 12;
+        System.out.print("Nodes in range [" + k1 + ", " + k2 + "]: ");
+        printInRange(root, k1, k2);
     }
 }
 
@@ -73,7 +113,7 @@ DRY RUN
 -------------------------------------------
 Insert order: 8, 5, 3, 1, 4, 6, 10, 11, 14
 
-Initial BST:
+BST Structure:
              8
            /   \
           5     10
@@ -82,30 +122,25 @@ Initial BST:
       / \            \
      1   4            14
 
-Deleting key = 1
-- 1 < 8 → go left
-- 1 < 5 → go left
-- 1 < 3 → go left → found node (leaf) → delete
+Range: [5, 12]
 
-Resulting BST after deletion:
-             8
-           /   \
-          5     10
-        /  \      \
-       3    6      11
-        \            \
-         4            14
+Traversal:
+- Start at 8 → lies within [5,12] → print 8
+- Left Subtree → explore 5 → within range → print 5
+- 3,1,4 < 5 → skipped
+- Right Subtree of 8 → explore 10 → within range → print 10
+- 11 → within range → print 11
+- 14 > 12 → skipped
 
-Inorder Traversal:
-3 4 5 6 8 10 11 14
+Output:
+5 6 8 10 11
 
 -------------------------------------------
 Time Complexity:
 - Insertion: O(h)
-- Deletion: O(h)
-- Inorder Traversal: O(n)
+- Range Printing: O(n) in worst case
 (where h = height of BST)
-→ O(log n) for balanced BST, O(n) for skewed tree
+→ O(log n) for balanced tree, O(n) for skewed tree
 
 Space Complexity:
 - O(h) due to recursion stack
