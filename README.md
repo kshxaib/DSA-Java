@@ -46,7 +46,7 @@ Covers fundamental Java concepts needed for DSA, such as data types, loops, cond
 Includes one-dimensional and two-dimensional arrays, along with practice problems and solutions.
 
 ## Basic Sorting Algorithms
-Implementations of common sorting algorithms such as Bubble Sort, Selection Sort, and Insertion Sort.
+Implementations of common sorting algorithms such as Bubble Sort, Counting Sort, Selection Sort, and Insertion Sort.
 
 ## Strings
 String manipulation, common string problems, and Java string utilities.
@@ -87,15 +87,9 @@ Covers greedy strategy problems like activity selection and coin change.
 ## Binary Trees
 Covers tree traversal, height, diameter, top view, and other binary tree problems.
 
-## LeetCode Problems
-Collection of solved LeetCode problems categorized by topic.
-
-## Mentorship Sessions
-Notes and solutions discussed during mentorship sessions.
-
 ---
 
 ## How to Use
 1. Clone this repository:
 ```bash
-git clone <repo_url>
+git clone https://github.com/kshxaib/DSA-Java.git
