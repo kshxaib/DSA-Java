@@ -36,7 +36,7 @@ Concepts:
 
 import java.util.ArrayList;
 
-public class InsertInHeap {
+public class ImplementationOfHeap {
 
     // Step 1: Create a Heap class to handle heap operations
     static class Heap {
@@ -69,6 +69,46 @@ public class InsertInHeap {
             return firstElmt;
         }
 
+        private void heapify(int idx){
+            int leftIdx = (2*idx)+1;
+            int rightIdx = (2*idx)+2;
+            int minIdx = idx;
+
+            if(leftIdx < arr.size() && arr.get(minIdx) > arr.get(leftIdx)){
+                minIdx = leftIdx;
+            }
+
+            if(rightIdx < arr.size() && arr.get(minIdx) > arr.get(rightIdx)){
+                minIdx = rightIdx;
+            }
+
+            if(minIdx != idx){
+                int temp = arr.get(idx);
+                arr.set(idx, arr.get(minIdx));
+                arr.set(minIdx, temp);
+
+                heapify(minIdx);
+            }
+        }
+
+        public int remove(){
+            // step1:
+            int temp = arr.get(0);
+            arr.set(0, arr.get(arr.size()-1));
+            arr.set(arr.size()-1, temp);
+
+            //step2:
+            arr.remove(arr.size() -1);
+
+            //step3:
+            heapify(0);
+            return temp;
+        }
+
+        public boolean isEmpty(){
+            return arr.size() == 0;
+        }
+
         // Step 3: Display current heap elements
         public void printHeap() {
             System.out.println(arr);
@@ -79,16 +119,14 @@ public class InsertInHeap {
         Heap heap = new Heap();
 
         // Step 4: Insert elements into the heap
-        heap.add(10);
-        heap.add(20);
+        heap.add(3);
+        heap.add(4);
+        heap.add(1);
         heap.add(5);
-        heap.add(30);
 
-        // Step 5: Print the heap after all insertions
-        System.out.println("Heap after insertions (Max-Heap):");
-        heap.printHeap();
-
-        System.out.println(heap.peek());
+        while(!heap.isEmpty()){
+            System.out.println(heap.remove());
+        }
     }
 }
 
