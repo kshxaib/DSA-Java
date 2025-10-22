@@ -64,6 +64,11 @@ public class InsertInHeap {
             }
         }
 
+        public int peek(){
+            int firstElmt = arr.get(0);
+            return firstElmt;
+        }
+
         // Step 3: Display current heap elements
         public void printHeap() {
             System.out.println(arr);
@@ -82,6 +87,8 @@ public class InsertInHeap {
         // Step 5: Print the heap after all insertions
         System.out.println("Heap after insertions (Max-Heap):");
         heap.printHeap();
+
+        System.out.println(heap.peek());
     }
 }
 
