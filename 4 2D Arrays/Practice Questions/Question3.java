@@ -9,13 +9,6 @@ public class Question3 {
                 transpose[j][i] = matrix[i][j];
             }
         }
-
-        for(int i=0; i<transpose.length; i++){
-            for(int j=0; j<transpose[0].length; j++){
-                System.out.print(transpose[i][j] + " ");
-            }
-            System.out.println();
-        }
     }
 
     public static void main(String args[]){
