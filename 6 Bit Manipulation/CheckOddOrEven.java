@@ -2,12 +2,9 @@ import java.util.*;
 
 public class CheckOddOrEven {
     public static void checkIfOddOrEven(int binaryInput){
-        int LSB = binaryInput % 10; // Get the last binary digit (LSB)
+        int bitMask = 1;
 
-        // In binary:
-        // Last bit 0 => Even
-        // Last bit 1 => Odd
-        if(LSB == 0){
+        if((binaryInput & bitMask) == 0){
             System.out.printf("Binary number %d is Even.", binaryInput);
         } else {
             System.out.printf("Binary number %d is Odd.", binaryInput);
