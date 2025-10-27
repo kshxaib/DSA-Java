@@ -9,7 +9,7 @@ public class checkIfNumberIsPowerOf2 {
         // Trick:
         // n & (n-1) → removes the rightmost set bit
         // If result == 0 → only one bit was set → power of 2
-
+        if(n == 0) return false;
         if((n & (n-1)) == 0){
             return true;
         }
