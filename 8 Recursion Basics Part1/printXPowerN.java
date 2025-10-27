@@ -5,8 +5,8 @@ public class printXPowerN {
     // Recursive function to calculate x^n
     public static int printPower(int x, int n){
         // Base case: any number raised to power 0 = 1
-        if(n == 0){
-            return 1;
+        if(n == 1){
+            return x;
         }
 
         // Recursive step: x^n = x * x^(n-1)
@@ -17,8 +17,8 @@ public class printXPowerN {
     // Using Exponentiation by Squaring → reduces O(n) → O(log n)
     public static int printPowerOptimized(int x, int n){
         // Base case
-        if(n == 0){
-            return 1;
+        if(n == 1){
+            return x;
         }
 
         // Recursive call for half power
