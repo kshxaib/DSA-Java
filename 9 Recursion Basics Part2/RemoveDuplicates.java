@@ -1,6 +1,6 @@
 // Problem: Remove duplicate characters from a string using recursion
 
-public class RemoveDuplicate {
+public class RemoveDuplicates {
 
     // Recursive function
     public static void RD(String str, int index, StringBuilder sb, boolean map[]){

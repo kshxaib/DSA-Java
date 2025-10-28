@@ -19,45 +19,17 @@ public class TilingProblem {
     // Recursive function
     public static int tilingProblem(int n){
         // Base cases
-        if(n == 0 || n == 1){
-            return 1;  // Only 1 way to arrange
+        if (n == 0) {
+            return 1;
         }
 
-        // Recursive calls
-        int fnm1 = tilingProblem(n-1);  // Place vertical tile
-        int fnm2 = tilingProblem(n-2);  // Place 2 horizontal tiles
-
-        int totalWays = fnm1 + fnm2;
-        return totalWays;
+        if(n == 1 || n == 2 || n == 3){
+            return n;  // Only 1 way to arrange
+        }
+        return tilingProblem(n-1) + tilingProblem(n-2);
     }
 
     public static void main(String[] args) {
         System.out.println(tilingProblem(6));  
-        // Expected Output → 13
     }
 }
-
-/*
-📌 Dry Run (n=6):
-    f(6) = f(5) + f(4)
-    f(5) = f(4) + f(3)
-    f(4) = f(3) + f(2)
-    f(3) = f(2) + f(1)
-    f(2) = f(1) + f(0)
-
-    f(0) = 1
-    f(1) = 1
-    f(2) = 1 + 1 = 2
-    f(3) = 2 + 1 = 3
-    f(4) = 3 + 2 = 5
-    f(5) = 5 + 3 = 8
-    f(6) = 8 + 5 = 13
-
-✅ Final Answer for n=6 → 13 ways
-
-✅ Time Complexity: O(2^n) (exponential recursion, like Fibonacci)
-✅ Space Complexity: O(n) (recursion stack)
-
-⚡ Optimization:
-We can use DP (memoization or tabulation) to reduce complexity to O(n).
-*/
