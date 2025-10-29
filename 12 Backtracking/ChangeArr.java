@@ -32,7 +32,7 @@ public class ChangeArr {
         }
 
         // Step 1: Assign value at current index (going forward)
-        arr[index] = index+1;
+        arr[index] = value;
 
         // Recursive call for next index
         changeArrValues(arr, index+1, value+1);
