@@ -38,9 +38,8 @@ public class GridWays {
     }
 
     public static void main(String[] args) {
-        int n = 3, m = 3; // 3x3 grid
+        int n = 3, m = 3; 
         System.out.println(gridWays(0, 0, n, m));
-        // Expected output: 6 (paths in a 3x3 grid)
     }
 }
 
