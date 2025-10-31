@@ -37,9 +37,27 @@ public class GridWays {
         return w1 + w2;
     }
 
+    public static int findFac(int n){
+        if(n == 1){
+            return 1;
+        }
+
+        return n *findFac(n-1);
+    }
+
+    public static int findGridWays(int n, int m){
+        int nPlusMMinus2 = findFac(n+m-2);
+        int nMinus1 = findFac(n-1);
+        int mMinus1 = findFac(m-1);
+
+        int totalWays = nPlusMMinus2/(nMinus1 * mMinus1);
+        return totalWays;
+    }
+
     public static void main(String[] args) {
         int n = 3, m = 3; 
         System.out.println(gridWays(0, 0, n, m));
+        System.out.println(findGridWays(n, m));
     }
 }
 
