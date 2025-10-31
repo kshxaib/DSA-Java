@@ -13,48 +13,46 @@ Queens can attack vertically, horizontally, and diagonally.
 */
 
 public class NQueens {
-
-    // Function to check if placing a queen at (row, column) is safe
     public static boolean isSafe(char board[][], int row, int column){
         // 🔹 Check vertically upwards
         for (int i = row-1; i >=0; i--) {
             if(board[i][column] == 'Q'){
-                return false; // another queen in same column
+                return false; 
             }
         }
 
         // 🔹 Check upper-left diagonal
         for(int i=row-1, j=column-1; i>=0 && j>=0; i--,j--){
             if(board[i][j] == 'Q'){
-                return false; // queen on left diagonal
+                return false; 
             }
         }
 
         // 🔹 Check upper-right diagonal
         for(int i=row-1, j=column+1; i>=0 && j<board.length; i--,j++){
             if(board[i][j] == 'Q'){
-                return false; // queen on right diagonal
+                return false; 
             }
         }
 
-        return true; // ✅ Safe to place queen
+        return true; 
     }
 
     // Recursive function to place queens row by row
     public static void nQueens(char board[][], int row){
         // ✅ Base case: if all rows filled → valid arrangement found
         if(row == board.length){
-            printBoard(board); // Print the board configuration
+            printBoard(board); 
             count++;           // Increase solution count
             return;
         }
 
         // 🔹 Try placing a queen in each column of the current row
         for(int j=0; j<board.length; j++){
-            if(isSafe(board, row, j)) {   // check safety
-                board[row][j] = 'Q';      // place queen
-                nQueens(board, row+1);    // move to next row (recursive call)
-                board[row][j] = 'X';      // backtrack → remove queen
+            if(isSafe(board, row, j)) {   
+                board[row][j] = 'Q';     
+                nQueens(board, row+1);    
+                board[row][j] = 'X';     
             }
         }
     }
@@ -62,7 +60,6 @@ public class NQueens {
     // 🔹 To count total number of solutions
     static int count = 0;
 
-    // Function to print the chessboard configuration
     public static void printBoard(char board[][]){
         System.out.println("------ Chess Board ------");
         for(int i=0; i<board.length; i++){
@@ -85,7 +82,6 @@ public class NQueens {
             }
         }
 
-        // Start recursion from the 0th row
         nQueens(board, 0);
         System.out.println("Total ways to solve n queens: " + count);
     }
