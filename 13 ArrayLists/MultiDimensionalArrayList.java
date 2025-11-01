@@ -3,15 +3,20 @@ import java.util.*;
 public class MultiDimensionalArrayList {
     public static void main(String[] args) {
         ArrayList<ArrayList<Integer>> mutliList = new ArrayList<>();
-        ArrayList<Integer> list = new ArrayList<>();
-        list.add(1); 
-        list.add(2);
-        mutliList.add(list);
+        ArrayList<Integer> List1 = new ArrayList<>();
+        ArrayList<Integer> List2 = new ArrayList<>();
+        ArrayList<Integer> List3 = new ArrayList<>();
 
-        ArrayList<Integer> list1 = new ArrayList<>();
-        list1.add(3);
-        list1.add(4);
-        mutliList.add(list1);
+        for(int i=1; i<=5; i++){
+            List1.add(i);
+            List2.add(i*2);
+            List3.add(i*3);
+        }
+
+        mutliList.add(List1);
+        mutliList.add(List2);
+        mutliList.add(List3);
+
 
         for(int i=0; i<mutliList.size(); i++){
             ArrayList<Integer> currList = mutliList.get(i);
