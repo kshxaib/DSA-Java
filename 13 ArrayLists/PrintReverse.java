@@ -21,3 +21,6 @@ public class PrintReverse {
         printRev(list);
     }
 }
+
+// Time: O(n)
+// Space: O(1)
