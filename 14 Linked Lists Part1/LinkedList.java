@@ -95,32 +95,36 @@ public class LinkedList {
     }
 
     // Remove the first node from the Linked List
-    public void removeFirst() {
+    public int removeFirst() {
         if (size == 0) {
             System.out.println("List is empty.");
-            return;
+            return Integer.MIN_VALUE;
         } else if (size == 1) {
+            int val = head.data;
             head = null;
             tail = null;
             size--;
-            return;
+            return val;
         }
 
+        int val = head.data;
         // move head to next node
         head = head.next;
         size--;
+        return val;
     }
 
     // Remove the last node from the Linked List
-    public void removeLast() {
+    public int removeLast() {
         if (size == 0) {
             System.out.println("List is empty.");
-            return;
+            return Integer.MIN_VALUE;
         } else if (size == 1) {
+            int val = tail.data;
             head = null;
             tail = null;
             size--;
-            return;
+            return val;
         }
 
         // traverse to the second last node
@@ -129,10 +133,12 @@ public class LinkedList {
             prev = prev.next;
         }
 
+        int val = tail.data;
         // remove last node by setting next to null
         prev.next = null;
         tail = prev;
         size--;
+        return val;
     }
 
     // Iterative search: find position of a key in the list
