@@ -22,3 +22,6 @@ public class FindMax {
         System.out.print("Maximum element: " + findMaximum(list));
     }    
 }
+
+// Time: O(n)
+// Space: O(1)
