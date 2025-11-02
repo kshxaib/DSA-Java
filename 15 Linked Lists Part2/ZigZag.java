@@ -1,34 +1,28 @@
 public class ZigZag {
 
-    // Node class represents a single element of the linked list
     public static class Node {
-        int data;  // stores value
-        Node next; // reference to next node
+        int data; 
+        Node next;
 
-        // Constructor to initialize node
         public Node(int data) {
             this.data = data;
             this.next = null;
         }
     }
 
-    public static Node head; // Head of linked list
+    public static Node head; 
 
-    // Function to find the middle node of the linked list
-    // Uses slow and fast pointer approach
     private Node getMid(Node head) {
-        Node slow = head;        // moves 1 step at a time
-        Node fast = head.next;   // moves 2 steps at a time
+        Node slow = head;       
+        Node fast = head.next;   
 
-        // When fast reaches end, slow will point to middle
         while (fast != null && fast.next != null) {
             slow = slow.next;
             fast = fast.next.next;
         }
-        return slow;  // return middle node
+        return slow; 
     }
 
-    // Function to rearrange linked list in ZigZag fashion
     public Node returnZigZagLL(Node head) {
         // Step 1: Find middle of list
         Node mid = getMid(head);
@@ -94,27 +88,3 @@ public class ZigZag {
         printList(head);
     }
 }
-
-/*
-Revision Notes:
-
-ZigZag Linked List:
-- Rearranges a linked list so that the first element is followed by the last,
-  second by second-last, third by third-last, and so on.
-
-Steps:
-1. Find the middle node of the list using slow and fast pointers.
-2. Reverse the second half of the list.
-3. Merge the first half and reversed second half in alternate fashion.
-
-Example:
-Input: 1 -> 2 -> 3 -> 4 -> 5 -> 6
-Output: 1 -> 6 -> 2 -> 5 -> 3 -> 4 -> null
-
-Time Complexity: O(n) - traverse list multiple times (finding mid, reversing, merging)
-Space Complexity: O(1) - in-place rearrangement
-
-Use Cases:
-- Rearranging data in alternating high-low or zigzag pattern
-- Interview question to test linked list manipulation skills
-*/
