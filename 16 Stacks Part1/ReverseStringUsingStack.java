@@ -28,27 +28,9 @@ public class ReverseStringUsingStack {
 }
 
 /*
-📌 Dry Run:
-Input: "abc"
-
-Step 1: Push characters
-Stack (top → bottom): c, b, a
-
-Step 2: Pop and append
-→ pop 'c' → sb = "c"
-→ pop 'b' → sb = "cb"
-→ pop 'a' → sb = "cba"
-
-Output: "cba"
-
----
-
-📊 Time Complexity:
+Time Complexity:
 O(n) — Each character is pushed and popped once.
 
-📊 Space Complexity:
+Space Complexity:
 O(n) — Stack stores all characters temporarily.
-
-✅ Concept Used:
-Stack (LIFO) property for reversing order.
 */
