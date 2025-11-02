@@ -12,7 +12,7 @@ public class StockSpan {
             int currentPrice = stocks[i];
 
             // Step 1: Pop all indices where stock price is less than current price
-            while (!stack.isEmpty() && currentPrice > stocks[stack.peek()]) {
+            while (!stack.isEmpty() && currentPrice >= stocks[stack.peek()]) {
                 stack.pop();
             }
 
