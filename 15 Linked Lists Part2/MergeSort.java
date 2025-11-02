@@ -56,26 +56,20 @@ public class MergeSort {
 
   
     public Node mergeSort(Node head) {
-        // Base case: single node or empty list
         if (head == null || head.next == null) {
             return head;
         }
 
-        // Step 1: Find middle node
         Node mid = getMid(head);
 
-        // Step 2: Split list into two halves
         Node rightHead = mid.next;
         mid.next = null;
 
-        // Step 3: Sort both halves recursively
         Node leftHalfSorted = mergeSort(head);
         Node rightHalfSorted = mergeSort(rightHead);
 
-        // Step 4: Merge both sorted halves
         Node fullSortedLL = merge(leftHalfSorted, rightHalfSorted);
 
-        // Return the fully sorted list
         return fullSortedLL;
     }
 
@@ -100,7 +94,6 @@ public class MergeSort {
         printList(sortedHead);
     }
 
-    // Helper function to print the linked list
     public static void printList(Node head) {
         Node temp = head;
         while (temp != null) {
