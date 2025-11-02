@@ -54,3 +54,11 @@ public class ReverseStack {
         printStack(stack);
     }
 }
+
+/*
+Time Complexity:
+O(n^2) — Each pushAtBottom() takes O(n) in worst case, and it is called n times during recursion.
+
+Space Complexity:
+O(n) — Due to call stack.
+*/
