@@ -27,9 +27,7 @@ public class DequeJCF {
 }
 
 /*
-Time Complexity:
-- addFirst(), addLast(), removeFirst(), removeLast() → O(1)
+Time Complexity: O(1) per operation
 
-Space Complexity:
-- O(n) for storing elements in the deque.
+Space Complexity: - O(n) for storing elements in the deque.
 */
