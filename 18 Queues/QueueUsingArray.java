@@ -35,23 +35,21 @@ public class QueueUsingArray {
 
             int front = arr[0]; 
 
-            // Shift all remaining elements one position left
             for (int i = 0; i < rear; i++) {
                 arr[i] = arr[i + 1];
             }
 
-            rear = rear - 1; // Reduce rear after removal
+            rear = rear - 1; 
             return front;
         }
 
-        // Peek operation — returns front element without removing it
         public static int peek() {
             if (isEmpty()) {
                 System.out.println("Queue is empty, cannot peek.");
                 return -1;
             }
 
-            return arr[0]; // Front element always at index 0
+            return arr[0]; 
         }
     }
 

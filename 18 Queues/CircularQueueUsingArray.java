@@ -11,8 +11,8 @@ public class CircularQueueUsingArray {
         Queue(int n) {
             arr = new int[n];
             this.size = n;
-            this.rear = -1;  // Initially empty
-            this.front = -1; // Initially empty
+            this.rear = -1;  
+            this.front = -1;
         }
 
         public static boolean isEmpty() {
@@ -23,73 +23,62 @@ public class CircularQueueUsingArray {
             return (rear + 1) % size == front;
         }
 
-        // 🔹 Add (enqueue) element at the rear of the queue
         public static void add(int data) {
             if (isFull()) {
-                System.out.println("Queue is full."); // Overflow condition
+                System.out.println("Queue is full.");
                 return;
             }
 
-            // First element insertion
             if (front == -1) {
                 front = 0;
             }
 
-            // Move rear circularly
             rear = (rear + 1) % size;
             arr[rear] = data;
         }
 
-        // 🔹 Remove (dequeue) element from the front of the queue
         public static int remove() {
             if (isEmpty()) {
-                System.out.println("Queue is empty, cannot remove."); // Underflow condition
+                System.out.println("Queue is empty, cannot remove."); 
                 return -1;
             }
 
-            int frontValue = arr[front]; // Element to remove
+            int frontValue = arr[front]; 
 
-            // If only one element is left
             if (rear == front) {
                 rear = -1;
                 front = -1;
             } else {
-                // Move front circularly
                 front = (front + 1) % size;
             }
 
             return frontValue;
         }
 
-        // 🔹 Peek operation — returns front element without removing it
         public static int peek() {
             if (isEmpty()) {
                 System.out.println("Queue is empty, cannot peek.");
                 return -1;
             }
 
-            return arr[front]; // Return current front element
+            return arr[front]; 
         }
     }
 
-    // 🔹 Main method — testing Circular Queue
     public static void main(String args[]) {
-        Queue queue = new Queue(5); // Create a circular queue of size 5
+        Queue queue = new Queue(5); 
 
-        // Enqueue elements
         queue.add(1);
         queue.add(2);
         queue.add(3);
         queue.add(4);
         queue.add(5);
 
-        // Display and remove elements in FIFO order
         while (!queue.isEmpty()) {
-            System.out.println(queue.peek()); // Show front element
-            queue.remove();                   // Remove front element
+            System.out.println(queue.peek()); 
+            queue.remove();                   
         }
 
-        // Reuse queue to demonstrate circular behavior
         queue.add(10);
         queue.add(20);
         queue.add(30);
@@ -103,41 +92,6 @@ public class CircularQueueUsingArray {
 }
 
 /*
-📌 Dry Run:
-
-Queue size = 5
-
-Initial state → front = -1, rear = -1
-
-add(1) → front = 0, rear = 0 → [1]
-add(2) → rear = 1 → [1, 2]
-add(3) → rear = 2 → [1, 2, 3]
-add(4) → rear = 3 → [1, 2, 3, 4]
-add(5) → rear = 4 → [1, 2, 3, 4, 5]
-
-Now remove:
-→ peek() = 1 → remove() → front moves → [2, 3, 4, 5]
-→ peek() = 2 → remove()
-→ ...
-→ queue becomes empty
-
-Then reuse:
-add(10), add(20), add(30)
-(rear wraps around circularly using modulo)
-
-✅ Output:
-1
-2
-3
-4
-5
-After reusing queue:
-10
-20
-30
-
----
-
 📊 Time Complexity:
 - add()   → O(1)
 - remove() → O(1)
@@ -145,7 +99,4 @@ After reusing queue:
 
 📊 Space Complexity:
 O(n) — for the array.
-
-✅ Concept Used:
-Circular Queue using Array + Modulo Arithmetic
 */
