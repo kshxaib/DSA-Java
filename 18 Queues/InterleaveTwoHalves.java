@@ -1,30 +1,10 @@
 // Problem: Interleave the Two Halves of a Queue
-/*
-This program interleaves the two halves of a given queue.
-That means elements from the first and second halves are arranged alternately.
-
-Example:
-Input  : [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-Output : [1, 6, 2, 7, 3, 8, 4, 9, 5, 10]
-
-Concept:
-1. Split the queue into two halves.
-2. Store the first half in a temporary queue.
-3. Alternately enqueue elements from both halves into the original queue:
-   - First element from first half
-   - Then element from second half
-4. Continue until all elements are interleaved.
-
-Key Idea:
-Use one temporary queue and the main queue itself for interleaving.
-*/
 
 import java.util.*;
 import java.util.LinkedList;
 
 public class InterleaveTwoHalves {
 
-    // Function to interleave two halves of the queue
     public static void InterleaveTH(Queue<Integer> queue) {
         Queue<Integer> forFirstHalf = new LinkedList<>(); // Temporary queue for the first half
         int sizeHalf = queue.size() / 2;                  // Size of each half
@@ -43,11 +23,9 @@ public class InterleaveTwoHalves {
         }
     }
 
-    // Main method to test interleaving logic
     public static void main(String[] args) {
         Queue<Integer> queue = new LinkedList<>();
 
-        // Add elements to the queue
         queue.add(1);
         queue.add(2);
         queue.add(3);
@@ -59,10 +37,8 @@ public class InterleaveTwoHalves {
         queue.add(9);
         queue.add(10);
 
-        // Perform interleaving operation
         InterleaveTH(queue);
 
-        // Display interleaved queue
         while (!queue.isEmpty()) {
             System.out.println(queue.remove());
         }
@@ -98,7 +74,4 @@ Time Complexity: O(n)
 
 Space Complexity: O(n/2)
 - Temporary queue stores half of the elements.
-
-Concept Used:
-- Queue manipulation and interleaving using FIFO behavior.
 */
