@@ -1,29 +1,10 @@
 // Problem: Find the First Non-Repeating Letter in a Stream
-/*
-This program finds and prints the first non-repeating letter (FNRL)
-for every character in a given string as it is being read.
-
-Concept:
-- Use a queue to maintain the order of characters as they appear.
-- Use a frequency array to count how many times each character has appeared.
-- For each character:
-  1. Add it to the queue and increase its frequency count.
-  2. Remove characters from the queue front if they have appeared more than once.
-  3. The character at the front of the queue is the first non-repeating character.
-  4. If the queue is empty, print -1 (no non-repeating character found yet).
-
-Operations supported:
-1. Add characters sequentially.
-2. Track their frequency using an array.
-3. Determine and print the first non-repeating character after each step.
-*/
 
 import java.util.*;
 import java.util.LinkedList;
 
 public class FirstNonRepeatingLetter {
 
-    // Function to print First Non-Repeating Letters in a stream
     public static void printFNRL(String str) {
         int freq[] = new int[26];              // Frequency array for 'a' to 'z'
         Queue<Character> queue = new LinkedList<>(); // Queue to store characters in order
@@ -49,10 +30,9 @@ public class FirstNonRepeatingLetter {
         }
     }
 
-    // Main method to test the logic
     public static void main(String[] args) {
-        String str = "aabccxb"; // Input stream of characters
-        printFNRL(str);         // Call function to print FNRL sequence
+        String str = "aabccxb"; 
+        printFNRL(str);         
     }
 }
 
@@ -75,9 +55,4 @@ Time Complexity: O(n)
 
 Space Complexity: O(n)
 - Queue and frequency array storage.
-
-Concept Used:
-- Queue (FIFO) for maintaining order.
-- Frequency array for repetition tracking.
-- Real-time detection of the first non-repeating character.
 */
