@@ -1,43 +1,39 @@
 // Problem: Implement Queue using Array
+
 public class QueueUsingArray {
 
-    // Inner static class for Queue implementation
     static class Queue {
         static int arr[];   // Array to store queue elements
         static int size;    // Maximum size of the queue
         static int rear;    // Index of the last inserted element
 
-        // Constructor to initialize the queue
         Queue(int n) {
             arr = new int[n];
             this.size = n;
-            this.rear = -1; // Initially empty
+            this.rear = -1; 
         }
 
-        // Check if the queue is empty
         public static boolean isEmpty() {
             return rear == -1;
         }
 
-        // Add (enqueue) element at the rear of the queue
         public static void add(int data) {
             if (rear == size - 1) {
                 System.out.println("Queue is full."); 
                 return;
             }
 
-            rear = rear + 1;     // Move rear forward
-            arr[rear] = data;    // Insert data
+            rear = rear + 1;     
+            arr[rear] = data;   
         }
 
-        // Remove (dequeue) element from the front of the queue
         public static int remove() {
             if (isEmpty()) {
                 System.out.println("Queue is empty, cannot remove."); 
                 return -1;
             }
 
-            int front = arr[0]; // Front element to return
+            int front = arr[0]; 
 
             // Shift all remaining elements one position left
             for (int i = 0; i < rear; i++) {

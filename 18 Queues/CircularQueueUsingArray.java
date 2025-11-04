@@ -1,36 +1,13 @@
-// ✅ Problem: Implement Circular Queue using Array
-/*
-📌 Problem Statement:
-Implement a **Circular Queue** data structure using an array in Java.  
-A Circular Queue overcomes the limitation of the Linear Queue where  
-empty spaces at the front cannot be reused after dequeuing.
-
-You need to perform the following operations:
-1. **add()**   → Enqueue (insert) an element at the rear.
-2. **remove()** → Dequeue (remove) an element from the front.
-3. **peek()**   → Get the front element without removing it.
-
-👉 Concept:
-- Queue follows the **FIFO (First In, First Out)** principle.
-- In a **Circular Queue**, the last position connects back to the first position.
-- This allows efficient space utilization — all slots can be reused.
-- Use **modulo (%)** to wrap indices when they reach the end of the array.
-
-🔹 Key Formulas:
-- Queue is **Full** when → `(rear + 1) % size == front`
-- Queue is **Empty** when → `rear == -1 && front == -1`
-*/
+// Problem: Implement Circular Queue using Array
 
 public class CircularQueueUsingArray {
 
-    // Inner static class for queue implementation
     static class Queue {
         static int arr[];   // Array to store queue elements
         static int size;    // Maximum size of queue
         static int rear;    // Index of last inserted element
         static int front;   // Index of first element
 
-        // 🔹 Constructor to initialize the queue
         Queue(int n) {
             arr = new int[n];
             this.size = n;
@@ -38,12 +15,10 @@ public class CircularQueueUsingArray {
             this.front = -1; // Initially empty
         }
 
-        // 🔹 Check if queue is empty
         public static boolean isEmpty() {
             return rear == -1 && front == -1;
         }
 
-        // 🔹 Check if queue is full
         public static boolean isFull() {
             return (rear + 1) % size == front;
         }
