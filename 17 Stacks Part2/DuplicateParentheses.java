@@ -41,7 +41,7 @@ public class DuplicateParentheses {
     }
 
     public static void main(String args[]) {
-        String str = "(a)";
+        String str = "((a+b))";
         System.out.println("Duplicate parentheses? " + isDuplicate(str)); // Output: false
     }
 }
