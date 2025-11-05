@@ -1,30 +1,4 @@
 // Problem: Level Order Traversal (Breadth-First Search) of a Binary Tree
-/*
-This program constructs a Binary Tree from a given preorder array (where -1 represents nulls)
-and performs a **Level Order Traversal** (also known as **Breadth-First Search**).
-
-Goal:
-- Build the binary tree from a preorder array
-- Traverse it level by level (top to bottom, left to right)
-- Print each level on a new line
-
-Concepts:
-1. Preorder Array with -1:
-   - The array represents a preorder traversal of the binary tree
-     (ROOT → LEFT → RIGHT)
-   - -1 indicates a null node (no child)
-2. Binary Tree Construction:
-   - Uses recursion and a static index to rebuild the tree
-3. Level Order Traversal:
-   - Use a **queue** to traverse the tree level by level
-   - Enqueue the root node first
-   - Use a `null` marker to indicate end of each level
-   - Dequeue nodes one by one:
-       • Print their data
-       • Enqueue their children (if any)
-       • When a `null` is found → print a newline and enqueue another `null`
-         (if more nodes remain)
-*/
 
 import java.util.*;
 import java.util.LinkedList;
