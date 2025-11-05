@@ -38,7 +38,6 @@ public class FractionalKnapsack {
         return (int) totalValue;
     }
 
-    // Main method to test the program
     public static void main(String args[]) {
         int value[] = {60, 100, 120};
         int weight[] = {10, 20, 30};
@@ -49,24 +48,6 @@ public class FractionalKnapsack {
 }
 
 /*
-Dry Run:
-Items:
-Index:   0   1   2
-Value:  60 100 120
-Weight: 10  20  30
-Ratio:   6   5   4
-
-Step 1: Sort by ratio (ascending):
-[[2,4.0], [1,5.0], [0,6.0]]
-
-Step 2: Start picking (from highest ratio):
-- Take full item 0 → remaining capacity = 40 → total = 60
-- Take full item 1 → remaining capacity = 20 → total = 160
-- Take 2/3 of item 2 → remaining capacity = 0 → total = 240
-
-Output:
-Max value in knapsack = 240
-
 Time Complexity:
 - Sorting: O(n log n)
 - Selection: O(n)
@@ -74,9 +55,4 @@ Total = O(n log n)
 
 Space Complexity: O(n)
 - For storing ratios
-
-Concept Used:
-- Greedy Algorithm
-- Sorting by value-to-weight ratio
-- Fractional item inclusion for optimal result
 */
