@@ -1,37 +1,9 @@
 // Problem: Fractional Knapsack Problem
-/*
-This program solves the classic "Fractional Knapsack" problem using a greedy algorithm.
-
-Goal:
-Maximize the total value in a knapsack that has a weight limit (capacity), 
-where you can take fractions of items if necessary.
-
-Concept:
-1. Each item has a value and a weight.
-2. Compute value/weight ratio for each item.
-3. Sort items in decreasing order of this ratio.
-4. Pick items with the highest ratio first:
-   - Take the whole item if it fits.
-   - Otherwise, take the fractional part that fits in remaining capacity.
-
-Example:
-Input:
-value  = [60, 100, 120]
-weight = [10, 20, 30]
-W = 50
-
-Output:
-Max value in knapsack = 240
-
-Key Idea:
-Use a greedy strategy — always choose the item with the highest value/weight ratio first.
-*/
 
 import java.util.*;
 
 public class FractionalKnapsack {
 
-    // Function to find maximum total value for given weight capacity
     public static int findMaxValue(int value[], int weight[], int w) {
         // Step 1: Store each item's index and value/weight ratio
         double ratio[][] = new double[value.length][2];
