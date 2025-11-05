@@ -117,67 +117,11 @@ public class LevelOrderTraversal {
 }
 
 /*
--------------------------------------------
-DRY RUN (Level Order Traversal Step-by-Step)
--------------------------------------------
-
-Constructed Tree:
-            1
-          /   \
-         2     3
-        / \     \
-       4   5     6
-
-Traversal Process:
-
-Queue initially: [1, null]
-
-1. Dequeue 1 → print "1"
-   → Enqueue 2, 3
-   Queue: [null, 2, 3]
-
-2. Dequeue null → end of level
-   → Print newline
-   → Enqueue another null (since queue not empty)
-   Queue: [2, 3, null]
-
-3. Dequeue 2 → print "2"
-   → Enqueue 4, 5
-   Queue: [3, null, 4, 5]
-
-4. Dequeue 3 → print "3"
-   → Enqueue 6
-   Queue: [null, 4, 5, 6]
-
-5. Dequeue null → end of level
-   → Print newline
-   → Enqueue another null (since queue not empty)
-   Queue: [4, 5, 6, null]
-
-6. Dequeue 4 → print "4"
-   → No children to enqueue
-   Queue: [5, 6, null]
-
-7. Dequeue 5 → print "5"
-   → No children
-   Queue: [6, null]
-
-8. Dequeue 6 → print "6"
-   → No children
-   Queue: [null]
-
-9. Dequeue null → end of level
-   → Queue empty → break
-
--------------------------------------------
-Final Output:
-
 Root node data: 1
 Level Order Traversal of the tree:
 1 
 2 3 
 4 5 6
--------------------------------------------
 
 Time Complexity: O(n)
 - Each node is visited exactly once.
