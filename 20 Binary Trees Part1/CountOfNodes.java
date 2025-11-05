@@ -1,21 +1,4 @@
 // Problem: Count the Total Number of Nodes in a Binary Tree
-/*
-This program constructs a Binary Tree manually and counts the **total number of nodes**
-present in the tree using recursion.
-
-Goal:
-- Build a binary tree manually
-- Use recursion to count all nodes (including root, internal, and leaf nodes)
-
-Concepts:
-1. Node Counting Logic:
-   - For each node → total nodes = left subtree nodes + right subtree nodes + 1 (for the current node)
-2. Base Case:
-   - If the node is null → count = 0
-3. Recursive Case:
-   - Recursively count nodes in left and right subtrees
-   - Add 1 for the current node
-*/
 
 public class CountOfNodes {
 
@@ -31,18 +14,14 @@ public class CountOfNodes {
         }
     }
 
-    // Step 1: Function to count total nodes in the binary tree
     public static int countNodes(Node root) {
-        // Base Case: Empty tree → 0 nodes
         if (root == null) {
             return 0;
         }
 
-        // Recursive calls to count nodes in left and right subtrees
         int leftNodes = countNodes(root.left);
         int rightNodes = countNodes(root.right);
 
-        // Step 2: Total nodes = left + right + 1 (current node)
         int nodes = leftNodes + rightNodes + 1;
         return nodes;
     }
@@ -61,34 +40,6 @@ public class CountOfNodes {
 }
 
 /*
--------------------------------------------
-DRY RUN (Step-by-Step Execution)
--------------------------------------------
-
-Tree Structure:
-            1
-          /   \
-         2     3
-        / \   / \
-       4  5  6  7
-
-Recursive Process:
-countNodes(1)
- → countNodes(2)
-     → countNodes(4) → returns 1
-     → countNodes(5) → returns 1
-     → total = 1 + 1 + 1 = 3
- → countNodes(3)
-     → countNodes(6) → returns 1
-     → countNodes(7) → returns 1
-     → total = 1 + 1 + 1 = 3
- → total = 3 + 3 + 1 = 7
-
--------------------------------------------
-Final Output:
-Total number of nodes in the Binary Tree: 7
--------------------------------------------
-
 Time Complexity: O(n)
 - Each node is visited exactly once.
 
