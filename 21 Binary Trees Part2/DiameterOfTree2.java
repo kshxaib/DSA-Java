@@ -1,23 +1,4 @@
 // Problem: Find the Diameter of a Binary Tree
-/*
-This program constructs a Binary Tree manually and calculates its **diameter**
-in an optimized way (O(n) time complexity).
-
-Goal:
-- Build a binary tree manually
-- Find the diameter (longest path between any two nodes)
-
-Concepts:
-1. Diameter Definition:
-   - Diameter = Number of nodes on the longest path between any two leaves.
-2. Optimized Recursive Approach:
-   - Instead of calling height() multiple times, use a single recursive function
-     that returns both height and diameter at once.
-3. Combined Result Class:
-   - A helper class `Info` stores both:
-       → `diam` (diameter of the subtree)
-       → `height` (height of the subtree)
-*/
 
 public class DiameterOfTree2 {
 
