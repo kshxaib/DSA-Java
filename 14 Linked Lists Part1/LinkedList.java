@@ -318,27 +318,6 @@ public class LinkedList {
 }
 
 /*
-Revision Notes:
-
-Linked List:
-- A linear data structure made of nodes connected using pointers.
-- Each node has:
-    data  -> value stored in the node
-    next  -> reference (address) of the next node
-
-Terms:
-- Head: first node of the list
-- Tail: last node of the list (next = null)
-- Size: number of nodes
-
-Advantages:
-- Dynamic size (can easily grow or shrink)
-- Insertion and deletion are efficient (no shifting like arrays)
-
-Disadvantages:
-- No random access (must traverse from start)
-- Uses extra memory for next references
-
 Common Operations:
 - addFirst()              -> insert at beginning
 - addLast()               -> insert at end
