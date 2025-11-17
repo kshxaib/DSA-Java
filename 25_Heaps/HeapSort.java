@@ -17,29 +17,24 @@ public class HeapSort {
         }
     }
 
-    // Heapify function to maintain Max Heap at index i
     public static void heapify(int arr[], int size, int i) {
-        int largest = i;       // assume parent is largest
-        int left = 2 * i + 1;  // left child index
-        int right = 2 * i + 2; // right child index
+        int largest = i;       
+        int left = 2 * i + 1;
+        int right = 2 * i + 2; 
 
-        // If left child exists and is greater than parent
         if (left < size && arr[left] > arr[largest]) {
             largest = left;
         }
 
-        // If right child exists and is greater than current largest
         if (right < size && arr[right] > arr[largest]) {
             largest = right;
         }
 
-        // If parent is not largest, swap and heapify further
         if (largest != i) {
             int temp = arr[i];
             arr[i] = arr[largest];
             arr[largest] = temp;
 
-            // Recursively fix affected subtree
             heapify(arr, size, largest);
         }
     }
@@ -63,3 +58,6 @@ public class HeapSort {
         printArray(arr);
     }
 }
+
+
+// Time: O(n*logn)
