@@ -62,6 +62,10 @@ public class ImplementationOfHeap {
             return first;
         }
 
+        public boolean isEmpty(){
+            return list.size() == 0;
+        }
+
         public void printHeap() {
             System.out.println(list);
         }
