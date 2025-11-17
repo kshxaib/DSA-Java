@@ -1,23 +1,18 @@
 public class HeapSort {
 
-    // Function to perform heap sort
     public static void heapSort(int arr[]) {
         int n = arr.length;
 
-        // Step 1: Build Max Heap
         for (int i = n/2; i >= 0; i--) {
             heapify(arr, n, i);
         }
 
-        // Step 2: Extract elements from heap one by one
         for (int i = n - 1; i > 0; i--) {
 
-            // Move current root (max element) to end
             int temp = arr[0];
             arr[0] = arr[i];
             arr[i] = temp;
 
-            // Heapify the reduced heap
             heapify(arr, i, 0);
         }
     }
