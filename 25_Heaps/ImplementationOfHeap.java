@@ -26,6 +26,10 @@ public class ImplementationOfHeap {
             }
         }
 
+        public int peek(){
+            return list.get(0);
+        }
+
         public void printHeap() {
             System.out.println(list);
         }
@@ -48,4 +52,5 @@ public class ImplementationOfHeap {
 /*
 Time Complexity:
  insert -> O(logn)
+ peek -> O(1)
 */
