@@ -65,10 +65,6 @@ public class ImplementationOfHeap {
         public boolean isEmpty(){
             return list.size() == 0;
         }
-
-        public void printHeap() {
-            System.out.println(list);
-        }
     }
 
     public static void main(String[] args) {
@@ -81,7 +77,10 @@ public class ImplementationOfHeap {
         hp.insert(10);
         hp.insert(1);
 
-        hp.printHeap();
+        while (!hp.isEmpty()) {
+            System.out.print(hp.peek() + " ");
+            hp.remove();
+        }
     }
 }
 
