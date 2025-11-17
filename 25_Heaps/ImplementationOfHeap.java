@@ -30,6 +30,44 @@ public class ImplementationOfHeap {
             return list.get(0);
         }
 
+        public void heapify(int i){
+            int left = 2*i +1;
+            int right = 2*i +2;
+
+            int minIdx = i;
+
+            if(left < list.size() && list.get(minIdx) > list.get(left)){
+                minIdx = left;
+            }
+            if(right < list.size() && list.get(minIdx) > list.get(right)){
+                minIdx = right;
+            }
+
+            if(minIdx != i){
+                //
+                int temp = list.get(i);
+                list.set(i, list.get(minIdx));
+                list.set(minIdx,  temp);
+
+                heapify(minIdx);
+            }
+        }
+
+        public int remove(){
+            //step 1: swap the 1st and last element
+            int first = list.get(0);
+            int last = list.get(list.size()-1);
+            list.set(0, last);
+            list.set(list.size() -1, first);
+
+            //step 2: remove the last element
+            list.remove(list.size()-1);
+
+            //step 3: heapify
+            heapify(0);   // 0 or fast
+            return last;
+        }
+
         public void printHeap() {
             System.out.println(list);
         }
