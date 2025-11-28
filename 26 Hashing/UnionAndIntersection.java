@@ -39,3 +39,16 @@ public class UnionAndIntersection {
         findUandI(arr1, arr2);
     }
 }
+
+/*
+Time Complexity:
+O(n + m)
+- Adding elements of arr1: O(n)
+- Adding elements of arr2: O(m)
+- Checking intersection: O(m) average with HashSet O(1) lookups
+
+Space Complexity:
+O(n)
+- HashSet stores elements of arr1 for intersection check
+- Union also uses HashSet that may store up to (n + m) unique elements, but auxiliary space is dominated by HashSet usage
+*/
