@@ -12,7 +12,7 @@ public class ImplementationOfTrie{
 
     public static Node root = new Node();
 
-    public static void insert(String word){
+    public static void insert(String word){  // O(L) -> length of word
         Node curr = root;
         for(int lvl=0; lvl<word.length(); lvl++){
             int idx = word.charAt(lvl) - 'a';
@@ -23,6 +23,19 @@ public class ImplementationOfTrie{
         }
 
         curr.endOfWord = true;
+    }
+
+    public static boolean search(String word){  // O(L)
+        Node curr = root;
+        for(int lvl=0; lvl<word.length(); lvl++){
+            int idx = word.charAt(lvl) - 'a';
+            if(curr.children[idx] == null){
+                return false;
+            }
+            curr = curr.children[idx];
+        }
+
+        return curr.endOfWord;
     }
 
     public static void main(String[] args) {
