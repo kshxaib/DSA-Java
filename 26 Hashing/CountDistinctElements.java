@@ -17,3 +17,11 @@ public class CountDistinctElements {
         System.out.println(findDE(nums));
     }
 }
+
+/*
+Time Complexity:
+O(n) – Each element is inserted into the HashSet once, and HashSet insertion is O(1) on average.
+
+Space Complexity:
+O(n) – In the worst case, all elements are distinct and stored in the HashSet.
+*/
