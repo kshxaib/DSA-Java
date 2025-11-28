@@ -6,15 +6,17 @@ public class LargsetSubarrayWith0Sum {
         int len = 0;
         int sum = 0;
 
-        for(int i=0; i<arr.length; i++){
-            sum += arr[i];
+        for(int i = 0; i < arr.length; i++){
+            sum += arr[i];  // prefix sum
 
+            // Same sum seen before → elements between those indexes sum to 0
             if(map.containsKey(sum)){
                 int newLen = i - map.get(sum);
                 if(newLen > len){
                     len = newLen;
                 }
             } else {
+                // Store first occurrence of this prefix sum
                 map.put(sum, i);
             }
         }
@@ -27,3 +29,11 @@ public class LargsetSubarrayWith0Sum {
         System.out.println(findLength(arr));
     }    
 }
+
+/*
+Time Complexity:
+O(n) – Each element is processed once, and HashMap operations are O(1) average.
+
+Space Complexity:
+O(n) – HashMap stores prefix sums up to n entries.
+*/
