@@ -43,5 +43,7 @@ public class ImplementationOfTrie{
         for(int i=0; i<words.length; i++){
             insert(words[i]);
         }
+
+        System.out.println(search("their"));
     }
 }
