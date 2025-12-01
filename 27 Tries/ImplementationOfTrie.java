@@ -121,6 +121,22 @@ public class ImplementationOfTrie{
         return true;
     }
 
+    //--------------- Count Unique Substring OR Nodes ---------------------
+    public static int countUSubstring(Node root){
+        if(root == null){
+            return 0;
+        }
+
+        int count = 0;
+        for(int i=0; i<26; i++){
+            if(root.children[i] != null){
+                count += countUSubstring(root.children[i]);
+            }
+        }
+
+        return count +1;
+    }
+
     public static void main(String[] args) {
         // Implementation of Trie
         // String words[] = {"the", "a", "there", "their", "any", "thee"};
@@ -146,12 +162,20 @@ public class ImplementationOfTrie{
         // findPrefix(root2, "");
 
         // startsWith Problem
-        String words[] = {"apple", "app", "mango", "man", "woman"};
-        String prefix1 = "app";
-        String prefix2 = "moon";
-        for(int i=0; i<words.length; i++){
-            insert(words[i]);
+        // String words[] = {"apple", "app", "mango", "man", "woman"};
+        // String prefix1 = "app";
+        // String prefix2 = "moon";
+        // for(int i=0; i<words.length; i++){
+        //     insert(words[i]);
+        // }
+        // System.out.println(startsWith(prefix1));
+
+        // Count Unique Substring
+        String str = "ababa";
+        // suffix -> insert in trie
+        for(int i=0; i<str.length(); i++){
+            insert(str.substring(i));
         }
-        System.out.println(startsWith(prefix1));
+        System.out.println(countUSubstring(root));
     }
 }
