@@ -106,6 +106,21 @@ public class ImplementationOfTrie{
         }
     }
 
+    //----------- startsWith Problem ------------------------
+    public static boolean startsWith(String prefix){    // O(L)
+        Node curr = root;
+        for(int i=0; i<prefix.length(); i++){
+            int idx = prefix.charAt(i) - 'a';
+            if(curr.children[idx] == null){
+                return false;
+            }
+
+            curr = curr.children[idx];
+        }
+
+        return true;
+    }
+
     public static void main(String[] args) {
         // Implementation of Trie
         // String words[] = {"the", "a", "there", "their", "any", "thee"};
@@ -123,11 +138,20 @@ public class ImplementationOfTrie{
         // System.out.println(wordBreak(key));
 
         // Prefix Problem
-        String arr[] = {"zebra", "dog", "duck", "dove"};
-        for(int i=0; i<arr.length; i++){
-             insert(arr[i]);
+        // String arr[] = {"zebra", "dog", "duck", "dove"};
+        // for(int i=0; i<arr.length; i++){
+        //      insert(arr[i]);
+        // }
+        // root2.freq = -1;
+        // findPrefix(root2, "");
+
+        // startsWith Problem
+        String words[] = {"apple", "app", "mango", "man", "woman"};
+        String prefix1 = "app";
+        String prefix2 = "moon";
+        for(int i=0; i<words.length; i++){
+            insert(words[i]);
         }
-        root2.freq = -1;
-        findPrefix(root2, "");
+        System.out.println(startsWith(prefix1));
     }
 }
