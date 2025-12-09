@@ -42,18 +42,28 @@ public class HasPath {
         graph[6].add(new Edge(6, 5, 1));
     }
 
-    public static boolean hasPath(ArrayList<Edge> graph[], int src, int dest, boolean vis[]){
-        if(src == dest){
+    public static boolean hasPath(ArrayList<Edge> graph[], int src, int dest, boolean vis[]) {
+
+        // Base case: if source becomes destination, path exists
+        if (src == dest) {
             return true;
         }
 
+        // Mark current node as visited
         vis[src] = true;
-        for(int i=0; i<graph[src].size(); i++){
+
+        // Explore all neighbours of source
+        for (int i = 0; i < graph[src].size(); i++) {
             Edge edge = graph[src].get(i);
-            if(!vis[edge.dest] && hasPath(graph, edge.dest, dest, vis)){
-                return true;
+
+            // If neighbour not visited, check path recursively
+            if (!vis[edge.dest] &&
+                    hasPath(graph, edge.dest, dest, vis)) {
+                return true; // path found
             }
         }
+
+        // No path found from this node
         return false;
     }
 
@@ -62,18 +72,18 @@ public class HasPath {
         ArrayList<Edge> graph[] = new ArrayList[V]; // null stored
         createGraph(graph);
 
-        boolean visited [] = new boolean[V];
+        boolean visited[] = new boolean[V];
         System.out.println(hasPath(graph, 0, 5, visited));
     }
 }
 
 /*
-Time Complexity: O(V + E)
-V → number of vertices
-E → number of edges
-Each vertex and each edge is processed once
-
-Space Complexity: O(V)
-visited[] array → O(V)
-Recursion stack (worst case) → O(V)
-*/
+ * Time Complexity: O(V + E)
+ * V → number of vertices
+ * E → number of edges
+ * Each vertex and each edge is processed once
+ * 
+ * Space Complexity: O(V)
+ * visited[] array → O(V)
+ * Recursion stack (worst case) → O(V)
+ */
