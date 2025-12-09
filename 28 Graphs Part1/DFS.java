@@ -42,17 +42,23 @@ public class DFS {
         graph[6].add(new Edge(6, 5, 1));
     }
 
-    public static void dfs(ArrayList<Edge> graph[], int curr, boolean vis[]){
-        System.out.print(curr + " ");
-        vis[curr] = true;
+    public static void dfs(ArrayList<Edge> graph[], int curr, boolean vis[]) {
 
-        for(int i=0; i<graph[curr].size(); i++){
-            Edge edge = graph[curr].get(i);
-            if(!vis[edge.dest]){
-                dfs(graph, edge.dest, vis);
-            }
+    // Visit current node
+    System.out.print(curr + " ");
+    vis[curr] = true;
+
+    // Traverse all neighbours of current node
+    for (int i = 0; i < graph[curr].size(); i++) {
+        Edge edge = graph[curr].get(i);
+
+        // If neighbour is not visited, apply DFS recursively
+        if (!vis[edge.dest]) {
+            dfs(graph, edge.dest, vis);
         }
-    } 
+    }
+}
+ 
 
     public static void main(String[] args) {
         int V = 7;
@@ -71,6 +77,6 @@ E → number of edges
 Each vertex and each edge is processed once
 
 Space Complexity: O(V)
-visited[] array
-Queue can store at most V vertices
+visited[] array → O(V)
+Recursion stack (worst case) → O(V)
 */
