@@ -74,4 +74,12 @@ public class CDUndirectedGraph {
     }
 }
 
+/*
+Time Complexity → O(V + E)
+DFS visits every vertex once → O(V)
+Checks all edges of each vertex → O(E)
 
+Space Complexity → O(V)
+visited[] array uses O(V)
+Recursion stack in worst case also O(V)
+*/
