@@ -52,11 +52,11 @@ public class AllPaths {
 }
 
 /*
-Time Complexity → O(V + E)
-Indegree calculation → O(E)
-BFS traversal → O(V + E)
+Time Complexity → O(All possible paths)
+Worst case: exponential
 
 Space Complexity → O(V)
-Indegree array → O(V)
-Queue → O(V)
+visited[] array → O(V)
+Recursion stack → O(V)
 */
+
