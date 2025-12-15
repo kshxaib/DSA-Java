@@ -72,10 +72,10 @@ public class KahnAlgorithm {
 
 /*
 Time Complexity → O(V + E)
-DFS visits every vertex once → O(V)
-Checks all edges of each vertex → O(E)
+Indegree calculation → O(E)
+BFS traversal → O(V + E)
 
 Space Complexity → O(V)
-visited[] array uses O(V)
-Recursion stack in worst case also O(V)
+Indegree array → O(V)
+Queue → O(V)
 */
