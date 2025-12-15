@@ -93,10 +93,14 @@ public class DijkstraAlgo {
 }
 
 /*
- * Time Complexity → O(All possible paths)
- * Worst case: exponential
- * 
- * Space Complexity → O(V)
- * visited[] array → O(V)
- * Recursion stack → O(V)
- */
+Time Complexity:
+O((V + E) log V)
+- PriorityQueue operations take log V
+- Each edge can be relaxed once
+
+Space Complexity:
+O(V)
+- dist[] array
+- visited[] array
+- PriorityQueue
+*/
