@@ -69,14 +69,10 @@ public class BellmanFordAlgo {
 }
 
 /*
-Time Complexity:
-O((V + E) log V)
-- PriorityQueue operations take log V
-- Each edge can be relaxed once
+Time Complexity: O(V * E)
+- Outer loop runs V-1 times
+- Inner loops traverse all edges
 
-Space Complexity:
-O(V)
+Space Complexity: O(V)
 - dist[] array
-- visited[] array
-- PriorityQueue
 */
