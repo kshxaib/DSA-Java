@@ -81,10 +81,11 @@ public class PrimsAlgo {
 }
 
 /*
-Time Complexity: O(V * E)
-- Outer loop runs V-1 times
-- Inner loops traverse all edges
+Time Complexity: O(E log V)
+- Each edge is added to PriorityQueue
+- PQ operations take log V
 
 Space Complexity: O(V)
-- dist[] array
+- visited[] array
+- PriorityQueue
 */
