@@ -52,3 +52,13 @@ public class ConnectingCities {
         System.out.println(connectCitis(cities));
     }
 } 
+
+/*
+Time Complexity: O(E log V)
+Each edge can be added to the priority queue
+PriorityQueue insertion/removal: O(log V)
+
+Space Complexity: O(V + E)
+PriorityQueue can store up to E edges → O(E)
+Visited array → O(V)
+*/
