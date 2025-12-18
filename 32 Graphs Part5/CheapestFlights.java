@@ -86,3 +86,16 @@ public class CheapestFlights {
         System.err.println(cheapestFlights(n, flights, src, dest, k));
     }    
 }
+
+/*
+ TIME COMPLEXITY:
+- Graph construction: O(E)
+- BFS traversal: Each edge can be relaxed at most K times
+- Total time: O(K * E)
+
+SPACE COMPLEXITY:
+- Graph adjacency list: O(V + E)
+- Distance array: O(V)
+- Queue (worst case): O(V)
+- Total space: O(V + E)
+*/
