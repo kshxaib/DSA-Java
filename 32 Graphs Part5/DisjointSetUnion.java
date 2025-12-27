@@ -23,6 +23,10 @@ public class DisjointSetUnion{
         int parA = find(a);
         int parB = find(b);
 
+        if (parA == parB) {
+            return;
+        }
+
         if(rank[parA] == rank[parB]){
             par[parB] = parA;
             rank[parA]++;
@@ -44,3 +48,7 @@ public class DisjointSetUnion{
         union(1, 5);
     }
 }
+
+// Time & Space Complexity
+// find / union → O(α(n)) (almost constant)
+// Space → O(n)
