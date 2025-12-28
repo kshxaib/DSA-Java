@@ -63,11 +63,11 @@ public class KruskalsAlgo {
     }
 
     public static void kruskalMST(ArrayList<Edge> edges, int V){
-        Collections.sort(edges);
+        Collections.sort(edges);     // O(ElogE)
         int mstCost = 0;
         int countEdges = 0;
 
-        for(int i=0; countEdges<V-1; i++){
+        for(int i=0; countEdges<V-1; i++){  // O(V)
             Edge e = edges.get(i);
             int parA = find(e.src);
             int parB = find(e.dest);
