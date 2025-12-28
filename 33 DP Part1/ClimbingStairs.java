@@ -6,7 +6,8 @@ public class ClimbingStairs {
         return countWays(n-1) + countWays(n-2);
     }
 
-    public static int cW2(int n, int dp[]){   
+    // Memoization
+    public static int cW2(int n, int dp[]){ //Time: O(n)
         if(n == 0) return 1;
         if(n < 0) return 0;
 
