@@ -12,3 +12,4 @@ public class ClimbingStairs {
     }
 }
 
+// Time: O(2^n)
