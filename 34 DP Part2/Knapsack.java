@@ -1,7 +1,7 @@
 import java.util.*;
 
 public class Knapsack {
-    public static int knapsack(int val[], int wt[], int i, int W){
+    public static int knapsack(int val[], int wt[], int i, int W){  //Time: O(n)
         if(W == 0 || i == 0){
             return 0;
         }
