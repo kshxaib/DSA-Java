@@ -1,7 +1,7 @@
 public class LCS {
 
     /*
-      LCS (Recursive Approach)
+      LCS: Longest Common Subsequence (Recursive Approach)
 
       Meaning:
       - Find length of Longest Common Subsequence between two strings
