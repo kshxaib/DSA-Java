@@ -26,16 +26,36 @@ public class StringConversion {
         return dp[n][m];
     }
 
-    public static int SC(String str1, String str2){
-        int lcsCount = lcs(str1, str2);
-        int totalOps = str1.length() - lcsCount + (str2.length() - lcsCount);
-        return totalOps;
+    /*
+      String Conversion using only Insertions and Deletions
+
+      Important Formula:
+      Let L = LCS(str1, str2)
+
+      deletions  = str1.length() - L
+      insertions = str2.length() - L
+      totalOps   = deletions + insertions
+
+      Reason:
+      - Delete characters from str1 that are not part of LCS
+      - Insert characters into str1 to form str2 using remaining part
+    */
+    public static void SC(String str1, String str2) {
+        int L = lcs(str1, str2);
+
+        int deletions = str1.length() - L;
+        int insertions = str2.length() - L;
+        int totalOps = deletions + insertions;
+
+        System.out.println("Deletions = " + deletions);
+        System.out.println("Insertions = " + insertions);
+        System.out.println("Total Operations = " + totalOps);
     }
 
     public static void main(String[] args) {
         String str1 = "pear";
         String str2 = "sea";
 
-        System.out.println(SC(str1, str2));
+        SC(str1, str2);
     }    
 }
