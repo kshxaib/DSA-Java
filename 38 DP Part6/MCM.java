@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class MCM {
 
     /*
@@ -58,6 +60,27 @@ public class MCM {
         return minCost;
     }
 
+    public static int mcmM(int arr[], int i, int j, int dp[][]){
+        if(i == j){
+            return 0;
+        }
+
+        if(dp[i][j] != -1){
+            return dp[i][j];
+        }
+
+        int minCost = Integer.MAX_VALUE;
+        for(int k=i; k<j; k++){
+            int cost1 = mcmM(arr, i, k, dp);
+            int cost2 = mcmM(arr, k+1, j, dp);
+            int cost3 = arr[i-1] * arr[k] * arr[j];
+            int finalCost = cost1 + cost2 + cost3;
+            minCost = Math.min(minCost, finalCost);
+        }
+
+        return dp[i][j] = minCost;
+    }
+
     public static void main(String[] args) {
 
         int arr[] = { 1, 2, 3, 4, 3 };
@@ -65,6 +88,15 @@ public class MCM {
 
         // Multiply matrices from A1 to A(n-1)
         System.out.println(mcm(arr, 1, n - 1)); // Output: 30
+
+        int dp[][] = new int[n][n];
+        for(int i=0; i<n; i++){
+            for(int j=0; j<dp[0].length; j++){
+                dp[i][j] = -1;
+            }
+        }
+
+        System.out.println(mcmM(arr, 1, n-1, dp));
     }
 }
 
