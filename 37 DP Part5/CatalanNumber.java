@@ -3,13 +3,13 @@ import java.util.Arrays;
 public class CatalanNumber {
 
     /*
-      Catalan Number (Recursive)
+      Catalan Number (Recursive + Memoization)
 
-      Catalan numbers appear in many DP problems like:
-      - Number of BSTs possible with n nodes
-      - Number of valid parentheses combinations
-      - Number of ways to triangulate polygon
-      - Mountain ranges problems etc.
+      Catalan numbers are used in problems like:
+      - Count of unique BSTs with n nodes
+      - Valid parentheses combinations
+      - Mountain ranges
+      - Triangulation of polygon
 
       Formula:
       C0 = 1
@@ -18,74 +18,112 @@ public class CatalanNumber {
       Cn = Σ (Ci * C(n-i-1))
            for i = 0 to n-1
 
-      Idea:
-      - Choose i nodes in left subtree
-      - Remaining (n-i-1) nodes in right subtree
-      - Total ways = leftWays * rightWays
-      - Add all possibilities
+      Meaning:
+      - i elements go to LEFT part
+      - (n-i-1) elements go to RIGHT part
+      - total ways for that split = leftWays * rightWays
+      - sum all splits to get final answer
+    */
+
+    /*
+      Catalan Number (Recursive)
+
+      CN(n) means:
+      - number of ways/structures possible for size n
+
+      Recursive idea:
+      - Try all partitions (i) for left side
+      - Multiply left and right results
+      - Add them to form CN(n)
     */
     public static int CN(int n) {
 
         // Base case:
-        // Catalan(0) = 1 and Catalan(1) = 1
+        // CN(0) = 1, CN(1) = 1
         if (n == 0 || n == 1) {
             return 1;
         }
 
-        // Store result for Catalan(n)
+        // Store result for CN(n)
         int ans = 0;
 
-        // Try all possible splits of nodes into left and right
+        // Try all possible splits
         for (int i = 0; i < n; i++) {
 
-            // Left subtree has i nodes  -> Catalan(i)
-            // Right subtree has (n-i-1) nodes -> Catalan(n-i-1)
+            // Left part = CN(i)
+            // Right part = CN(n-i-1)
             ans += CN(i) * CN(n - i - 1);
         }
 
         return ans;
     }
 
-    public static int CNM(int n, int dp[]){
-        if(n == 0 || n == 1){
+    /*
+      Catalan Number (Memoization / Top-Down DP)
+
+      dp[n] stores:
+      - Catalan number CN(n)
+
+      Benefit:
+      - Avoids recalculating same values again and again
+      - Reduces exponential recursion to O(n^2)
+    */
+    public static int CNM(int n, int dp[]) {
+
+        // Base case
+        if (n == 0 || n == 1) {
             return 1;
         }
 
-        if(dp[n] != -1){
+        // If already computed, return stored answer
+        if (dp[n] != -1) {
             return dp[n];
         }
 
+        // Compute CN(n)
         int ans = 0;
-        for(int i=0; i<n; i++){
-            ans += CNM(i, dp) * CNM(n-i-1, dp);
+
+        // Same recurrence, but using dp[] to store results
+        for (int i = 0; i < n; i++) {
+            ans += CNM(i, dp) * CNM(n - i - 1, dp);
         }
 
+        // Store result in dp[n] and return
         return dp[n] = ans;
     }
 
     public static void main(String[] args) {
         int n = 4;
 
-        // Catalan(4) = 14
+        // Recursive answer
         System.out.println(CN(n));
 
-        int dp[] = new int[n+1];
+        // dp array for memoization
+        int dp[] = new int[n + 1];
         Arrays.fill(dp, -1);
+
+        // Memoization answer
         System.out.println(CNM(n, dp));
     }
 }
 
 /*
+1) Recursive Catalan:
 Time Complexity:
 - Exponential (very slow)
-  because it recomputes same subproblems multiple times
-
-Approximately:
-- O(2^n) (commonly written)
-More accurate growth:
-- related to Catalan numbers (~ 4^n / (n^(3/2)))
+  because it recomputes the same subproblems many times
 
 Space Complexity:
 - O(n)
-  due to recursion
-*/ 
+  due to recursion stack depth
+
+2) Memoization Catalan (Top-Down DP):
+Time Complexity:
+- O(n^2)
+  because for each CN(k), we loop i=0 to k-1 only once
+
+Space Complexity:
+- O(n) for dp array
+- O(n) recursion stack
+Total: O(n)
+*/
