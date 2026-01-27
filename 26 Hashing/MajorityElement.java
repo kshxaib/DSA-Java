@@ -24,7 +24,7 @@ public class MajorityElement {
             if (hm.get(key) > nums.length / 3) {
                 System.out.println(key);
             }
-        }
+        }    
     }
 
     public static void main(String[] args) {
