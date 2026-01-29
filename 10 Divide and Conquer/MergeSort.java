@@ -86,8 +86,8 @@ public class MergeSort {
          * Note: We start from arr[startIdx], not arr[0],
          * because merge is operating only on a subarray.
          */
-        for(k = 0, i = startIdx; k < temp.length; k++, i++){
-            arr[i] = temp[k];
+        for(i = startIdx; i <= endIdx; i++){
+            arr[i] = temp[i - startIdx];
         }
     }
 
