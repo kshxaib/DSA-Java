@@ -52,3 +52,6 @@ class Solution {
         }
     }
 }
+
+// Time: O(nlogn)
+// Space: O(n)
