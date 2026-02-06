@@ -29,5 +29,31 @@ class Solution {
         return ans;
     }
 
-    
+    public List<List<Integer>> mergeOverlap(List<List<Integer>> intervals) {
+        int n = intervals.size();
+        List<List<Integer>> ans = new ArrayList<>();
+
+        if (n == 0) return ans;
+
+        intervals.sort(Comparator.comparingInt(a -> a.get(0)));
+
+        List<Integer> newInterval = new ArrayList<>(intervals.get(0));
+        ans.add(newInterval);
+
+        for (int i = 1; i < n; i++) {
+            List<Integer> curr = intervals.get(i);
+
+            if (curr.get(0) <= newInterval.get(1)) {
+                newInterval.set(1, Math.max(newInterval.get(1), curr.get(1)));
+            } else {
+                newInterval = new ArrayList<>(curr);
+                ans.add(newInterval);
+            }
+        }
+
+        return ans;
+    }
 }
+
+// Time: O(nlogn)
+// Space: O(1)
