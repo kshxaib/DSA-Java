@@ -18,5 +18,5 @@ class Solution {
     }
 }
 
-// Time: O(nlogn)
+// Time: O(logn)
 // Time: O(1)

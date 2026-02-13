@@ -34,3 +34,6 @@ class Solution {
         return false;
     }
 }
+
+// Time: O(logn)
+// Space: O(1)

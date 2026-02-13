@@ -42,5 +42,5 @@ class Solution {
     }
 }
 
-// Time: O(nlogn)
+// Time: O(logn)
 // Space: O(1)
