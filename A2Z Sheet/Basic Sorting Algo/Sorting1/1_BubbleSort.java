@@ -22,7 +22,6 @@ Complexities:
 Properties:
 - Stable Sort
 - In-place
-- Adaptive (with swapped flag)
 - Comparison-based
 
 Use Cases:
