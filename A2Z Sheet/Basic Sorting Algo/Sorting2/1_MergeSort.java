@@ -1,3 +1,46 @@
+/*
+Definition:
+Merge Sort is a divide-and-conquer sorting algorithm.
+It divides the array into two halves, recursively sorts
+each half, and then merges the sorted halves.
+
+Core Idea:
+1. Divide the array into two halves.
+2. Recursively sort both halves.
+3. Merge the two sorted halves into one sorted array.
+
+Example:
+[5, 2, 4, 1]
+
+Divide:
+[5,2] [4,1]
+[5] [2] [4] [1]
+
+Merge:
+[2,5] [1,4]
+[1,2,4,5]
+
+Complexities:
+Worst Case  : O(n log n)
+Average Case: O(n log n)
+Best Case   : O(n log n)
+
+Space Complexity:
+O(n) → extra temporary array required for merging
+
+Properties:
+- Stable
+- Not in-place (uses extra memory)
+- Comparison-based
+- Divide and Conquer algorithm
+
+Key Interview Points:
+- Guarantees O(n log n) time complexity
+- Works well for large datasets
+- Used in external sorting (large data on disk)
+- Basis of algorithms like TimSort
+*/
+
 class Solution {
     public int[] mergeSort(int[] nums) {
         int start = 0;
@@ -53,5 +96,5 @@ class Solution {
     }
 }
 
-// Time: O(nlogn)
+// Time: O(n log n)
 // Space: O(n)
