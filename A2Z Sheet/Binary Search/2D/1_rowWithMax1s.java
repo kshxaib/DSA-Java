@@ -101,9 +101,7 @@ class Solution {
 
         for(int i=0; i<mat.length; i++){
             int totalElements = mat[i].length;
-
             int startOf1s = lowerBound(mat[i], totalElements, 1);
-
             int countOf1s = totalElements - startOf1s;
 
             if(countOf1s > countMax){
