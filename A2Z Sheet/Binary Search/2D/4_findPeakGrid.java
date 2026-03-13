@@ -1,67 +1,129 @@
-Find Peak Element - II
-Subscribe to TUF+
+/*
+         FIND PEAK ELEMENT – II
+        (BINARY SEARCH ON COLUMNS)
 
-Hints
-Company
-Given a 0-indexed n x m matrix mat where no two adjacent cells are equal, find any peak element mat[i][j] and return the array [i, j].A peak element in a 2D grid is an element that is strictly greater than all of its adjacent neighbours to the left, right, top, and bottom.
+Problem:
+Given an n × m matrix where no two adjacent cells
+are equal, find any peak element.
 
+A peak element is strictly greater than its
+four neighbours:
 
+        top
+        bottom
+        left
+        right
 
-Assume that the entire matrix is surrounded by an outer perimeter with the value -1 in each cell.
+The matrix is surrounded by imaginary -1 values.
 
-
-
-Note: As there can be many peak values, 1 is given as output if the returned index is a peak number, otherwise 0.
+Return the position [row, col] of any peak.
 
 
 Example 1
+mat =
+[
+ [10,20,15],
+ [21,30,14],
+ [7 ,16,32]
+]
 
-Input: mat=[[10, 20, 15], [21, 30, 14], [7, 16, 32]]
+Output:
+[1,1]
 
-Output: [1, 1]
+Explanation:
+30 is greater than:
 
-Explanation: The value at index [1, 1] is 30, which is a peak element because all its neighbours are smaller or equal to it. Similarly, {2, 2} can also be picked as a peak.
+20 (top)
+21 (left)
+14 (right)
+16 (bottom)
+
+So it is a peak.
+
 
 Example 2
+mat =
+[
+ [10,7],
+ [11,17]
+]
 
-Input: mat=[[10, 7], [11, 17]]
+Output:
+[1,1]
 
-Output : [1, 1]
+Explanation:
+17 is greater than all neighbours.
 
-Explanation:The value at index [1, 1] is 17, which is the only peak element because all its neighbours are smaller or equal to it. 
+
+Core Idea
+Instead of searching every cell (O(n*m)),
+we apply Binary Search on columns.
+
+
+Observation
+If we take a column and find the maximum
+element in that column, that element
+is the best candidate for a peak in that column.
+
+Because:
+All elements above and below it
+are smaller.
+
+So we only need to compare:
+        left neighbour
+        right neighbour
+
+
+Binary Search Strategy
+1. Pick middle column.
+2. Find the maximum element in that column.
+3. Compare with left and right neighbours.
+
+
+Complexities
+Time Complexity  : O(n log m)
+Binary search → log m
+Finding max in column → O(n)
+
+Space Complexity : O(1)
+*/
 
 class Solution {
     public int[] findPeakGrid(int[][] mat) {
-      int m = mat[0].length;
-      int start = 0;
-      int end = m -1;
+        int m = mat[0].length;
 
-      while(start <= end){
-        int midCol = start + (end - start)/2;
-        int maxIdx = findMax(mat, midCol); 
+        int start = 0;
+        int end = m - 1;
 
-        int maxEle = mat[maxIdx][midCol];
+        while(start <= end){
+            int midCol = start + (end - start) / 2;
 
-        int left = midCol -1 >= 0 ? mat[maxIdx][midCol -1] : -1; 
-        int right = midCol +1 < m ? mat[maxIdx][midCol +1] : -1;
+            int maxIdx = findMax(mat, midCol);
 
-        if(maxEle > left && maxEle > right){
-            return new int[] {maxIdx, midCol};
-        }  
-        else if (maxEle < left){
-            end = midCol -1;
-        } else {
-            start = midCol +1;
+            int maxEle = mat[maxIdx][midCol];
+
+            int left = midCol - 1 >= 0 ? mat[maxIdx][midCol - 1] : -1;
+            int right = midCol + 1 < m ? mat[maxIdx][midCol + 1] : -1;
+
+            if(maxEle > left && maxEle > right){
+                return new int[]{maxIdx, midCol};
+            }
+            else if(maxEle < left){
+                end = midCol - 1;
+            }
+            else{
+                start = midCol + 1;
+            }
         }
-      }
 
-      return new int[] {-1, -1};
+        return new int[]{-1, -1};
     }
 
-    public int findMax(int mat[][], int col){
+    public int findMax(int[][] mat, int col){
         int max = -1;
         int maxIdx = -1;
-        for(int i=0; i<mat.length; i++){
+
+        for(int i = 0; i < mat.length; i++){
             if(mat[i][col] > max){
                 max = mat[i][col];
                 maxIdx = i;
@@ -72,4 +134,5 @@ class Solution {
     }
 }
 
-give notes with code
+// Time: O(n log m)
+// Space: O(1)
