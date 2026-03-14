@@ -1,67 +1,85 @@
+/*
+        REMOVE OUTERMOST PARENTHESES
+
+Problem:
+Given a valid parentheses string s,
+remove the outermost parentheses of
+every primitive valid parentheses string.
+
+
+Valid Parentheses Rules
+1. "" is valid.
+2. "(" + A + ")" is valid if A is valid.
+3. A + B is valid if A and B are valid.
+
+
+Primitive Parentheses String
+A primitive string is a valid parentheses
+string that cannot be split into two
+valid non-empty strings.
+
+Example: "(()())"
+This is primitive.
+
+But "()()"
+is not primitive because: "()" + "()"
+
+Goal
+Remove the outermost parentheses of
+each primitive substring.
+
+
+Example 1: s = "((()))"
+Primitive: ((()))
+Remove outer layer: (()) 
+
+Example 2
+s = "()(()())(())"
+Primitive decomposition: "()" + "(()())" + "(())"
+Remove outer parentheses: "" + "()()" + "()"
+Final result: "()()()"
+
+
+Core Idea
+Use a counter to track the depth
+of parentheses.
+
+counter = number of currently open '('
+
+
+Why This Works
+The first '(' of a primitive occurs
+when counter == 0 → we skip it.
+
+The last ')' of a primitive occurs
+when counter becomes 0 → we skip it.
+
+All inner parentheses are kept.
+
+
+Complexities
+Time Complexity  : O(n)
+Space Complexity : O(n) (for result)
+*/
+
 class Solution {
     public String removeOuterParentheses(String s) {
        int counter = 0;
        StringBuilder ans = new StringBuilder();
 
-       for(int i=0; i<s.length(); i++){
+       for(int i = 0; i < s.length(); i++){
             char ch = s.charAt(i);
 
             if(ch == '('){
                 if(counter > 0) ans.append(ch);
                 counter++;
-            } else {
+            } 
+            else{
                 counter--;
                 if(counter > 0) ans.append(ch);
             }
-       } 
+       }
 
-    return ans.toString();
+       return ans.toString();
     }
-}Remove Outermost Parentheses
-Subscribe to TUF+
-
-Hints
-Company
-A valid parentheses string is defined by the following rules:
-
-It is the empty string "".
-If A is a valid parentheses string, then so is "(" + A + ")".
-If A and B are valid parentheses strings, then A + B is also valid.
-
-
-A primitive valid parentheses string is a non-empty valid string that cannot be split into two or more non-empty valid parentheses strings.
-
-
-
-Given a valid parentheses string s, consider its primitive decomposition: s = P1 + P2 + ... + Pk, where Pi are primitive valid parentheses strings.
-
-
-
-Return s after removing the outermost parentheses of every primitive string in the primitive decomposition of s.
-
-
-Example 1
-
-Input: s = "((()))"
-
-Output: "(())"
-
-Explanation:
-
-The input string is a single primitive: "((()))".
-
-Removing the outermost layer yields: "(())".
-
-Example 2
-
-Input: s = "()(()())(())"
-
-Output: "()()()"
-
-Explanation:
-
-Primitive decomposition: "()" + "(()())" + "(())"
-
-After removing outermost parentheses: "" + "()()" + "()"
-
-Final result: "()()()".
+}
