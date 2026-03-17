@@ -101,7 +101,6 @@ public class introduction {
 
     // Node structure
     public static class Node {
-
         int data;
         Node next;
 
@@ -120,40 +119,28 @@ public class introduction {
         Node tail = head;
 
         for (int i = 1; i < arr.length; i++) {
-
             Node temp = new Node(arr[i]);
             tail.next = temp;
             tail = temp;
         }
 
-        /*
-            Linked List created
-
-            head
-             ↓
-            1 -> 2 -> 3 -> 4 -> 5 -> null
-        */
 
         // Traverse Linked List
         Node curr = head;
-
         while (curr != null) {
             System.out.print(curr.data + " -> ");
             curr = curr.next;
         }
-
         System.out.println("null");
 
+        
         // Length of Linked List
         int size = 0;
-
         Node temp = head;
-
         while (temp != null) {
             temp = temp.next;
             size++;
         }
-
         System.out.println("Length of Linked list is: " + size);
     }
 }
