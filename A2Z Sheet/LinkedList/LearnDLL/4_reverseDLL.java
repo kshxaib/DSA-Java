@@ -48,7 +48,6 @@ class Solution {
         ListNode next;
 
         while (curr != null) {
-
             next = curr.next;
 
             // reverse pointers
