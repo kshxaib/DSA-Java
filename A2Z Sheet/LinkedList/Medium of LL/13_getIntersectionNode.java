@@ -56,6 +56,13 @@ Eventually:
 • both pointers travel equal total distance
 • they either meet at intersection
 • or both become null
+
+Time Complexity: O(m + n)
+Both pointers traverse at most
+two lists combined.
+
+Space Complexity: O(1)
+Only two pointers used.
 */
 
 class Solution {
@@ -85,81 +92,3 @@ class Solution {
         return temp1;
     }
 }
-
-/*
- * -----------------------------------------------------
- * 
- * Step-by-Step Algorithm
- * 
- * 1. If any list is null → return null
- * 2. Set temp1 = headA, temp2 = headB
- * 3. Move both one step at a time
- * 4. If temp1 reaches null → move to headB
- * 5. If temp2 reaches null → move to headA
- * 6. Continue until temp1 == temp2
- * 7. Return temp1
- * 
- * -----------------------------------------------------
- * 
- * Dry Run
- * 
- * A: 1 -> 9 -> 1 -> 2 -> 4
- * B: 3 -> 2 -> 4
- * 
- * Intersection at node 2
- * 
- * temp1 path:
- * 1 -> 9 -> 1 -> 2 -> 4 -> null -> 3 -> 2
- * 
- * temp2 path:
- * 3 -> 2 -> 4 -> null -> 1 -> 9 -> 1 -> 2
- * 
- * They meet at node 2
- * 
- * -----------------------------------------------------
- * 
- * Edge Cases
- * 
- * • No intersection → both become null
- * • One list empty → return null
- * • Intersection at head
- * • Different lengths
- * 
- * -----------------------------------------------------
- * 
- * Time Complexity
- * 
- * O(m + n)
- * 
- * Both pointers traverse at most
- * two lists combined.
- * 
- * -----------------------------------------------------
- * 
- * Space Complexity
- * 
- * O(1)
- * 
- * Only two pointers used.
- * 
- * -----------------------------------------------------
- * 
- * Key Interview Points
- * 
- * • Most optimal approach
- * • No length calculation needed
- * • No extra HashSet needed
- * • Based on pointer switching
- * • Compare references, not values
- * 
- * -----------------------------------------------------
- * 
- * Common Mistakes
- * 
- * • Comparing values instead of nodes
- * • Using extra space unnecessarily
- * • Overcomplicating pointer resets
- * • Forgetting null handling
- * 
- * -----------------------------------------------------
- */
