@@ -69,6 +69,7 @@ class Solution {
             return;
         }
 
+        // pick
         if (candidates[index] <= target) {
             curr.add(candidates[index]);
             target = target - candidates[index];
@@ -77,6 +78,7 @@ class Solution {
             target = target + candidates[index];
         }
 
+        // not pick
         findCombinations(candidates, ans, curr, index + 1, target);
     }
 }       
