@@ -40,7 +40,7 @@ Because:
 • avoids checking column again
 
 
-Time Complexity: O(N!)
+Time Complexity: O(N!) * O(N)
 we try placing queens in permutations
 
 Space Complexity
