@@ -1,4 +1,50 @@
+/*
+        QUEUE USING LINKED LIST
+
+Definition:
+A Queue follows:
+
+FIFO (First In First Out)
+
+Using Linked List:
+• Insert at TAIL (rear)
+• Remove from HEAD (front)
+
+
+Structure
+Node:
+• data
+• next
+
+Queue:
+head → front  
+tail → rear  
+
+
+Core Idea
+• push → add at tail
+• pop → remove from head
+Both operations = O(1)
+
+
+Operations
+
+1. push(x)
+2. pop()
+3. peek()
+4. isEmpty()
+
+
+Time Complexity
+push → O(1)  
+pop → O(1)  
+peek → O(1)  
+
+Space Complexity: O(n)
+*/
+
 class LinkedListQueue {
+
     private class Node {
         int data;
         Node next;
@@ -9,8 +55,8 @@ class LinkedListQueue {
         }
     }
 
-    private Node head; //front
-    private Node tail; //rear
+    private Node head; // front
+    private Node tail; // rear
 
     public LinkedListQueue() {
         head = null;
@@ -19,6 +65,7 @@ class LinkedListQueue {
 
     public void push(int x) {
         Node newNode = new Node(x);
+
         if(isEmpty()){
             head = newNode;
             tail = newNode;
@@ -36,6 +83,12 @@ class LinkedListQueue {
 
         int val = head.data;
         head = head.next;
+
+        // update tail when queue becomes empty
+        if(head == null){
+            tail = null;
+        }
+
         return val;
     }
 
@@ -44,11 +97,14 @@ class LinkedListQueue {
             throw new RuntimeException("Queue Underflow");
         }
 
-        int val = head.data;
-        return val;
+        return head.data;
     }
 
     public boolean isEmpty() {
         return head == null;
     }
 }
+
+/*
+
+*/
