@@ -11,7 +11,6 @@ Design a stack that supports:
 
 All operations must run in O(1) time.
 
------------------------------------------------------
 
 Example
 
@@ -24,142 +23,26 @@ MinStack: [5, 3]
 
 getMin() → 3
 
------------------------------------------------------
 
 Core Idea
 
 Use TWO STACKS:
-
 1. stack → stores all elements
 2. minStack → stores minimum elements
 
------------------------------------------------------
 
 Why This Works
-
 minStack always keeps track of
 the current minimum at each stage.
 
------------------------------------------------------
-
-Step-by-Step Approach
-
-Push Operation
-
-• Push value into main stack
-• If:
-    - minStack empty OR
-    - val <= current min
-
-→ push into minStack
-
------------------------------------------------------
-
-Pop Operation
-
-• If top of stack == top of minStack
-→ pop from minStack also
-
-• Pop from main stack
-
------------------------------------------------------
-
-Top Operation
-
-Return top of stack (without removing)
-
------------------------------------------------------
-
-getMin Operation
-
-Return top of minStack
-
------------------------------------------------------
-
-Visualization
-
-push(5)
-stack = [5]
-min   = [5]
-
-push(3)
-stack = [5,3]
-min   = [5,3]
-
-push(7)
-stack = [5,3,7]
-min   = [5,3]
-
------------------------------------------------------
-
-Dry Run
-
-pop()
-
-stack top = 7  
-min top = 3 → no match  
-
-→ only pop stack
-
------------------------------------------------------
-
-IMPORTANT BUG IN YOUR CODE 🚨
-
-public int top() {
-    return stack.pop(); ❌
-}
-
------------------------------------------------------
-
-Problem:
-
-top() should NOT remove element
-
-But you are popping it → WRONG
-
------------------------------------------------------
-
-Correct:
-
-return stack.peek();
-
------------------------------------------------------
 
 Time Complexity
-
 push → O(1)  
 pop → O(1)  
 top → O(1)  
 getMin → O(1)  
 
------------------------------------------------------
-
-Space Complexity
-
-O(n)
-
------------------------------------------------------
-
-Key Interview Points
-
-• Use auxiliary stack
-• Maintain minimum efficiently
-• Handle duplicates using <=
-• Synchronize both stacks
-
------------------------------------------------------
-
-Common Mistakes
-
-• Using pop instead of peek (YOU DID THIS ❌)
-• Not handling duplicates properly
-• Not syncing minStack with stack
-
------------------------------------------------------
-
-Corrected Code
-
------------------------------------------------------
+Space Complexity: O(n)
 */
 
 class MinStack {
