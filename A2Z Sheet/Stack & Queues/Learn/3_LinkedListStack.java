@@ -1,8 +1,53 @@
+/*
+        STACK USING LINKED LIST
+
+Definition:
+A Stack follows:
+
+LIFO (Last In First Out)
+
+Instead of array,
+we use a Linked List.
+
+
+Structure
+Node:
+• data
+• next
+
+Stack:
+Top → head of linked list
+
+
+Core Idea
+• Insert at HEAD → push
+• Remove from HEAD → pop
+
+Why?
+Because:
+Linked List allows O(1) insert/delete at head
+
+
+Operations
+1. push(x)
+2. pop()
+3. top()
+4. isEmpty()
+
+Time Complexity:
+push → O(1)  
+pop → O(1)  
+top → O(1)  
+
+Space Complexity: O(n)
+*/
+
 class LinkedListStack {
+
     private class Node{
         int data;
         Node next;
-        
+
         Node(int data){
             this.data = data;
             this.next = null;
@@ -17,11 +62,8 @@ class LinkedListStack {
 
     public void push(int x) {
         Node newNode = new Node(x);
-        if(isEmpty()){
-            head = newNode;
-        }
 
-        newNode.next = head;
+        newNode.next = head;  
         head = newNode;
     }
 
@@ -40,8 +82,7 @@ class LinkedListStack {
             throw new RuntimeException("Stack Underflow");
         }
 
-        int val = head.data;
-        return val;
+        return head.data;
     }
 
     public boolean isEmpty() {
