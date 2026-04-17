@@ -1,3 +1,45 @@
+/*
+        PREFIX TO INFIX (STACK)
+
+Definition:
+Convert a PREFIX expression into INFIX expression.
+
+Prefix:
+Operator comes BEFORE operands
+
+Example:
++AB  → (A+B)
+
+
+Example
+
+Input:
+*+AB-CD
+
+Output:
+((A+B)*(C-D))
+
+
+Core Idea
+Traverse the string from RIGHT → LEFT
+Use a STACK of STRINGS
+
+
+Why This Works
+
+Prefix format:
+Operator → Operand1 → Operand2
+
+When scanning from right:
+• operands come first
+• operator combines them
+
+
+Time Complexity: O(n)
+
+Space Complexity: O(n)
+*/
+
 class Solution {
     public String prefixToInfix(String s) {
         Stack<String> stack = new Stack<>();
