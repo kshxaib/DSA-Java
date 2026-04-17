@@ -1,3 +1,54 @@
+/*
+        INFIX TO POSTFIX (STACK + OPERATOR PRECEDENCE)
+
+Definition:
+Convert an INFIX expression to POSTFIX.
+
+Infix:
+A + B
+
+Postfix:
+AB+
+
+
+Example
+
+Input:
+A + B * C
+
+Output:
+ABC*+
+
+
+Input:
+(A + B) * C
+
+Output:
+AB+C*
+
+
+Core Idea
+Use STACK to handle operators
+based on precedence and brackets.
+
+
+Why This Works
+• Operands → directly added to result
+• Operators → handled using stack
+• Parentheses → control evaluation order
+
+
+Operator Precedence
+^  → 3 (highest)
+* / → 2
++ - → 1
+
+
+Time Complexity: O(n)
+
+Space Complexity: O(n)
+*/
+
 import java.util.*;
 
 class Solution {
@@ -29,7 +80,8 @@ class Solution {
             // operator
             else {
                 while (!stack.isEmpty() &&
-                       precedence(ch) <= precedence(stack.peek())) {
+                       ((ch != '^' && precedence(ch) <= precedence(stack.peek())) ||
+                        (ch == '^' && precedence(ch) < precedence(stack.peek())))) {
                     ans.append(stack.pop());
                 }
                 stack.push(ch);
@@ -50,4 +102,4 @@ class Solution {
         if (ch == '^') return 3;
         return -1;
     }
-} 
+}
