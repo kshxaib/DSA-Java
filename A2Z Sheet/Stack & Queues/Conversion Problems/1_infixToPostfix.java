@@ -79,9 +79,7 @@ class Solution {
 
             // operator
             else {
-                while (!stack.isEmpty() &&
-                       ((ch != '^' && precedence(ch) <= precedence(stack.peek())) ||
-                        (ch == '^' && precedence(ch) < precedence(stack.peek())))) {
+                while (!stack.isEmpty() && precedence(ch) <= precedence(stack.peek())) {
                     ans.append(stack.pop());
                 }
                 stack.push(ch);
