@@ -1,3 +1,45 @@
+/*
+        PREFIX TO POSTFIX (STACK)
+
+Definition:
+Convert a PREFIX expression into POSTFIX.
+
+Prefix:
+Operator comes BEFORE operands
+
+Postfix:
+Operands come BEFORE operator
+
+
+Example
+
+Input:
+*+AB-CD
+
+Output:
+AB+CD-*
+
+
+Core Idea
+Traverse the string from RIGHT → LEFT
+Use a STACK of STRINGS
+
+
+Why This Works
+
+Prefix format:
+Operator → Operand1 → Operand2
+
+When scanning from right:
+• operands come first
+• operator combines them
+
+
+Time Complexity: O(n)
+
+Space Complexity: O(n)
+*/
+
 class Solution {
     public String prefixToPostfix(String s) {
         Stack<String> stack = new Stack<>();
