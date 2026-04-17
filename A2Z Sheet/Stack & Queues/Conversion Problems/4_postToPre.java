@@ -1,8 +1,36 @@
+/*
+        POSTFIX TO PREFIX (STACK)
+
+Definition:
+Convert a POSTFIX expression into PREFIX.
+
+Postfix:
+AB+
+
+Prefix:
++AB
+
+-----------------------------------------------------
+
+Example
+
+Input:
+AB+C*
+
+Output:
+*+ABC
+
+
+Time Complexity: O(n)
+
+Space Complexity: O(n)
+*/
+
 class Solution {
     public String postToPre(String postfix) {
         Stack<String> stack = new Stack<>();
 
-        for(int i=0; i<postfix.length(); i++){
+        for(int i = 0; i < postfix.length(); i++){
             char ch = postfix.charAt(i);
 
             if(Character.isLetterOrDigit(ch)){
