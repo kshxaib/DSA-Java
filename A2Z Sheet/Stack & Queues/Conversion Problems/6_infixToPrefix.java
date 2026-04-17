@@ -1,3 +1,40 @@
+/*
+        INFIX TO PREFIX (STACK + REVERSAL TRICK)
+
+Definition:
+Convert an INFIX expression to PREFIX.
+
+Infix:
+A + B
+
+Prefix:
++AB
+
+
+Example
+
+Input:
+(A+B)*C
+
+Output:
+*+ABC
+
+
+Core Idea
+We DON’T convert directly.
+Instead use trick:
+
+1. Reverse infix
+2. Swap brackets
+3. Convert to postfix
+4. Reverse result → prefix
+
+
+Time Complexity: O(n)
+
+Space Complexity: O(n)
+*/
+
 class Solution {
 
     public String infixToPrefix(String s) {
