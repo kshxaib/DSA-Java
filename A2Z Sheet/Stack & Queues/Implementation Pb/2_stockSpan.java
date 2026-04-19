@@ -66,17 +66,12 @@ Space Complexity: O(n)
 
 class Solution {
     public int[] stockSpan(int[] arr, int n) {
-
         int ans[] = new int[n];
-
         Stack<Integer> stack = new Stack<>();
-
         for(int i = 0; i < n; i++){
 
             // remove smaller/equal previous prices
-            while(!stack.isEmpty() &&
-                  arr[stack.peek()] <= arr[i]){
-
+            while(!stack.isEmpty() && arr[stack.peek()] <= arr[i]){
                 stack.pop();
             }
 
