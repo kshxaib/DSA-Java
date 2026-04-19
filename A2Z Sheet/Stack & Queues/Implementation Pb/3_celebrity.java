@@ -85,7 +85,6 @@ Space Complexity: O(1)
 
 class Solution {
     public int celebrity(int[][] M) {
-
         int n = M.length;
 
         int top = 0;
@@ -93,7 +92,6 @@ class Solution {
 
         // eliminate impossible candidates
         while(top < down){
-
             if(M[top][down] == 1){
                 top++;
             }
@@ -110,7 +108,6 @@ class Solution {
 
         // verify candidate
         for(int i = 0; i < n; i++){
-
             if(i == top) continue;
 
             if(M[top][i] != 0 || M[i][top] != 1){
