@@ -65,4 +65,35 @@ class Solution {
 
         return dummy.next;
     }
+
+
+    public ListNode mergeKLists(ListNode[] lists) {
+        if(lists == null || lists.length == 0) {
+            return null;
+        }
+
+        PriorityQueue<ListNode> pq = new PriorityQueue<>(
+            (a,b) -> a.val - b.val
+        );
+        for(int i=0; i<lists.length; i++){
+            if(lists[i] != null){
+                pq.add(lists[i]);
+            }
+        }
+
+        ListNode dummy = new ListNode(-1);
+        ListNode temp = dummy;
+
+        while(!pq.isEmpty()){
+            ListNode minNode = pq.remove();
+            temp.next = minNode;
+            temp = temp.next;
+
+            if(minNode.next != null){
+                pq.add(minNode.next);
+            }
+        }
+
+        return dummy.next;
+    }
 }
