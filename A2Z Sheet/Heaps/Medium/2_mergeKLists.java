@@ -23,4 +23,46 @@ class Solution {
 
         return dummy.next;
     }
+
+
+    public ListNode mergeKLists(ListNode[] lists) {
+        if(lists == null || lists.length == 0) {
+            return null;
+        }
+
+        ListNode head = lists[0];
+
+        for(int i = 1; i < lists.length; i++) {
+            head = merge(head, lists[i]);
+        }
+
+        return head;
+    }
+
+    public ListNode merge(ListNode firstL, ListNode secondL) {
+        ListNode dummy = new ListNode(-1);
+        ListNode temp = dummy;
+
+        while(firstL != null && secondL != null) {
+            if(firstL.val <= secondL.val) {
+                temp.next = firstL;
+                firstL = firstL.next;
+            } else {
+                temp.next = secondL;
+                secondL = secondL.next;
+            }
+
+            temp = temp.next;
+        }
+
+        if(firstL != null) {
+            temp.next = firstL;
+        }
+
+        if(secondL != null) {
+            temp.next = secondL;
+        }
+
+        return dummy.next;
+    }
 }
