@@ -23,4 +23,27 @@ class Solution {
 
         return rank;
     }
+
+
+    public int[] arrayRankTransform(int[] arr) {
+        int sortedArr [] = arr.clone();
+        Arrays.sort(sortedArr);
+
+        int rank = 1;
+        HashMap<Integer, Integer> rankMap = new HashMap<>();
+        for(int i=0; i<sortedArr.length; i++){
+            int curr = sortedArr[i];
+            if(!rankMap.containsKey(curr)){
+                rankMap.put(curr, rank);
+                rank++;
+            }
+        }
+
+        int[] result = new int[arr.length];
+        for(int i=0; i<arr.length; i++){
+            result[i] = rankMap.get(arr[i]);
+        }
+
+        return result;
+    }
 }
