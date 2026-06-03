@@ -1,3 +1,6 @@
+// Time Complexity: O(n * m + nmlog(nm)) ,We compute all n * m pairwise sums. Sorting takes O(nm log nm). Extracting top k is O(k).
+
+// Space Complexity:O(n * m) , We store all pairwise sums explicitly before sorting 
 class Solution {
     public int[] maxSumCombinations(int[] nums1, int[] nums2, int k) {
         ArrayList<Integer> pairSum = new ArrayList<>();
@@ -16,5 +19,52 @@ class Solution {
         }
 
         return result;
+    }
+
+    public int[] maxSumCombinations(int[] nums1, int[] nums2, int k) {
+        int n = nums1.length;
+
+        Arrays.sort(nums1);
+        Arrays.sort(nums2);
+
+        PriorityQueue<int[]> maxheap = new PriorityQueue<>(
+            (a, b) -> b[0] - a[0]
+        );
+
+        HashSet<String> visited = new HashSet<>();
+
+        maxheap.add(new int[] {nums1[n -1] + nums2[n -1], n-1, n-1});
+        visited.add((n - 1) + "#" + (n - 1));
+
+        int ans[] = new int[k];
+        int index = 0;
+
+        while(index < k){
+            int maxSum[] = maxheap.remove();
+            int sum = maxSum[0];
+            int i = maxSum[1];
+            int j = maxSum[2];
+
+            ans[index] = sum;
+            index++;
+
+            if(i -1 >= 0){
+                String key = (i -1) + "#" + j;
+                if(!visited.contains(key)){
+                    maxheap.add(new int[] {nums1[i -1] + nums2[j], i-1, j});
+                    visited.add(key);
+                }
+            }
+
+            if(j -1 >= 0){
+                String key = i + "#" + (j -1);
+                if(!visited.contains(key)){
+                    maxheap.add(new int[] {nums1[i] + nums2[j -1], i, j -1});
+                    visited.add(key);
+                }
+            }
+        }
+
+        return ans;
     }
 }
