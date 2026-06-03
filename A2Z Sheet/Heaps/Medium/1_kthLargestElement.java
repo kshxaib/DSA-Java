@@ -89,7 +89,6 @@ Space Complexity: O(k)
 */
 
     public int kthLargestElement(int[] nums, int k) {
-
         PriorityQueue<Integer> pq = new PriorityQueue<>();
 
         // first k elements
