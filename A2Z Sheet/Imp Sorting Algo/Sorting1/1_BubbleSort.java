@@ -3,6 +3,7 @@ Definition:
 Bubble Sort is a comparison-based sorting algorithm
 where adjacent elements are repeatedly compared and
 swapped if they are in the wrong order.
+After each full pass the largest element settles at the end of the array
 
 Core Idea:
 - After each pass, the largest unsorted element
