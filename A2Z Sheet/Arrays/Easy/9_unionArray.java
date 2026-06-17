@@ -51,6 +51,8 @@ Key Interview Points:
   O((n+m) log(n+m)) to O(n+m)
 */
 
+import java.util.*;
+
 class Solution {
     public int[] unionArray(int[] nums1, int[] nums2) {
         int i = 0;

@@ -60,6 +60,7 @@ Key Interview Points:
 - HashMap lookup is O(1) average
 - Much better than brute force O(n²)
 */
+import java.util.*;
 
 class Solution {
     public int[] twoSum(int[] nums, int target) {
@@ -78,5 +79,7 @@ class Solution {
     }
 }
 
-// Time: O(n)
-// Space: O(n)
+// Time Complexity: O(N) because we traverse the array only once, and each lookup or insertion in the hash map takes O(1) on average, where N is the size of the array.
+
+// Space Complexity: O(N) since in the worst case we may store all elements of the array in the hash map.
+

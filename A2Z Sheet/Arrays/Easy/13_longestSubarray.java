@@ -48,31 +48,57 @@ Key Interview Points:
 - HashMap stores earliest occurrence of prefix sum
 */
 
+import java.util.HashMap;
+
 class Solution {
-    public int longestSubarray(int[] nums, int k) {
-        HashMap<Integer, Integer> map = new HashMap<>();
-        int sum = 0;
+     // public int longestSubarray(int[] nums, int k) {
+     //      HashMap<Integer, Integer> map = new HashMap<>();
+     //      int sum = 0;
+     //      int maxLen = 0;
+
+     //      for (int i = 0; i < nums.length; i++) {
+     //           sum += nums[i];
+
+     //           if (sum == k) {
+     //                maxLen = i + 1;
+     //           }
+
+     //           if (map.containsKey(sum - k)) {
+     //                int len = i - map.get(sum - k);
+     //                maxLen = Math.max(maxLen, len);
+     //           }
+
+     //           if (!map.containsKey(sum)) {
+     //                map.put(sum, i);
+     //           }
+     //      }
+
+     //      return maxLen;
+     // }
+
+     public int longestSubarray(int[] nums, int k) {
+        int n = nums.length;
+        int left = 0, right = 0;
         int maxLen = 0;
-        
-        for(int i=0; i<nums.length; i++){
-           sum += nums[i];
+        int sum = 0;
 
-           if(sum == k){
-                maxLen = i + 1;
-           }
+        while(right < n){
+            sum += nums[right];
+            while(left <= right && sum > k){
+                sum -= nums[left];
+                left++;
+            }
 
-           if(map.containsKey(sum - k)){
-                int len = i - map.get(sum - k);
-                maxLen = Math.max(maxLen, len);
-           }
+            if(sum == k){
+                maxLen = Math.max(maxLen, right - left +1);
+            }
 
-           if(!map.containsKey(sum)){
-                map.put(sum, i);
-           }
+            right++;
+            
         }
 
         return maxLen;
-    }
+     }
 }
 
 // Time: O(n)
