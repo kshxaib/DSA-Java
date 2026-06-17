@@ -46,6 +46,8 @@ Key Interview Points:
   because each element may need to be inspected.
 */
 
+import java.util.ArrayList;
+
 class Solution {
     public boolean isSorted(ArrayList<Integer> nums) {
         for(int i=0; i<nums.size() -1; i++){
@@ -62,3 +64,17 @@ class Solution {
 
 // Time: O(n)
 // Space: O(1)
+
+
+public boolean check(int[] nums) {
+    int count = 0;
+    int n = nums.length;
+
+    for(int i = 0; i < n; i++) {
+        if(nums[i] > nums[(i + 1) % n]) {
+            count++;
+        }
+    }
+
+    return count <= 1;
+}

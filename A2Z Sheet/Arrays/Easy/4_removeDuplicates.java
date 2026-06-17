@@ -39,6 +39,8 @@ Key Interview Points:
 - Modifies array in-place
 */
 
+import java.util.*;
+
 class Solution {
     public int removeDuplicates(int[] nums) {
         int i = 0;
