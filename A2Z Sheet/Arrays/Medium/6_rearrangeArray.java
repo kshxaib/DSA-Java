@@ -70,14 +70,16 @@ Key Interview Points:
 - Order of elements must be preserved
 */
 
+import java.util.*;
+
 class Solution {
     public int[] rearrangeArray(int[] nums) {
         int n = nums.length;
         int posIdx = 0, negIdx = 1;
         int ans[] = new int[n];
 
-        for(int i=0; i<n; i++){
-            if(nums[i] < 0){
+        for (int i = 0; i < n; i++) {
+            if (nums[i] < 0) {
                 ans[negIdx] = nums[i];
                 negIdx += 2;
             } else {

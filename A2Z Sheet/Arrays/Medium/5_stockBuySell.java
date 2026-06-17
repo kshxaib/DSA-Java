@@ -76,16 +76,16 @@ class Solution {
         int maxProfit = 0;
         int buyingPrice = Integer.MAX_VALUE;
 
-        for(int i=0; i<arr.length; i++){
+        for (int i = 0; i < arr.length; i++) {
             int currPrice = arr[i];
-            if(currPrice < buyingPrice){
+            if (currPrice < buyingPrice) {
                 buyingPrice = currPrice;
             } else {
                 int currProfit = currPrice - buyingPrice;
                 maxProfit = Math.max(currProfit, maxProfit);
             }
         }
- 
+
         return maxProfit;
     }
 }
