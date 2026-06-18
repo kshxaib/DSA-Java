@@ -74,10 +74,11 @@ Key Interview Points:
 - Reduces complexity from O(n log n) to O(n)
 */
 
+import java.util.*;
 class Solution {
     public int longestConsecutive(int[] nums) {
         int n = nums.length;
-        
+
         if(n == 0) return 0;
 
         int longest = 1;
