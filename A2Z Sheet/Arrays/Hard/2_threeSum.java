@@ -75,24 +75,32 @@ Key Interview Points:
 • Optimal solution → Sorting + two pointers
 */
 
+import java.util.*;
+
 class Solution {
     public List<List<Integer>> threeSum(int[] nums) {
-        List<List<Integer>> ans = new ArrayList<>();
         int n = nums.length;
 
         Arrays.sort(nums);
 
+        List<List<Integer>> ans = new ArrayList<>();
+
         for(int i=0; i<n; i++){
-            if(i > 0 && nums[i] == nums[i-1]) continue;
-            int j = i+1;
+            
+            if(i > 0 && nums[i] == nums[i-1]){ // Skip duplicates for first element
+                continue;
+            }
+
+            int j = i +1;
             int k = n -1;
 
+            // Find pairs for current arr[i]
             while(j < k){
                 int sum = nums[i] + nums[j] + nums[k];
-                
+
                 if(sum < 0){
                     j++;
-                } else if (sum > 0){
+                } else if(sum > 0){
                     k--;
                 } else {
                     List<Integer> triplet = Arrays.asList(nums[i], nums[j], nums[k]);
@@ -100,13 +108,17 @@ class Solution {
                     j++;
                     k--;
 
-                    while(j < k && nums[j] == nums[j-1]) j++;
-                    while(j < k && nums[k] == nums[k+1]) k--;
+                    while(j < k && nums[j] == nums[j-1]){   // Skip duplicates for first element
+                        j++;
+                    }
+                    while(j < k && nums[k] == nums[k+1]){   // Skip duplicates for first element
+                        k--;
+                    }
                 }
             }
         }
 
-       return ans; 
+        return ans;
     }
 }
 

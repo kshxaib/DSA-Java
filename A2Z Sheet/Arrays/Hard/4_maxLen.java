@@ -65,6 +65,8 @@ Properties:
 - Handles negative numbers
 */
 
+import java.util.*;
+
 class Solution {
     public int maxLen(int[] arr) {
         Map<Integer, Integer> map = new HashMap<>();
@@ -73,14 +75,14 @@ class Solution {
 
         int sum = 0;
 
-        for(int i=0; i<n; i++){
+        for (int i = 0; i < n; i++) {
             sum += arr[i];
 
-            if(sum == 0){
+            if (sum == 0) {
                 maxLen = i + 1;
             }
 
-            if(map.containsKey(sum)){
+            if (map.containsKey(sum)) {
                 int len = i - map.get(sum);
                 maxLen = Math.max(maxLen, len);
             } else {
