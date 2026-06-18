@@ -72,18 +72,20 @@ Key Interview Points:
 - frequency counting handles multiple subarrays
 */
 
+import java.util.HashMap;
+
 class Solution {
     public int subarraySum(int[] nums, int k) {
         HashMap<Integer, Integer> map = new HashMap<>();
-        map.put(0, 1);  
+        map.put(0, 1);
 
         int sum = 0;
         int ans = 0;
 
-        for(int j = 0; j < nums.length; j++){
-            sum += nums[j];  
+        for (int j = 0; j < nums.length; j++) {
+            sum += nums[j];
 
-            if(map.containsKey(sum - k)){
+            if (map.containsKey(sum - k)) {
                 ans += map.get(sum - k);
             }
 
@@ -94,5 +96,5 @@ class Solution {
     }
 }
 
-// Time Complexity  : O(n)
+// Time Complexity : O(n)
 // Space Complexity : O(n)
