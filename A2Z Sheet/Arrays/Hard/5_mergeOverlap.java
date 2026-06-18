@@ -70,32 +70,31 @@ Key Interview Points:
 • Update end using max()
 */
 
+// Time: O(n log n)
+// Space: O(n) 
+
+import java.util.*;
+
 class Solution {
-    public List<List<Integer>> mergeOverlap(List<List<Integer>> intervals) {
-        int n = intervals.size();
-        List<List<Integer>> ans = new ArrayList<>();
+    public int[][] merge( int[][] intervals) {
 
-        if (n == 0) return ans;
+        Arrays.sort(intervals, (a, b) -> a[0] - b[0]);
 
-        intervals.sort(Comparator.comparingInt(a -> a.get(0)));
+        List<int[]> merged = new ArrayList<>();
+        merged.add(intervals[0]);
 
-        List<Integer> newInterval = new ArrayList<>(intervals.get(0));
-        ans.add(newInterval);
+        for (int i = 1; i < intervals.length; i++) {
+            int[] last = merged.get(merged.size() - 1);
 
-        for (int i = 1; i < n; i++) {
-            List<Integer> curr = intervals.get(i);
-
-            if (curr.get(0) <= newInterval.get(1)) {
-                newInterval.set(1, Math.max(newInterval.get(1), curr.get(1)));
+            if (intervals[i][0] <= last[1]) {
+                last[1] = Math.max(last[1], intervals[i][1]);
             } else {
-                newInterval = new ArrayList<>(curr);
-                ans.add(newInterval);
+                merged.add(intervals[i]);
             }
         }
 
-        return ans;
+        return merged.toArray(new int[merged.size()][2]);
     }
 }
 
-// Time: O(n log n)
-// Space: O(1) (excluding result)
+
