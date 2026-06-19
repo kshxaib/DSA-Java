@@ -1,5 +1,5 @@
 /*
-          LOWER BOUND
+          Search Insert Position
         (BINARY SEARCH)
 
 Problem:
@@ -90,19 +90,21 @@ Used in problems like:
 */
 
 class Solution {
-    public int lowerBound(int[] nums, int x) {
-        int start = 0;
-        int end = nums.length - 1; 
-        int ans = nums.length; 
+    public int searchInsert(int[] nums, int target) {
+        int n = nums.length;
+        int ans = n;
+        
+        int low = 0;
+        int high = n-1;
 
-        while(start <= end){
-            int mid = start + (end - start)/2;
+        while(low <= high){
+            int mid = low + (high - low)/2;
 
-            if(nums[mid] >= x){
+            if(nums[mid] >= target){
                 ans = mid;
-                end = mid - 1;
+                high = mid -1;
             } else {
-                start = mid + 1;
+                low = mid +1;
             }
         }
 
