@@ -64,28 +64,30 @@ Else
 Minimum lies in the UNSORTED region.
 */
 
+
+// Time: O(log n)
+// Space: O(1)
+
 class Solution {
-    public int findMin(ArrayList<Integer> arr) {
+    public int findMin(int[] nums) {
+        int n = nums.length;
+
         int min = Integer.MAX_VALUE;
+        int low = 0;
+        int high = n - 1;
 
-        int start = 0;
-        int end = arr.size() -1;
+        while (low <= high) {
+            int mid = low + (high - low) / 2;
 
-        while(start <= end){
-            int mid = start + (end - start) /2;
-
-            if(arr.get(start) <= arr.get(mid)){
-                min = Math.min(arr.get(start), min);
-                start = mid + 1;
+            if (nums[low] <= nums[mid]) {
+                min = Math.min(min, nums[low]);
+                low = mid + 1;
             } else {
-                min = Math.min(arr.get(mid), min);
-                end = mid -1;
+                min = Math.min(min, nums[mid]);
+                high = mid - 1;
             }
         }
 
         return min;
     }
 }
-
-// Time: O(log n)
-// Space: O(1)
