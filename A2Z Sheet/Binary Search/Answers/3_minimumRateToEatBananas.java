@@ -104,40 +104,41 @@ Space Complexity : O(1)
 */
 
 class Solution {
-    public int minimumRateToEatBananas(int[] nums, int h) {
-        int n = nums.length;
-        int max = Integer.MIN_VALUE;
-        int minBananaPH = Integer.MAX_VALUE;
+    public int minEatingSpeed(int[] piles, int h) {
+        int n = piles.length;
 
-        for(int i = 0; i < n; i++){
-            max = Math.max(max, nums[i]);
+        int max = Integer.MIN_VALUE;
+        for(int i=0; i<n; i++){
+            max = Math.max(max, piles[i]);
         }
 
+        int minBananaPerHr = Integer.MAX_VALUE;
         int start = 1;
         int end = max;
 
         while(start <= end){
-            int mid = start + (end - start) / 2;
-            int totalHours = findTotalHours(nums, mid);
+            int mid = start + (end - start)/2;
+            int totalHrs = calculateTotalHours(piles, mid);
 
-            if(totalHours <= h){
-                minBananaPH = mid;
-                end = mid - 1;
+            if(totalHrs <= h){
+                minBananaPerHr = mid;
+                end = mid -1;
             } else {
-                start = mid + 1;
+                start = mid +1;
             }
         }
 
-        return minBananaPH;
+        return minBananaPerHr;
     }
 
-    public int findTotalHours(int nums[], int nph){
-        int totalHours = 0;
+    private int calculateTotalHours(int piles[], int h){
+        int totalHr = 0;
 
-        for(int i = 0; i < nums.length; i++){
-            totalHours += Math.ceil((double) nums[i] / nph);
+        for(int i=0; i<piles.length; i++){
+            totalHr += Math.ceil((double)piles[i]/h);
         }
 
-        return totalHours;
+        return totalHr;
     }
 }
+

@@ -87,34 +87,30 @@ Properties:
 */
 
 class Solution {
+
     public int NthRoot(int N, int M) {
-       int start = 1;
-       int end = M;
+        int start = 1;
+        int end = M;
 
-       while(start <= end){
-         int mid = start + (end - start)/2;
-         long sq = findSq(mid, N);
+        while(start <= end){
+            int mid = start + (end - start)/2;
 
-         if(sq == M) return mid;
+            long power = (long) Math.pow(mid, N);
 
-         if(sq < M){
-            start = mid +1;
-         } else {
-            end = mid -1;
-         }
-       } 
+            if(power == M) return mid;
 
-       return -1;
-    }
-
-    private long findSq(int n, int N){
-        long ans = 1;
-        for(int i=0; i<N; i++){
-            ans = ans * n;
+            if(power < M){
+                start = mid +1;
+            } else {
+                end = mid -1;
+            }
         }
-        return ans;
+        
+        return -1;
     }
 }
 
 // Time: O(N log M)
 // Space: O(1)
+
+
