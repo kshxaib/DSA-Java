@@ -12,117 +12,169 @@ Median Definition:
 If total length is odd: middle element
 
 If total length is even: average of two middle elements
-
-
-Example 1
-arr1 = [2,4,6]
-arr2 = [1,3,5]
-
-Merged: [1,2,3,4,5,6]
-
-Median = (3 + 4) / 2 = 3.5
-
-
-Example 2
-arr1 = [2,4,6]
-arr2 = [1,3]
-
-Merged: [1,2,3,4,6]
-
-Median = 3
-
-
-Core Idea:
-Instead of merging arrays,
-we partition both arrays such that:
-
-Left half size = Right half size
-(or left half has one extra element if odd)
-
-
-Partition Concept
-Suppose we cut arrays like this:
-
-arr1:   [ left | right ]
-arr2:   [ left | right ]
-
-Total left elements = (n1 + n2 + 1) / 2
-
-
-Partition Condition
-Correct partition occurs when:
-        l1 ≤ r2
-        l2 ≤ r1
-
-Where:
-l1 = last element on left of arr1
-l2 = last element on left of arr2
-r1 = first element on right of arr1
-r2 = first element on right of arr2
-
-
-Median Calculation
-If total length is odd: median = max(l1, l2)
-
-If even: median = ( max(l1,l2) + min(r1,r2) ) / 2
-
-
-Binary Search Strategy
-We binary search the partition index
-in the smaller array.
-
-Why?
-To keep time complexity minimal.
-
-
-Complexities
-Time Complexity  : O(log(min(n1,n2)))
-Space Complexity : O(1)
 */
 
 class Solution {
-    public double median(int[] arr1, int[] arr2) {
-        int n1 = arr1.length;
-        int n2 = arr2.length;
+    public double findMedianSortedArrays(int[] nums1, int[] nums2) {
 
-        if(n1 > n2) return median(arr2, arr1);
+        int length1 = nums1.length;
+        int length2 = nums2.length;
+        int totalLength = length1 + length2;
 
-        int start = 0;
-        int end = n1;
+        // Always binary search on the smaller array
+        if (length1 > length2) {
+            return findMedianSortedArrays(nums2, nums1);
+        }
 
-        int left = (n1 + n2 + 1) / 2;
-        int n = n1 + n2;
+        int low = 0;
+        int high = length1;
 
-        while(start <= end){
-            int mid1 = start + (end - start)/2;
-            int mid2 = left - mid1;
+        int leftPartitionSize = (totalLength + 1) / 2;
 
-            int l1 = Integer.MIN_VALUE;
-            int l2 = Integer.MIN_VALUE;
+        while (low <= high) {
 
-            int r1 = Integer.MAX_VALUE;
-            int r2 = Integer.MAX_VALUE;
+            int partition1 = low + (high - low) / 2;
+            int partition2 = leftPartitionSize - partition1;
 
-            if(mid1 < n1) r1 = arr1[mid1];
-            if(mid2 < n2) r2 = arr2[mid2];
+            int leftMax1 = Integer.MIN_VALUE;
+            int leftMax2 = Integer.MIN_VALUE;
 
-            if(mid1 - 1 >= 0) l1 = arr1[mid1 - 1];
-            if(mid2 - 1 >= 0) l2 = arr2[mid2 - 1];
+            int rightMin1 = Integer.MAX_VALUE;
+            int rightMin2 = Integer.MAX_VALUE;
 
-            if(l1 <= r2 && l2 <= r1){
-                if(n % 2 == 1)
-                    return Math.max(l1, l2);
-
-                return (double)(Math.max(l1, l2) + Math.min(r1, r2)) / 2.0;
+            if (partition1 > 0) {
+                leftMax1 = nums1[partition1 - 1];
             }
-            else if(l1 > r2){
-                end = mid1 - 1;
+
+            if (partition2 > 0) {
+                leftMax2 = nums2[partition2 - 1];
             }
-            else{
-                start = mid1 + 1;
+
+            if (partition1 < length1) {
+                rightMin1 = nums1[partition1];
+            }
+
+            if (partition2 < length2) {
+                rightMin2 = nums2[partition2];
+            }
+
+            // Correct partition found
+            if (leftMax1 <= rightMin2 && leftMax2 <= rightMin1) {
+
+                if (totalLength % 2 == 1) {
+                    return Math.max(leftMax1, leftMax2);
+                }
+
+                return (Math.max(leftMax1, leftMax2)
+                        + Math.min(rightMin1, rightMin2)) / 2.0;
+            }
+
+            // Move partition1 to the left
+            else if (leftMax1 > rightMin2) {
+                high = partition1 - 1;
+            }
+
+            // Move partition1 to the right
+            else {
+                low = partition1 + 1;
             }
         }
 
         return 0.0;
+    }
+}
+
+
+class Solution {
+    public double findMedianSortedArrays(int[] nums1, int[] nums2) {
+        int n = nums1.length;
+        int m = nums2.length;
+
+        int merged[] = new int[n+m];
+
+        int i =0, j =0, k=0;
+        while(i<n && j<m){
+            if(nums1[i] < nums2[j]){
+                merged[k] = nums1[i];
+                i++;
+            } else {
+                merged[k] = nums2[j];
+                j++;
+            }
+            k++;
+        }
+
+        while(i<n){
+            merged[k] = nums1[i];
+            i++;
+            k++;
+        }
+
+        while(j<m){
+            merged[k] = nums2[j];
+            j++;
+            k++;
+        }
+
+        int len = merged.length;
+        if(len % 2 == 1) return (double)merged[len/2];
+        return ((double)merged[len/2 - 1] + merged[len/2]) / 2.0;
+    }
+}
+
+
+class Solution {
+    public double findMedianSortedArrays(int[] nums1, int[] nums2) {
+        int n = nums1.length;
+        int m = nums2.length;
+
+        int len = n + m;
+
+        int index1 = (len / 2) - 1;
+        int index2 = len / 2;
+
+        int element1 = -1;
+        int element2 = -1;
+
+        int i = 0, j = 0, count = 0;
+
+        while (i < n && j < m) {
+            int curr;
+
+            if (nums1[i] <= nums2[j]) {
+                curr = nums1[i++];
+            } else {
+                curr = nums2[j++];
+            }
+
+            if (count == index1) element1 = curr;
+            if (count == index2) element2 = curr;
+
+            count++;
+        }
+
+        while (i < n) {
+            int curr = nums1[i++];
+
+            if (count == index1) element1 = curr;
+            if (count == index2) element2 = curr;
+
+            count++;
+        }
+
+        while (j < m) {
+            int curr = nums2[j++];
+
+            if (count == index1) element1 = curr;
+            if (count == index2) element2 = curr;
+
+            count++;
+        }
+
+        if (len % 2 == 1) {
+            return element2;
+        }
+
+        return (element1 + element2) / 2.0;
     }
 }
