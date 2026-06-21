@@ -154,3 +154,46 @@ class Solution {
         return students;
     }
 }
+
+
+
+
+class Solution {
+    public int findPages(int[] nums, int m) {
+        int n = nums.length;
+        if(m > n) return -1;
+
+        int max = Integer.MIN_VALUE;
+        int sum = 0;
+        for(int i=0; i<n; i++){
+            max = Math.max(max, nums[i]);
+            sum += nums[i];
+        }
+
+        for(int pages=max; pages<=sum; pages++){
+            int students = countStudents(nums, pages);
+
+            if(students == m){
+                return pages;
+            }
+        }
+
+        return -1;
+    }
+
+    public int countStudents(int nums[], int pages){
+        int students = 1;
+        int currPages = 0;
+
+        for(int i=0; i<nums.length; i++){
+            if(currPages + nums[i] <= pages){
+                currPages += nums[i];
+            } else {
+                students++;
+                currPages = nums[i];
+            }
+        }
+
+        return students;
+    }
+}

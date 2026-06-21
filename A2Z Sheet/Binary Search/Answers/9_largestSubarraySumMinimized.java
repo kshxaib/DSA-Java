@@ -101,54 +101,92 @@ Space Complexity : O(1)
 */
 
 class Solution {
-    public int largestSubarraySumMinimized(int[] a, int k) {
-        if(k > a.length) return -1;
+    public int splitArray(int[] nums, int k) {
+        int n = nums.length;
 
         int max = Integer.MIN_VALUE;
-        int sum = 0;
-
-        for(int i = 0; i < a.length; i++){
-            max = Math.max(max, a[i]);
-            sum += a[i];
+        int sum = 0;    
+        for(int i=0; i<n; i++){
+            max = Math.max(max, nums[i]);
+            sum += nums[i];
         }
 
+        int ans = -1;
         int start = max;
         int end = sum;
-        int ans = -1;
 
         while(start <= end){
-            int mid = start + (end - start) / 2;
-            int arrays = countArrays(a, mid);
+            int mid = start + (end - start)/2;
+            int subArrays = countSubArrays(nums, mid);
 
-            if(arrays <= k){
+            if(subArrays <= k){
                 ans = mid;
-                end = mid - 1;
-            }
-            else{
-                start = mid + 1;
+                end = mid -1;
+            } else {
+                start = mid +1;
             }
         }
 
         return ans;
     }
 
-    public int countArrays(int a[], int maxSum){
-        int arrays = 1;
+    private int countSubArrays(int nums[], int maxSum){
+        int subArrays = 1;
         int currSum = 0;
 
-        for(int i = 0; i < a.length; i++){
-            if(currSum + a[i] <= maxSum){
-                currSum += a[i];
-            }
-            else{
-                arrays++;
-                currSum = a[i];
+        for(int i=0; i<nums.length; i++){
+            if(currSum + nums[i] > maxSum){
+                subArrays++;
+                currSum = nums[i];
+            } else {
+                currSum += nums[i];
             }
         }
 
-        return arrays;
+        return subArrays;
     }
 }
 
 // Time: O(n log(sum))
 // Space: O(1)
+
+
+
+class Solution {
+    public int splitArray(int[] nums, int k) {
+        int n = nums.length;
+
+        int max = Integer.MIN_VALUE;
+        int sum = 0;    
+        for(int i=0; i<n; i++){
+            max = Math.max(max, nums[i]);
+            sum += nums[i];
+        }
+
+        for(int maxSum=max; maxSum<=sum; maxSum++){
+            int subArrays = countSubArrays(nums, maxSum);
+
+            if(subArrays == k){
+                return maxSum;
+            }
+        }
+
+        return -1;
+    }
+
+    private int countSubArrays(int nums[], int maxSum){
+        int subArrays = 1;
+        int currSum = 0;
+
+        for(int i=0; i<nums.length; i++){
+            if(currSum + nums[i] > maxSum){
+                subArrays++;
+                currSum = nums[i];
+            } else {
+                currSum += nums[i];
+            }
+        }
+
+        return subArrays;
+    }
+}
