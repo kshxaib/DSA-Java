@@ -107,51 +107,89 @@ Each check → O(n)
 Space Complexity : O(1)
 */
 
-class Solution {
-
+class Solution1 {
     public int shipWithinDays(int[] weights, int days) {
+        int n = weights.length;
 
-        int ans = Integer.MAX_VALUE;
+        int sum = 0;    
         int max = Integer.MIN_VALUE;
-        int sum = 0;
-
-        for(int i = 0; i < weights.length; i++){
-            max = Math.max(max, weights[i]);
+        for(int i=0; i<n; i++){
             sum += weights[i];
+            max = Math.max(max, weights[i]);
         }
 
+        int minCap = Integer.MAX_VALUE;
         int start = max;
         int end = sum;
 
         while(start <= end){
-
             int mid = start + (end - start)/2;
 
-            int requiredDays = findDays(weights, mid);
+            int daysTaken = findDays(weights, mid);
 
-            if(requiredDays <= days){
-                ans = mid;
-                end = mid - 1;
+            if(daysTaken <= days){
+                minCap = mid;
+                end = mid -1;
             } else {
-                start = mid + 1;
+                start = mid +1;
             }
         }
 
-        return ans;
+        return minCap;
     }
 
-    public int findDays(int weights[], int capacity){
-
-        int currWeight = 0;
+    private int findDays(int weights[], int capacity){
+        int currWgt = 0;
         int days = 1;
 
-        for(int i = 0; i < weights.length; i++){
-
-            if(currWeight + weights[i] > capacity){
+        for(int i=0; i<weights.length; i++){
+            if(currWgt + weights[i] > capacity){
                 days++;
-                currWeight = weights[i];
-            } else{
-                currWeight += weights[i];
+                currWgt = weights[i];
+            } else {
+                currWgt += weights[i];
+            }
+        }
+
+        return days;
+    }
+}
+
+
+
+
+class Solution {
+    public int shipWithinDays(int[] weights, int days) {
+        int n = weights.length;
+
+        int sum = 0;
+        int max = Integer.MIN_VALUE;
+        for(int i=0; i<n; i++){
+            sum += weights[i];
+            max = Math.max(max, weights[i]);
+        }
+
+        for(int capacity=max; capacity<=sum; capacity++){
+            int daysTaken = findDays(weights, capacity);
+
+            if(daysTaken <= days){
+                return capacity;
+            }
+        }
+
+        return -1;
+    }
+
+    private int findDays(int weights[], int capacity){
+        int currWgt = 0;
+        int days = 1;
+
+        for(int i=0; i<weights.length; i++){
+            if(currWgt + weights[i] > capacity){
+                days++;
+                currWgt = weights[i];
+            } else {
+                currWgt += weights[i];
             }
         }
 
