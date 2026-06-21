@@ -72,9 +72,7 @@ Space Complexity : O(1)
 */
 
 class Solution {
-
-    public int smallestDivisor(int[] nums, int limit) {
-
+    public int smallestDivisor(int[] nums, int threshold) {
         int max = Integer.MIN_VALUE;
 
         for(int num : nums){
@@ -86,12 +84,10 @@ class Solution {
         int ans = max;
 
         while(start <= end){
-
             int mid = start + (end - start)/2;
-
             int sum = findSum(nums, mid);
 
-            if(sum <= limit){
+            if(sum <= threshold){
                 ans = mid;
                 end = mid - 1;
             }
@@ -111,5 +107,30 @@ class Solution {
         }
 
         return sumOfDivision;
+    }
+}
+
+
+class Solution {
+    public int smallestDivisor(int[] nums, int threshold) {
+        int n = nums.length;
+
+        int max = Integer.MIN_VALUE;
+        for(int i=0; i<n; i++){
+            max = Math.max(max, nums[i]);
+        }
+
+        for(int divisor =1; divisor<=max; divisor++){
+            int sum = 0;
+            for(int i=0; i<n; i++){
+                sum +=(int) Math.ceil((double)nums[i] / divisor);
+            }
+
+            if(sum <= threshold){
+                return divisor;
+            }
+        }
+
+        return -1;
     }
 }

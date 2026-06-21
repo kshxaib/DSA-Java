@@ -104,55 +104,103 @@ Each check → O(n)
 Space Complexity : O(1)
 */
 
+class Solution1 {
+    public int minDays(int[] bloomDay, int m, int k) {
+        int n = bloomDay.length;
 
-class Solution {
-    public int roseGarden(int n, int[] nums, int k, int m) {
-        int minDay = -1;
-
-        if(m * k > n) return minDay;
+        if((long)m*k > n) return -1;
 
         int min = Integer.MAX_VALUE;
         int max = Integer.MIN_VALUE;
 
         for(int i = 0; i < n; i++){
-            min = Math.min(min, nums[i]);
-            max = Math.max(max, nums[i]);
+            min = Math.min(min, bloomDay[i]);
+            max = Math.max(max, bloomDay[i]);
         }
 
         int start = min;
         int end = max;
+        int minDay = Integer.MAX_VALUE;
 
         while(start <= end){
-            int mid = start + (end - start) / 2;
+            int mid = start + (end - start)/2;
 
-            if(canMake(nums, mid, m, k)){
-                minDay = mid;
-                end = mid - 1;
+            if(canMake(bloomDay, m, k, mid)){
+                minDay = Math.min(minDay, mid);
+                end = mid -1;
             } else {
-                start = mid + 1;
+                start = mid +1;
             }
         }
 
         return minDay;
     }
 
-    public boolean canMake(int nums[], int day, int m, int k){
-        int count = 0;
+    private boolean canMake(int bloomDay[], int m, int k, int day){
         int bouquets = 0;
+        int flowersCount = 0;
 
-        for(int i = 0; i < nums.length; i++){
-            if(nums[i] <= day){
-                count++;
+        for(int i=0; i<bloomDay.length; i++){
+            if(bloomDay[i] <= day){
+                flowersCount++;
 
-                if(count == k){
+                if(flowersCount == k){
                     bouquets++;
-                    count = 0;
+                    flowersCount = 0;
                 }
             } else {
-                count = 0;
+                flowersCount = 0;
             }
         }
 
-        return bouquets >= m;
+        if(bouquets >= m) return true;
+        return false;
+    }
+}
+
+
+
+class Solution {
+    public int minDays(int[] bloomDay, int m, int k) {
+        int n = bloomDay.length;
+
+        if((long)m*k > n) return -1;
+
+        int min = Integer.MAX_VALUE;
+        int max = Integer.MIN_VALUE;
+
+        for(int i=0; i<n; i++){
+            min = Math.min(min, bloomDay[i]);
+            max = Math.max(max, bloomDay[i]);
+        }
+
+        for(int day=min; day<=max; day++){
+            if(canMake(bloomDay, m, k, day)){
+                return day;
+            }
+        }
+
+        return -1;
+    }
+
+    private boolean canMake(int bloomDay[], int m, int k, int day){
+        int bouquets = 0;
+        int flowersCount = 0;
+
+        for(int i=0; i<bloomDay.length; i++){
+            if(bloomDay[i] <= day){
+                flowersCount++;
+
+                if(flowersCount == k){
+                    bouquets++;
+                    flowersCount = 0;
+                }
+            } else {
+                flowersCount = 0;
+            }
+        }
+
+        if(bouquets >= m) return true;
+        return false;
     }
 }
