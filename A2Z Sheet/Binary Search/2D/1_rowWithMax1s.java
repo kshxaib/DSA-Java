@@ -96,36 +96,39 @@ Space Complexity : O(1)
 
 class Solution {
     public int rowWithMax1s(int[][] mat) {
-        int countMax = 0;
-        int index = -1;
+        int rows = mat.length;
 
-        for(int i=0; i<mat.length; i++){
-            int totalElements = mat[i].length;
-            int startOf1s = lowerBound(mat[i], totalElements, 1);
-            int countOf1s = totalElements - startOf1s;
+        int maxOnes = 0;
+        int ans = -1;
 
-            if(countOf1s > countMax){
-                countMax = countOf1s;
-                index = i;
+        for (int i = 0; i < rows; i++) {
+            int firstOne = findFirstOne(mat[i]);
+            int ones = mat[i].length - firstOne;
+
+            if (ones > maxOnes) {
+                maxOnes = ones;
+                ans = i;
             }
         }
 
-        return index;
+        return ans;
     }
 
-    public int lowerBound(int row[], int n, int x){
-        int start = 0;
-        int end = n -1;
+    private int findFirstOne(int[] row) {
+        int n = row.length;
         int ans = n;
 
-        while(start <= end){
-            int mid = start + (end - start)/2;
+        int start = 0;
+        int end = n - 1;
 
-            if(row[mid] >= x){
+        while (start <= end) {
+            int mid = start + (end - start) / 2;
+
+            if (row[mid] == 1) {
                 ans = mid;
-                end = mid -1;
+                end = mid - 1;
             } else {
-                start = mid +1;
+                start = mid + 1;
             }
         }
 
@@ -135,3 +138,29 @@ class Solution {
 
 // Time: O(n log m)
 // Space: O(1)
+
+
+
+class Solution {
+    
+    public int rowWithMax1s(int[][] mat) {
+       int n = mat.length;
+
+       int maxCount = 0;
+       int ans = -1;
+
+       for(int i=0; i<n; i++){
+            int count = 0;
+            for(int j=0; j<n; j++){
+                if(mat[i][j] == 1) count++;
+            }
+
+            if(count > maxCount){
+                maxCount = count;
+                ans = i;
+            }
+       }
+
+       return ans;
+    }
+}

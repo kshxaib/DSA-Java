@@ -79,23 +79,21 @@ Space Complexity : O(1)
 
 class Solution {
     public boolean searchMatrix(int[][] matrix, int target) {
+        int row = matrix.length;
+        int col = matrix[0].length;
 
-        int n = matrix.length;
-        int m = matrix[0].length;
+        int startingRow = 0;
+        int startingCol = col - 1;
 
-        int row = 0;
-        int col = m - 1;
+        while (startingRow < row && startingCol >= 0) {
+            int currElement = matrix[startingRow][startingCol];
 
-        while(row < n && col >= 0){
-
-            if(matrix[row][col] == target){
+            if (currElement == target) {
                 return true;
-            }
-            else if(matrix[row][col] > target){
-                col--;
-            }
-            else{
-                row++;
+            } else if (currElement > target) {
+                startingCol--;
+            } else {
+                startingRow++;
             }
         }
 

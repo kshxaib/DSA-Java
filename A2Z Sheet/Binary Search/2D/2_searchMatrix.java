@@ -72,7 +72,7 @@ Time Complexity  : O(log(n*m))
 Space Complexity : O(1)
 */
 
-class Solution {
+class Solution1 {
     public boolean searchMatrix(int[][] mat, int target) {
         int n = mat.length;
         int m = mat[0].length;
