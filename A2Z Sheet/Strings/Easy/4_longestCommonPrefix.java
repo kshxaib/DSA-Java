@@ -42,6 +42,8 @@ Space Complexity : O(1)
 (ignoring sorting internal space)
 */
 
+import java.util.Arrays;
+
 class Solution {    
 
     public String longestCommonPrefix(String[] str) {

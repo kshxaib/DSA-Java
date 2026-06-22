@@ -75,6 +75,7 @@ Space Complexity : O(1)
 Explanation:
 At most 256 character mappings.
 */
+import java.util.*;
 
 class Solution {
     public boolean isomorphicString(String s, String t) {
