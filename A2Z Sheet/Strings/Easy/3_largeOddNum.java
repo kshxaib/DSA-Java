@@ -63,21 +63,15 @@ Single traversal + trimming.
 Space Complexity : O(1)
 */
 
-class Solution {    
-    public String largeOddNum(String s) {
-        int n = s.length();
+class Solution {
+    public String largestOddNumber(String num) {
+        int n = num.length();
 
-        for(int i = n - 1; i >= 0; i--) {
+        for(int i=n-1; i>=0; i--){
+            if((num.charAt(i) - '0') % 2 == 1){
+                String res = num.substring(0, i+1);
 
-            if((s.charAt(i) - '0') % 2 == 1) {
-                String res = s.substring(0, i + 1);
-
-                int j = 0;
-                while(j < res.length() && res.charAt(j) == '0'){
-                    j++;
-                }
-
-                return res.substring(j);
+                return res.toString();
             }
         }
 

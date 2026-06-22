@@ -32,16 +32,6 @@ Core Idea
 We solve the problem in two steps:
 1. Reverse the entire string.
 2. Reverse each individual word.
-
-
-Complexities
-Time Complexity  : O(n)
-
-Explanation:
-- Reverse string → O(n)
-- Traverse string → O(n)
-
-Space Complexity : O(n)
 */
 
 class Solution {

@@ -59,8 +59,10 @@ All inner parentheses are kept.
 
 Complexities
 Time Complexity  : O(n)
-Space Complexity : O(n) (for result)
+Space Complexity : O(1) (for result we dont count space)
 */
+
+import java.util.*;
 
 class Solution {
     public String removeOuterParentheses(String s) {
@@ -81,5 +83,35 @@ class Solution {
        }
 
        return ans.toString();
+    }
+}
+
+
+
+class Solution1 {
+    public String removeOuterParentheses(String s) {
+        Stack<Character> st = new Stack<>();
+        StringBuilder ans = new StringBuilder();
+
+        for (int i = 0; i < s.length(); i++) {
+            char ch = s.charAt(i);
+
+            if (ch == '(' && st.isEmpty()) {
+                st.push(ch);
+            } 
+            else if (ch == '(') {
+                st.push(ch);
+                ans.append(ch);
+            } 
+            else if (ch == ')' && st.size() == 1) {
+                st.pop();
+            } 
+            else if (ch == ')') {
+                ans.append(ch);
+                st.pop();
+            }
+        }
+
+        return ans.toString();
     }
 }
