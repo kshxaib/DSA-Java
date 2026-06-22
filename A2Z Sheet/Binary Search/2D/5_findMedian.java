@@ -107,33 +107,30 @@ Total rows → n
 Space Complexity : O(1)
 */
 
+import java.util.Arrays;
+
 class Solution {
-
     public int findMedian(int[][] matrix) {
-
         int n = matrix.length;
         int m = matrix[0].length;
 
         int start = Integer.MAX_VALUE;
         int end = Integer.MIN_VALUE;
 
-        for(int i = 0; i < n; i++){
+        for (int i = 0; i < n; i++) {
             start = Math.min(start, matrix[i][0]);
             end = Math.max(end, matrix[i][m - 1]);
         }
 
         int required = (n * m) / 2;
 
-        while(start <= end){
-
+        while (start <= end) {
             int mid = start + (end - start) / 2;
-
             int smallerEquals = findSmallerEquals(matrix, mid);
 
-            if(smallerEquals <= required){
+            if (smallerEquals <= required) {
                 start = mid + 1;
-            }
-            else{
+            } else {
                 end = mid - 1;
             }
         }
@@ -141,32 +138,28 @@ class Solution {
         return start;
     }
 
-    public int findSmallerEquals(int matrix[][], int x){
-
+    public int findSmallerEquals(int matrix[][], int x) {
         int count = 0;
 
-        for(int i = 0; i < matrix.length; i++){
+        for (int i = 0; i < matrix.length; i++) {
             count += findUpperBound(matrix[i], x);
         }
 
         return count;
     }
 
-    public int findUpperBound(int row[], int x){
-
+    public int findUpperBound(int row[], int x) {
         int start = 0;
         int end = row.length - 1;
         int ans = row.length;
 
-        while(start <= end){
-
+        while (start <= end) {
             int mid = start + (end - start) / 2;
 
-            if(row[mid] > x){
+            if (row[mid] > x) {
                 ans = mid;
                 end = mid - 1;
-            }
-            else{
+            } else {
                 start = mid + 1;
             }
         }

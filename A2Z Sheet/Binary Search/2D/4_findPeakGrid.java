@@ -95,36 +95,33 @@ class Solution {
         int start = 0;
         int end = m - 1;
 
-        while(start <= end){
+        while (start <= end) {
             int midCol = start + (end - start) / 2;
 
             int maxIdx = findMax(mat, midCol);
-
             int maxEle = mat[maxIdx][midCol];
 
             int left = midCol - 1 >= 0 ? mat[maxIdx][midCol - 1] : -1;
             int right = midCol + 1 < m ? mat[maxIdx][midCol + 1] : -1;
 
-            if(maxEle > left && maxEle > right){
-                return new int[]{maxIdx, midCol};
-            }
-            else if(maxEle < left){
+            if (maxEle > left && maxEle > right) {
+                return new int[] { maxIdx, midCol };
+            } else if (maxEle < left) {
                 end = midCol - 1;
-            }
-            else{
+            } else {
                 start = midCol + 1;
             }
         }
 
-        return new int[]{-1, -1};
+        return new int[] { -1, -1 };
     }
 
-    public int findMax(int[][] mat, int col){
+    public int findMax(int[][] mat, int col) {
         int max = -1;
         int maxIdx = -1;
 
-        for(int i = 0; i < mat.length; i++){
-            if(mat[i][col] > max){
+        for (int i = 0; i < mat.length; i++) {
+            if (mat[i][col] > max) {
                 max = mat[i][col];
                 maxIdx = i;
             }
