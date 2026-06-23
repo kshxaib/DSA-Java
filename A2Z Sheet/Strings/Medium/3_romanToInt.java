@@ -53,29 +53,25 @@ Space Complexity : O(1)
 */
 
 class Solution {
-
     public int romanToInt(String s) {
+        int n = s.length();
+        int intValue = 0;
 
-        int total = 0;
+        for(int i=0; i<n; i++){
+            int currValue = giveIntValue(s.charAt(i));
 
-        for(int i = 0; i < s.length(); i++){
-
-            int current = value(s.charAt(i));
-
-            if(i < s.length() - 1 && current < value(s.charAt(i + 1))){
-                total -= current;
+            if(i < n-1 && currValue < giveIntValue(s.charAt(i+1))){
+                intValue -= currValue;
             } else {
-                total += current;
+                intValue += currValue;
             }
         }
 
-        return total;
+        return intValue;
     }
 
-    private int value(char c){
-
-        switch(c){
-
+    private int giveIntValue(char ch){
+        switch(ch){
             case 'I': return 1;
             case 'V': return 5;
             case 'X': return 10;
@@ -83,7 +79,6 @@ class Solution {
             case 'C': return 100;
             case 'D': return 500;
             case 'M': return 1000;
-
         }
 
         return 0;

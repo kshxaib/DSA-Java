@@ -58,22 +58,16 @@ Only two integer variables are used.
 class Solution {
 
     public int maxDepth(String s) {
-
         int maxDpt = 0;   // stores maximum depth
         int count = 0;    // current nesting level
 
         for(char c : s.toCharArray()){
-
             if(c == '('){
-
                 count++;                       // increase nesting level
                 maxDpt = Math.max(maxDpt, count); // update maximum depth
-
             } 
             else if(c == ')'){
-
                 count--;                       // decrease nesting level
-
             }
         }
 

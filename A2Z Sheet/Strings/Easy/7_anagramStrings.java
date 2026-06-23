@@ -51,7 +51,6 @@ Frequency array size is fixed (26).
 
 class Solution {  
     public boolean anagramStrings(String s, String t) {
-
         if(s.length() != t.length()){
             return false;
         }

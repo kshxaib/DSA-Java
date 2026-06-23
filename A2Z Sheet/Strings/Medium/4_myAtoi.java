@@ -85,49 +85,44 @@ This prevents overflow before it happens.
 */
 
 class Solution {
-
     public int myAtoi(String s) {
-
-        int i = 0;
         int n = s.length();
-
-        int sign = 1;
-        int result = 0;
 
         int max = Integer.MAX_VALUE;
         int min = Integer.MIN_VALUE;
 
+        int sign = 1;
+        int ans = 0;
+
         // Step 1: Skip leading whitespace
-        while (i < n && s.charAt(i) == ' ') {
-            i++;
-        }
+        int i =0;
+        while(i<n && s.charAt(i) == ' ')i++;
 
         // Step 2: Detect sign
-        if (i < n && (s.charAt(i) == '+' || s.charAt(i) == '-')) {
-
-            if (s.charAt(i) == '-') {
+        if(i<n){
+            char ch = s.charAt(i);
+            if(ch == '-'){
                 sign = -1;
+                i++;
+            } else if(ch == '+'){
+                i++;
             }
-
-            i++;
         }
 
         // Step 3: Convert digits
-        while (i < n && Character.isDigit(s.charAt(i))) {
-
+        while(i<n && Character.isDigit(s.charAt(i))){
             int digit = s.charAt(i) - '0';
 
             // Step 4: Overflow check
-            if (result > (max - digit) / 10) {
+            if(ans > (max - digit)/10){
                 return sign == 1 ? max : min;
             }
 
-            result = result * 10 + digit;
-
+            ans = ans*10 + digit;
             i++;
         }
 
-        return result * sign;
+        return sign * ans;
     }
 }
 
