@@ -93,25 +93,25 @@ No extra data structures used.
 */
 
 class Solution {
-
     public String longestPalindrome(String s) {
-        if (s.length() < 1) {
-            return "";
-        }
+        int n = s.length();
 
-        int start = 0;
-        int end = 0;
+        if (n <= 1) return s;
 
-        for (int i = 0; i < s.length(); i++) {
-            int oddLen = expand(s, i, i);       // odd palindrome
-            int evenLen = expand(s, i, i + 1);  // even palindrome
+        int start = 0; // start index of longest palindrome
+        int end = 0;   // end index of longest palindrome
 
-            int len = Math.max(oddLen, evenLen);
+        for (int i = 0; i < n; i++) {
+            int oddLen = expand(s, i, i);   // Odd length palindrome (center = i)
+            int evenLen = expand(s, i, i + 1);     // Even length palindrome (center = i, i+1)
 
-            if (len > end - start) {
+            int len = Math.max(oddLen, evenLen);   
+
+            // Update answer if longer palindrome found
+            if (len > end - start + 1) {        
+                // Calculate actual start and end indices
                 start = i - (len - 1) / 2;
                 end = i + len / 2;
-
             }
         }
 
@@ -119,11 +119,18 @@ class Solution {
     }
 
     private int expand(String s, int left, int right) {
-        while (left >= 0 && right < s.length() && s.charAt(left) == s.charAt(right)) {
+
+        // Expand while characters match
+        while (
+            left >= 0 &&
+            right < s.length() &&
+            s.charAt(left) == s.charAt(right)
+        ) {
             left--;
             right++;
         }
 
+        // Length of palindrome found
         return right - left - 1;
     }
 }
