@@ -53,13 +53,20 @@ Only one pointer used.
 
 class Solution {
 
-    public boolean searchKey(ListNode head, int key) {
+     class ListNode {
+    public int data;
+    public ListNode prev;
+    public ListNode next;
+    public ListNode();
+    public ListNode(int data);
+    public ListNode(int data, ListNode prev, ListNode next);
+}
 
+    public boolean searchKey(ListNode head, int key) {
         ListNode temp = head;
 
         while (temp != null) {
-
-            if (temp.val == key) {
+            if (temp.data == key) {
                 return true;
             }
 

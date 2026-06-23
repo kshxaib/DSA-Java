@@ -71,6 +71,26 @@ No extra memory used.
 */
 
 class Solution {
+    class ListNode {
+    int data;
+    ListNode next;
+
+    ListNode() {
+        this.data = 0;
+        this.next = null;
+    }
+
+    ListNode(int x) {
+        this.data = x;
+        this.next = null;
+    }
+
+    ListNode(int x, ListNode next) {
+        this.data = x;
+        this.next = next;
+    }
+}
+
 
     public ListNode deleteHead(ListNode head) {
 

@@ -62,12 +62,23 @@ Space Complexity: O(1)
 Only one new node created.
 */
 
+
+
 class Solution {
 
-    public ListNode insertAtHead(ListNode head, int X) {
+    class ListNode {
+    public int data;
+    public ListNode prev;
+    public ListNode next;
+    public ListNode();
+    public ListNode(int data);
+    public ListNode(int data, ListNode prev, ListNode next);
+}
+
+    public ListNode insertAtHead(ListNode head, int data) {
 
         // Step 1: create new node
-        ListNode newNode = new ListNode(X);
+        ListNode newNode = new ListNode(data);
 
         // Step 2: link new node to current head
         newNode.next = head;

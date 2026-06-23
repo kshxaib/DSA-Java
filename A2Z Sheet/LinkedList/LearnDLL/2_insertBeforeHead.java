@@ -46,6 +46,14 @@ Only one node created.
 */
 
 class Solution {
+    class ListNode {
+    public int data;
+    public ListNode prev;
+    public ListNode next;
+    public ListNode();
+    public ListNode(int data);
+    public ListNode(int data, ListNode prev, ListNode next);
+};
 
     public ListNode insertBeforeHead(ListNode head, int data) {
 
