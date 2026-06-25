@@ -63,17 +63,16 @@ Loop counting is at most O(n)
 Space Complexity: O(1)
 No extra memory used
 */
+import java.util.*;
 
 class Solution {
 
     public int findLengthOfLoop(ListNode head) {
-
         ListNode slow = head;
         ListNode fast = head;
 
         // Step 1: Detect cycle
         while (fast != null && fast.next != null) {
-
             slow = slow.next;
             fast = fast.next.next;
 
@@ -96,5 +95,25 @@ class Solution {
     }
 }
 
-// Time Complexity  : O(n)
+// Time Complexity : O(n)
 // Space Complexity : O(1)
+
+public int findLengthOfLoop(ListNode head) {
+    Map<ListNode, Integer> map = new HashMap<>();
+
+    ListNode temp = head;
+    int numberOfNode = 0;
+
+    while (temp != null) {
+        if (map.containsKey(temp)) {
+            int len = numberOfNode - map.get(temp);
+            return len;
+        }
+
+        map.put(temp, numberOfNode);
+        temp = temp.next;
+        numberOfNode++;
+    }
+
+    return 0;
+}

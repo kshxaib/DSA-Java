@@ -1,3 +1,4 @@
+
 /*
         LINKED LIST CYCLE II (FIND START OF CYCLE)
 
@@ -55,17 +56,16 @@ Time Complexity: O(n)
 
 Space Complexity: O(1)
 */
+import java.util.*;
 
 class Solution {
 
     public ListNode detectCycle(ListNode head) {
-
         ListNode slow = head;
         ListNode fast = head;
 
         // Step 1: Detect cycle
         while (fast != null && fast.next != null) {
-
             slow = slow.next;
             fast = fast.next.next;
 
@@ -83,9 +83,25 @@ class Solution {
             }
         }
 
-        return null; // no cycle
+        return null; 
     }
 }
 
-// Time Complexity  : O(n)
+// Time Complexity : O(n)
 // Space Complexity : O(1)
+
+public ListNode detectCycle(ListNode head) {
+    ListNode temp = head;
+    Map<ListNode, Integer> map = new HashMap<>();
+
+    while (temp != null) {
+        if (map.containsKey(temp)) {
+            return temp;
+        }
+
+        map.put(temp, 1);
+        temp = temp.next;
+    }
+
+    return null;
+}

@@ -73,11 +73,11 @@ Space Complexity: O(1)
 Only pointers used.
 No extra array or stack.
 */
+import java.util.*;;
 
 class Solution {
 
     public boolean isPalindrome(ListNode head) {
-
         ListNode slow = head;
         ListNode fast = head;
 
@@ -119,3 +119,27 @@ class Solution {
 
 // Time Complexity  : O(n)
 // Space Complexity : O(1)
+
+public boolean isPalindrome(ListNode head) {
+    Stack<Integer> st = new Stack<>();
+    ListNode temp = head;
+
+    while (temp != null) {
+        st.push(temp.val);
+        temp = temp.next;
+    }
+
+    temp = head;
+    while (temp != null) {
+        if (temp.val != st.pop()) {
+            return false;
+        }
+
+        temp = temp.next;
+    }
+
+    if (!st.isEmpty())
+        return false;
+
+    return true;
+}
