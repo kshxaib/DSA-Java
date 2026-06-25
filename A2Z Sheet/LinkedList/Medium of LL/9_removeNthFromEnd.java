@@ -57,41 +57,59 @@ No extra data structure used.
 */
 
 class Solution {
-
     public ListNode removeNthFromEnd(ListNode head, int n) {
+        ListNode dummy = new ListNode(-1);
+        dummy.next = head;
 
-        int size = 0;
-        ListNode temp = head;
+        ListNode pointer1 = dummy;
+        ListNode pointer2 = dummy;
 
-        // Step 1: Find length
-        while (temp != null) {
-            size++;
-            temp = temp.next;
+        for (int i = 0; i < n; i++) {
+            pointer2 = pointer2.next;
         }
 
-        // Step 2: Convert nth from end to nth from start
-        int nthFromStart = (size - n) + 1;
-
-        // Step 3: If head needs to be deleted
-        if (nthFromStart == 1) {
-            return head.next;
+        while (pointer2.next != null) {
+            pointer1 = pointer1.next;
+            pointer2 = pointer2.next;
         }
 
-        // Step 4: Move to previous node
-        int count = 1;
-        ListNode prev = head;
-
-        while (count < nthFromStart - 1) {
-            prev = prev.next;
-            count++;
-        }
-
-        // Step 5: Delete target node
-        prev.next = prev.next.next;
-
-        return head;
+        pointer1.next = pointer1.next.next;
+        return dummy.next;
     }
 }
 
-// Time Complexity  : O(n)
+public ListNode removeNthFromEnd(ListNode head, int n) {
+    int size = 0;
+    ListNode temp = head;
+
+    // Step 1: Find length
+    while (temp != null) {
+        size++;
+        temp = temp.next;
+    }
+
+    // Step 2: Convert nth from end to nth from start
+    int nthFromStart = (size - n) + 1;
+
+    // Step 3: If head needs to be deleted
+    if (nthFromStart == 1) {
+        return head.next;
+    }
+
+    // Step 4: Move to previous node
+    int count = 1;
+    ListNode prev = head;
+
+    while (count < nthFromStart - 1) {
+        prev = prev.next;
+        count++;
+    }
+
+    // Step 5: Delete target node
+    prev.next = prev.next.next;
+
+    return head;
+}
+
+// Time Complexity : O(n)
 // Space Complexity : O(1)

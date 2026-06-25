@@ -56,7 +56,7 @@ Each node is visited once.
 Space Complexity: O(1)
 Only pointers used.
 */
-
+import java.util.*;
 class Solution {
 
     public ListNode oddEvenList(ListNode head) {
@@ -81,5 +81,40 @@ class Solution {
     }
 }
 
-// Time Complexity  : O(n)
+// Time Complexity : O(n)
 // Space Complexity : O(1)
+
+public ListNode oddEvenList(ListNode head) {
+    ArrayList<Integer> list = new ArrayList<>();
+    ListNode temp = head;
+
+    if (head == null)
+        return head;
+
+    while (temp != null && temp.next != null) {
+        list.add(temp.val);
+        temp = temp.next.next;
+    }
+    if (temp != null) {
+        list.add(temp.val);
+    }
+
+    temp = head.next;
+    while (temp != null && temp.next != null) {
+        list.add(temp.val);
+        temp = temp.next.next;
+    }
+    if (temp != null) {
+        list.add(temp.val);
+    }
+
+    temp = head;
+    int i = 0;
+    while (temp != null) {
+        temp.val = list.get(i);
+        temp = temp.next;
+        i++;
+    }
+
+    return head;
+}

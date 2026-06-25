@@ -63,8 +63,6 @@ Only pointers used.
 class Solution {
 
     public ListNode deleteMiddle(ListNode head) {
-
-        // Edge case
         if (head == null || head.next == null) {
             return null;
         }
