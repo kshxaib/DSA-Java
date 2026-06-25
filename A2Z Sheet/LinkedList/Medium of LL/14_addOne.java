@@ -98,7 +98,6 @@ class Solution {
     }
 
     public int helper(ListNode temp) {
-
         if (temp == null) {
             return 1;
         }
