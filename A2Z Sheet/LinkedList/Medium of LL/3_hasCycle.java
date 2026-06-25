@@ -46,7 +46,7 @@ At most one full traversal.
 Space Complexity: O(1)
 No extra memory used.
 */
-
+import java.util.*;
 class Solution {
 
     public boolean hasCycle(ListNode head) {
@@ -68,3 +68,25 @@ class Solution {
 
 // Time Complexity  : O(n)
 // Space Complexity : O(1)
+
+
+
+
+public class Solution1 {
+    
+    public boolean hasCycle(ListNode head) {
+        ListNode temp = head;
+        Map<ListNode, Integer> map = new HashMap<>();
+
+        while(temp != null){
+            if(map.containsKey(temp)){
+                return true;
+            }
+
+            map.put(temp, 1);
+            temp = temp.next;
+        }
+
+        return false;
+    }
+}
