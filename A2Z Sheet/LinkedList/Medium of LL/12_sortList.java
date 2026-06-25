@@ -115,6 +115,65 @@ Dummy nodes are constant extra space.
 */
 
 class Solution {
+    class ListNode {
+        public int data;
+        public ListNode next;
+
+        ListNode() {
+            data = 0;
+            next = null;
+        }
+
+        ListNode(int x) {
+            data = x;
+            next = null;
+        }
+
+        ListNode(int x, ListNode next) {
+            data = x;
+            this.next = next;
+        }
+    }
+
+    public ListNode sortListBrute(ListNode head) {
+        int countOf0s = 0;
+        int countOf1s = 0;
+        int countOf2s = 0;
+
+        ListNode temp = head;
+        while (temp != null) {
+            if (temp.data == 0)
+                countOf0s++;
+            if (temp.data == 1)
+                countOf1s++;
+            if (temp.data == 2)
+                countOf2s++;
+
+            temp = temp.next;
+        }
+
+        temp = head;
+        while (countOf0s > 0) {
+            temp.data = 0;
+            temp = temp.next;
+            countOf0s--;
+        }
+
+        while (countOf1s > 0) {
+            temp.data = 1;
+            temp = temp.next;
+            countOf1s--;
+        }
+
+        while (countOf2s > 0) {
+            temp.data = 2;
+            temp = temp.next;
+            countOf2s--;
+        }
+
+        return head;
+    }
+
     public ListNode sortList(ListNode head) {
         if (head == null || head.next == null) {
             return head;
@@ -163,5 +222,5 @@ class Solution {
     }
 }
 
-// Time Complexity  : O(n)
+// Time Complexity : O(n)
 // Space Complexity : O(1)

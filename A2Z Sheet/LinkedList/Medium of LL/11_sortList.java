@@ -60,11 +60,31 @@ Space Complexity: O(log n)
 Explanation:
 Recursive call stack is used.
 */
+import java.util.*;
+ public ListNode sortListBrute(ListNode head) {
+        ListNode temp = head;
+        ArrayList<Integer> list = new ArrayList<>();
+
+        while(temp != null){
+            list.add(temp.val);
+            temp = temp.next;
+        }
+
+        Collections.sort(list);
+
+        temp = head;
+        int i=0;
+        while(temp != null){
+            temp.val = list.get(i);
+            temp = temp.next;
+            i++;
+        }
+
+        return head;
+    }
 
 class Solution {
-
     public ListNode sortList(ListNode head) {
-        // Base case
         if (head == null || head.next == null) {
             return head;
         }
@@ -132,3 +152,6 @@ class Solution {
 
 // Time Complexity  : O(n log n)
 // Space Complexity : O(log n)
+
+
+
