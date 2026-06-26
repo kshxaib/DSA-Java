@@ -155,43 +155,77 @@ Space Complexity: O(N) for newly created nodes
 */
 
 class Solution {
+
+    class ListNode {
+        int val;
+        ListNode next;
+        ListNode child;
+
+        ListNode() {
+            val = 0;
+            next = null;
+            child = null;
+        }
+
+        ListNode(int data) {
+            val = data;
+            next = null;
+            child = null;
+        }
+
+        ListNode(int data, ListNode nextNode, ListNode childNode) {
+            val = data;
+            next = nextNode;
+            child = childNode;
+        }
+    }
+
     public ListNode flattenLinkedList(ListNode head) {
-        if(head == null || head.next == null){
+        // Step 1: If the list is empty or contains only one main list, it is already flattened.
+        if (head == null || head.next == null) {
             return head;
         }
 
-        ListNode mergedHead = flattenLinkedList(head.next);
-        return merge(head, mergedHead);
+        // Step 2: Recursively flatten the remaining lists
+        ListNode flattenedRightList = flattenLinkedList(head.next);
+
+        // Step 3: Merge the current child list with the flattened right-side list
+        return mergeSortedLists(head, flattenedRightList);
     }
 
-    public ListNode merge(ListNode temp1, ListNode temp2){
-        ListNode dummy = new ListNode(-1);
-        ListNode dummyTemp = dummy;
+    private ListNode mergeSortedLists(ListNode firstList, ListNode secondList) {
+        ListNode dummy = new ListNode(-1);  // Dummy node to simplify merging
+        ListNode current = dummy;
 
-        while(temp1 != null && temp2 != null){
-            if(temp1.val <= temp2.val){
-                dummyTemp.child = new ListNode(temp1.val);
-                temp1 = temp1.child;
+        while (firstList != null && secondList != null) {   // Step 4: Merge both sorted child lists
+            if (firstList.val <= secondList.val) {
+                current.child = firstList;
+                firstList = firstList.child;
             } else {
-                dummyTemp.child = new ListNode(temp2.val);
-                temp2 = temp2.child;
+                current.child = secondList;
+                secondList = secondList.child;
             }
 
-            dummyTemp = dummyTemp.child;
+            current = current.child;    // Move forward in merged list
+            current.next = null;        // Remove old next pointer
         }
 
-        while (temp1 != null) {
-            dummyTemp.child = new ListNode(temp1.val);
-            dummyTemp = dummyTemp.child;
-            temp1 = temp1.child;
+        while (firstList != null) {     // Step 5: Attach remaining nodes from first list
+            current.child = firstList;
+            current = current.child;
+            firstList = firstList.child;
+
+            current.next = null;
         }
 
-        while (temp2 != null) {
-            dummyTemp.child = new ListNode(temp2.val);
-            dummyTemp = dummyTemp.child;
-            temp2 = temp2.child;
+        while (secondList != null) {    // Step 6: Attach remaining nodes from second list
+            current.child = secondList;
+            current = current.child;
+            secondList = secondList.child;
+
+            current.next = null;
         }
 
-        return dummy.child;
+        return dummy.child;    // Step 7: Return the head of the merged child list
     }
 }
