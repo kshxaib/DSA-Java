@@ -162,8 +162,9 @@ Only pointer variables used
 
 class Solution {
     public ListNode rotateRight(ListNode head, int k) {
-        if (head == null || head.next == null || k == 0) return head;
+        if (head == null || head.next == null || k == 0)  return head;  // Step 1: edge cases
 
+        // Step 2: Find the size of the linked list and keep a reference to the last node (tail)
         ListNode tail = head;
         int size = 1;
 
@@ -172,21 +173,24 @@ class Solution {
             size++;
         }
 
-        k = k % size;
-        if (k == 0) return head;
+        k = k % size;   // Step 3: Reduce unnecessary rotations
+        if (k == 0) return head;    // If k becomes 0, no rotation is needed
 
-        int n = size - k;
+        int n = size - k;   // Step 4: Find the position of the new tail
+
         ListNode temp = head;
         int count = 1;
-        while(temp != null && count < n){
+
+        while (temp != null && count < n) {
             temp = temp.next;
             count++;
         }
 
-        tail.next = head;
-        head = temp.next;
-        temp.next = null;
+        
+        tail.next = head;   // Step 5: Make the linked list circular
+        head = temp.next;   // Step 6: The node after the new tail becomes the new head
+        temp.next = null;   // Step 7: Break the circular linked list
 
-        return head;
+        return head;        // Step 8: Return the new head
     }
 }

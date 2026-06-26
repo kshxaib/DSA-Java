@@ -104,18 +104,14 @@ Only pointer manipulation used.
 */
 
 class Solution {
-
     public ListNode reverseKGroup(ListNode head, int k) {
-
         ListNode temp = head;
         ListNode prev = null;
 
         while (temp != null) {
-
             ListNode kthNode = findKthNode(temp, k);
 
-            // less than k nodes left
-            if (kthNode == null) {
+            if (kthNode == null) {  // less than k nodes left
                 if (prev != null) {
                     prev.next = temp;
                 }
@@ -123,15 +119,11 @@ class Solution {
             }
 
             ListNode nextNode = kthNode.next;
+            kthNode.next = null;    // detach current k-group
 
-            // detach current k-group
-            kthNode.next = null;
-
-            // reverse current group
-            reverse(temp);
-
-            // first group
-            if (temp == head) {
+            reverse(temp);  // reverse current group
+            
+            if (temp == head) {     // first group
                 head = kthNode;
             } else {
                 prev.next = kthNode;
