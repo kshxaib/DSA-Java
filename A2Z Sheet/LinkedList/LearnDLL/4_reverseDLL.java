@@ -40,9 +40,7 @@ In-place reversal.
 */
 
 class Solution {
-
     public ListNode reverseDLL(ListNode head) {
-
         ListNode curr = head;
         ListNode prev = null;
         ListNode next;
