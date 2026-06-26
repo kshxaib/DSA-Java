@@ -1,5 +1,3 @@
-import java.util.*;
-
 class Solution {
     class Node {
         int val;
@@ -14,82 +12,81 @@ class Solution {
     }
 
     public Node copyRandomList(Node head) {
-        Map<Node, Node> map = new HashMap<>(); //<original, createdOne>
-
-        Node temp = head;
-        while(temp != null){
-            Node newNode = new Node(temp.val);
-            map.put(temp, newNode);
-
-            temp = temp.next;
+        if (head == null) {
+            return null;
         }
 
-        temp = head;
-        while(temp != null){
-            Node node = map.get(temp);
-            node.next = map.get(temp.next);
-            node.random = map.get(temp.random);
-
-            temp = temp.next;
-        }
-
-        return map.get(head);
-    }
-
-
-    public Node copyRandomList(Node head) {
-        if (head == null) return null;
-
+        // Step 1: Insert copied nodes between original nodes
         insertCopyInBetween(head);
 
+        // Step 2: Connect random pointers of the copied nodes
         connectRandomPointers(head);
 
-        Node newHead = extractCopiedList(head);
-
-        return newHead;
+        // Step 3: Separate the copied list from the original list
+        return extractCopiedList(head);
     }
 
-    private void insertCopyInBetween(Node head){
+    // Function to insert copied nodes between original nodes
+    private void insertCopyInBetween(Node head) {
         Node temp = head;
-        while(temp != null){
-            Node nextNode = temp.next;
 
-            Node newNode = new Node(temp.val);
-            temp.next = newNode;
+        while (temp != null) {
+            Node nextNode = temp.next;  // Store the next original node
+            Node newNode = new Node(temp.val);  // Create a copy of the current node
+
+            // Point the copied node's next to the next original node
             newNode.next = nextNode;
 
-            temp = nextNode;
+            // Insert the copied node after the original node
+            temp.next = newNode;
+
+            temp = nextNode;    // Move to the next original node
         }
     }
 
-    private void connectRandomPointers(Node head){
+    // Function to connect random pointers of the copied nodes
+    private void connectRandomPointers(Node head) {
         Node temp = head;
-        while(temp != null){
-            Node copiedNextNode = temp.next;
-            
-            if(temp.random != null){
+
+        while (temp != null) {
+            Node copiedNextNode = temp.next;    // Access the copied node
+
+            // If the original node has a random pointer
+            if (temp.random != null) {
+
+                // Connect the copied node's random pointer to the copied random node
                 copiedNextNode.random = temp.random.next;
+
             } else {
-                copiedNextNode.random = null;
+                copiedNextNode.random = null;   // Otherwise point to null
             }
 
-            temp = temp.next.next;
+            temp = temp.next.next;  // Move to the next original node
         }
     }
 
-    private Node extractCopiedList(Node head){
+    // Function to separate the copied list from the original linked list
+    private Node extractCopiedList(Node head) {
+        // Create a dummy node for the copied list
         Node dummy = new Node(-1);
         Node dTemp = dummy;
 
         Node temp = head;
-        while(temp != null){
+
+        while (temp != null) {
+
+            // Add copied node to the copied linked list
             dTemp.next = temp.next;
             dTemp = dTemp.next;
 
+            // Restore the original linked list
             temp.next = temp.next.next;
+
+            // Move to the next original node
             temp = temp.next;
         }
 
+        // Return the head of the copied linked list
         return dummy.next;
     }
 }
