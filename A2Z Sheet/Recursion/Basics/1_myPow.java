@@ -81,7 +81,7 @@ class Solution {
     }
 
     private double power(double x, long n) {
-        if (n == 1) return x;
+        if (n == 0) return 1;
 
         double half = power(x, n / 2);
 
