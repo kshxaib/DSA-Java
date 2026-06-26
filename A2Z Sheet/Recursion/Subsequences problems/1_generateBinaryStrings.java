@@ -55,6 +55,7 @@ Exact count follows Fibonacci pattern.
 Space Complexity: O(n)
 Recursion stack depth = n
 */
+import java.util.*;
 
 class Solution {
     public List<String> generateBinaryStrings(int n) {
