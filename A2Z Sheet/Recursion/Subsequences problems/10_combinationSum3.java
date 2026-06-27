@@ -51,6 +51,7 @@ Since numbers are fixed (1–9)
 Space Complexity: O(k)
 Recursion depth limited to k
 */
+import java.util.*;
 
 class Solution {
     public List<List<Integer>> combinationSum3(int k, int n) {
@@ -62,7 +63,9 @@ class Solution {
         return ans;
     }
 
-    public void findCombinations(List<List<Integer>> ans, List<Integer> curr, int num, int k, int n){
+    public void findCombinations(List<List<Integer>> ans, List<Integer> curr, 
+        int num, int k, int n){
+            
         if(n == 0 && curr.size() == k){
             ans.add(new ArrayList<>(curr));
             return;

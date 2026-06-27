@@ -1,3 +1,4 @@
+
 /*
         COMBINATION SUM II (NO REUSE + HANDLE DUPLICATES)
 
@@ -47,6 +48,7 @@ But pruning + duplicate skipping reduces work
 Space Complexity: O(k)
 k = max depth of recursion
 */
+import java.util.*;
 
 class Solution {
     public List<List<Integer>> combinationSum2(int[] candidates, int target) {
@@ -59,31 +61,26 @@ class Solution {
         return ans;
     }
 
-    public void findCombinations(int candidates[], List<List<Integer>> ans, List<Integer> curr, int index, int target){
-        if(target == 0){
+    public void findCombinations(int candidates[], List<List<Integer>> ans,
+            List<Integer> curr, int index, int target) {
+
+        if (target == 0) {
             ans.add(new ArrayList<>(curr));
             return;
         }
 
-        for(int i=index; i<candidates.length; i++){
-
-            // skip duplicates
-            if(i > index && candidates[i] == candidates[i -1]){
+        for (int i = index; i < candidates.length; i++) {
+            if (i > index && candidates[i] == candidates[i - 1]) {  // skip duplicates
                 continue;
             }
-
-            // pruning
-            if(candidates[i] > target){
+            
+            if (candidates[i] > target) {   // pruning
                 break;
             }
 
             curr.add(candidates[i]);
-
-            // move to next index (no reuse)
-            findCombinations(candidates, ans, curr, i +1, target - candidates[i]);
-
-            // backtrack
-            curr.remove(curr.size() -1);
+            findCombinations(candidates, ans, curr, i + 1, target - candidates[i]); // move to next index     
+            curr.remove(curr.size() - 1);   // backtrack
         }
     }
 }
