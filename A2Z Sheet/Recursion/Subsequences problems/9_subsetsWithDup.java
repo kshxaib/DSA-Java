@@ -1,3 +1,4 @@
+
 /*
         SUBSETS WITH DUPLICATES (UNIQUE POWER SET)
 
@@ -48,29 +49,38 @@ less than 2^n due to pruning
 Space Complexity: O(n)
 Recursion depth
 */
+import java.util.*;
+
 class Solution {
     public List<List<Integer>> subsetsWithDup(int[] nums) {
         List<List<Integer>> ans = new ArrayList<>();
-        Arrays.sort(nums); 
+        Arrays.sort(nums);
 
         findSubsets(nums, ans, new ArrayList<>(), 0);
         return ans;
     }
 
     public void findSubsets(int[] nums, List<List<Integer>> ans,
-                            List<Integer> curr, int index) {
+            List<Integer> curr, int index) {
 
-        ans.add(new ArrayList<>(curr)); // add at every step
+        // Every current subset is a valid answer.
+        ans.add(new ArrayList<>(curr));
 
+        // Try every element starting from the current index.
         for (int i = index; i < nums.length; i++) {
 
-            // skip duplicates
-            if (i > index && nums[i] == nums[i - 1]) continue;
+            // Skip duplicates at the same recursion level.
+            if (i > index && nums[i] == nums[i - 1]) {
+                continue;
+            }
 
+            // Choose current element.
             curr.add(nums[i]);
 
+            // Explore further subsets.
             findSubsets(nums, ans, curr, i + 1);
 
+            // Backtrack.
             curr.remove(curr.size() - 1);
         }
     }
