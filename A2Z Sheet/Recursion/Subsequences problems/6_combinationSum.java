@@ -1,3 +1,4 @@
+
 /*
         COMBINATION SUM (UNLIMITED USE OF ELEMENTS)
 
@@ -50,6 +51,7 @@ depends on branching and pruning.
 Space Complexity: O(k)
 Recursion depth depends on target / smallest element
 */
+import java.util.*;
 
 class Solution {
     public List<List<Integer>> combinationSum(int[] candidates, int target) {
@@ -61,7 +63,9 @@ class Solution {
         return ans;
     }
 
-    public void findCombinations(int candidates[], List<List<Integer>> ans, List<Integer> curr, int index, int target) {
+    public void findCombinations(int candidates[], List<List<Integer>> ans,
+            List<Integer> curr, int index, int target) {
+                
         if (index == candidates.length) {
             if (target == 0) {
                 ans.add(new ArrayList<>(curr));
@@ -69,16 +73,14 @@ class Solution {
             return;
         }
 
-        // pick
         if (candidates[index] <= target) {
             curr.add(candidates[index]);
             target = target - candidates[index];
             findCombinations(candidates, ans, curr, index, target);
-            curr.remove(curr.size() -1);
+            curr.remove(curr.size() - 1);
             target = target + candidates[index];
         }
 
-        // not pick
         findCombinations(candidates, ans, curr, index + 1, target);
     }
-}       
+}
