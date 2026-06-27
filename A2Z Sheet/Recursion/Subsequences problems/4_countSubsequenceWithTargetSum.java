@@ -63,18 +63,13 @@ class Solution {
 
     public int findCount(int[] nums, int index, int sum, int k) {
         if (index == nums.length) {
-            if(sum == k){
-                return 1;
-            } else {
-                return 0;
-            }
+            if(sum == k) return 1;
+            else return 0;
         }
+        
+        int left = findCount(nums, index + 1, sum + nums[index], k);    // pick
 
-        // pick
-        int left = findCount(nums, index + 1, sum + nums[index], k);
-
-        // not pick
-        int right = findCount(nums, index + 1, sum, k);
+        int right = findCount(nums, index + 1, sum, k);     // not pick
 
         return left + right;
     }
