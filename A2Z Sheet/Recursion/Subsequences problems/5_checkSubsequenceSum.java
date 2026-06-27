@@ -62,25 +62,24 @@ Recursion stack.
 
 class Solution {
     public boolean checkSubsequenceSum(int[] nums, int k) {
-        return checkSum(nums, 0, 0, k);
-    }
-
-    public boolean checkSum(int nums[], int index, int sum, int k){
-        if(index == nums.length){
-            if(sum == k){
-                return true;
-            }
-            return false;
-        }
-        
-        if(checkSum(nums, index +1, sum + nums[index], k) == true){
-            return true;
-        }
-
-        if(checkSum(nums, index +1, sum, k) == true){
+        int index = 0;
+        int sum = 0;
+        if (checkSum(nums, index, sum, k) == true) {
             return true;
         }
 
         return false;
+    }
+
+    public boolean checkSum(int nums[], int index, int sum, int k) {
+        if (index == nums.length) {
+            if (sum == k) {
+                return true;
+            }
+            return false;
+        }
+
+        return checkSum(nums, index + 1, sum + nums[index], k) ||
+                checkSum(nums, index + 1, sum, k);
     }
 }
