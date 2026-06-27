@@ -72,18 +72,12 @@ class Solution {
             }
             return false;
         }
-
-        // pick
-        sum += nums[index];
-        if(checkSum(nums, index +1, sum, k)){
+        
+        if(checkSum(nums, index +1, sum + nums[index], k) == true){
             return true;
         }
 
-        // backtrack
-        sum -= nums[index];
-
-        // not pick
-        if(checkSum(nums, index +1, sum, k)){
+        if(checkSum(nums, index +1, sum, k) == true){
             return true;
         }
 
