@@ -66,16 +66,16 @@ class Solution {
 
         String[] map = {"", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
 
-        findCombinations(ans, "", digits, map, 0);
+        findCombinations(ans, new StringBuilder(), digits, map, 0);
 
         return ans;
     }
 
-    public void findCombinations(List<String> ans, String curr, String digits, 
-        String[] map, int index) {
+    public void findCombinations(List<String> ans,  StringBuilder curr, 
+        String digits, String[] map, int index) {
 
         if (index == digits.length()) {
-            ans.add(curr);
+            ans.add(curr.toString());
             return;
         }
 
@@ -83,7 +83,9 @@ class Solution {
         String letters = map[currNum];
 
         for (int i=0; i<letters.length(); i++) {
-            findCombinations(ans, curr + letters.charAt(i), digits, map, index + 1);
+            curr.append(letters.charAt(i));
+            findCombinations(ans, curr, digits, map, index + 1);
+            curr.deleteCharAt(curr.length() - 1);
         }
     }
 }
