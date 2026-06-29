@@ -47,6 +47,7 @@ Space Complexity
 O(N^2) → board  
 O(N) → recursion stack
 */
+import java.util.*;
 
 class Solution {
     public List<List<String>> solveNQueens(int n) {
@@ -65,9 +66,7 @@ class Solution {
     }
 
     public void findNQueens(char board[][], List<List<String>> ans, int col){
-
-        // base case: all queens placed
-        if(col == board.length){
+        if(col == board.length){     // base case: all queens placed
             List<String> temp = new ArrayList<>();
 
             for(int i=0; i<board.length; i++){
@@ -82,32 +81,25 @@ class Solution {
         for(int row=0; row<board.length; row++){
             if(isSafe(board, row, col)){
 
-                // place queen
-                board[row][col] = 'Q';
-
-                // move to next column
-                findNQueens(board, ans, col + 1);
-
-                // backtrack
-                board[row][col] = '.';
+                board[row][col] = 'Q';  // place queen
+                
+                findNQueens(board, ans, col + 1);   // move to next column
+                
+                board[row][col] = '.';  // backtrack
             }
         }
     }
 
     public boolean isSafe(char board[][], int row, int col){
-
-        // check left row
-        for(int j=0; j<col; j++){
+        for(int j=0; j<col; j++){   // check left row
             if(board[row][j] == 'Q') return false;
         }
-
-        // check upper-left diagonal
-        for(int i=row, j=col; i>=0 && j>=0; i--, j--){
+        
+        for(int i=row, j=col; i>=0 && j>=0; i--, j--){  // check upper-left diagonal
             if(board[i][j] == 'Q') return false;
         }
-
-        // check lower-left diagonal
-        for(int i=row, j=col; i<board.length && j>=0; i++, j--){
+        
+        for(int i=row, j=col; i<board.length && j>=0; i++, j--){    // check lower-left diagonal
             if(board[i][j] == 'Q') return false;
         }
 
