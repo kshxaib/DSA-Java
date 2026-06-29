@@ -65,10 +65,10 @@ Worst case substring check + lookup
 Space Complexity: O(n)
 DP array
 */
+import java.util.*;
 
 class Solution {
     public boolean wordBreak(String s, List<String> wordDict) {
-
         // Step 1: Convert list to set for fast lookup
         Set<String> wordSet = new HashSet<>(wordDict);
 
@@ -83,7 +83,7 @@ class Solution {
         // Step 3: DP array
         boolean dp[] = new boolean[n+1];
 
-        // Step 4: Base case
+        // Step 4: Base case: empty string can be segmented
         dp[0] = true;
 
         // Step 5: Fill DP
@@ -99,7 +99,6 @@ class Solution {
             }
         }
 
-        // Step 6: Answer
-        return dp[n];
+        return dp[n];   // Step 6: Answer
     }
 }
