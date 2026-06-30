@@ -58,12 +58,12 @@ Space Complexity: O(1)
 
 class Solution {
     public int findRangeXOR(int l, int r) {
-        int tillLMinus1 = findXorTillN(l -1);
-        int tillR = findXorTillN(r);
+        int tillLMinus1 = findXorTill(l -1);
+        int tillR = findXorTill(r);
         return tillLMinus1 ^ tillR;
     }
 
-    public int findXorTillN(int n) {
+    public int findXorTill(int n) {
         if (n % 4 == 0) return n;
         if (n % 4 == 1) return 1;
         if (n % 4 == 2) return n + 1;
