@@ -46,6 +46,8 @@ Each element pushed + popped once
 Space Complexity: O(n)
 */
 
+import java.util.*;
+
 class Solution {
     public int[] nextSmallerElements(int[] arr) {
         int n = arr.length;

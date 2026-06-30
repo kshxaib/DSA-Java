@@ -54,8 +54,38 @@ Each element pushed/popped at most twice
 Space Complexity: O(n)
 */
 
+import java.util.*;
 
 class Solution {
+    public int[] nextGreaterElementsBrute(int[] nums) {
+        int n = nums.length;
+        int ans[] = new int [n];
+        
+        for(int i=0; i<n; i++){
+            int greater = -1;
+
+            for(int j=i+1; j<n; j++){
+                if(nums[j] > nums[i]){
+                    greater = nums[j];
+                    break;
+                }
+            }
+
+            if(greater == -1){
+                for(int j=0; j<i; j++){
+                    if(nums[j] > nums[i]){
+                        greater = nums[j];
+                        break;
+                    }
+                }
+            }
+
+            ans[i] = greater;
+        }
+
+        return ans;
+    }
+
     public int[] nextGreaterElements(int[] nums) {
         int n = nums.length;
         int ans[] = new int[n];
