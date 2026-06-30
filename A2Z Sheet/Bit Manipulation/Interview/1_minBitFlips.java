@@ -63,7 +63,9 @@ class Solution {
         int count = 0;
 
         while(xor > 0){
-            count = count + (xor & 1);
+            if((xor & 1) == 1){
+                count++;
+            }
             xor = xor >> 1;
         }
 
