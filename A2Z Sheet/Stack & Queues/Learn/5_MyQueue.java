@@ -1,3 +1,5 @@
+import java.util.*;
+
 class MyQueue {
 
     Stack<Integer> stack1;
@@ -9,38 +11,38 @@ class MyQueue {
     }
     
     public void push(int x) {
+        while (!stack1.isEmpty()) {
+            stack2.push(stack1.pop());
+        }
+
         stack1.push(x);
+
+        while (!stack2.isEmpty()) {
+            stack1.push(stack2.pop());
+        }
     }
     
     public int pop() {
-        if (empty()) {
-            throw new RuntimeException("Queue is empty");
+        if (stack1.isEmpty()) {
+            System.out.println("Stack is empty");
+            return -1; 
         }
 
-        if(stack2.isEmpty()){
-            while(!stack1.isEmpty()){
-                stack2.push(stack1.pop());
-            }
-        }
+        int topElement = stack1.pop(); 
 
-        return stack2.pop();
+        return topElement;
     }
     
     public int peek() {
-        if (empty()) {
-            throw new RuntimeException("Queue is empty");
+        if (stack1.isEmpty()) {
+            System.out.println("Stack is empty");
+            return -1; 
         }
 
-        if(stack2.isEmpty()){
-            while(!stack1.isEmpty()){
-                stack2.push(stack1.pop());
-            }
-        }
-
-        return stack2.peek();
+        return stack1.peek();
     }
     
     public boolean empty() {
-        return stack1.isEmpty() && stack2.isEmpty();
+        return stack1.isEmpty();
     }
 }

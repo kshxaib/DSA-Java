@@ -1,39 +1,38 @@
+import java.util.*;
+
 class MyStack {
-    Queue<Integer> queue1;
-    Queue<Integer> queue2;
+    Queue<Integer> q;
 
     public MyStack() {
-        queue1 = new LinkedList<>();
-        queue2 = new LinkedList<>();
+        q = new LinkedList<>();
     }
-    
+
     public void push(int x) {
-        queue2.add(x);
+        int s = q.size();
 
-        while(!queue1.isEmpty()){
-            queue2.add(queue1.remove());
+        // Insert new element.
+        q.add(x);
+
+        // Move old elements behind the new element.
+        for (int i = 0; i < s; i++) {
+            q.add(q.poll());
         }
-
-        Queue<Integer> temp = queue1;
-        queue1 = queue2;
-        queue2 = temp;
     }
 
-     public int pop() {
-        if (empty()) {
-            throw new RuntimeException("Stack is empty");
-        }
-        return queue1.remove();
+    public int pop() {
+        // Remove and return top element.
+        int n = q.peek();
+        q.poll();
+        return n;
     }
-    
+
     public int top() {
-        if (empty()) {
-            throw new RuntimeException("Stack is empty");
-        }
-        return queue1.peek();
+        // Return top element.
+        return q.peek();
     }
-    
+
     public boolean empty() {
-        return queue1.isEmpty();
+        // Stack is empty when queue is empty.
+        return q.isEmpty();
     }
 }
