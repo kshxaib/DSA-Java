@@ -83,34 +83,41 @@ class ArrayStack {
     public ArrayStack() {
         size = 10;
         stack = new int[size];
-        top = -1;
+        top = -1; // Stack is initially empty.
     }
 
     public void push(int x) {
-        if(top == size - 1){
+        // Check for stack overflow.
+        if (top == size - 1) {
             throw new RuntimeException("Stack Overflow");
         }
 
+        // Move top and insert element.
         stack[++top] = x;
     }
 
     public int pop() {
-        if(top == -1){
+        // Check for stack underflow.
+        if (top == -1) {
             throw new RuntimeException("Stack Underflow");
         }
 
+        // Return top element and move top back.
         return stack[top--];
     }
 
     public int peek() {
-        if(top == -1){
+        // Check if stack is empty.
+        if (top == -1) {
             throw new RuntimeException("Stack Underflow");
         }
 
+        // Return top element.
         return stack[top];
     }
 
     public boolean isEmpty() {
+        // Stack is empty when top = -1.
         return top == -1;
     }
 }
