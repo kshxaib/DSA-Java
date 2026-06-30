@@ -67,6 +67,7 @@ Time Complexity: O(n)
 Space Complexity: O(n)
 (stack in worst case)
 */
+import java.util.*;
 
 class Solution {
     public boolean isValid(String s) {

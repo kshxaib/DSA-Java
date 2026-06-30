@@ -44,6 +44,7 @@ getMin → O(1)
 
 Space Complexity: O(n)
 */
+import java.util.*;
 
 class MinStack {
     
@@ -64,14 +65,14 @@ class MinStack {
     }
     
     public void pop() {
-        if(minStack.peek().equals(stack.peek())){
+        if(minStack.peek() == stack.peek()){
             minStack.pop();
         }
         stack.pop();
     }
     
     public int top() {
-        return stack.peek(); 
+        return stack.pop();
     }
     
     public int getMin() {
