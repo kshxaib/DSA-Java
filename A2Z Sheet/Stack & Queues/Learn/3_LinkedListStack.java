@@ -44,11 +44,11 @@ Space Complexity: O(n)
 
 class LinkedListStack {
 
-    private class Node{
+    private class Node {
         int data;
         Node next;
 
-        Node(int data){
+        Node(int data) {
             this.data = data;
             this.next = null;
         }
@@ -57,35 +57,43 @@ class LinkedListStack {
     private Node head;
 
     public LinkedListStack() {
-        head = null;
+        head = null; // Stack is initially empty.
     }
 
     public void push(int x) {
+        // Create a new node.
         Node newNode = new Node(x);
 
-        newNode.next = head;  
+        // Insert at the beginning.
+        newNode.next = head;
         head = newNode;
     }
 
     public int pop() {
-        if(isEmpty()){
+        // Stack is empty.
+        if (isEmpty()) {
             throw new RuntimeException("Stack Underflow");
         }
 
+        // Remove the top node.
         int val = head.data;
         head = head.next;
+
         return val;
     }
 
     public int top() {
-        if(isEmpty()){
+        // Stack is empty.
+        if (isEmpty()) {
             throw new RuntimeException("Stack Underflow");
         }
 
+        // Return top element.
         return head.data;
     }
 
     public boolean isEmpty() {
+        // Stack is empty when head is null.
         return head == null;
     }
 }
