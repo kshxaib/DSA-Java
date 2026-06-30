@@ -68,6 +68,11 @@ Space Complexity: O(1)
 
 class Solution {
     public boolean isPowerOfTwo(int n) {
+        // Power of 2 must be positive.
+        if (n <= 0) {
+            return false;
+        }
+
         if((n & (n-1)) == 0) return true;
         return false;
     }
