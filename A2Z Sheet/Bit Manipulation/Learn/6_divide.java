@@ -50,34 +50,43 @@ Space Complexity: O(1)
 
 class Solution {
     public int divide(int dividend, int divisor) {
-        if(dividend == divisor) return 1;
+        if (dividend == divisor) return 1;  // Same numbers.
 
+        // Handle overflow case.
         if (dividend == Integer.MIN_VALUE && divisor == -1) {
             return Integer.MAX_VALUE;
         }
 
+        // Determine sign.
         boolean sign = true;
-        if((dividend > 0 && divisor < 0) || (dividend < 0 && divisor > 0)){
+        if ((dividend > 0 && divisor < 0) || (dividend < 0 && divisor > 0)) {
             sign = false;
         }
 
+        // Work with positive long values.
         long a = Math.abs((long) dividend);
         long b = Math.abs((long) divisor);
 
         int ans = 0;
 
-        while(a >= b){
+        // Keep subtracting largest possible multiple.
+        while (a >= b) {
 
             int shift = 0;
 
-            while(a >= (b << (shift + 1))){
+            // Find maximum power of 2 multiple.
+            while (a >= (b << (shift + 1))) {
                 shift++;
             }
 
+            // Remove that multiple.
             a -= b << shift;
+
+            // Add corresponding quotient.
             ans += 1 << shift;
         }
 
+        // Apply sign.
         return sign ? ans : -ans;
     }
 }
