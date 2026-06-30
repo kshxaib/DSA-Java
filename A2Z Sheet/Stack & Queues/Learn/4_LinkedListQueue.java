@@ -55,37 +55,42 @@ class LinkedListQueue {
         }
     }
 
-    private Node head; // front
-    private Node tail; // rear
+    private Node head; // Front of queue.
+    private Node tail; // Rear of queue.
 
     public LinkedListQueue() {
         head = null;
-        tail = null;
+        tail = null; // Queue is initially empty.
     }
 
     public void push(int x) {
+        // Create a new node.
         Node newNode = new Node(x);
 
-        if(isEmpty()){
+        // First element.
+        if (isEmpty()) {
             head = newNode;
             tail = newNode;
             return;
         }
 
+        // Insert at rear.
         tail.next = newNode;
         tail = newNode;
     }
 
     public int pop() {
-        if(isEmpty()){
+        // Queue is empty.
+        if (isEmpty()) {
             throw new RuntimeException("Queue Underflow");
         }
 
+        // Remove front element.
         int val = head.data;
         head = head.next;
 
-        // update tail when queue becomes empty
-        if(head == null){
+        // Queue became empty.
+        if (head == null) {
             tail = null;
         }
 
@@ -93,18 +98,18 @@ class LinkedListQueue {
     }
 
     public int peek() {
-        if(isEmpty()){
+        // Queue is empty.
+        if (isEmpty()) {
             throw new RuntimeException("Queue Underflow");
         }
 
+        // Return front element.
         return head.data;
     }
 
     public boolean isEmpty() {
+        // Queue is empty when head is null.
         return head == null;
     }
 }
 
-/*
-
-*/
