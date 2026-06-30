@@ -1,5 +1,5 @@
 /*
-        SINGLE NUMBER II (TWO UNIQUE ELEMENTS)
+        SINGLE NUMBER III (TWO UNIQUE ELEMENTS)
 
 Definition:
 Given an array where:
@@ -62,40 +62,32 @@ Each group will give one unique number
 Time Complexity: O(n)
 Space Complexity: O(1)
 */
-
-class Solution {    
-    public int[] singleNumber(int[] nums) {        
+class Solution {
+    public int[] singleNumber(int[] nums) {
         int xor = 0;
-        for(int i=0; i<nums.length; i++){
-            xor = xor ^ nums[i];
+
+        for (int num : nums) {
+            xor ^= num;
         }
 
-        // first different bit
-        int shift = 0;
-        while(xor > 0){
-            if((xor & 1) == 0){
-                shift++;
-                xor = xor >> 1;
-            } else {
-                break;
-            }
-        }
+        // Rightmost set bit.
+        int mask = xor & (-xor);
 
         int setBucket = 0;
         int unsetBucket = 0;
 
-        for(int i=0; i<nums.length; i++){
-            if(((nums[i] >> shift) & 1) == 1){
-                setBucket = setBucket ^ nums[i];
-            } else {
-                unsetBucket = unsetBucket ^ nums[i];
+        for (int num : nums) {
+
+            // Bit is set.
+            if ((num & mask) != 0) {
+                setBucket ^= num;
+            }
+            // Bit is not set.
+            else {
+                unsetBucket ^= num;
             }
         }
 
-        if(setBucket > unsetBucket){
-            return new int[] {unsetBucket, setBucket};
-        } else {
-            return new int[] {setBucket, unsetBucket};
-        }
+        return new int[]{setBucket, unsetBucket};
     }
 }
