@@ -75,33 +75,45 @@ class ArrayQueue {
     }
 
     public void push(int x) {
-        if((rear + 1) % size == front){
+        // Queue is full.
+        if ((rear + 1) % size == front) {
             throw new RuntimeException("Queue Overflow");
         }
 
+        // Insert at rear.
         queue[rear] = x;
+
+        // Move rear circularly.
         rear = (rear + 1) % size;
     }
 
     public int pop() {
-        if(isEmpty()){
+        // Queue is empty.
+        if (isEmpty()) {
             throw new RuntimeException("Queue Underflow");
         }
 
+        // Remove front element.
         int value = queue[front];
+
+        // Move front circularly.
         front = (front + 1) % size;
+
         return value;
     }
 
     public int peek() {
-        if(isEmpty()){
+        // Queue is empty.
+        if (isEmpty()) {
             throw new RuntimeException("Queue Underflow");
         }
 
+        // Return front element.
         return queue[front];
     }
 
     public boolean isEmpty() {
+        // Queue is empty when front == rear.
         return front == rear;
     }
 }
