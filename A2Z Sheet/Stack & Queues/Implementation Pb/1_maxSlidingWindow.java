@@ -46,8 +46,26 @@ Each index added once, removed once.
 
 Space Complexity: O(k)
 */
+import java.util.*;
 
 class Solution {
+    public int[] maxSlidingWindowBrute(int[] nums, int k) {
+        int n = nums.length;
+        int ans[] = new int[n-k+1];
+
+        for(int i=0; i<= n - k; i++){
+            int maxVal = nums[i];
+
+            for(int j=i; j<i+k; j++){
+                maxVal = Math.max(maxVal, nums[j]);
+            }
+
+            ans[i] = maxVal;
+        }
+
+        return ans;
+    }
+    
     public int[] maxSlidingWindow(int[] nums, int k) {
         int n = nums.length;
         Deque<Integer> deque = new ArrayDeque<>();
