@@ -116,10 +116,7 @@ class Solution {
                 freq[s.charAt(j) - 'A']++;
 
                 // track most frequent char
-                maxFreq = Math.max(
-                    maxFreq,
-                    freq[s.charAt(j) - 'A']
-                );
+                maxFreq = Math.max(maxFreq, freq[s.charAt(j) - 'A']);
 
                 int windowSize = j - i + 1;
                 int replacements = windowSize - maxFreq;
@@ -157,15 +154,9 @@ class Solution {
             freq[s.charAt(right) - 'A']++;
 
             // highest freq in current / previous valid window
-            maxFreq = Math.max(
-                maxFreq,
-                freq[s.charAt(right) - 'A']
-            );
+            maxFreq = Math.max(maxFreq, freq[s.charAt(right) - 'A']);
 
-            /*
-                invalid if replacements needed > k
-                shrink window
-            */
+            //  invalid if replacements needed > k shrink window
             while((right - left + 1) - maxFreq > k){
                 freq[s.charAt(left) - 'A']--;
                 left++;
