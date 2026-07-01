@@ -79,36 +79,42 @@ put()  = O(1)
 Space Complexity: O(capacity)
 */
 
+import java.util.*;
+
 class LRUCache {
 
-    class Node{
+    class Node {
         int key;
         int val;
         Node next;
         Node prev;
 
-        Node(int key, int val){
+        Node(int key, int val) {
             this.key = key;
             this.val = val;
         }
     }
 
-    // dummy nodes
+    // Dummy head and tail nodes.
     Node head = new Node(-1, -1);
     Node tail = new Node(-1, -1);
 
     int cap;
 
+    // key -> node mapping.
     HashMap<Integer, Node> map = new HashMap<>();
 
     public LRUCache(int capacity) {
         cap = capacity;
+
+        // Initialize empty doubly linked list.
         head.next = tail;
         tail.prev = head;
     }
 
-    // insert node right after head (most recent)
-    public void addNode(Node newNode){
+    // Insert node after head (Most Recently Used).
+    public void addNode(Node newNode) {
+
         Node temp = head.next;
 
         newNode.next = temp;
@@ -118,8 +124,9 @@ class LRUCache {
         temp.prev = newNode;
     }
 
-    // remove any node
-    public void deleteNode(Node node){
+    // Remove node from linked list.
+    public void deleteNode(Node node) {
+
         Node prevNode = node.prev;
         Node nextNode = node.next;
 
@@ -128,35 +135,45 @@ class LRUCache {
     }
 
     public int get(int key) {
-        if(map.containsKey(key)){
+
+        // Key exists.
+        if (map.containsKey(key)) {
+
             Node resNode = map.get(key);
-            int val = resNode.val;
+            int value = resNode.val;
+
+            // Move accessed node to front (MRU).
             map.remove(key);
             deleteNode(resNode);
             addNode(resNode);
             map.put(key, head.next);
 
-            return val;
+            return value;
         }
 
+        // Key not found.
         return -1;
     }
 
     public void put(int key, int value) {
-        // if key already exists
-        if(map.containsKey(key)){
+
+        // Remove old node if key already exists.
+        if (map.containsKey(key)) {
+
             Node existingNode = map.get(key);
+
             map.remove(key);
             deleteNode(existingNode);
         }
 
-        // remove LRU if full
-        if(map.size() == cap){
+        // Cache full -> Remove Least Recently Used node.
+        if (map.size() == cap) {
+
             map.remove(tail.prev.key);
             deleteNode(tail.prev);
         }
 
-        // insert new node
+        // Insert new node at front.
         addNode(new Node(key, value));
         map.put(key, head.next);
     }
