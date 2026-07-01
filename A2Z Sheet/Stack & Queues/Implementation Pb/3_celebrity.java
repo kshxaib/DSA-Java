@@ -84,6 +84,31 @@ Space Complexity: O(1)
 */
 
 class Solution {
+    public int celebrityBrute(int[][] M) {
+        int n = M.length;
+
+        int[] knowsMe = new int[n];
+        int[] iKnow = new int[n];
+
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                if (M[i][j] == 1) {
+                    knowsMe[j]++;   // Person j is known by i.
+                    iKnow[i]++;     // Person i knows someone.
+                }
+            }
+        }
+
+        // Celebrity: known by everyone, knows no one.
+        for (int i = 0; i < n; i++) {
+            if (knowsMe[i] == n - 1 && iKnow[i] == 0) {
+                return i;
+            }
+        }
+
+        return -1;
+    }
+
     public int celebrity(int[][] M) {
         int n = M.length;
 
