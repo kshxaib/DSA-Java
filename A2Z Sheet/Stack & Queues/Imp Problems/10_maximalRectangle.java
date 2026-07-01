@@ -72,11 +72,10 @@ O(n * m) for prefixSum
 O(m) stack
 */
 
+import java.util.*;
 
 class Solution {
-
     public int maximalRectangle(char[][] matrix) {
-
         int n = matrix.length;
         int m = matrix[0].length;
 
