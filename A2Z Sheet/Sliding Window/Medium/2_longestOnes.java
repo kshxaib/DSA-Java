@@ -152,22 +152,19 @@ class Solution {
         int maxLen = 0;
 
         while(right < n){
-            // include current element
-            if(nums[right] == 0){
+            if(nums[right] == 0){   // include current element
                 countOf0++;
             }
 
-            // if invalid, move left once
-            if(countOf0 > k){
+            if(countOf0 > k){   // if invalid, move left once
                 if(nums[left] == 0){
                     countOf0--;
                 }
 
                 left++;
             }
-
-            // if valid, update answer
-            if(countOf0 <= k){
+            
+            if(countOf0 <= k){  // if valid, update answer
                 int len = right - left + 1;
                 maxLen = Math.max(maxLen, len);
             }
