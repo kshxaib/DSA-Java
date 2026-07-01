@@ -71,18 +71,17 @@ Each asteroid pushed/popped once
 
 Space Complexity: O(n)
 */
+import java.util.*;
 
 class Solution {
     public int[] asteroidCollision(int[] asteroids) {
         int n = asteroids.length;
-
-        // list used as stack
-        List<Integer> st = new ArrayList<>();
+        
+        List<Integer> st = new ArrayList<>();   // list used as stack
 
         for (int i = 0; i < n; i++) {
 
-            // moving right → push directly
-            if (asteroids[i] > 0) {
+            if (asteroids[i] > 0) { // moving right → push directly
                 st.add(asteroids[i]);
             }
 
@@ -90,8 +89,7 @@ class Solution {
             else {
 
                 // destroy smaller right-moving asteroids
-                while (!st.isEmpty()
-                        && st.get(st.size() - 1) > 0
+                while (!st.isEmpty() && st.get(st.size() - 1) > 0
                         && st.get(st.size() - 1) < Math.abs(asteroids[i])) {
 
                     st.remove(st.size() - 1);
@@ -105,9 +103,7 @@ class Solution {
                 }
 
                 // current asteroid survives
-                else if (st.isEmpty()
-                        || st.get(st.size() - 1) < 0) {
-
+                else if (st.isEmpty() || st.get(st.size() - 1) < 0) {
                     st.add(asteroids[i]);
                 }
             }
