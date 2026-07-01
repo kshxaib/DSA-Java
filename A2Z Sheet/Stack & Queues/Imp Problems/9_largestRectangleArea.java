@@ -1,3 +1,4 @@
+
 /*
         LARGEST RECTANGLE IN HISTOGRAM
 
@@ -52,34 +53,67 @@ Each index pushed/popped once
 
 Space Complexity: O(n)
 */
+import java.util.*;
 
 class Solution {
+    public int largestRectangleAreaBrute(int[] heights) {
+        int maxArea = 0;
+
+        // Loop through all possible start indices
+        for (int i = 0; i < heights.length; i++) {
+            int minHeight = Integer.MAX_VALUE;
+
+            // Loop through all possible end indices
+            for (int j = i; j < heights.length; j++) {
+                // Update minimum height in current range
+                minHeight = Math.min(minHeight, heights[j]);
+
+                // Calculate area of current rectangle
+                int area = minHeight * (j - i + 1);
+
+                // Update maxArea
+                maxArea = Math.max(maxArea, area);
+            }
+        }
+
+        return maxArea;
+    }
+
     public int largestRectangleArea(int[] heights) {
         int n = heights.length;
         int maxArea = 0;
+
+        // Monotonic increasing stack (stores indices).
         Stack<Integer> stack = new Stack<>();
 
-        for(int i = 0; i < n; i++){
-            // current bar smaller than previous bars
-            while(!stack.isEmpty() && heights[stack.peek()] >= heights[i]){
-                int element = heights[stack.pop()];
-                int nse = i;
-                int pse = stack.isEmpty() ? -1 : stack.peek();
+        for (int i = 0; i < n; i++) {
 
-                int area = element * (nse - pse - 1);
+            // Current bar is smaller, so rectangles end here.
+            while (!stack.isEmpty() && heights[stack.peek()] >= heights[i]) {   
+                int height = heights[stack.pop()];  // Height of rectangle.
+
+                int nse = i;    // Current index is Next Smaller Element.
+                int pse = stack.isEmpty() ? -1 : stack.peek();  // Stack top is Previous Smaller Element.
+
+                int width = nse - pse - 1;  // Width of rectangle.
+                int area = height * width;  // Calculate area.
+
                 maxArea = Math.max(maxArea, area);
             }
 
-            stack.push(i);
+            stack.push(i);  // Push current index.
         }
 
-        // remaining bars
-        while(!stack.isEmpty()){
-            int element = heights[stack.pop()];
-            int nse = n;
+        // Process remaining bars.
+        while (!stack.isEmpty()) {
+            int height = heights[stack.pop()];
+
+            int nse = n;    // No smaller element on the right.
             int pse = stack.isEmpty() ? -1 : stack.peek();
 
-            int area = element * (nse - pse - 1);
+            int width = nse - pse - 1;
+            int area = height * width;
+
             maxArea = Math.max(maxArea, area);
         }
 
