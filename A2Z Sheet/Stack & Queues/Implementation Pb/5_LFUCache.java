@@ -138,8 +138,7 @@ class LFUCache {
         DLLNode newNode = new DLLNode(key, value);
 
         // Frequency = 1 list.
-        DoubleLinkedList list =
-                freqMap.getOrDefault(1, new DoubleLinkedList());
+        DoubleLinkedList list = freqMap.getOrDefault(1, new DoubleLinkedList());
 
         list.addNode(newNode);
 
@@ -173,8 +172,7 @@ class LFUCache {
         node.freq++;
 
         // New frequency list.
-        DoubleLinkedList newList =
-                freqMap.getOrDefault(node.freq, new DoubleLinkedList());
+        DoubleLinkedList newList = freqMap.getOrDefault(node.freq, new DoubleLinkedList());
 
         // Add node to front (Most Recently Used).
         newList.addNode(node);
