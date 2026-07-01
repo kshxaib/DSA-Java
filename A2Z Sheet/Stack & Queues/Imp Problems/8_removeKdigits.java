@@ -63,6 +63,7 @@ Each digit pushed/popped once
 
 Space Complexity: O(n)
 */
+import java.util.*;
 
 class Solution {
     public String removeKdigits(String num, int k) {
@@ -71,7 +72,6 @@ class Solution {
         Stack<Character> stack = new Stack<>();
 
         for(int i = 0; i < n; i++){
-
             char digit = num.charAt(i);
 
             // remove bigger previous digits
@@ -99,9 +99,7 @@ class Solution {
         }
 
         // remove leading zeros of final answer
-        while(ans.length() > 0 &&
-              ans.charAt(ans.length() - 1) == '0') {
-
+        while(ans.length() > 0 && ans.charAt(ans.length() - 1) == '0') {
             ans.deleteCharAt(ans.length() - 1);
         }
 
