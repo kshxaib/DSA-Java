@@ -170,7 +170,7 @@ Use two-pointer version for stronger interviews.
 */
 
 class Solution {
-    public int trap(int[] height) {
+    public int trapBrute(int[] height) {
         int n = height.length;
 
         // leftMax[i] = max height from left till i
