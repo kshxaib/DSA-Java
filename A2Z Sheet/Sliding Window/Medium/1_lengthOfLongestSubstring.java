@@ -123,10 +123,7 @@ class Solution {
         while(right < n){
             int currChar = s.charAt(right);
 
-            /*
-                if character already appeared
-                inside current window
-            */
+            // if character already appeared inside current window
             if(hash[currChar] >= left){
                 left = hash[currChar] + 1;  // move left after duplicate
             }
