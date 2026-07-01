@@ -76,33 +76,42 @@ Each index pushed/popped once
 Space Complexity: O(n)
 */
 
+import java.util.*;
+
 class Solution {
+    public int sumSubarrayMinsBrute(int[] arr) {
+        int sum = 0;
+
+        for(int i=0; i<arr.length; i++){
+            int min = arr[i];
+
+            for(int j=i; j<arr.length; j++){
+                min = Math.min(min, arr[j]);
+
+                sum += min;
+            }
+        }
+
+        return sum;
+    }
+
     public int sumSubarrayMins(int[] arr) {
         int mod = 1000000007;
         int n = arr.length;
 
         long sum = 0;
 
-        // nse[i] = index of next smaller element
-        int[] nse = findNSE(arr);
-
-        // psee[i] = index of previous smaller or equal element
-        int[] psee = findPSEE(arr);
+        int[] nse = findNSE(arr);   // nse[i] = index of next smaller element
+        int[] psee = findPSEE(arr); // psee[i] = index of previous smaller or equal element
 
         for (int i = 0; i < n; i++) {
+            
+            long left = i - psee[i];    // how many choices to pick start index
+            long right = nse[i] - i;    // how many choices to pick end index
 
-            // how many choices to pick start index
-            long left = i - psee[i];
-
-            // how many choices to pick end index
-            long right = nse[i] - i;
-
-            // total subarrays where arr[i] is minimum
-            long freq = left * right;
-
-            // contribution of current element
-            long value = (freq * arr[i]) % mod;
-
+            long freq = left * right;   // total subarrays where arr[i] is minimum
+            
+            long value = (freq * arr[i]) % mod; // contribution of current element
             sum = (sum + value) % mod;
         }
 
