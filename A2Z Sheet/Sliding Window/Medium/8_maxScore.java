@@ -85,7 +85,6 @@ Space: O(1)
 
 class Solution {
     public int maxScore(int[] cardPoints, int k) {
-
         int n = cardPoints.length;
 
         // initial: take first k cards from left
@@ -96,7 +95,6 @@ class Solution {
         }
 
         int maxScore = leftSum;
-
         int rightSum = 0;
 
         // replace left picks with right picks one by one
@@ -108,10 +106,7 @@ class Solution {
             // add from right side
             rightSum += cardPoints[n - i - 1];
 
-            maxScore = Math.max(
-                maxScore,
-                leftSum + rightSum
-            );
+            maxScore = Math.max(maxScore, leftSum + rightSum);
         }
 
         return maxScore;
