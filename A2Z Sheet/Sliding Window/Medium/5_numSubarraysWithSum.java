@@ -51,7 +51,7 @@ Time: O(n²)
 
 import java.util.*;
 
-class Solution {
+// class Solution {
 
     public int numSubarraysWithSumBrute(int[] nums, int goal) {
         int ans = 0;
@@ -128,7 +128,7 @@ Space: O(1)
 
 Best for binary arrays only.
 */
-
+class Solution {
     public int numSubarraysWithSum(int[] nums, int goal) {
         int lessThanEqualsToGoal = countSubarrays(nums, goal);
         int lessThanEqualsToGoalMinus1 = countSubarrays(nums, goal - 1);
@@ -141,26 +141,20 @@ Best for binary arrays only.
         if(goal < 0) return 0;
 
         int n = nums.length;
-
-        int left = 0;
-        int right = 0;
+        int left = 0, right = 0;
 
         int sum = 0;
         int count = 0;
 
         while(right < n){
             sum += nums[right];
-
-            // shrink if invalid
-            while(sum > goal){
+            
+            while(sum > goal){  // shrink if invalid
                 sum -= nums[left];
                 left++;
             }
 
-            /*
-                all windows ending at right
-                from left...right are valid
-            */
+            // all windows ending at right from left...right are valid
             count += (right - left + 1);
             right++;
         }
