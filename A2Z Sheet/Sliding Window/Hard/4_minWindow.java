@@ -42,30 +42,30 @@ class Solution {
         int startingIdx = -1;
 
         int j = 0;
-        for(int i=0; i<n; i++){
-            if(j<m && s1.charAt(i) == s2.charAt(j)){
+        for (int i = 0; i < n; i++) {
+            if (j < m && s1.charAt(i) == s2.charAt(j)) {
                 j++;
 
-                if(j == m){
+                if (j == m) {
                     int endingIdx = i; // i was not increased yet
                     j--; // because j was already went out of bound
 
-                    while(j>=0){
-                        if(s1.charAt(i) == s2.charAt(j)){
+                    while (j >= 0) {
+                        if (s1.charAt(i) == s2.charAt(j)) {
                             j--;
                         }
                         i--;
                     }
-                    int windowStart = i+1;
-                    int len = endingIdx - windowStart +1;
+                    int windowStart = i + 1;
+                    int len = endingIdx - windowStart + 1;
 
-                    if(len < minLen){
+                    if (len < minLen) {
                         minLen = len;
                         startingIdx = windowStart;
                     }
 
                     i++;
-                    j=0;
+                    j = 0;
                 }
             }
         }
