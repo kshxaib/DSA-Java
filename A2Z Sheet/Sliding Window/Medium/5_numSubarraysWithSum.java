@@ -51,7 +51,7 @@ Time: O(n²)
 
 import java.util.*;
 
-// class Solution {
+class Solution {
 
     public int numSubarraysWithSumBrute(int[] nums, int goal) {
         int ans = 0;
@@ -128,7 +128,7 @@ Space: O(1)
 
 Best for binary arrays only.
 */
-class Solution {
+
     public int numSubarraysWithSum(int[] nums, int goal) {
         int lessThanEqualsToGoal = countSubarrays(nums, goal);
         int lessThanEqualsToGoalMinus1 = countSubarrays(nums, goal - 1);

@@ -117,12 +117,9 @@ Space = O(1)
         return atMost(nums, k) - atMost(nums, k - 1);
     }
 
-    // count subarrays with at most k odd numbers
     public int atMost(int[] nums, int k) {
         int n = nums.length;
-
-        int left = 0;
-        int right = 0;
+        int left = 0, right = 0;
 
         int odd = 0;
         int count = 0;
@@ -142,10 +139,7 @@ Space = O(1)
                 left++;
             }
 
-            /*
-                all subarrays ending at right
-                starting from left...right valid
-            */
+            // all subarrays ending at right starting from left...right valid
             count += (right - left + 1);
             right++;
         }
