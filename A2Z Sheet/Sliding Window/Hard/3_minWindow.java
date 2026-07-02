@@ -150,10 +150,8 @@ Space = O(256)
 
         while(right < n){
             char rightChar = s.charAt(right);
-
-            /*
-                if needed char found
-            */
+            
+            // if needed char found
             if(hash[rightChar] > 0){
                 count++;
             }
@@ -161,10 +159,7 @@ Space = O(256)
             // include char in window
             hash[rightChar]--;
 
-            /*
-                valid window:
-                matched all chars of t
-            */
+            // valid window: matched all chars of t            
             while(count == t.length()){
                 int len = right - left + 1;
 
@@ -177,10 +172,7 @@ Space = O(256)
                 char leftChar = s.charAt(left);
                 hash[leftChar]++;
 
-                /*
-                    if needed char removed,
-                    window invalid
-                */
+                // if needed char removed, window invalid
                 if(hash[leftChar] > 0){
                     count--;
                 }
