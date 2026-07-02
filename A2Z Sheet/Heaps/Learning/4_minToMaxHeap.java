@@ -41,7 +41,7 @@ Max Heap:
       /   \
      5     3
     / \   /
-   4  2  1
+   4   2 1
 
 
 Core Idea
@@ -76,8 +76,7 @@ Space Complexity: O(1)
 In-place conversion
 */
 
-class Solution {
-
+class Solution { 
     public int[] minToMaxHeap(int[] nums) {
         int n = nums.length;
 
