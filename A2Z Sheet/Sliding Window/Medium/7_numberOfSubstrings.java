@@ -115,13 +115,8 @@ Space = O(1)
             // include current char
             freq[s.charAt(right) - 'a']++;
 
-            /*
-                while window contains
-                a,b,c
-            */
-            while(freq[0] > 0 &&
-                  freq[1] > 0 &&
-                  freq[2] > 0){
+            // while window contains a,b,c            
+            while(freq[0] > 0 && freq[1] > 0 && freq[2] > 0){
 
                 // all substrings ending after right valid
                 count += (n - right);
