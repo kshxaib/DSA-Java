@@ -61,22 +61,23 @@ Expand right until distinct chars > k
 Time = O(n²)
 */
 
+import java.util.*;
 
 class Solution {
 
     public int kDistinctCharBrute(String s, int k) {
         int maxLen = 0;
 
-        for(int i = 0; i < s.length(); i++){
+        for (int i = 0; i < s.length(); i++) {
             Map<Character, Integer> freq = new HashMap<>();
 
-            for(int j = i; j < s.length(); j++){
+            for (int j = i; j < s.length(); j++) {
                 char ch = s.charAt(j);
 
                 freq.put(ch, freq.getOrDefault(ch, 0) + 1);
 
                 // invalid
-                if(freq.size() > k){
+                if (freq.size() > k) {
                     break;
                 }
 
@@ -88,41 +89,39 @@ class Solution {
         return maxLen;
     }
 
-
-/*
-2. OPTIMAL SLIDING WINDOW
-Maintain window with:
-distinct chars <= k
-
-If > k:
-shrink from left.
-
-Time = O(n)
-Space = O(k)
-*/
+    /*
+     * 2. OPTIMAL SLIDING WINDOW
+     * Maintain window with:
+     * distinct chars <= k
+     * 
+     * If > k:
+     * shrink from left.
+     * 
+     * Time = O(n)
+     * Space = O(k)
+     */
 
     public int kDistinctChar(String s, int k) {
         int n = s.length();
         int maxLen = 0;
 
-        int left = 0;
-        int right = 0;
+        int left = 0, right = 0;
 
         Map<Character, Integer> freq = new HashMap<>();
 
-        while(right < n){
+        while (right < n) {
             char ch = s.charAt(right);
 
             // include current char
             freq.put(ch, freq.getOrDefault(ch, 0) + 1);
 
             // shrink until valid
-            while(freq.size() > k){
+            while (freq.size() > k) {
                 char leftChar = s.charAt(left);
                 freq.put(leftChar, freq.get(leftChar) - 1);
 
                 // remove if count becomes zero
-                if(freq.get(leftChar) == 0){
+                if (freq.get(leftChar) == 0) {
                     freq.remove(leftChar);
                 }
 

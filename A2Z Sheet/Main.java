@@ -1,54 +1,38 @@
 import java.util.*;
 
-// Class representing a node in Doubly Linked List
-class Node {
-    // Stores data of the node
-    int data;
+public int kDistinctChar(String s, int k) {
+    int n = s.length();
+    int maxLen = 0;
 
-    // Pointer to the next node
-    Node next;
+    int left = 0, right = 0;
 
-    // Pointer to the previous node
-    Node prev;
+    Map<Character, Integer> freq = new HashMap<>();
 
-    // Constructor when data, next and prev are provided
-    Node(int data1, Node next1, Node prev1) {
-        data = data1;
-        next = next1;
-        prev = prev1;
+    while (right < n) {
+        char ch = s.charAt(right);
+
+        // include current char
+        freq.put(ch, freq.getOrDefault(ch, 0) + 1);
+
+        // shrink until valid
+        while (freq.size() > k) {
+            char leftChar = s.charAt(left);
+            freq.put(leftChar, freq.get(leftChar) - 1);
+
+            // remove if count becomes zero
+            if (freq.get(leftChar) == 0) {
+                freq.remove(leftChar);
+            }
+
+            left++;
+        }
+
+        // valid window length
+        int len = right - left + 1;
+        maxLen = Math.max(maxLen, len);
+
+        right++;
     }
 
-    // Constructor when only data is provided
-    Node(int data1) {
-        data = data1;
-        next = null;
-        prev = null;
-    }
-}
-
-public class Main {
-    public static void main(String[] args) {
-        // Initializing an array to create nodes
-        int[] arr = {2, 5, 8, 7};
-
-        // Creating the head node of the doubly linked list
-        Node head = new Node(arr[0]);
-
-        // Printing the memory reference of head
-        System.out.println(head);
-
-        // Printing the data stored in head node
-        System.out.println(head.data);
-    }
-}
-
-
-
-
-public class ListNode {
-      int val;
-      ListNode next;
-      ListNode() {}
-      ListNode(int val) { this.val = val; }
-      ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+    return maxLen;
 }
