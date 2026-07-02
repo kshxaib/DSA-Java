@@ -1,38 +1,38 @@
 import java.util.*;
+class Solution {
+    // count subarrays with at most k distinct
+    public int atMost(int[] nums, int k) {
+        if(k < 0) return 0;
 
-public int kDistinctChar(String s, int k) {
-    int n = s.length();
-    int maxLen = 0;
+        int n = nums.length;
+        int left = 0, right = 0;
 
-    int left = 0, right = 0;
+        int count = 0;
 
-    Map<Character, Integer> freq = new HashMap<>();
+        Map<Integer,Integer> freq = new HashMap<>();
 
-    while (right < n) {
-        char ch = s.charAt(right);
+        while(right < n){
+            // include right element
+            freq.put(nums[right], freq.getOrDefault(nums[right],0) + 1);
 
-        // include current char
-        freq.put(ch, freq.getOrDefault(ch, 0) + 1);
+            // shrink invalid window
+            while(freq.size() > k){
+                int val = nums[left];
+                freq.put(val, freq.get(val) - 1);
 
-        // shrink until valid
-        while (freq.size() > k) {
-            char leftChar = s.charAt(left);
-            freq.put(leftChar, freq.get(leftChar) - 1);
+                if(freq.get(val) == 0){
+                    freq.remove(val);
+                }
 
-            // remove if count becomes zero
-            if (freq.get(leftChar) == 0) {
-                freq.remove(leftChar);
+                left++;
             }
 
-            left++;
+            
+            // all subarrays ending at right from left...right valid
+            count += (right - left + 1);
+            right++;
         }
 
-        // valid window length
-        int len = right - left + 1;
-        maxLen = Math.max(maxLen, len);
-
-        right++;
+        return count;
     }
-
-    return maxLen;
 }

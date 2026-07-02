@@ -51,6 +51,7 @@ If distinct == k → count++
 Time = O(n²)
 */
 
+import java.util.*;
 
 class Solution {
 
@@ -123,10 +124,8 @@ Space = O(k)
                 left++;
             }
 
-            /*
-                all subarrays ending at right
-                from left...right valid
-            */
+            
+            // all subarrays ending at right from left...right valid
             count += (right - left + 1);
             right++;
         }
