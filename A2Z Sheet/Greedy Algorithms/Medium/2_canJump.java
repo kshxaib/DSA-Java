@@ -86,14 +86,11 @@ class Solution {
         int maxIndex = 0; // max reachable index
 
         for(int i = 0; i < nums.length; i++) {            
-            if(i > maxIndex) {  // current index is unreachable
-                return false;
-            }
-
+            if(i > maxIndex) return false;// current index is unreachable
+                
             maxIndex = Math.max(maxIndex, i + nums[i]);  // update max reachable index
         }
 
-        // reached end successfully
-        return true;
+        return true;    // reached end successfully
     }
 }
