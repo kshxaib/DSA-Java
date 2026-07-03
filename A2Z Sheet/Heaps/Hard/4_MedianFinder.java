@@ -61,20 +61,17 @@ Space Complexity: O(n)
 
 import java.util.*;
 
-class MedianFinder {
-
+class MedianFinderBrute {
     ArrayList<Integer> list;
 
-    public MedianFinder() {
+    public MedianFinderBrute() {
         list = new ArrayList<>();
     }
 
-    // insert number
     public void addNum(int num) {
         list.add(num);
     }
 
-    // find median
     public double findMedian() {
         Collections.sort(list);
 
@@ -143,12 +140,8 @@ Space Complexity: O(n)
 */
 
 class MedianFinder {
-
-    // left half
-    PriorityQueue<Integer> maxHeap;
-
-    // right half
-    PriorityQueue<Integer> minHeap;
+    PriorityQueue<Integer> maxHeap; // left half
+    PriorityQueue<Integer> minHeap; // right half
 
     public MedianFinder() {
         maxHeap = new PriorityQueue<>((a,b) -> b - a);
