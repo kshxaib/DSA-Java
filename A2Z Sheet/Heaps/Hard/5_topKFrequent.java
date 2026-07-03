@@ -49,25 +49,27 @@ Worst Case: O(n²)
 Space Complexity: O(n)
 */
 
+import java.util.*;
+
 class Solution {
 
     public int[] topKFrequentBrute(int[] nums, int k) {
         HashMap<Integer, Integer> freq = new HashMap<>();
 
         // count frequencies
-        for(int num : nums){
+        for (int num : nums) {
             freq.put(num, freq.getOrDefault(num, 0) + 1);
         }
 
         int result[] = new int[k];
 
-        for(int i = 0; i < k; i++){
+        for (int i = 0; i < k; i++) {
             int maxFreq = -1;
             int element = -1;
 
             // find current max frequency
-            for(int key : freq.keySet()){
-                if(freq.get(key) > maxFreq){
+            for (int key : freq.keySet()) {
+                if (freq.get(key) > maxFreq) {
                     maxFreq = freq.get(key);
                     element = key;
                 }
@@ -82,65 +84,58 @@ class Solution {
         return result;
     }
 
-
-/*
-=====================================================
-2. BUCKET SORT (OPTIMAL)
-=====================================================
-
-Idea:
-Frequency can be at most n.
-
-Create buckets:
-bucket[i] = all numbers appearing i times
-
-Then traverse buckets
-from high frequency to low frequency.
-
-
-Time Complexity
-Frequency Count = O(n)
-Bucket Fill = O(n)
-Bucket Traversal = O(n)
-Total = O(n)
-
-Space Complexity: O(n)
-*/
+    /*
+     * =====================================================
+     * 2. BUCKET SORT (OPTIMAL)
+     * =====================================================
+     * 
+     * Idea:
+     * Frequency can be at most n.
+     * 
+     * Create buckets:
+     * bucket[i] = all numbers appearing i times
+     * 
+     * Then traverse buckets
+     * from high frequency to low frequency.
+     * 
+     * 
+     * Time Complexity
+     * Frequency Count = O(n)
+     * Bucket Fill = O(n)
+     * Bucket Traversal = O(n)
+     * Total = O(n)
+     * 
+     * Space Complexity: O(n)
+     */
 
     public int[] topKFrequent(int[] nums, int k) {
+        int n = nums.length;
         HashMap<Integer, Integer> freq = new HashMap<>();
 
-        // count frequencies
-        for(int num : nums){
+        for (int i = 0; i < n; i++) {
+            int num = nums[i];
             freq.put(num, freq.getOrDefault(num, 0) + 1);
         }
 
-        // bucket[i] stores numbers
-        // with frequency i
-        ArrayList<Integer>[] buckets = new ArrayList[nums.length + 1];
+        ArrayList<Integer>[] buckets = new ArrayList[n + 1];
+        for (int i = 0; i < n + 1; i++) {
+            buckets[i] = new ArrayList<>();
+        }
 
-        for(int key : freq.keySet()){
+        for (int key : freq.keySet()) {
             int frequency = freq.get(key);
-
-            if(buckets[frequency] == null){
-                buckets[frequency] = new ArrayList<>();
-            }
-
             buckets[frequency].add(key);
         }
 
         int result[] = new int[k];
         int count = 0;
-
-        // traverse highest frequency first
-        for(int i = buckets.length - 1; i >= 0 && count < k; i--){
-            if(buckets[i] != null){
-                for(int num : buckets[i]){
-                    result[count++] = num;
-                    
-                    if(count == k){
+        for (int i = buckets.length - 1; i >= 0 && count < k; i--) {
+            if (buckets[i] != null) {
+                for (int num : buckets[i]) {
+                    result[count] = num;
+                    count++;
+                    if (count == k)
                         break;
-                    }
                 }
             }
         }
@@ -148,4 +143,3 @@ Space Complexity: O(n)
         return result;
     }
 }
-
