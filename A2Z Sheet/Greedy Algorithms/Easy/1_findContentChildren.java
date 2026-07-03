@@ -91,9 +91,9 @@ Two Pointer Traversal = O(n + m)
 Space Complexity: O(1)
 */
 
-class Solution {
+import java.util.*;
 
-    // Function to find maximum number of satisfied children
+class Solution {
     public int findContentChildren(int[] g, int[] s) {
 
         // Sort greed factors in increasing order
