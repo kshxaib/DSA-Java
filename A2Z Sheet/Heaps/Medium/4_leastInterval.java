@@ -99,61 +99,50 @@ Map   : O(K)
 
 Total: O(K)
 */
-
-class Task implements Comparable<Task> {
-    int frequency;
-    int excuetionTime;
-
-    Task(int f, int t) {
-        this.frequency = f;
-        this.excuetionTime = t;
-    }
-
-    // max heap by frequency
-    public int compareTo(Task t2) {
-        return t2.frequency - this.frequency;
-    }
-}
+import java.util.*;
 
 class Solution {
-
     public int leastInterval(char[] tasks, int n) {
-        // frequency count
-        Map<Character, Integer> map = new HashMap<>();
-
-        for(int i = 0; i < tasks.length; i++) {
-            map.put(tasks[i], map.getOrDefault(tasks[i], 0) + 1);
+        // Count frequency of each task
+        Map<Character, Integer> freqMap = new HashMap<>();
+        for (char task : tasks) {
+            freqMap.put(task, freqMap.getOrDefault(task, 0) + 1);
         }
 
-        // max heap
-        PriorityQueue<Task> pq = new PriorityQueue<>();
-        for(Character ch : map.keySet()) {
-            pq.add(new Task( map.get(ch), 0));
+        // Max heap stores highest frequency first
+        PriorityQueue<Integer> maxHeap = new PriorityQueue<>(Collections.reverseOrder());
+        for (int count : freqMap.values()) {
+            maxHeap.add(count);
         }
 
-        // cooldown queue
-        Queue<Task> queue = new LinkedList<>();
         int time = 0;
 
-        while(!pq.isEmpty() || !queue.isEmpty()) {
-            time++;
+        // Process tasks cycle by cycle
+        while (!maxHeap.isEmpty()) {
 
-            // execute highest frequency task
-            if(!pq.isEmpty()) {
-                Task task = pq.remove();
-                task.frequency--;
+            // Store tasks used in current cycle
+            List<Integer> temp = new ArrayList<>();
 
-                // still remaining
-                if(task.frequency > 0) {
-                    task.excuetionTime = time + n;
-                    queue.add(task);
+            int cycle = n + 1;  // Cooldown cycle length
+
+            // Pick at most n+1 most frequent tasks
+            for (int i = 0; i < cycle; i++) {
+                if (!maxHeap.isEmpty()) {
+                    temp.add(maxHeap.poll());
                 }
             }
 
-            // cooldown completed
-            if(!queue.isEmpty() && queue.peek().excuetionTime == time) {
-                pq.add(queue.remove());
+            // Decrease frequency and add remaining back
+            for (int freq : temp) {
+                freq--;
+
+                if (freq > 0) {
+                    maxHeap.add(freq);
+                }
             }
+
+            // Add actual tasks if done, otherwise full cycle
+            time += maxHeap.isEmpty() ? temp.size() : cycle;
         }
 
         return time;
