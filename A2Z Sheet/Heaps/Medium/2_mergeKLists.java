@@ -189,7 +189,7 @@ class Solution {
      * 
      * O(N log k)
      * 
-     * BEST solution.
+     * BEST solution.S
      * 
      * Space Complexity: O(k)
      * Heap stores at most k nodes.
@@ -201,8 +201,7 @@ class Solution {
         }
 
         // min heap based on node value
-        PriorityQueue<ListNode> pq = new PriorityQueue<>(
-                (a, b) -> a.val - b.val);
+        PriorityQueue<ListNode> pq = new PriorityQueue<>( (a, b) -> a.val - b.val);
 
         // insert first node of every list
         for (int i = 0; i < lists.length; i++) {
