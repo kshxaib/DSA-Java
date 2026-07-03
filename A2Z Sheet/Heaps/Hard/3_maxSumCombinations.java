@@ -83,11 +83,7 @@ import java.util.*;
 
 class Solution {
 
-    public int[] maxSumCombinationsBrute(
-            int[] nums1,
-            int[] nums2,
-            int k) {
-
+    public int[] maxSumCombinationsBrute( int[] nums1, int[] nums2, int k) {
         ArrayList<Integer> pairSum = new ArrayList<>();
 
         // generate all pair sums
@@ -186,7 +182,8 @@ Heap + visited
             int i = curr[1];
             int j = curr[2];
 
-            ans[index++] = sum;
+            ans[index] = sum;
+            index++;
 
             if(i - 1 >= 0){
                 String key =(i - 1) + "#" + j;
