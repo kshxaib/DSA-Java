@@ -100,26 +100,18 @@ Recursion stack
 */
 
 class Solution {
-
     public boolean checkValidString(String s) {
         return check(s, 0, 0);
     }
 
     public boolean check(String s, int index, int count){
-        // more closing brackets than opening
-        if(count < 0){
-            return false;
-        }
+        
+        if(count < 0)  return false;  // more closing brackets than opening
 
         // reached end of string
         if(index >= s.length()){
-            // valid if all brackets matched
-            if(count == 0){
-                return true;
-            }
-            else{
-                return false;
-            }
+            if(count == 0) return true; // valid if all brackets matched
+            else return false;      // more opening brackets than closing
         }
 
         // opening bracket
@@ -132,8 +124,7 @@ class Solution {
             return check(s, index + 1, count - 1);
         }
 
-        // '*' can be:
-        // '(' OR ')' OR empty
+        // '*' can be: '(' OR ')' OR empty
         return check(s, index + 1, count + 1) || check(s, index + 1, count - 1) || check(s, index + 1, count);
     }
 
@@ -173,34 +164,28 @@ all possible open counts.
         for(int i = 0; i < s.length(); i++){
             char ch = s.charAt(i);
 
-            // opening bracket
             if(ch == '('){
                 minOpen++;
                 maxOpen++;
             }
-
-            // closing bracket
             else if(ch == ')'){
                 minOpen--;
                 maxOpen--;
             }
-
-            // wildcard '*'
             else{
                 minOpen--;
                 maxOpen++;
             }
    
             if(minOpen < 0){
-                minOpen = 0;  // minimum opens cannot be negative
+                minOpen = 0;  
             }
   
             if(maxOpen < 0){
-                return false;     // impossible state
+                return false;
             }
         }
 
-        // valid if all opens can be matched
         return minOpen == 0;
     }
 }
