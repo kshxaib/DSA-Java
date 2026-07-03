@@ -83,18 +83,15 @@ class Solution {
 
     public double fractionalKnapsack(int[] val, int[] wt, long cap) {
         int n = val.length;
-
-        // ratio[i][0] = index
-        // ratio[i][1] = value/weight ratio
-        double ratio[][] = new double[n][2];
+        // ratio[i][0] = index, ratio[i][1] = value/weight ratio
+        double ratio[][] = new double[n][2];   
 
         for(int i = 0; i < n; i++) {
             ratio[i][0] = i;
             ratio[i][1] = val[i] / (double) wt[i]; // value per unit weight
         }
-
-        // sort by ratio ascending
-        Arrays.sort(ratio, Comparator.comparingDouble(o -> o[1]));
+        
+        Arrays.sort(ratio, Comparator.comparingDouble(o -> o[1]));  // sort by ratio ascending
 
         double totalValue = 0;
         int bagCapacity = (int) cap;
