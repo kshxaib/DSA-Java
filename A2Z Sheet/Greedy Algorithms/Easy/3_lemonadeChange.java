@@ -112,46 +112,32 @@ Only two counters
 
 class Solution {
     public boolean lemonadeChange(int[] bills) {
-        int dollar5 = 0; 
-        int dollar10 = 0;
+        int dollar5 = 0, dollar10 = 0;
 
         for(int i=0; i<bills.length; i++){
             int bill = bills[i];
 
-            // Customer pays $5
             if(bill == 5){
                 dollar5++;
             }
 
-            // Customer pays $10
             else if(bill == 10){
-
-                // Receive one $10
                 dollar10++;
 
-                // Need to give one $5 as change
                 if(dollar5 > 0){
                     dollar5--;
                 } else {
                     return false;
                 }
             }
-
-            // Customer pays $20
             else {
-
-                // Prefer giving $10 + $5
                 if(dollar5 > 0 && dollar10 > 0){
                     dollar5--;
                     dollar10--;
                 }
-
-                // Otherwise give 3 × $5
                 else if(dollar5 >= 3){
                     dollar5 -= 3;
                 }
-
-                // Change not possible
                 else {
                     return false;
                 }
