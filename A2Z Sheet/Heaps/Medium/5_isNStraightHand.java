@@ -87,6 +87,8 @@ Space Complexity: O(n)
 TreeMap frequencies
 */
 
+import java.util.*;
+
 class Solution {
 
     public boolean isNStraightHand(int[] hand, int groupSize) {
