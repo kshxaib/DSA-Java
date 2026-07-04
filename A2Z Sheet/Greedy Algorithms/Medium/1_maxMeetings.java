@@ -81,14 +81,14 @@ class Solution {
     public int maxMeetings(int[] start, int[] end) {
         int n = start.length;
 
-        // store: [endTime, startTime, meetingIndex]
+        // store: [startTime, endTime]
         List<int[]> meetings = new ArrayList<>();
         for(int i = 0; i < n; i++) {
-            meetings.add( new int[]{end[i], start[i], i});
+            meetings.add( new int[]{start[i], end[i]});
         }
 
         // sort by ending time
-        Collections.sort(meetings, Comparator.comparingInt(a -> a[0]));
+        Collections.sort(meetings, (a, b) -> a[1] - b[1]);
 
         int totalMeeting = 0;
         int lastEnd = -1;   // end time of last selected meeting
@@ -96,9 +96,9 @@ class Solution {
 
         while(i < n) {
             int currMeeting[] = meetings.get(i);
-            if(lastEnd < currMeeting[1]) {   // current meeting can be scheduled
+            if(lastEnd < currMeeting[0]) {   // current meeting can be scheduled
                 totalMeeting++;
-                lastEnd = currMeeting[0];   // update last ending time
+                lastEnd = currMeeting[1];   // update last ending time
             }
             i++;
         }
