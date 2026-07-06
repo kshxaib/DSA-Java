@@ -11,16 +11,13 @@ class Solution {
         }
     }
 
-    public List<Integer> topView(TreeNode root) {
+    public List<Integer> bottomView(TreeNode root) {
         List<Integer> ans = new ArrayList<>();
 
         if (root == null) return ans;
 
-        // line -> node value
         Map<Integer, Integer> map = new TreeMap<>();
-        // store node with its vertical line
         Queue<Pair> queue = new LinkedList<>();
-
         queue.offer(new Pair(root, 0));
 
         while (!queue.isEmpty()) {
@@ -28,10 +25,7 @@ class Solution {
             TreeNode node = curr.node;
             int line = curr.line;
 
-            // First node appearing at this line = top view
-            if (!map.containsKey(line)) {
-                map.put(line, node.val);
-            }
+            map.put(line, node.val);
 
             if (node.left != null) {
                 queue.offer(new Pair(node.left, line - 1));
