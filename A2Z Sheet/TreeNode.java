@@ -1,5 +1,5 @@
 public class TreeNode {
-    int data;
+    int val;
     TreeNode left;
     TreeNode right;
 
@@ -7,11 +7,11 @@ public class TreeNode {
     }
 
     TreeNode(int val) {
-        this.data = val;
+        this.val = val;
     }
 
     TreeNode(int val, TreeNode left, TreeNode right) {
-        this.data = val;
+        this.val = val;
         this.left = left;
         this.right = right;
     }
