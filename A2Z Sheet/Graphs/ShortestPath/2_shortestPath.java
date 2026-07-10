@@ -32,22 +32,18 @@ class Solution {
         // source
         dist[0] = 0;
 
-        // remove nodes before source in topo order
-        while (!stack.isEmpty() && stack.peek() != 0) {
-            stack.pop();
-        }
-
-
         // process nodes in topo order
         while (!stack.isEmpty()) {
             int node = stack.pop();
 
-            for (int neighbour[] : adj.get(node)) {
-                int adjNode = neighbour[0];
-                int weight = neighbour[1];
+            if (dist[node] != Integer.MAX_VALUE) {
+                for (int neighbour[] : adj.get(node)) {
+                    int adjNode = neighbour[0];
+                    int weight = neighbour[1];
 
-                if (dist[node] + weight < dist[adjNode]) {
-                    dist[adjNode] = dist[node] + weight;
+                    if (dist[node] + weight < dist[adjNode]) {
+                        dist[adjNode] = dist[node] + weight;
+                    }
                 }
             }
         }
@@ -68,6 +64,7 @@ class Solution {
 
         for (int neighbour[] : adj.get(node)) {
             int adjNode = neighbour[0];
+
             if (!visited[adjNode]) {
                 dfs(adjNode, adj, visited, stack);
             }
