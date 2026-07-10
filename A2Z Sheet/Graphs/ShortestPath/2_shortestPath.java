@@ -2,7 +2,7 @@ import java.util.*;
 
 class Solution {
     public int[] shortestPath(int N, int M, int[][] edges) {
-        List<List<int[]>> adj = new ArrayList<>();
+        List<List<int[]>> adj = new ArrayList<>();  // adjacency list storing {node, weight}
         for (int i = 0; i < N; i++) {
             adj.add(new ArrayList<>());
         }
@@ -17,7 +17,7 @@ class Solution {
         }
 
         boolean visited[] = new boolean[N];
-        Stack<Integer> stack = new Stack<>();
+        Stack<Integer> stack = new Stack<>();   // stores topological order
 
         // topo sort
         for (int i = 0; i < N; i++) {
@@ -26,29 +26,29 @@ class Solution {
             }
         }
 
-        int dist[] = new int[N];
+        int dist[] = new int[N];    // stores topological order
         Arrays.fill(dist, Integer.MAX_VALUE);
 
-        // source
+        // source distance
         dist[0] = 0;
 
         // process nodes in topo order
         while (!stack.isEmpty()) {
             int node = stack.pop();
 
-            if (dist[node] != Integer.MAX_VALUE) {
+            if (dist[node] != Integer.MAX_VALUE) {       // skip unreachable nodes
                 for (int neighbour[] : adj.get(node)) {
                     int adjNode = neighbour[0];
                     int weight = neighbour[1];
 
-                    if (dist[node] + weight < dist[adjNode]) {
+                    if (dist[node] + weight < dist[adjNode]) {   // edge relaxation
                         dist[adjNode] = dist[node] + weight;
                     }
                 }
             }
         }
 
-        // unreachable nodes
+        // convert unreachable nodes
         for (int i = 0; i < N; i++) {
             if (dist[i] == Integer.MAX_VALUE) {
                 dist[i] = -1;
