@@ -24,6 +24,7 @@ class Solution {
         while(!queue.isEmpty()){
             int node = queue.poll();
             topo[index] = node;
+            index++;
 
             for(int neighbour : adj.get(node)){
                 indegree[neighbour]--;          // remove current edge
