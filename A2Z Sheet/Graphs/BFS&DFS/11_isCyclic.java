@@ -2,10 +2,10 @@ import java.util.*;
 
 class Solution {
     public boolean isCyclic(int N, List<List<Integer>> adj) {
-        boolean visited[] = new boolean[N];
-        boolean pathVisited[] = new boolean[N];
+        boolean visited[] = new boolean[N];  // visited anytime before
+        boolean pathVisited[] = new boolean[N]; // visited in current path
 
-        for(int i=0; i<N; i++){
+        for(int i=0; i<N; i++){ // check every component
             if(!visited[i]){
                 if(dfs(i, adj, visited, pathVisited)){
                     return true;
@@ -17,8 +17,8 @@ class Solution {
     }
 
     private boolean dfs(int node, List<List<Integer>> adj, boolean[] visited, boolean[] pathVisited){
-        visited[node] = true;
-        pathVisited[node] = true;
+        visited[node] = true;   // check every component
+        pathVisited[node] = true;   // add to current path
 
         for(int neighbour : adj.get(node)){
             // new node
