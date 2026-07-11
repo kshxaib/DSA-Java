@@ -1,0 +1,39 @@
+import java.util.*;
+
+class Solution {
+    static int[] bellman_ford(int V, ArrayList<ArrayList<Integer>> edges, int S) {
+        int dist[] = new int[V];    // stores shortest distance for dist[i]
+        Arrays.fill(dist, (int)1e8);
+
+        dist[S] = 0;    // source distance
+
+        // Relax all edges V-1 times
+        for(int i=1; i<=V-1; i++){
+
+            for(ArrayList<Integer> edge : edges){
+                int u = edge.get(0);
+                int v = edge.get(1);
+                int wt = edge.get(2);
+
+                // relaxation: found shorter path
+                if(dist[u] != (int)1e8 && dist[u] + wt < dist[v]){
+                    dist[v] = dist[u] + wt;
+                }
+            }
+        }
+
+        // one more iteration to detect negative weight cycle
+        for(ArrayList<Integer> edge : edges){
+            int u = edge.get(0);
+            int v = edge.get(1);
+            int wt = edge.get(2);
+
+            // distance still decreasing negative cycle exists
+            if(dist[u] != (int)1e8 && dist[u] + wt < dist[v]){
+                return new int[]{-1};
+            }
+        }
+
+        return dist;
+    }
+}
