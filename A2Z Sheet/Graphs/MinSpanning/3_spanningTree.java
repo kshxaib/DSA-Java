@@ -60,22 +60,19 @@ class Solution {
     public int spanningTree(int V, List<List<List<Integer>>> adj) {
         List<Edge> edges = new ArrayList<>();
 
-        // Convert adjacency list to edge list
-        for (int u = 0; u < V; u++) {
+        for (int u = 0; u < V; u++) {   // Convert adjacency list to edge list
             for (List<Integer> neighbour : adj.get(u)) {
 
                 int v = neighbour.get(0);
                 int weight = neighbour.get(1);
-
-                // Avoid duplicate edges
-                if (u < v) {
+                
+                if (u < v) {    // Avoid duplicate edges
                     edges.add(new Edge(u, v, weight));
                 }
             }
         }
-
-        // Sort edges by weight
-        Collections.sort(edges, (a, b) -> a.weight - b.weight);
+        
+        Collections.sort(edges, (a, b) -> a.weight - b.weight); // Sort edges by weight
 
         DisjointSet ds = new DisjointSet(V);
 
