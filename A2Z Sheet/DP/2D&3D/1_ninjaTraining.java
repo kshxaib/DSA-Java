@@ -14,7 +14,7 @@ class Solution1 {
     }
 
     private int solve(int day, int lastTask, int matrix[][], int dp[][]){
-        if(day == 0){
+        if(day == 0){   // first day
             int max = 0;
             for(int task=0; task<3; task++){
                 if(task != lastTask){
@@ -25,19 +25,19 @@ class Solution1 {
             return max;
         }
 
-        if(dp[day][lastTask] != -1){
+        if(dp[day][lastTask] != -1){    // already computed
             return dp[day][lastTask];
         }
 
         int max = 0;
-        for(int task=0; task<3; task++){
+        for(int task=0; task<3; task++){    // try every allowed task
             if(task != lastTask){
                 int points = matrix[day][task] + solve(day-1, task, matrix, dp);
                 max = Math.max(max, points);
             }
         }
 
-        return dp[day][lastTask] = max;
+        return dp[day][lastTask] = max; // store answer
     }
 }
 
@@ -106,9 +106,8 @@ class Solution3 {
             for (int lastTask = 0; lastTask < 4; lastTask++) {
                 curr[lastTask] = 0;
                 int max = 0;
-
-                // Try every task except lastTask
-                for (int task = 0; task < 3; task++) {
+                
+                for (int task = 0; task < 3; task++) {  // Try every task except lastTask
                     if (task != lastTask) {
                         int points = matrix[day][task] + prev[task];
                         max = Math.max(max, points);
