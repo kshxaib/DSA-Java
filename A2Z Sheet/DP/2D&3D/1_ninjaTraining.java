@@ -105,14 +105,17 @@ class Solution3 {
 
             for (int lastTask = 0; lastTask < 4; lastTask++) {
                 curr[lastTask] = 0;
+                int max = 0;
 
                 // Try every task except lastTask
                 for (int task = 0; task < 3; task++) {
                     if (task != lastTask) {
                         int points = matrix[day][task] + prev[task];
-                        curr[lastTask] = Math.max(curr[lastTask], points);
+                        max = Math.max(max, points);
                     }
                 }
+
+                curr[lastTask] = max;
             }
             
             prev = curr;    // Move current row to previous row
