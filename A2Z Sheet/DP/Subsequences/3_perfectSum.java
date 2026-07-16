@@ -43,25 +43,21 @@ class Solution2 {
         int n = arr.length;
 
         int[][] dp = new int[n][K + 1];
-
-        // Base case: one subset (empty set) makes sum 0
-        dp[0][0] = 1;
+        
+        dp[0][0] = 1;   // Base case: one subset (empty set) makes sum 0
 
         // If first element is <= K, mark dp[0][arr[0]] as 1
         if (arr[0] <= K) dp[0][arr[0]] = 1;
 
         for (int i = 1; i < n; i++) {
             for (int target = 0; target <= K; target++) {
-                // Exclude current element
                 int notTake = dp[i - 1][target];
 
-                // Include current element if possible
                 int take = 0;
                 if (arr[i] <= target){
                     take = dp[i - 1][target - arr[i]];
                 }
 
-                // Total ways
                 dp[i][target] = notTake + take;
             }
         }
@@ -79,28 +75,24 @@ class Solution3 {
         int n = arr.length;
 
         int[] prev = new int[K + 1];
-        // Base case: Empty set makes sum 0
-        prev[0] = 1;
+        
+        prev[0] = 1;    // Base case: Empty set makes sum 0
 
-        // If first element <= K, mark it
-        if (arr[0] <= K) prev[arr[0]] += 1;
+        if (arr[0] <= K) prev[arr[0]] += 1;     // If first element <= K, mark it
 
         for (int i = 1; i < n; i++) {
             int[] curr = new int[K + 1];
             curr[0] = 1;
 
             for (int target = 0; target <= K; target++) {
-                // Exclude current element
                 int notTake = prev[target];
 
-                // Include current element if possible
                 int take = 0;
                 if (arr[i] <= target){
                     take = prev[target - arr[i]];
                 }
-
-                // Total ways
-                curr[target] = (notTake + take)  % MOD;
+                
+                curr[target] = (notTake + take)  % MOD; // Total ways
             }
 
             prev = curr;
