@@ -90,3 +90,47 @@ class Solution2 {
 }
 
 
+
+class Solution3 {
+    static final int MOD = 1000000007;
+
+    public int countPartitions(int[] arr, int diff) {
+        int n = arr.length;
+
+        int totalSum = 0;
+        for (int num : arr) {
+            totalSum += num;
+        }
+
+        if (totalSum - diff < 0 || (totalSum - diff) % 2 != 0) return 0;
+
+        int target = (totalSum - diff) / 2;
+
+        int[] prev = new int[target + 1];
+
+        // Base case
+        if (arr[0] == 0) prev[0] = 2;
+        else prev[0] = 1;
+
+        if (arr[0] != 0 && arr[0] <= target) prev[arr[0]] = 1;
+
+        for (int i = 1; i < n; i++) {
+            int[] curr = new int[target + 1];
+
+            for (int sum = 0; sum <= target; sum++) {
+                int notTake = prev[sum];
+
+                int take = 0;
+                if (arr[i] <= sum) {
+                    take = prev[sum - arr[i]];
+                }
+
+                curr[sum] = (notTake + take) % MOD;
+            }
+
+            prev = curr;
+        }
+
+        return prev[target];
+    }
+}
