@@ -1,6 +1,6 @@
 import java.util.*;
 
-class Solution {
+class Solution1 {
     public boolean isSubsetSum(int[] arr, int target) {
         int n = arr.length;
         int dp[][] = new int[n][target+1];
@@ -27,6 +27,38 @@ class Solution {
 
         dp[i][target] = (take || notTake) == true ? 1 : 0;
         return (take || notTake);
+    }
+}
+
+
+class Solution2 {
+    public boolean isSubsetSum(int[] arr, int target) {
+        int n = arr.length;
+        boolean dp[][] = new boolean[n][target+1];
+
+        // Sum 0 is always possible
+        for (int i = 0; i < n; i++){
+            dp[i][0] = true;
+        }
+
+        if(arr[0] <= target){
+            dp[0][arr[0]] = true;
+        }
+
+        for(int i=1; i<n; i++){
+            for(int sum =1; sum <= target; sum++){
+                boolean notTake = dp[i - 1][sum];
+                
+                boolean take = false;
+                if (arr[i] <= sum){
+                    take = dp[i - 1][sum - arr[i]];
+                }
+
+                dp[i][sum] = take || notTake;
+            }
+        }
+
+        return dp[n-1][target];
     }
 }
 
