@@ -13,19 +13,19 @@ class Solution1 {
     }
 
     private boolean solve(int i, int target, int arr[], int dp[][]){
-        if(target == 0) return true;
-        if(i == 0) return arr[0] == target;
+        if(target == 0) return true;     // target achieved
+        if(i == 0) return arr[0] == target; // only one element left
 
-        if(dp[i][target] != -1) return dp[i][target] == 1;
+        if(dp[i][target] != -1) return dp[i][target] == 1;  // already computed
 
-        boolean notTake = solve(i-1, target, arr, dp);
+        boolean notTake = solve(i-1, target, arr, dp);  // don't take
 
-        boolean take = false;
+        boolean take = false;   // don't take
         if(arr[i] <= target){
             take = solve(i-1, target - arr[i], arr, dp);
         }
 
-        dp[i][target] = (take || notTake) == true ? 1 : 0;
+        dp[i][target] = (take || notTake) == true ? 1 : 0;   // store answer
         return (take || notTake);
     }
 }
@@ -41,11 +41,11 @@ class Solution2 {
             dp[i][0] = true;
         }
 
-        if(arr[0] <= target){
+        if(arr[0] <= target){   // first element
             dp[0][arr[0]] = true;
         }
 
-        for(int i=1; i<n; i++){
+        for(int i=1; i<n; i++){ // build answers
             for(int sum =1; sum <= target; sum++){
                 boolean notTake = dp[i - 1][sum];
                 
@@ -66,7 +66,7 @@ class Solution2 {
 class Solution {
     public boolean isSubsetSum(int[] arr, int target) {
         int n = arr.length;
-        boolean[] prev = new boolean[target + 1];
+        boolean[] prev = new boolean[target + 1];    // previous row
 
         if(arr[0] <= target){
             prev[arr[0]] = true;
@@ -87,7 +87,7 @@ class Solution {
                 curr[sum] = take || notTake;
             }
 
-            prev = curr;
+            prev = curr;    // move current row
         }
 
         return prev[target];
