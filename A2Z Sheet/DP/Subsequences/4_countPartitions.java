@@ -25,15 +25,13 @@ class Solution1 {
     }
 
     private int solve(int index, int target, int[] arr, int[][] dp) {
-
         if (index == 0) {
             if (target == 0 && arr[0] == 0) return 2;
             if (target == 0 || arr[0] == target) return 1;
             return 0;
         }
 
-        if (dp[index][target] != -1)
-            return dp[index][target];
+        if (dp[index][target] != -1) return dp[index][target];
 
         int notTake = solve(index - 1, target, arr, dp);
 
