@@ -70,3 +70,42 @@ class Solution2 {
     }
 }
 
+
+
+class Solution3 {
+    static final int MOD = 1000000007;
+
+    public int perfectSum(int[] arr, int K) {
+        int n = arr.length;
+
+        int[] prev = new int[K + 1];
+        // Base case: Empty set makes sum 0
+        prev[0] = 1;
+
+        // If first element <= K, mark it
+        if (arr[0] <= K) prev[arr[0]] += 1;
+
+        for (int i = 1; i < n; i++) {
+            int[] curr = new int[K + 1];
+            curr[0] = 1;
+
+            for (int target = 0; target <= K; target++) {
+                // Exclude current element
+                int notTake = prev[target];
+
+                // Include current element if possible
+                int take = 0;
+                if (arr[i] <= target){
+                    take = prev[target - arr[i]];
+                }
+
+                // Total ways
+                curr[target] = (notTake + take)  % MOD;
+            }
+
+            prev = curr;
+        }
+
+        return prev[K];
+    }
+}
