@@ -63,3 +63,33 @@ class Solution2 {
 }
 
 
+class Solution {
+    public boolean isSubsetSum(int[] arr, int target) {
+        int n = arr.length;
+        boolean[] prev = new boolean[target + 1];
+
+        if(arr[0] <= target){
+            prev[arr[0]] = true;
+        }
+
+        for (int index = 1; index < n; index++) {
+            boolean[] curr = new boolean[target + 1];
+            curr[0] = true;
+
+            for (int sum = 1; sum <= target; sum++) {
+                boolean notTake = prev[sum];
+
+                boolean take = false;   
+                if (arr[index] <= sum){
+                    take = prev[sum - arr[index]];
+                }
+
+                curr[sum] = take || notTake;
+            }
+
+            prev = curr;
+        }
+
+        return prev[target];
+    }
+}
