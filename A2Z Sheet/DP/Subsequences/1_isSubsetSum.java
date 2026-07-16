@@ -93,3 +93,38 @@ class Solution {
         return prev[target];
     }
 }
+
+
+class Solution {
+    static final int MOD = 1000000007;
+
+    public int perfectSum(int[] arr, int K) {
+        int n = arr.length;
+
+        int[][] dp = new int[n][K + 1];
+
+        // Base case: one subset (empty set) makes sum 0
+        dp[0][0] = 1;
+
+        // If first element is <= K, mark dp[0][arr[0]] as 1
+        if (arr[0] <= K) dp[0][arr[0]] = 1;
+
+        for (int i = 1; i < n; i++) {
+            for (int target = 0; target <= K; target++) {
+                // Exclude current element
+                int notTake = dp[i - 1][target];
+
+                // Include current element if possible
+                int take = 0;
+                if (arr[i] <= target){
+                    take = dp[i - 1][target - arr[i]];
+                }
+
+                // Total ways
+                dp[i][target] = notTake + take;
+            }
+        }
+
+        return dp[n-1][K];
+    }
+}
