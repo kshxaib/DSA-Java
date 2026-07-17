@@ -47,7 +47,6 @@ class Solution2 {
 
         for (int i = 1; i < n; i++) {
             for (int target = 0; target <= amount; target++) {
-
                 int notTake = dp[i - 1][target];
 
                 int take = 0;
@@ -64,3 +63,35 @@ class Solution2 {
 }
 
 
+
+class Solution3 {
+    public int change(int amount, int[] coins) {
+        int n = coins.length;
+
+        int[] prev = new int[amount + 1];
+
+        // Base case
+        for (int target = 0; target <= amount; target++) {
+            if (target % coins[0] == 0) prev[target] = 1;
+        }
+
+        for (int i = 1; i < n; i++) {
+            int[] curr = new int[amount + 1];
+
+            for (int target = 0; target <= amount; target++) {
+                int notTake = prev[target];
+
+                int take = 0;
+                if (coins[i] <= target) {
+                    take = curr[target - coins[i]];
+                }
+
+                curr[target] = take + notTake;
+            }
+
+            prev = curr;
+        }
+
+        return prev[amount];
+    }
+}
