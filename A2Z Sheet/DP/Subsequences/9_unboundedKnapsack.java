@@ -35,9 +35,7 @@ class Solution1 {
 
 
 class Solution2 {
-
     public int unboundedKnapsack(int[] wt, int[] val, int n, int W) {
-
         int[][] dp = new int[n][W + 1];
 
         // Base case
@@ -48,9 +46,7 @@ class Solution2 {
         }
 
         for (int i = 1; i < n; i++) {
-
             for (int capacity = 0; capacity <= W; capacity++) {
-
                 int notTake = dp[i - 1][capacity];
 
                 int take = 0;
@@ -70,22 +66,20 @@ class Solution2 {
 
 
 class Solution3 {
-
     public int unboundedKnapsack(int[] wt, int[] val, int n, int W) {
-
         int[] prev = new int[W + 1];
 
         // Base case
         for (int capacity = 0; capacity <= W; capacity++) {
-            prev[capacity] = (capacity / wt[0]) * val[0];
+            if (wt[0] <= capacity) {
+                prev[capacity] = val[0];
+            }
         }
 
         for (int i = 1; i < n; i++) {
-
             int[] curr = new int[W + 1];
 
             for (int capacity = 0; capacity <= W; capacity++) {
-
                 int notTake = prev[capacity];
 
                 int take = 0;
