@@ -60,3 +60,36 @@ class Solution2 {
         return dp[n - 1][n];
     }
 }
+
+
+
+class Solution3 {
+    public int RodCutting(int[] price, int n) {
+        int[] prev = new int[n + 1];
+
+        // Base case
+        for (int length = 0; length <= n; length++) {
+            prev[length] = length * price[0];
+        }
+
+        for (int i = 1; i < n; i++) {
+            int[] curr = new int[n + 1];
+            int rodLength = i + 1;
+
+            for (int length = 0; length <= n; length++) {
+                int notTake = prev[length];
+
+                int take = 0;
+                if (rodLength <= length) {
+                    take = price[i] + curr[length - rodLength];
+                }
+
+                curr[length] = Math.max(take, notTake);
+            }
+
+            prev = curr;
+        }
+
+        return prev[n];
+    }
+}
