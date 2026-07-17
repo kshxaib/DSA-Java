@@ -5,6 +5,7 @@ class Solution1 {
         int n = text1.length();
         int m = text2.length();
 
+        // dp[i][j]: Length of the LCS between text1[0...i] and text2[0...j].
         int[][] dp = new int[n][m];
 
         for (int i = 0; i < n; i++) {
@@ -34,6 +35,8 @@ class Solution2 {
         int n = text1.length();
         int m = text2.length();
 
+        // dp[i][j]: Length of the LCS between the first i characters of text1 and 
+        // the first j characters of text2.
         int[][] dp = new int[n + 1][m + 1];
 
         for (int i = 1; i <= n; i++) {
