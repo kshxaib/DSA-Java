@@ -41,8 +41,10 @@ class Solution2 {
         int[][] dp = new int[n][W + 1];
 
         // Base case
-        for (int capacity = wt[0]; capacity <= W; capacity++) {
-            dp[0][capacity] = val[0];
+        for (int capacity = 0; capacity <= W; capacity++) {
+            if (wt[0] <= capacity) {
+                dp[0][capacity] = val[0];
+            }
         }
 
         for (int i = 1; i < n; i++) {
@@ -73,8 +75,10 @@ class Solution3 {
         int[] dp = new int[W + 1];
 
         // Base case
-        for (int capacity = wt[0]; capacity <= W; capacity++) {
-            dp[capacity] = val[0];
+        for (int capacity = 0; capacity <= W; capacity++) {
+            if (wt[0] <= capacity) {
+                dp[capacity] = val[0];
+            }
         }
 
         for (int i = 1; i < n; i++) {
