@@ -32,9 +32,7 @@ class Solution {
 
         int maxLength = 0;
         for (int i = 0; i < n; i++) {
-            if (lis[i] > 1 && lds[i] > 1) {
                 maxLength = Math.max(maxLength, lis[i] + lds[i] - 1);
-            }
         }
 
         return maxLength;
