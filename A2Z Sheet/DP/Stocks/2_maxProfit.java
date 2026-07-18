@@ -14,18 +14,18 @@ class Solution1 {
     }
 
     private int solve(int index, int buy, int[] prices, int[][] dp) {
-        if (index == prices.length) return 0;
+        if (index == prices.length) return 0;   // all days processed
 
         if (dp[index][buy] != -1) return dp[index][buy];
 
         int profit;
 
-        if (buy == 1) {
+        if (buy == 1) {     // can buy
             int buyStock = -prices[index] + solve(index + 1, 0, prices, dp);
             int skip = solve(index + 1, 1, prices, dp);
             profit = Math.max(buyStock, skip);
 
-        } else {
+        } else {    // holding stock
             int sellStock = prices[index] + solve(index + 1, 1, prices, dp);
             int skip = solve(index + 1, 0, prices, dp);
             profit = Math.max(sellStock, skip);
