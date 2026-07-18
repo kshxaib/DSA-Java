@@ -36,3 +36,36 @@ class Solution1 {
         return dp[index][buy][transactions] = profit;
     }
 }
+
+
+class Solution2 {
+    public int maxProfit(int k, int[] prices) {
+        int n = prices.length;
+
+        int[][][] dp = new int[n + 1][2][k + 1];
+
+        for (int index = n - 1; index >= 0; index--) {
+            for (int buy = 0; buy <= 1; buy++) {
+                for (int transactions = 1; transactions <= k; transactions++) {
+
+                    int profit;
+
+                    if (buy == 1) {
+                        int buyStock = -prices[index] + dp[index + 1][0][transactions];
+                        int skip = dp[index + 1][1][transactions];
+                        profit = Math.max(buyStock, skip);
+
+                    } else {
+                        int sellStock = prices[index] + dp[index + 1][1][transactions - 1];
+                        int skip = dp[index + 1][0][transactions];
+                        profit = Math.max(sellStock, skip);
+                    }
+
+                    dp[index][buy][transactions] = profit;
+                }
+            }
+        }
+
+        return dp[0][1][k];
+    }
+}
