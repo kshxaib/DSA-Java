@@ -90,23 +90,65 @@ class Solution4 {
     public int lengthOfLIS(int[] nums) {
         int n = nums.length;
 
-        int[] dp = new int[n];
+        int[] dp = new int[n];  // dp[i] = LIS ending at i
 
-        Arrays.fill(dp, 1);
+        Arrays.fill(dp, 1); // every element itself forms LIS of length 1
 
         int maxLength = 1;
 
+        // compute LIS ending at every index
         for (int index = 0; index < n; index++) {
             for (int prevIndex = 0; prevIndex < index; prevIndex++) {
 
+                // can extend previous LIS
                 if (nums[index] > nums[prevIndex]) {
                     dp[index] = Math.max(dp[index], 1 + dp[prevIndex]);
                 }
             }
 
-            maxLength = Math.max(maxLength, dp[index]);
+            maxLength = Math.max(maxLength, dp[index]); // update overall answer
         }
 
         return maxLength;
+    }
+}
+
+
+class Solution5 {
+    public int lengthOfLIS(int[] nums) {
+        ArrayList<Integer> list = new ArrayList<>();    // stores smallest possible tail
+
+        for (int num : nums) {
+            if (list.isEmpty() || num > list.get(list.size() - 1)) {    // extend LIS
+                list.add(num);
+
+            } else {    // replace first element >= num
+                int index = lowerBound(list, num);
+                list.set(index, num);
+            }
+        }
+
+        return list.size(); // size of list = LIS length
+    }
+
+    // first index whose value >= target
+    private int lowerBound(ArrayList<Integer> list, int target) {
+        int firstGreaterOrEqualIdx = -1;
+        int low = 0;
+        int high = list.size() - 1;
+
+        while (low <= high) {
+
+            int mid = low + (high - low) / 2;
+
+            if (list.get(mid) >= target) {
+                firstGreaterOrEqualIdx = mid;
+                high = mid - 1;
+            } else {
+                low = mid + 1;
+            }
+        }
+
+        return firstGreaterOrEqualIdx;
     }
 }
