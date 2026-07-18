@@ -15,6 +15,7 @@ class Solution1 {
     }
 
     private int solve(int index, int buy, int transactions, int[] prices, int[][][] dp) {
+        // no days or no transactions left
         if (index == prices.length || transactions == 0) return 0;
 
         if (dp[index][buy][transactions] != -1) return dp[index][buy][transactions];
@@ -27,6 +28,7 @@ class Solution1 {
             profit = Math.max(buyStock, skip);
 
         } else {
+            // sell stock (transaction completed)
             int sellStock = prices[index] + solve(index + 1, 1, transactions - 1, prices, dp);
             int skip = solve(index + 1, 0, transactions, prices, dp);
             profit = Math.max(sellStock, skip);
@@ -66,17 +68,17 @@ class Solution2 {
             }
         }
 
-        return dp[0][1][2];
+        return dp[0][1][2]; // day 0, can buy, 2 transactions remaining
     }
 }
 
 
 class Solution3 {
     public int maxProfit(int[] prices) {
-        int[][] ahead = new int[2][3];
+        int[][] ahead = new int[2][3];  // next day's DP states
 
         for (int index = prices.length - 1; index >= 0; index--) {
-            int[][] curr = new int[2][3];
+            int[][] curr = new int[2][3];   // current day's DP states
 
             for (int buy = 0; buy <= 1; buy++) {
 
@@ -99,9 +101,9 @@ class Solution3 {
                 }
             }
 
-            ahead = curr;
+            ahead = curr;   // move to previous day
         }
 
-        return ahead[1][2];
+        return ahead[1][2];  // day 0, can buy, 2 transactions remaining
     }
 }
