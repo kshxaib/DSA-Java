@@ -28,3 +28,29 @@ class Solution1 {
         return dp[index][prevIndex + 1] = Math.max(take, notTake);
     }
 }
+
+
+
+class Solution2 {
+    public int lengthOfLIS(int[] nums) {
+        int n = nums.length;
+
+        int[][] dp = new int[n + 1][n + 1];
+
+        for (int index = n - 1; index >= 0; index--) {
+            for (int prevIndex = index - 1; prevIndex >= -1; prevIndex--) {
+
+                int notTake = dp[index + 1][prevIndex + 1];
+
+                int take = 0;
+                if (prevIndex == -1 || nums[index] > nums[prevIndex]) {
+                    take = 1 + dp[index + 1][index + 1];
+                }
+
+                dp[index][prevIndex + 1] = Math.max(take, notTake);
+            }
+        }
+
+        return dp[0][0];
+    }
+}
