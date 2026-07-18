@@ -54,3 +54,33 @@ class Solution2 {
         return dp[0][0];
     }
 }
+
+
+class Solution3 {
+    public int lengthOfLIS(int[] nums) {
+        int n = nums.length;
+
+        int[] ahead = new int[n + 1];
+
+        for (int index = n - 1; index >= 0; index--) {
+            int[] curr = new int[n + 1];
+
+            for (int prevIndex = index - 1; prevIndex >= -1; prevIndex--) {
+
+                int notTake = ahead[prevIndex + 1];
+
+                int take = 0;
+                if (prevIndex == -1 || nums[index] > nums[prevIndex]) {
+                    take = 1 + ahead[index + 1];
+                }
+
+                curr[prevIndex + 1] = Math.max(take, notTake);
+            }
+
+            ahead = curr;
+        }
+
+        return ahead[0];
+    }
+}
+
