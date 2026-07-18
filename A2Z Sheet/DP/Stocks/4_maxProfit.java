@@ -69,3 +69,39 @@ class Solution2 {
         return dp[0][1][k];
     }
 }
+
+
+
+class Solution3 {
+    public int maxProfit(int k, int[] prices) {
+        int[][] ahead = new int[2][k + 1];
+
+        for (int index = prices.length - 1; index >= 0; index--) {
+            int[][] curr = new int[2][k + 1];
+
+            for (int buy = 0; buy <= 1; buy++) {
+                for (int transactions = 1; transactions <= k; transactions++) {
+
+                    int profit;
+
+                    if (buy == 1) {
+                        int buyStock = -prices[index] + ahead[0][transactions];
+                        int skip = ahead[1][transactions];
+                        profit = Math.max(buyStock, skip);
+
+                    } else {
+                        int sellStock = prices[index] + ahead[1][transactions - 1];
+                        int skip = ahead[0][transactions];
+                        profit = Math.max(sellStock, skip);
+                    }
+
+                    curr[buy][transactions] = profit;
+                }
+            }
+
+            ahead = curr;
+        }
+
+        return ahead[1][k];
+    }
+}
