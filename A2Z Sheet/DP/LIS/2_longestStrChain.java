@@ -26,20 +26,20 @@ class Solution {
     }
 
     private boolean isPredecessor(String shorter, String longer) {
-        if (longer.length() != shorter.length() + 1) return false;
+        if (longer.length() != shorter.length() + 1) return false;  // length must differ by exactly one
 
         int i = 0;
         int j = 0;
 
         while (i < shorter.length() && j < longer.length()) {
-            if (shorter.charAt(i) == longer.charAt(j)) {
+            if (shorter.charAt(i) == longer.charAt(j)) {    // matching character
                 i++;
-                j++;
-            } else {
+                j++;    
+            } else {    // skip extra character
                 j++;
             }
         }
 
-        return i == shorter.length();
+        return i == shorter.length();   // all shorter characters matched
     }
 }
