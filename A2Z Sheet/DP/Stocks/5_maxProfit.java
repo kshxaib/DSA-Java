@@ -52,3 +52,24 @@ class Solution2 {
     }
 }
 
+
+
+class Solution3 {
+    public int maxProfit(int[] prices) {
+        int[] ahead1 = new int[2];
+        int[] ahead2 = new int[2];
+
+        for (int index = prices.length - 1; index >= 0; index--) {
+            int[] curr = new int[2];
+
+            curr[1] = Math.max(-prices[index] + ahead1[0], ahead1[1]);
+
+            curr[0] = Math.max(prices[index] + ahead2[1], ahead1[0]);
+
+            ahead2 = ahead1;
+            ahead1 = curr;
+        }
+
+        return ahead1[1];
+    }
+}
