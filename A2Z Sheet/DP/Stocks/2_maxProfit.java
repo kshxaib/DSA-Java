@@ -38,33 +38,24 @@ class Solution1 {
 
 
 class Solution2 {
-
     public int maxProfit(int[] prices) {
-
         int n = prices.length;
 
         int[][] dp = new int[n + 1][2];
 
         for (int index = n - 1; index >= 0; index--) {
-
             for (int buy = 0; buy <= 1; buy++) {
 
                 int profit;
 
                 if (buy == 1) {
-
                     int buyStock = -prices[index] + dp[index + 1][0];
-
                     int skip = dp[index + 1][1];
-
                     profit = Math.max(buyStock, skip);
 
                 } else {
-
                     int sellStock = prices[index] + dp[index + 1][1];
-
                     int skip = dp[index + 1][0];
-
                     profit = Math.max(sellStock, skip);
                 }
 
@@ -78,13 +69,10 @@ class Solution2 {
 
 
 class Solution3 {
-
     public int maxProfit(int[] prices) {
-
         int[] ahead = new int[2];
 
         for (int index = prices.length - 1; index >= 0; index--) {
-
             int[] curr = new int[2];
 
             for (int buy = 0; buy <= 1; buy++) {
@@ -92,19 +80,13 @@ class Solution3 {
                 int profit;
 
                 if (buy == 1) {
-
                     int buyStock = -prices[index] + ahead[0];
-
                     int skip = ahead[1];
-
                     profit = Math.max(buyStock, skip);
 
                 } else {
-
                     int sellStock = prices[index] + ahead[1];
-
                     int skip = ahead[0];
-
                     profit = Math.max(sellStock, skip);
                 }
 
