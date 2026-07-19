@@ -78,4 +78,4 @@ class Solution2 {
 
         return dp[1][n];
     }
-}
+} 
