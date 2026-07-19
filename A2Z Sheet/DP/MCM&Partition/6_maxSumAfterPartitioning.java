@@ -1,6 +1,6 @@
 import java.util.*;
 
-class Solution {
+class Solution1 {
     public int maxSumAfterPartitioning(int[] arr, int k) {
         int n = arr.length;
 
@@ -28,5 +28,33 @@ class Solution {
         }
 
         return dp[index] = maxSum;
+    }
+}
+
+
+
+class Solution2 {
+    public int maxSumAfterPartitioning(int[] arr, int k) {
+        int n = arr.length;
+
+        int[] dp = new int[n + 1];
+
+        for (int index = n - 1; index >= 0; index--) {
+
+            int maxSum = 0;
+            int currentMax = 0;
+            int length = 0;
+
+            for (int j = index; j < Math.min(n, index + k); j++) {
+                length++;
+                currentMax = Math.max(currentMax, arr[j]);
+                int sum = length * currentMax + dp[j + 1];
+                maxSum = Math.max(maxSum, sum);
+            }
+
+            dp[index] = maxSum;
+        }
+
+        return dp[0];
     }
 }
