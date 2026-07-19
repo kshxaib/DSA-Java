@@ -2,8 +2,8 @@
 
 class Trie {
     class TrieNode {
-        TrieNode[] children;
-        boolean isEnd;
+        TrieNode[] children;     // links to next characters
+        boolean isEnd;          // marks end of a complete word
 
         TrieNode() {
             children = new TrieNode[26];
@@ -11,57 +11,60 @@ class Trie {
         }
     }
 
-    TrieNode root;
+    TrieNode root;  // root of trie
 
     public Trie() {
         root = new TrieNode();
     }
 
-    public void insert(String word) {
+    // Insert a word
+    public void insert(String word) {   
         TrieNode current = root;
 
         for (char ch : word.toCharArray()) {
             int index = ch - 'a';
 
-            if (current.children[index] == null) {
+            if (current.children[index] == null) {  // create node if absent
                 current.children[index] = new TrieNode();
             }
 
-            current = current.children[index];
+            current = current.children[index];  // move to next node
         }
 
-        current.isEnd = true;
+        current.isEnd = true;    // mark complete word
     }
 
-    public boolean search(String word) {
+    // Search complete word
+    public boolean search(String word) {    
         TrieNode current = root;
 
         for (char ch : word.toCharArray()) {
             int index = ch - 'a';
 
-            if (current.children[index] == null) {
+            if (current.children[index] == null) {  // path doesn't exist
                 return false;
             }
 
-            current = current.children[index];
+            current = current.children[index];  // move to next node
         }
 
-        return current.isEnd;
+        return current.isEnd;   // word exists only if marked as end
     }
 
+    // Check if prefix exists
     public boolean startsWith(String prefix) {
         TrieNode current = root;
 
         for (char ch : prefix.toCharArray()) {
             int index = ch - 'a';
 
-            if (current.children[index] == null) {
+            if (current.children[index] == null) {  // prefix path doesn't exist
                 return false;
             }
 
-            current = current.children[index];
+            current = current.children[index];  // move to next node
         }
 
-        return true;
+        return true;    // prefix found
     }
 }
