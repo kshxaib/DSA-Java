@@ -35,3 +35,31 @@ class Solution1 {
     }
 }
 
+
+
+
+class Solution2 {
+    public int matrixMultiplication(int[] nums) {
+        int n = nums.length;
+
+        int[][] dp = new int[n][n]; // dp[i][j] = minimum cost to multiply matrices i...j
+
+        // build answer for increasing interval lengths
+        for (int i = n - 1; i >= 1; i--) {
+            for (int j = i + 1; j < n; j++) {
+
+                dp[i][j] = Integer.MAX_VALUE;
+
+                // try every partition
+                for (int k = i; k < j; k++) {
+
+                    // left cost + right cost + multiplication cost
+                    int cost = dp[i][k] + dp[k + 1][j] + nums[i - 1] * nums[k] * nums[j];
+                    dp[i][j] = Math.min(dp[i][j], cost);    // keep minimum cost
+                }
+            }
+        }
+
+        return dp[1][n - 1];    // minimum cost for all matrices
+    }
+}
