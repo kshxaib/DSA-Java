@@ -1,3 +1,5 @@
+import java.util.*;
+
 // Class representing a node in Doubly Linked List
 class Node {
 
@@ -40,4 +42,44 @@ public class Main {
         // Printing the data stored in head node
         System.out.println(head.data);
     }
+}
+
+class ListNode {
+    int val;
+    ListNode next;
+    ListNode prev;
+
+    ListNode() {
+    }
+
+    ListNode(int val) {
+        this.val = val;
+    }
+
+    ListNode(int val, ListNode next, ListNode prev) {
+        this.val = val;
+        this.next = next;
+        this.prev = prev;
+    }
+}
+
+
+public ListNode reverseList(ListNode head) {
+    Stack<Integer> st = new Stack<>();
+
+    ListNode temp = head;
+
+    while (temp != null) {
+        st.push(temp.val);
+        temp = temp.next;
+    }
+
+    temp = head;
+
+    while (temp != null) {
+        temp.val = st.pop();
+        temp = temp.next;
+    }
+
+    return head;
 }
