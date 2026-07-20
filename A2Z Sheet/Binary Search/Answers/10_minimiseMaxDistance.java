@@ -9,11 +9,18 @@ class Solution {
 
         int ans = 0;
 
-        for (int dis = 1; dis <= maxDis; dis++) {
-            if (canPlace(position, m, dis)) {
-                ans = dis;
-            } else
-                break;
+        int start = 1;
+        int end = maxDis;
+
+        while (start <= end) {
+            int mid = start + (end - start) / 2;
+
+            if (canPlace(position, m, mid)) {
+                ans = mid;
+                start = mid + 1;
+            } else {
+                end = mid - 1;
+            }
         }
 
         return ans;
