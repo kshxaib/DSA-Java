@@ -1,4 +1,4 @@
-class Solution {
+class Solution1 {
     class Node {
         int val;
         Node next;
@@ -10,7 +10,7 @@ class Solution {
             this.random = null;
         }
     }
-
+    
     public Node copyRandomList(Node head) {
         if (head == null) {
             return null;
