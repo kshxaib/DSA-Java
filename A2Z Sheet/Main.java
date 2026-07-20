@@ -1,61 +1,43 @@
-import java.util.*;
-
-/**
- * Main
- */
-class Solution {
-    public int findMedian(int[][] matrix) {
-        int n = matrix.length;
-        int m = matrix[0].length;
-
-        int[] arr = new int[n * m];
-
-        int idx = 0;
-
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < m; j++) {
-                arr[idx++] = matrix[i][j];
-            }
-        }
-
-        Arrays.sort(arr);
-
-        return arr[(n * m) / 2];
-    }
-}
-
-
-// Node class represents a node in the linked list
+// Class representing a node in Doubly Linked List
 class Node {
-    int data;      // Data value
-    Node next;     // Pointer to next node
 
-    // Constructor with data and next
-    Node(int data1, Node next1) {
+    // Stores data of the node
+    int data;
+
+    // Pointer to the next node
+    Node next;
+
+    // Pointer to the previous node
+    Node prev;
+
+    // Constructor when data, next and prev are provided
+    Node(int data1, Node next1, Node prev1) {
         data = data1;
         next = next1;
+        prev = prev1;
     }
 
-    // Constructor with only data
+    // Constructor when only data is provided
     Node(int data1) {
         data = data1;
         next = null;
+        prev = null;
     }
 }
 
 public class Main {
     public static void main(String[] args) {
 
-        // Create an array
+        // Initializing an array to create nodes
         int[] arr = {2, 5, 8, 7};
 
-        // Create first node
-        Node y = new Node(arr[0]);
+        // Creating the head node of the doubly linked list
+        Node head = new Node(arr[0]);
 
-        // Print memory reference of node
-        System.out.println(y);
+        // Printing the memory reference of head
+        System.out.println(head);
 
-        // Print data stored in node
-        System.out.println(y.data);
+        // Printing the data stored in head node
+        System.out.println(head.data);
     }
 }
