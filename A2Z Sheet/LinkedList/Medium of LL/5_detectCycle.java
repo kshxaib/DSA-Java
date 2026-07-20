@@ -59,6 +59,24 @@ Space Complexity: O(1)
 import java.util.*;
 
 class Solution {
+    class ListNode {
+        int val;
+        ListNode next;
+        ListNode prev;
+
+        ListNode() {
+        }
+
+        ListNode(int val) {
+            this.val = val;
+        }
+
+        ListNode(int val, ListNode next, ListNode prev) {
+            this.val = val;
+            this.next = next;
+            this.prev = prev;
+        }
+    }
 
     public ListNode detectCycle(ListNode head) {
         ListNode slow = head;
@@ -83,7 +101,7 @@ class Solution {
             }
         }
 
-        return null; 
+        return null;
     }
 }
 
