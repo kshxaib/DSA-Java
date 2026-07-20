@@ -154,7 +154,7 @@ Space Complexity: O(N) for newly created nodes
 + recursion stack
 */
 
-class Solution {
+class Solution1 {
 
     class ListNode {
         int val;
@@ -179,7 +179,7 @@ class Solution {
             child = childNode;
         }
     }
-
+class Solution {
     public ListNode flattenLinkedList(ListNode head) {
         // Step 1: If the list is empty or contains only one main list, it is already flattened.
         if (head == null || head.next == null) {
