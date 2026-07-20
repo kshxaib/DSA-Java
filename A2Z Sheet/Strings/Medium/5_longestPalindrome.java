@@ -119,7 +119,6 @@ class Solution {
     }
 
     private int expand(String s, int left, int right) {
-
         // Expand while characters match
         while (
             left >= 0 &&
