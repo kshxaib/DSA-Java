@@ -1,21 +1,26 @@
+import java.util.*;
+
 class Solution {
     public List<List<Integer>> shiftGrid(int[][] grid, int k) {
         int m = grid.length;
         int n = grid[0].length;
-        int total = n * m;
+        int total = m * n;
 
-        k = k % total;
+        // Reduce unnecessary full rotations
+        k %= total;
 
-        reverse(grid, 0, total -1, n);
-        reverse(grid, 0, k-1, n);
-        reverse(grid, k, total -1, n);
+        // Rotate right using reversal algorithm
+        reverse(grid, 0, total - 1, n);
+        reverse(grid, 0, k - 1, n);
+        reverse(grid, k, total - 1, n);
 
+        // Convert grid to List<List<Integer>>
         List<List<Integer>> ans = new ArrayList<>();
 
-        for(int i=0; i<m; i++){
+        for (int i = 0; i < m; i++) {
             List<Integer> row = new ArrayList<>();
 
-            for(int j=0; j<n; j++){
+            for (int j = 0; j < n; j++) {
                 row.add(grid[i][j]);
             }
 
@@ -25,20 +30,24 @@ class Solution {
         return ans;
     }
 
-    private void reverse(int grid[][], int i, int j, int cols){
-        while(i < j){
-            int r1 = i / cols;
-            int c1 = i % cols;
+    private void reverse(int[][] grid, int left, int right, int cols) {
+        // Reverse elements by treating 2D grid as a 1D array
+        while (left < right) {
 
-            int r2 = j / cols;
-            int c2 = j % cols;
+            // Convert 1D index -> 2D coordinates
+            int r1 = left / cols;
+            int c1 = left % cols;
 
+            int r2 = right / cols;
+            int c2 = right % cols;
+
+            // Swap elements
             int temp = grid[r1][c1];
             grid[r1][c1] = grid[r2][c2];
             grid[r2][c2] = temp;
 
-            i++;
-            j--;
+            left++;
+            right--;
         }
     }
 }
