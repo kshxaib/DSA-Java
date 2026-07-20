@@ -71,7 +71,7 @@ Each check → O(n)
 Space Complexity : O(1)
 */
 
-class Solution {
+class Solution1 {
     public int smallestDivisor(int[] nums, int threshold) {
         int max = Integer.MIN_VALUE;
 
@@ -111,7 +111,7 @@ class Solution {
 }
 
 
-class Solution {
+class Solution2 {
     public int smallestDivisor(int[] nums, int threshold) {
         int n = nums.length;
 

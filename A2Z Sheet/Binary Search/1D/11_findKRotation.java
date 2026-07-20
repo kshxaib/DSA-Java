@@ -74,6 +74,7 @@ Properties:
 - Works only with DISTINCT values
 - Finds pivot element
 */
+import java.util.*;
 
 class Solution {
     public int findKRotation(ArrayList<Integer> nums) {
