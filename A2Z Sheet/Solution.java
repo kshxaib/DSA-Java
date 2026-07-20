@@ -3,33 +3,35 @@ import java.util.*;
 /**
  * Main
  */
-public class Solution {
-    public int minEatingSpeed(int[] piles, int h) {
-        int n = piles.length;
+class Solution {
+    public boolean searchMatrix(int[][] mat, int target) {
+        int rows = mat.length;
 
-        int max = Integer.MIN_VALUE;
-        for (int i = 0; i < n; i++) {
-            max = Math.max(max, piles[i]);
-        }
-
-        for (int i = 1; i <= max; i++) {
-            int hours = calculateTotalHours(piles, i);
-
-            if (hours <= h) {
-                return i;
+        for (int i = 0; i < rows; i++) {
+            if (binarySearch(mat[i], target)) {
+                return true;
             }
         }
 
-        return max;
+        return false;
     }
 
-    private int calculateTotalHours(int piles[], int h) {
-        int totalHr = 0;
+    private boolean binarySearch(int[] row, int target) {
+        int start = 0;
+        int end = row.length - 1;
 
-        for (int i = 0; i < piles.length; i++) {
-            totalHr += Math.ceil((double) piles[i] / h);
+        while (start <= end) {
+            int mid = start + (end - start) / 2;
+
+            if (row[mid] == target) {
+                return true;
+            } else if (row[mid] > target) {
+                end = mid - 1;
+            } else {
+                start = mid + 1;
+            }
         }
 
-        return totalHr;
+        return false;
     }
 }

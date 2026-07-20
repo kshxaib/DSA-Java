@@ -141,7 +141,7 @@ class Solution {
 
 
 
-class Solution {
+class Solution1 {
     
     public int rowWithMax1s(int[][] mat) {
        int n = mat.length;

@@ -100,7 +100,7 @@ Each feasibility check → O(n)
 Space Complexity : O(1)
 */
 
-class Solution {
+class Solution1 {
     public int splitArray(int[] nums, int k) {
         int n = nums.length;
 
