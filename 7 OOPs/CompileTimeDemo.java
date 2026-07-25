@@ -1,5 +1,4 @@
 class Calculator {
-
     int add(int a, int b) {
         return a + b;
     }
@@ -14,7 +13,6 @@ class Calculator {
 }
 
 public class CompileTimeDemo {
-
     public static void main(String[] args) {
 
         Calculator c = new Calculator();
@@ -24,3 +22,5 @@ public class CompileTimeDemo {
         System.out.println(c.add(10.5,20.5));
     }
 }
+
+
