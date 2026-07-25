@@ -1,16 +1,10 @@
 // Topic: Classes and Objects in Java
 public class ClassesAndObjects {
     public static void main(String args[]){
-        // Creating an object of Pen class using 'new' keyword
+
         Pen p1 = new Pen();
 
-        // Setting color using setter method
         p1.setColor("blue");
-
-        // Accessing property (color) of object
-        System.out.println(p1.color);
-
-        // Directly accessing and assigning value to tip variable
         p1.tip = 5;
 
         // Printing the tip value
@@ -20,16 +14,13 @@ public class ClassesAndObjects {
 
 // ---------------- Pen Class ----------------
 class Pen {
-    // Properties (fields/attributes)
     String color;
     int tip;
 
-    // Method to set color
     void setColor(String newColor) {
         color = newColor;
     }
 
-    // Method to set tip size
     void setTip(int newTip){
         tip = newTip;
     }
