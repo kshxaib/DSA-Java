@@ -1,5 +1,4 @@
 class Student {
-
     String name;
     int age;
 
@@ -20,7 +19,6 @@ class Student {
 }
 
 public class CopyConstructorDemo {
-
     public static void main(String[] args) {
 
         Student s1 = new Student("Khan Shoaib", 20);
@@ -31,3 +29,6 @@ public class CopyConstructorDemo {
         s2.display();
     }
 }
+
+
+
