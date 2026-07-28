@@ -1,12 +1,10 @@
 interface Remote {
-
     void turnOn();
 
     void turnOff();
 }
 
 class TV implements Remote {
-
     public void turnOn() {
         System.out.println("TV ON");
     }
@@ -17,12 +15,13 @@ class TV implements Remote {
 }
 
 public class InterfaceDemo {
-
     public static void main(String[] args) {
-
         Remote r = new TV();
 
         r.turnOn();
         r.turnOff();
     }
 }
+
+
+
