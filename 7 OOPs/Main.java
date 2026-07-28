@@ -1,5 +1,4 @@
 class Student {
-
     static String college = "ABC College";
     String name;
 
@@ -22,3 +21,5 @@ public class Main {
         s2.display();
     }
 }
+
+
