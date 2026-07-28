@@ -1,5 +1,4 @@
 class Student {
-
     int[] marks;
 
     Student(int m) {
@@ -18,7 +17,6 @@ class Student {
 }
 
 public class ShallowCopyDemo {
-
     public static void main(String[] args) {
 
         Student s1 = new Student(90);
@@ -31,3 +29,5 @@ public class ShallowCopyDemo {
         s2.display();
     }
 }
+
+
