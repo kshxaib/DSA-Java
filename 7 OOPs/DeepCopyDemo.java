@@ -1,4 +1,5 @@
 class Student {
+
     int[] marks;
 
     Student(int m) {
@@ -6,17 +7,22 @@ class Student {
         marks[0] = m;
     }
 
-    // Shallow Copy
+    // Deep Copy
     Student(Student s) {
-        this.marks = s.marks;
+
+        this.marks = new int[1];
+
+        this.marks[0] = s.marks[0];
     }
 
     void display() {
+
         System.out.println("Marks : " + marks[0]);
     }
 }
 
-public class ShallowCopyDemo {
+public class DeepCopyDemo {
+
     public static void main(String[] args) {
 
         Student s1 = new Student(90);
@@ -26,8 +32,7 @@ public class ShallowCopyDemo {
         s2.marks[0] = 50;
 
         s1.display();
+
         s2.display();
     }
 }
-
-
