@@ -1,26 +1,16 @@
-class Student {
-    String name;
-    int age;
+class A{
 
-    Student(String name, int age) {
-
-        this.name = name;
-        this.age = age;
-    }
-
-    void display() {
-
-        System.out.println("Name : " + this.name);
-        System.out.println("Age : " + this.age);
-    }
 }
 
-public class ThisKeywordDemo {
-    public static void main(String[] args) {
+class B extends A{
 
-        Student s = new Student("Khan Shoaib", 20);
-
-        s.display();
-    }
 }
 
+class C extends A{
+
+}
+
+// Not Allowed
+class D extends B, C{
+
+}
