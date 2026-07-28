@@ -1,13 +1,9 @@
-class Student {
-    static void show() {
-        System.out.println("Welcome to Java");
-    }
-}
-
-public class Main {
+class Test {
     public static void main(String[] args) {
-
-        Student.show();
+        Test t1 = new Test();
+        Test t2 = t1;
+        System.out.println(t1 == t2);
     }
 }
+
 
