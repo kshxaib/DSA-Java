@@ -1,5 +1,4 @@
 class Student {
-
     String name;
     int age;
 
@@ -17,7 +16,6 @@ class Student {
 }
 
 public class ThisKeywordDemo {
-
     public static void main(String[] args) {
 
         Student s = new Student("Khan Shoaib", 20);
@@ -25,3 +23,4 @@ public class ThisKeywordDemo {
         s.display();
     }
 }
+
