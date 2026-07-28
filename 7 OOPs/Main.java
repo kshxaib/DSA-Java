@@ -14,8 +14,8 @@ class Student {
 public class Main {
     public static void main(String[] args) {
 
-        Student s1 = new Student("Aman");
-        Student s2 = new Student("Riya");
+        Student s1 = new Student("Shoaib");
+        Student s2 = new Student("Faisal");
 
         s1.display();
         s2.display();
