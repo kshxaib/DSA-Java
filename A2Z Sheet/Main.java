@@ -1,31 +1,25 @@
-interface Camera{
-    void click();
+interface A{
+    void show();
 }
 
-interface MusicPlayer{
-    void playMusic();
+interface B extends A{
+
 }
 
-class SmartPhone implements Camera, MusicPlayer{
-    public void click(){
-        System.out.println("Photo Clicked");
-    }
+interface C extends A{
 
-    public void playMusic(){
-        System.out.println("Playing Music");
+}
+
+class D implements B, C{
+    public void show(){
+        System.out.println("Method Implemented in D");
     }
 }
 
 public class Main{
     public static void main(String[] args){
-
-        SmartPhone phone = new SmartPhone();
-
-        phone.click();
-
-        phone.playMusic();
+        D obj = new D();
+        obj.show();
     }
 }
-
-
 
