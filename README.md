@@ -38,6 +38,7 @@ It includes detailed examples, explanations, and solutions for a variety of DSA 
 |  |
 | ------- |
 | [0049-group-anagrams](https://github.com/kshxaib/DSA-Java/tree/master/0049-group-anagrams) |
+| [0125-valid-palindrome](https://github.com/kshxaib/DSA-Java/tree/master/0125-valid-palindrome) |
 | [0242-valid-anagram](https://github.com/kshxaib/DSA-Java/tree/master/0242-valid-anagram) |
 ## Divide and Conquer
 |  |
@@ -71,4 +72,8 @@ It includes detailed examples, explanations, and solutions for a variety of DSA 
 |  |
 | ------- |
 | [0128-longest-consecutive-sequence](https://github.com/kshxaib/DSA-Java/tree/master/0128-longest-consecutive-sequence) |
+## Two Pointers
+|  |
+| ------- |
+| [0125-valid-palindrome](https://github.com/kshxaib/DSA-Java/tree/master/0125-valid-palindrome) |
 <!---LeetCode Topics End-->
