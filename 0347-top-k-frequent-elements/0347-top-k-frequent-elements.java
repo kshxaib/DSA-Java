@@ -6,13 +6,21 @@ class Solution {
             map.put(nums[i], map.getOrDefault(nums[i], 0) +1);
         }
 
-        List<Integer> list = new ArrayList<>(map.keySet());
+        Queue<Integer> heap = new PriorityQueue<>(
+            (a, b) -> map.get(a) - map.get(b)
+        );
 
-        list.sort((a, b) -> map.get(b) - map.get(a));
+        for(int key : map.keySet()){
+            heap.add(key);
+
+            if(heap.size() > k){
+                heap.poll();
+            }
+        }
 
         int ans[] = new int[k];
         for(int i=0; i<k; i++){
-            ans[i] = list.get(i);
+            ans[i] = heap.poll();
         }
 
         return ans;
