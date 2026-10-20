@@ -25,6 +25,7 @@ It includes detailed examples, explanations, and solutions for a variety of DSA 
 | [0217-contains-duplicate](https://github.com/kshxaib/DSA-Java/tree/master/0217-contains-duplicate) |
 | [0238-product-of-array-except-self](https://github.com/kshxaib/DSA-Java/tree/master/0238-product-of-array-except-self) |
 | [0239-sliding-window-maximum](https://github.com/kshxaib/DSA-Java/tree/master/0239-sliding-window-maximum) |
+| [0240-search-a-2d-matrix-ii](https://github.com/kshxaib/DSA-Java/tree/master/0240-search-a-2d-matrix-ii) |
 | [0347-top-k-frequent-elements](https://github.com/kshxaib/DSA-Java/tree/master/0347-top-k-frequent-elements) |
 | [0704-binary-search](https://github.com/kshxaib/DSA-Java/tree/master/0704-binary-search) |
 | [0739-daily-temperatures](https://github.com/kshxaib/DSA-Java/tree/master/0739-daily-temperatures) |
@@ -67,6 +68,7 @@ It includes detailed examples, explanations, and solutions for a variety of DSA 
 ## Divide and Conquer
 |  |
 | ------- |
+| [0240-search-a-2d-matrix-ii](https://github.com/kshxaib/DSA-Java/tree/master/0240-search-a-2d-matrix-ii) |
 | [0347-top-k-frequent-elements](https://github.com/kshxaib/DSA-Java/tree/master/0347-top-k-frequent-elements) |
 ## Heap (Priority Queue)
 |  |
@@ -94,6 +96,7 @@ It includes detailed examples, explanations, and solutions for a variety of DSA 
 | ------- |
 | [0036-valid-sudoku](https://github.com/kshxaib/DSA-Java/tree/master/0036-valid-sudoku) |
 | [0085-maximal-rectangle](https://github.com/kshxaib/DSA-Java/tree/master/0085-maximal-rectangle) |
+| [0240-search-a-2d-matrix-ii](https://github.com/kshxaib/DSA-Java/tree/master/0240-search-a-2d-matrix-ii) |
 ## Union-Find
 |  |
 | ------- |
@@ -111,6 +114,7 @@ It includes detailed examples, explanations, and solutions for a variety of DSA 
 |  |
 | ------- |
 | [0167-two-sum-ii-input-array-is-sorted](https://github.com/kshxaib/DSA-Java/tree/master/0167-two-sum-ii-input-array-is-sorted) |
+| [0240-search-a-2d-matrix-ii](https://github.com/kshxaib/DSA-Java/tree/master/0240-search-a-2d-matrix-ii) |
 | [0704-binary-search](https://github.com/kshxaib/DSA-Java/tree/master/0704-binary-search) |
 ## Greedy
 |  |
