@@ -16,6 +16,7 @@ It includes detailed examples, explanations, and solutions for a variety of DSA 
 | [0036-valid-sudoku](https://github.com/kshxaib/DSA-Java/tree/master/0036-valid-sudoku) |
 | [0042-trapping-rain-water](https://github.com/kshxaib/DSA-Java/tree/master/0042-trapping-rain-water) |
 | [0049-group-anagrams](https://github.com/kshxaib/DSA-Java/tree/master/0049-group-anagrams) |
+| [0084-largest-rectangle-in-histogram](https://github.com/kshxaib/DSA-Java/tree/master/0084-largest-rectangle-in-histogram) |
 | [0121-best-time-to-buy-and-sell-stock](https://github.com/kshxaib/DSA-Java/tree/master/0121-best-time-to-buy-and-sell-stock) |
 | [0128-longest-consecutive-sequence](https://github.com/kshxaib/DSA-Java/tree/master/0128-longest-consecutive-sequence) |
 | [0150-evaluate-reverse-polish-notation](https://github.com/kshxaib/DSA-Java/tree/master/0150-evaluate-reverse-polish-notation) |
@@ -122,6 +123,7 @@ It includes detailed examples, explanations, and solutions for a variety of DSA 
 | ------- |
 | [0020-valid-parentheses](https://github.com/kshxaib/DSA-Java/tree/master/0020-valid-parentheses) |
 | [0042-trapping-rain-water](https://github.com/kshxaib/DSA-Java/tree/master/0042-trapping-rain-water) |
+| [0084-largest-rectangle-in-histogram](https://github.com/kshxaib/DSA-Java/tree/master/0084-largest-rectangle-in-histogram) |
 | [0150-evaluate-reverse-polish-notation](https://github.com/kshxaib/DSA-Java/tree/master/0150-evaluate-reverse-polish-notation) |
 | [0155-min-stack](https://github.com/kshxaib/DSA-Java/tree/master/0155-min-stack) |
 | [0739-daily-temperatures](https://github.com/kshxaib/DSA-Java/tree/master/0739-daily-temperatures) |
@@ -130,6 +132,7 @@ It includes detailed examples, explanations, and solutions for a variety of DSA 
 |  |
 | ------- |
 | [0042-trapping-rain-water](https://github.com/kshxaib/DSA-Java/tree/master/0042-trapping-rain-water) |
+| [0084-largest-rectangle-in-histogram](https://github.com/kshxaib/DSA-Java/tree/master/0084-largest-rectangle-in-histogram) |
 | [0739-daily-temperatures](https://github.com/kshxaib/DSA-Java/tree/master/0739-daily-temperatures) |
 | [0853-car-fleet](https://github.com/kshxaib/DSA-Java/tree/master/0853-car-fleet) |
 ## Sliding Window
@@ -151,6 +154,7 @@ It includes detailed examples, explanations, and solutions for a variety of DSA 
 ## Range Minimum/Maximum Query
 |  |
 | ------- |
+| [0084-largest-rectangle-in-histogram](https://github.com/kshxaib/DSA-Java/tree/master/0084-largest-rectangle-in-histogram) |
 | [0239-sliding-window-maximum](https://github.com/kshxaib/DSA-Java/tree/master/0239-sliding-window-maximum) |
 ## Bracket Sequences
 |  |
