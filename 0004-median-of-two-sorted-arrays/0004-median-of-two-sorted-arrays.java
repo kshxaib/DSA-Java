@@ -4,30 +4,41 @@ class Solution {
         int m = nums2.length;
         int total = n + m;
 
-        int i = 0, j = 0;
-        int counter = 0;
-        int prev = 0, curr = 0;
+        // Always binary search on the smaller array
+        if (n > m) {
+            return findMedianSortedArrays(nums2, nums1);
+        }
 
-        while (counter <= total / 2) {
-            prev = curr;
+        int leftPartitionSize = (total +1) / 2;
 
-            if (i >= n) {
-                curr = nums2[j++];
-            } else if (j >= m) {
-                curr = nums1[i++];
-            } else if (nums1[i] <= nums2[j]) {
-                curr = nums1[i++];
-            } else {
-                curr = nums2[j++];
+        int low = 0;
+        int high = n;
+
+        while(low <= high){
+            int partition1 = low + (high - low) / 2;
+            int partition2 = leftPartitionSize - partition1;
+
+            int left1 = partition1 == 0 ? Integer.MIN_VALUE : nums1[partition1 - 1];
+            int left2 = partition2 == 0 ? Integer.MIN_VALUE : nums2[partition2 - 1];
+
+            int right1 = partition1 == n ? Integer.MAX_VALUE : nums1[partition1];
+            int right2 = partition2 == m ? Integer.MAX_VALUE : nums2[partition2];
+
+            if(left1 <= right2 && left2 <= right1){
+                if(total % 2 == 1){
+                    return Math.max(left1, left2);
+                } else {
+                    return (Math.max(left1, left2) + Math.min(right1, right2)) / 2.0;
+                }
             }
 
-            counter++;
+            if(left1 > left2){
+                high = partition1 -1;
+            } else {
+                low = partition1 +1;
+            }
         }
 
-        if (total % 2 == 1) {
-            return curr;
-        }
-
-        return ((double) prev + curr) / 2.0;
+        return 0.0;
     }
 }
