@@ -1,24 +1,59 @@
 class Solution {
     public Node copyRandomList(Node head) {
-        HashMap<Node, Node> map = new HashMap<>();
-
-        Node temp = head;
-        while(temp != null){
-            Node newNode = new Node(temp.val);
-            map.put(temp, newNode);
-
-            temp = temp.next;
+        if(head == null){
+            return head;
         }        
 
-        temp = head;
-        while(temp != null){
-            Node node = map.get(temp);
-            node.next = map.get(temp.next);
-            node.random = map.get(temp.random);
+        insertCopyInBetween(head);
 
-            temp = temp.next;
+        connectRandomPointers(head);
+
+        return extractCopiedList(head);
+    }
+
+    private void insertCopyInBetween(Node head){
+        Node curr = head;
+
+        while(curr != null){
+            Node nextNode = curr.next;
+            Node copyNode = new Node(curr.val);
+
+            copyNode.next = nextNode;
+            curr.next = copyNode;
+
+            curr = nextNode;
+        }
+    }
+
+    private void connectRandomPointers(Node head){
+        Node curr = head;
+
+        while(curr != null){
+            Node copiedNode = curr.next;
+
+            if(curr.random != null){
+                copiedNode.random = curr.random.next;
+            } else {
+                copiedNode.random = null;
+            }
+
+            curr = curr.next.next;
+        }
+    }
+
+    private Node extractCopiedList(Node head){
+        Node dummy = new Node(-1);
+        Node dTemp = dummy;
+
+        Node curr = head;
+        while(curr != null){
+            dTemp.next = curr.next;
+            dTemp = dTemp.next;
+
+            curr.next = curr.next.next;
+            curr = curr.next;
         }
 
-        return map.get(head);
+        return dummy.next;
     }
 }
