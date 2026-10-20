@@ -31,6 +31,7 @@ It includes detailed examples, explanations, and solutions for a variety of DSA 
 | [0704-binary-search](https://github.com/kshxaib/DSA-Java/tree/master/0704-binary-search) |
 | [0739-daily-temperatures](https://github.com/kshxaib/DSA-Java/tree/master/0739-daily-temperatures) |
 | [0853-car-fleet](https://github.com/kshxaib/DSA-Java/tree/master/0853-car-fleet) |
+| [0875-koko-eating-bananas](https://github.com/kshxaib/DSA-Java/tree/master/0875-koko-eating-bananas) |
 ## Hash Table
 |  |
 | ------- |
@@ -119,6 +120,7 @@ It includes detailed examples, explanations, and solutions for a variety of DSA 
 | [0167-two-sum-ii-input-array-is-sorted](https://github.com/kshxaib/DSA-Java/tree/master/0167-two-sum-ii-input-array-is-sorted) |
 | [0240-search-a-2d-matrix-ii](https://github.com/kshxaib/DSA-Java/tree/master/0240-search-a-2d-matrix-ii) |
 | [0704-binary-search](https://github.com/kshxaib/DSA-Java/tree/master/0704-binary-search) |
+| [0875-koko-eating-bananas](https://github.com/kshxaib/DSA-Java/tree/master/0875-koko-eating-bananas) |
 ## Greedy
 |  |
 | ------- |
