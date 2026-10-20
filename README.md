@@ -23,6 +23,7 @@ It includes detailed examples, explanations, and solutions for a variety of DSA 
 | [0121-best-time-to-buy-and-sell-stock](https://github.com/kshxaib/DSA-Java/tree/master/0121-best-time-to-buy-and-sell-stock) |
 | [0128-longest-consecutive-sequence](https://github.com/kshxaib/DSA-Java/tree/master/0128-longest-consecutive-sequence) |
 | [0150-evaluate-reverse-polish-notation](https://github.com/kshxaib/DSA-Java/tree/master/0150-evaluate-reverse-polish-notation) |
+| [0153-find-minimum-in-rotated-sorted-array](https://github.com/kshxaib/DSA-Java/tree/master/0153-find-minimum-in-rotated-sorted-array) |
 | [0167-two-sum-ii-input-array-is-sorted](https://github.com/kshxaib/DSA-Java/tree/master/0167-two-sum-ii-input-array-is-sorted) |
 | [0217-contains-duplicate](https://github.com/kshxaib/DSA-Java/tree/master/0217-contains-duplicate) |
 | [0238-product-of-array-except-self](https://github.com/kshxaib/DSA-Java/tree/master/0238-product-of-array-except-self) |
@@ -119,6 +120,7 @@ It includes detailed examples, explanations, and solutions for a variety of DSA 
 | ------- |
 | [0033-search-in-rotated-sorted-array](https://github.com/kshxaib/DSA-Java/tree/master/0033-search-in-rotated-sorted-array) |
 | [0074-search-a-2d-matrix](https://github.com/kshxaib/DSA-Java/tree/master/0074-search-a-2d-matrix) |
+| [0153-find-minimum-in-rotated-sorted-array](https://github.com/kshxaib/DSA-Java/tree/master/0153-find-minimum-in-rotated-sorted-array) |
 | [0167-two-sum-ii-input-array-is-sorted](https://github.com/kshxaib/DSA-Java/tree/master/0167-two-sum-ii-input-array-is-sorted) |
 | [0240-search-a-2d-matrix-ii](https://github.com/kshxaib/DSA-Java/tree/master/0240-search-a-2d-matrix-ii) |
 | [0704-binary-search](https://github.com/kshxaib/DSA-Java/tree/master/0704-binary-search) |
