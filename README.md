@@ -120,6 +120,7 @@ It includes detailed examples, explanations, and solutions for a variety of DSA 
 | [0042-trapping-rain-water](https://github.com/kshxaib/DSA-Java/tree/master/0042-trapping-rain-water) |
 | [0125-valid-palindrome](https://github.com/kshxaib/DSA-Java/tree/master/0125-valid-palindrome) |
 | [0141-linked-list-cycle](https://github.com/kshxaib/DSA-Java/tree/master/0141-linked-list-cycle) |
+| [0143-reorder-list](https://github.com/kshxaib/DSA-Java/tree/master/0143-reorder-list) |
 | [0167-two-sum-ii-input-array-is-sorted](https://github.com/kshxaib/DSA-Java/tree/master/0167-two-sum-ii-input-array-is-sorted) |
 | [0567-permutation-in-string](https://github.com/kshxaib/DSA-Java/tree/master/0567-permutation-in-string) |
 ## Binary Search
@@ -152,6 +153,7 @@ It includes detailed examples, explanations, and solutions for a variety of DSA 
 | [0042-trapping-rain-water](https://github.com/kshxaib/DSA-Java/tree/master/0042-trapping-rain-water) |
 | [0084-largest-rectangle-in-histogram](https://github.com/kshxaib/DSA-Java/tree/master/0084-largest-rectangle-in-histogram) |
 | [0085-maximal-rectangle](https://github.com/kshxaib/DSA-Java/tree/master/0085-maximal-rectangle) |
+| [0143-reorder-list](https://github.com/kshxaib/DSA-Java/tree/master/0143-reorder-list) |
 | [0150-evaluate-reverse-polish-notation](https://github.com/kshxaib/DSA-Java/tree/master/0150-evaluate-reverse-polish-notation) |
 | [0155-min-stack](https://github.com/kshxaib/DSA-Java/tree/master/0155-min-stack) |
 | [0739-daily-temperatures](https://github.com/kshxaib/DSA-Java/tree/master/0739-daily-temperatures) |
@@ -209,11 +211,13 @@ It includes detailed examples, explanations, and solutions for a variety of DSA 
 | [0019-remove-nth-node-from-end-of-list](https://github.com/kshxaib/DSA-Java/tree/master/0019-remove-nth-node-from-end-of-list) |
 | [0021-merge-two-sorted-lists](https://github.com/kshxaib/DSA-Java/tree/master/0021-merge-two-sorted-lists) |
 | [0141-linked-list-cycle](https://github.com/kshxaib/DSA-Java/tree/master/0141-linked-list-cycle) |
+| [0143-reorder-list](https://github.com/kshxaib/DSA-Java/tree/master/0143-reorder-list) |
 | [0206-reverse-linked-list](https://github.com/kshxaib/DSA-Java/tree/master/0206-reverse-linked-list) |
 ## Recursion
 |  |
 | ------- |
 | [0021-merge-two-sorted-lists](https://github.com/kshxaib/DSA-Java/tree/master/0021-merge-two-sorted-lists) |
+| [0143-reorder-list](https://github.com/kshxaib/DSA-Java/tree/master/0143-reorder-list) |
 | [0206-reverse-linked-list](https://github.com/kshxaib/DSA-Java/tree/master/0206-reverse-linked-list) |
 ## Floyd's Cycle Finding Algorithm
 |  |
