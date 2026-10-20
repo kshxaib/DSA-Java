@@ -1,24 +1,40 @@
 class Solution {
     public ListNode mergeKLists(ListNode[] lists) {
-        ArrayList<Integer> list = new ArrayList<>();
+        if (lists.length == 0) {
+            return null;
+        }
 
-        for(int i=0; i<lists.length; i++){
-            ListNode temp = lists[i];
+        ListNode head = lists[0];
 
-            while(temp != null){
-                list.add(temp.val);
-                temp = temp.next;
-            }
-        }        
+        for (int i = 1; i < lists.length; i++) {
+            head = mergeLL(head, lists[i]);
+        }
 
-        Collections.sort(list);
+        return head;
+    }
 
+    private ListNode mergeLL(ListNode firstLL, ListNode secondLL) {
         ListNode dummy = new ListNode(-1);
-        ListNode dTemp = dummy;
+        ListNode temp = dummy;
 
-        for(int i=0; i<list.size(); i++){
-            dTemp.next = new ListNode(list.get(i));
-            dTemp = dTemp.next;
+        while (firstLL != null && secondLL != null) {
+            if (firstLL.val <= secondLL.val) {
+                temp.next = firstLL;
+                firstLL = firstLL.next;
+            } else {
+                temp.next = secondLL;
+                secondLL = secondLL.next;
+            }
+
+            temp = temp.next;
+        }
+
+        if (firstLL != null) {
+            temp.next = firstLL;
+        }
+
+        if (secondLL != null) {
+            temp.next = secondLL;
         }
 
         return dummy.next;
