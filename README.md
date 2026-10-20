@@ -30,6 +30,7 @@ It includes detailed examples, explanations, and solutions for a variety of DSA 
 | [0238-product-of-array-except-self](https://github.com/kshxaib/DSA-Java/tree/master/0238-product-of-array-except-self) |
 | [0239-sliding-window-maximum](https://github.com/kshxaib/DSA-Java/tree/master/0239-sliding-window-maximum) |
 | [0240-search-a-2d-matrix-ii](https://github.com/kshxaib/DSA-Java/tree/master/0240-search-a-2d-matrix-ii) |
+| [0287-find-the-duplicate-number](https://github.com/kshxaib/DSA-Java/tree/master/0287-find-the-duplicate-number) |
 | [0347-top-k-frequent-elements](https://github.com/kshxaib/DSA-Java/tree/master/0347-top-k-frequent-elements) |
 | [0704-binary-search](https://github.com/kshxaib/DSA-Java/tree/master/0704-binary-search) |
 | [0739-daily-temperatures](https://github.com/kshxaib/DSA-Java/tree/master/0739-daily-temperatures) |
@@ -122,6 +123,7 @@ It includes detailed examples, explanations, and solutions for a variety of DSA 
 | [0141-linked-list-cycle](https://github.com/kshxaib/DSA-Java/tree/master/0141-linked-list-cycle) |
 | [0143-reorder-list](https://github.com/kshxaib/DSA-Java/tree/master/0143-reorder-list) |
 | [0167-two-sum-ii-input-array-is-sorted](https://github.com/kshxaib/DSA-Java/tree/master/0167-two-sum-ii-input-array-is-sorted) |
+| [0287-find-the-duplicate-number](https://github.com/kshxaib/DSA-Java/tree/master/0287-find-the-duplicate-number) |
 | [0567-permutation-in-string](https://github.com/kshxaib/DSA-Java/tree/master/0567-permutation-in-string) |
 ## Binary Search
 |  |
@@ -132,6 +134,7 @@ It includes detailed examples, explanations, and solutions for a variety of DSA 
 | [0153-find-minimum-in-rotated-sorted-array](https://github.com/kshxaib/DSA-Java/tree/master/0153-find-minimum-in-rotated-sorted-array) |
 | [0167-two-sum-ii-input-array-is-sorted](https://github.com/kshxaib/DSA-Java/tree/master/0167-two-sum-ii-input-array-is-sorted) |
 | [0240-search-a-2d-matrix-ii](https://github.com/kshxaib/DSA-Java/tree/master/0240-search-a-2d-matrix-ii) |
+| [0287-find-the-duplicate-number](https://github.com/kshxaib/DSA-Java/tree/master/0287-find-the-duplicate-number) |
 | [0704-binary-search](https://github.com/kshxaib/DSA-Java/tree/master/0704-binary-search) |
 | [0875-koko-eating-bananas](https://github.com/kshxaib/DSA-Java/tree/master/0875-koko-eating-bananas) |
 | [0981-time-based-key-value-store](https://github.com/kshxaib/DSA-Java/tree/master/0981-time-based-key-value-store) |
@@ -226,4 +229,13 @@ It includes detailed examples, explanations, and solutions for a variety of DSA 
 |  |
 | ------- |
 | [0141-linked-list-cycle](https://github.com/kshxaib/DSA-Java/tree/master/0141-linked-list-cycle) |
+| [0287-find-the-duplicate-number](https://github.com/kshxaib/DSA-Java/tree/master/0287-find-the-duplicate-number) |
+## Bit Manipulation
+|  |
+| ------- |
+| [0287-find-the-duplicate-number](https://github.com/kshxaib/DSA-Java/tree/master/0287-find-the-duplicate-number) |
+## Pigeonhole Principle
+|  |
+| ------- |
+| [0287-find-the-duplicate-number](https://github.com/kshxaib/DSA-Java/tree/master/0287-find-the-duplicate-number) |
 <!---LeetCode Topics End-->
