@@ -11,7 +11,10 @@ class Solution {
             fast = fast.next.next;
         }
 
-        ListNode curr = slow;
+        ListNode secondHalf = slow.next;
+        slow.next = null;
+
+        ListNode curr = secondHalf;
         ListNode prev = null;
         ListNode next = null;
         while(curr != null){
@@ -25,7 +28,7 @@ class Solution {
         ListNode pointer1 = head;
         ListNode pointer2 = prev;
 
-        while(pointer2.next != null){
+        while(pointer2 != null){
             ListNode next1 = pointer1.next;
             ListNode next2 = pointer2.next;
 
