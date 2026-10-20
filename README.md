@@ -18,6 +18,7 @@ It includes detailed examples, explanations, and solutions for a variety of DSA 
 | [0049-group-anagrams](https://github.com/kshxaib/DSA-Java/tree/master/0049-group-anagrams) |
 | [0121-best-time-to-buy-and-sell-stock](https://github.com/kshxaib/DSA-Java/tree/master/0121-best-time-to-buy-and-sell-stock) |
 | [0128-longest-consecutive-sequence](https://github.com/kshxaib/DSA-Java/tree/master/0128-longest-consecutive-sequence) |
+| [0150-evaluate-reverse-polish-notation](https://github.com/kshxaib/DSA-Java/tree/master/0150-evaluate-reverse-polish-notation) |
 | [0167-two-sum-ii-input-array-is-sorted](https://github.com/kshxaib/DSA-Java/tree/master/0167-two-sum-ii-input-array-is-sorted) |
 | [0217-contains-duplicate](https://github.com/kshxaib/DSA-Java/tree/master/0217-contains-duplicate) |
 | [0238-product-of-array-except-self](https://github.com/kshxaib/DSA-Java/tree/master/0238-product-of-array-except-self) |
@@ -116,6 +117,7 @@ It includes detailed examples, explanations, and solutions for a variety of DSA 
 | ------- |
 | [0020-valid-parentheses](https://github.com/kshxaib/DSA-Java/tree/master/0020-valid-parentheses) |
 | [0042-trapping-rain-water](https://github.com/kshxaib/DSA-Java/tree/master/0042-trapping-rain-water) |
+| [0150-evaluate-reverse-polish-notation](https://github.com/kshxaib/DSA-Java/tree/master/0150-evaluate-reverse-polish-notation) |
 | [0155-min-stack](https://github.com/kshxaib/DSA-Java/tree/master/0155-min-stack) |
 ## Monotonic Stack
 |  |
@@ -149,4 +151,8 @@ It includes detailed examples, explanations, and solutions for a variety of DSA 
 |  |
 | ------- |
 | [0155-min-stack](https://github.com/kshxaib/DSA-Java/tree/master/0155-min-stack) |
+## Math
+|  |
+| ------- |
+| [0150-evaluate-reverse-polish-notation](https://github.com/kshxaib/DSA-Java/tree/master/0150-evaluate-reverse-polish-notation) |
 <!---LeetCode Topics End-->
