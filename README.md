@@ -219,6 +219,7 @@ It includes detailed examples, explanations, and solutions for a variety of DSA 
 | [0019-remove-nth-node-from-end-of-list](https://github.com/kshxaib/DSA-Java/tree/master/0019-remove-nth-node-from-end-of-list) |
 | [0021-merge-two-sorted-lists](https://github.com/kshxaib/DSA-Java/tree/master/0021-merge-two-sorted-lists) |
 | [0023-merge-k-sorted-lists](https://github.com/kshxaib/DSA-Java/tree/master/0023-merge-k-sorted-lists) |
+| [0025-reverse-nodes-in-k-group](https://github.com/kshxaib/DSA-Java/tree/master/0025-reverse-nodes-in-k-group) |
 | [0138-copy-list-with-random-pointer](https://github.com/kshxaib/DSA-Java/tree/master/0138-copy-list-with-random-pointer) |
 | [0141-linked-list-cycle](https://github.com/kshxaib/DSA-Java/tree/master/0141-linked-list-cycle) |
 | [0143-reorder-list](https://github.com/kshxaib/DSA-Java/tree/master/0143-reorder-list) |
@@ -228,6 +229,7 @@ It includes detailed examples, explanations, and solutions for a variety of DSA 
 | ------- |
 | [0002-add-two-numbers](https://github.com/kshxaib/DSA-Java/tree/master/0002-add-two-numbers) |
 | [0021-merge-two-sorted-lists](https://github.com/kshxaib/DSA-Java/tree/master/0021-merge-two-sorted-lists) |
+| [0025-reverse-nodes-in-k-group](https://github.com/kshxaib/DSA-Java/tree/master/0025-reverse-nodes-in-k-group) |
 | [0143-reorder-list](https://github.com/kshxaib/DSA-Java/tree/master/0143-reorder-list) |
 | [0206-reverse-linked-list](https://github.com/kshxaib/DSA-Java/tree/master/0206-reverse-linked-list) |
 ## Floyd's Cycle Finding Algorithm
