@@ -203,9 +203,11 @@ It includes detailed examples, explanations, and solutions for a variety of DSA 
 ## Linked List
 |  |
 | ------- |
+| [0021-merge-two-sorted-lists](https://github.com/kshxaib/DSA-Java/tree/master/0021-merge-two-sorted-lists) |
 | [0206-reverse-linked-list](https://github.com/kshxaib/DSA-Java/tree/master/0206-reverse-linked-list) |
 ## Recursion
 |  |
 | ------- |
+| [0021-merge-two-sorted-lists](https://github.com/kshxaib/DSA-Java/tree/master/0021-merge-two-sorted-lists) |
 | [0206-reverse-linked-list](https://github.com/kshxaib/DSA-Java/tree/master/0206-reverse-linked-list) |
 <!---LeetCode Topics End-->
