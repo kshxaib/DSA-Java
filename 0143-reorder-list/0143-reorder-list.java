@@ -1,31 +1,39 @@
 class Solution {
     public void reorderList(ListNode head) {
-        ArrayList<Integer> list = new ArrayList<>();
+        if(head == null || head.next == null){
+            return;
+        }        
 
-        ListNode curr = head;
-        while(curr != null){
-            list.add(curr.val);
-            curr = curr.next;
+        ListNode slow = head;
+        ListNode fast = head;
+        while(fast != null && fast.next != null){
+            slow = slow.next;
+            fast = fast.next.next;
         }
 
-        int i=0, j=list.size() -1;
-        int count = 0;
-        curr = head;
+        ListNode curr = slow;
+        ListNode prev = null;
+        ListNode next = null;
+        while(curr != null){
+            next = curr.next;
+            curr.next = prev;
 
-        while(i <= j){
-            int val;
+            prev = curr;
+            curr = next;
+        }
 
-            if(count % 2 == 0){
-                val = list.get(i);
-                i++;
-            } else {
-                val = list.get(j);
-                j--;
-            }
+        ListNode pointer1 = head;
+        ListNode pointer2 = prev;
 
-            curr.val = val;
-            curr = curr.next;
-            count++;
+        while(pointer2.next != null){
+            ListNode next1 = pointer1.next;
+            ListNode next2 = pointer2.next;
+
+            pointer1.next = pointer2;
+            pointer2.next = next1;
+
+            pointer1 = next1;
+            pointer2 = next2;
         }
     }
 }
