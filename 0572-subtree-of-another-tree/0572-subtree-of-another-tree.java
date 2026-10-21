@@ -1,27 +1,21 @@
 class Solution {
     public boolean isSubtree(TreeNode root, TreeNode subRoot) {
-        if(subRoot == null) return true;
-        if(root == null) return false;   
+        String fullTree = preOrderTraversal(root);
+        String subTree = preOrderTraversal(subRoot);
 
-        if(isSameTree(root, subRoot)){
-            return true;
-        }  
-
-        boolean leftTree = isSubtree(root.left, subRoot);
-        boolean rightTree = isSubtree(root.right, subRoot);
-
-        return leftTree || rightTree;
+        return fullTree.contains(subTree);
     }
 
-    private boolean isSameTree(TreeNode p, TreeNode q){
-        if(p == null && q == null) return true;
-        if(p == null || q == null) return false;
+    private String preOrderTraversal(TreeNode node) {
+        if (node == null) {
+            return "null";
+        }
 
-        if(p.val != q.val) return false;
+        StringBuilder sb = new StringBuilder(",");
+        sb.append(node.val);
+        sb.append(preOrderTraversal(node.left));
+        sb.append(preOrderTraversal(node.right));
 
-        boolean left = isSameTree(p.left, q.left);
-        boolean right = isSameTree(p.right, q.right);
-
-        return left && right;
+        return sb.toString();
     }
 }
