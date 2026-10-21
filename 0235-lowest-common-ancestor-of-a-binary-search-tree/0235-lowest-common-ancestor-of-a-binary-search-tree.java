@@ -1,34 +1,21 @@
 class Solution {
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
-        List<TreeNode> pathP = new ArrayList<>();
-        List<TreeNode> pathQ = new ArrayList<>();
+        TreeNode curr = root;
 
-        findPath(root, p, pathP);
-        findPath(root, q, pathQ);
+        while (curr != null) {
+            if (curr.val < p.val && curr.val < q.val) {
+                curr = curr.right;
+            }
 
-        TreeNode lca = null;
-        int i=0;
+            else if (curr.val > p.val && curr.val > q.val) {
+                curr = curr.left;
+            }
 
-        while(i<pathP.size() && i<pathQ.size() && pathP.get(i) == pathQ.get(i)){
-            lca = pathP.get(i);
-            i++;
+            else {
+                return curr;
+            }
         }
 
-        return lca;
-    }
-
-    private boolean findPath(TreeNode root, TreeNode target, List<TreeNode> path) {
-        if(root == null) return false;
-
-        path.add(root);
-
-        if(root == target) return true;
-
-        if(findPath(root.left, target, path) || findPath(root.right, target, path)){
-            return true;
-        }
-
-        path.remove(path.size() -1);
-        return false;
+        return null;
     }
 }
