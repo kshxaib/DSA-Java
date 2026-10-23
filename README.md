@@ -27,6 +27,7 @@ It includes detailed examples, explanations, and solutions for a variety of DSA 
 | [0150-evaluate-reverse-polish-notation](https://github.com/kshxaib/DSA-Java/tree/master/0150-evaluate-reverse-polish-notation) |
 | [0153-find-minimum-in-rotated-sorted-array](https://github.com/kshxaib/DSA-Java/tree/master/0153-find-minimum-in-rotated-sorted-array) |
 | [0167-two-sum-ii-input-array-is-sorted](https://github.com/kshxaib/DSA-Java/tree/master/0167-two-sum-ii-input-array-is-sorted) |
+| [0212-word-search-ii](https://github.com/kshxaib/DSA-Java/tree/master/0212-word-search-ii) |
 | [0217-contains-duplicate](https://github.com/kshxaib/DSA-Java/tree/master/0217-contains-duplicate) |
 | [0238-product-of-array-except-self](https://github.com/kshxaib/DSA-Java/tree/master/0238-product-of-array-except-self) |
 | [0239-sliding-window-maximum](https://github.com/kshxaib/DSA-Java/tree/master/0239-sliding-window-maximum) |
@@ -76,6 +77,7 @@ It includes detailed examples, explanations, and solutions for a variety of DSA 
 | [0125-valid-palindrome](https://github.com/kshxaib/DSA-Java/tree/master/0125-valid-palindrome) |
 | [0208-implement-trie-prefix-tree](https://github.com/kshxaib/DSA-Java/tree/master/0208-implement-trie-prefix-tree) |
 | [0211-design-add-and-search-words-data-structure](https://github.com/kshxaib/DSA-Java/tree/master/0211-design-add-and-search-words-data-structure) |
+| [0212-word-search-ii](https://github.com/kshxaib/DSA-Java/tree/master/0212-word-search-ii) |
 | [0242-valid-anagram](https://github.com/kshxaib/DSA-Java/tree/master/0242-valid-anagram) |
 | [0297-serialize-and-deserialize-binary-tree](https://github.com/kshxaib/DSA-Java/tree/master/0297-serialize-and-deserialize-binary-tree) |
 | [0424-longest-repeating-character-replacement](https://github.com/kshxaib/DSA-Java/tree/master/0424-longest-repeating-character-replacement) |
@@ -117,6 +119,7 @@ It includes detailed examples, explanations, and solutions for a variety of DSA 
 | [0036-valid-sudoku](https://github.com/kshxaib/DSA-Java/tree/master/0036-valid-sudoku) |
 | [0074-search-a-2d-matrix](https://github.com/kshxaib/DSA-Java/tree/master/0074-search-a-2d-matrix) |
 | [0085-maximal-rectangle](https://github.com/kshxaib/DSA-Java/tree/master/0085-maximal-rectangle) |
+| [0212-word-search-ii](https://github.com/kshxaib/DSA-Java/tree/master/0212-word-search-ii) |
 | [0240-search-a-2d-matrix-ii](https://github.com/kshxaib/DSA-Java/tree/master/0240-search-a-2d-matrix-ii) |
 ## Union-Find
 |  |
@@ -223,6 +226,7 @@ It includes detailed examples, explanations, and solutions for a variety of DSA 
 |  |
 | ------- |
 | [0022-generate-parentheses](https://github.com/kshxaib/DSA-Java/tree/master/0022-generate-parentheses) |
+| [0212-word-search-ii](https://github.com/kshxaib/DSA-Java/tree/master/0212-word-search-ii) |
 ## Linked List
 |  |
 | ------- |
@@ -359,4 +363,5 @@ It includes detailed examples, explanations, and solutions for a variety of DSA 
 | ------- |
 | [0208-implement-trie-prefix-tree](https://github.com/kshxaib/DSA-Java/tree/master/0208-implement-trie-prefix-tree) |
 | [0211-design-add-and-search-words-data-structure](https://github.com/kshxaib/DSA-Java/tree/master/0211-design-add-and-search-words-data-structure) |
+| [0212-word-search-ii](https://github.com/kshxaib/DSA-Java/tree/master/0212-word-search-ii) |
 <!---LeetCode Topics End-->
