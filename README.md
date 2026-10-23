@@ -155,6 +155,7 @@ It includes detailed examples, explanations, and solutions for a variety of DSA 
 | [0042-trapping-rain-water](https://github.com/kshxaib/DSA-Java/tree/master/0042-trapping-rain-water) |
 | [0085-maximal-rectangle](https://github.com/kshxaib/DSA-Java/tree/master/0085-maximal-rectangle) |
 | [0121-best-time-to-buy-and-sell-stock](https://github.com/kshxaib/DSA-Java/tree/master/0121-best-time-to-buy-and-sell-stock) |
+| [0124-binary-tree-maximum-path-sum](https://github.com/kshxaib/DSA-Java/tree/master/0124-binary-tree-maximum-path-sum) |
 ## Stack
 |  |
 | ------- |
@@ -265,6 +266,7 @@ It includes detailed examples, explanations, and solutions for a variety of DSA 
 | [0104-maximum-depth-of-binary-tree](https://github.com/kshxaib/DSA-Java/tree/master/0104-maximum-depth-of-binary-tree) |
 | [0105-construct-binary-tree-from-preorder-and-inorder-traversal](https://github.com/kshxaib/DSA-Java/tree/master/0105-construct-binary-tree-from-preorder-and-inorder-traversal) |
 | [0110-balanced-binary-tree](https://github.com/kshxaib/DSA-Java/tree/master/0110-balanced-binary-tree) |
+| [0124-binary-tree-maximum-path-sum](https://github.com/kshxaib/DSA-Java/tree/master/0124-binary-tree-maximum-path-sum) |
 | [0199-binary-tree-right-side-view](https://github.com/kshxaib/DSA-Java/tree/master/0199-binary-tree-right-side-view) |
 | [0226-invert-binary-tree](https://github.com/kshxaib/DSA-Java/tree/master/0226-invert-binary-tree) |
 | [0230-kth-smallest-element-in-a-bst](https://github.com/kshxaib/DSA-Java/tree/master/0230-kth-smallest-element-in-a-bst) |
@@ -279,6 +281,7 @@ It includes detailed examples, explanations, and solutions for a variety of DSA 
 | [0100-same-tree](https://github.com/kshxaib/DSA-Java/tree/master/0100-same-tree) |
 | [0104-maximum-depth-of-binary-tree](https://github.com/kshxaib/DSA-Java/tree/master/0104-maximum-depth-of-binary-tree) |
 | [0110-balanced-binary-tree](https://github.com/kshxaib/DSA-Java/tree/master/0110-balanced-binary-tree) |
+| [0124-binary-tree-maximum-path-sum](https://github.com/kshxaib/DSA-Java/tree/master/0124-binary-tree-maximum-path-sum) |
 | [0199-binary-tree-right-side-view](https://github.com/kshxaib/DSA-Java/tree/master/0199-binary-tree-right-side-view) |
 | [0226-invert-binary-tree](https://github.com/kshxaib/DSA-Java/tree/master/0226-invert-binary-tree) |
 | [0230-kth-smallest-element-in-a-bst](https://github.com/kshxaib/DSA-Java/tree/master/0230-kth-smallest-element-in-a-bst) |
@@ -304,6 +307,7 @@ It includes detailed examples, explanations, and solutions for a variety of DSA 
 | [0104-maximum-depth-of-binary-tree](https://github.com/kshxaib/DSA-Java/tree/master/0104-maximum-depth-of-binary-tree) |
 | [0105-construct-binary-tree-from-preorder-and-inorder-traversal](https://github.com/kshxaib/DSA-Java/tree/master/0105-construct-binary-tree-from-preorder-and-inorder-traversal) |
 | [0110-balanced-binary-tree](https://github.com/kshxaib/DSA-Java/tree/master/0110-balanced-binary-tree) |
+| [0124-binary-tree-maximum-path-sum](https://github.com/kshxaib/DSA-Java/tree/master/0124-binary-tree-maximum-path-sum) |
 | [0199-binary-tree-right-side-view](https://github.com/kshxaib/DSA-Java/tree/master/0199-binary-tree-right-side-view) |
 | [0226-invert-binary-tree](https://github.com/kshxaib/DSA-Java/tree/master/0226-invert-binary-tree) |
 | [0230-kth-smallest-element-in-a-bst](https://github.com/kshxaib/DSA-Java/tree/master/0230-kth-smallest-element-in-a-bst) |
@@ -314,6 +318,7 @@ It includes detailed examples, explanations, and solutions for a variety of DSA 
 ## DP on Trees
 |  |
 | ------- |
+| [0124-binary-tree-maximum-path-sum](https://github.com/kshxaib/DSA-Java/tree/master/0124-binary-tree-maximum-path-sum) |
 | [0543-diameter-of-binary-tree](https://github.com/kshxaib/DSA-Java/tree/master/0543-diameter-of-binary-tree) |
 ## String Matching
 |  |
