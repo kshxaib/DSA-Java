@@ -49,6 +49,7 @@ It includes detailed examples, explanations, and solutions for a variety of DSA 
 | [0128-longest-consecutive-sequence](https://github.com/kshxaib/DSA-Java/tree/master/0128-longest-consecutive-sequence) |
 | [0138-copy-list-with-random-pointer](https://github.com/kshxaib/DSA-Java/tree/master/0138-copy-list-with-random-pointer) |
 | [0141-linked-list-cycle](https://github.com/kshxaib/DSA-Java/tree/master/0141-linked-list-cycle) |
+| [0208-implement-trie-prefix-tree](https://github.com/kshxaib/DSA-Java/tree/master/0208-implement-trie-prefix-tree) |
 | [0217-contains-duplicate](https://github.com/kshxaib/DSA-Java/tree/master/0217-contains-duplicate) |
 | [0242-valid-anagram](https://github.com/kshxaib/DSA-Java/tree/master/0242-valid-anagram) |
 | [0347-top-k-frequent-elements](https://github.com/kshxaib/DSA-Java/tree/master/0347-top-k-frequent-elements) |
@@ -73,6 +74,7 @@ It includes detailed examples, explanations, and solutions for a variety of DSA 
 | [0049-group-anagrams](https://github.com/kshxaib/DSA-Java/tree/master/0049-group-anagrams) |
 | [0076-minimum-window-substring](https://github.com/kshxaib/DSA-Java/tree/master/0076-minimum-window-substring) |
 | [0125-valid-palindrome](https://github.com/kshxaib/DSA-Java/tree/master/0125-valid-palindrome) |
+| [0208-implement-trie-prefix-tree](https://github.com/kshxaib/DSA-Java/tree/master/0208-implement-trie-prefix-tree) |
 | [0242-valid-anagram](https://github.com/kshxaib/DSA-Java/tree/master/0242-valid-anagram) |
 | [0297-serialize-and-deserialize-binary-tree](https://github.com/kshxaib/DSA-Java/tree/master/0297-serialize-and-deserialize-binary-tree) |
 | [0424-longest-repeating-character-replacement](https://github.com/kshxaib/DSA-Java/tree/master/0424-longest-repeating-character-replacement) |
@@ -207,6 +209,7 @@ It includes detailed examples, explanations, and solutions for a variety of DSA 
 |  |
 | ------- |
 | [0155-min-stack](https://github.com/kshxaib/DSA-Java/tree/master/0155-min-stack) |
+| [0208-implement-trie-prefix-tree](https://github.com/kshxaib/DSA-Java/tree/master/0208-implement-trie-prefix-tree) |
 | [0297-serialize-and-deserialize-binary-tree](https://github.com/kshxaib/DSA-Java/tree/master/0297-serialize-and-deserialize-binary-tree) |
 | [0981-time-based-key-value-store](https://github.com/kshxaib/DSA-Java/tree/master/0981-time-based-key-value-store) |
 ## Math
@@ -348,4 +351,8 @@ It includes detailed examples, explanations, and solutions for a variety of DSA 
 |  |
 | ------- |
 | [0235-lowest-common-ancestor-of-a-binary-search-tree](https://github.com/kshxaib/DSA-Java/tree/master/0235-lowest-common-ancestor-of-a-binary-search-tree) |
+## Trie
+|  |
+| ------- |
+| [0208-implement-trie-prefix-tree](https://github.com/kshxaib/DSA-Java/tree/master/0208-implement-trie-prefix-tree) |
 <!---LeetCode Topics End-->
