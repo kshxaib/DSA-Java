@@ -39,6 +39,7 @@ It includes detailed examples, explanations, and solutions for a variety of DSA 
 | [0739-daily-temperatures](https://github.com/kshxaib/DSA-Java/tree/master/0739-daily-temperatures) |
 | [0853-car-fleet](https://github.com/kshxaib/DSA-Java/tree/master/0853-car-fleet) |
 | [0875-koko-eating-bananas](https://github.com/kshxaib/DSA-Java/tree/master/0875-koko-eating-bananas) |
+| [1046-last-stone-weight](https://github.com/kshxaib/DSA-Java/tree/master/1046-last-stone-weight) |
 ## Hash Table
 |  |
 | ------- |
@@ -101,6 +102,7 @@ It includes detailed examples, explanations, and solutions for a variety of DSA 
 | [0215-kth-largest-element-in-an-array](https://github.com/kshxaib/DSA-Java/tree/master/0215-kth-largest-element-in-an-array) |
 | [0239-sliding-window-maximum](https://github.com/kshxaib/DSA-Java/tree/master/0239-sliding-window-maximum) |
 | [0347-top-k-frequent-elements](https://github.com/kshxaib/DSA-Java/tree/master/0347-top-k-frequent-elements) |
+| [1046-last-stone-weight](https://github.com/kshxaib/DSA-Java/tree/master/1046-last-stone-weight) |
 ## Bucket Sort
 |  |
 | ------- |
