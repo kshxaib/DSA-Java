@@ -39,6 +39,7 @@ It includes detailed examples, explanations, and solutions for a variety of DSA 
 | [0739-daily-temperatures](https://github.com/kshxaib/DSA-Java/tree/master/0739-daily-temperatures) |
 | [0853-car-fleet](https://github.com/kshxaib/DSA-Java/tree/master/0853-car-fleet) |
 | [0875-koko-eating-bananas](https://github.com/kshxaib/DSA-Java/tree/master/0875-koko-eating-bananas) |
+| [0973-k-closest-points-to-origin](https://github.com/kshxaib/DSA-Java/tree/master/0973-k-closest-points-to-origin) |
 | [1046-last-stone-weight](https://github.com/kshxaib/DSA-Java/tree/master/1046-last-stone-weight) |
 ## Hash Table
 |  |
@@ -69,6 +70,7 @@ It includes detailed examples, explanations, and solutions for a variety of DSA 
 | [0242-valid-anagram](https://github.com/kshxaib/DSA-Java/tree/master/0242-valid-anagram) |
 | [0347-top-k-frequent-elements](https://github.com/kshxaib/DSA-Java/tree/master/0347-top-k-frequent-elements) |
 | [0853-car-fleet](https://github.com/kshxaib/DSA-Java/tree/master/0853-car-fleet) |
+| [0973-k-closest-points-to-origin](https://github.com/kshxaib/DSA-Java/tree/master/0973-k-closest-points-to-origin) |
 ## String
 |  |
 | ------- |
@@ -95,6 +97,7 @@ It includes detailed examples, explanations, and solutions for a variety of DSA 
 | [0215-kth-largest-element-in-an-array](https://github.com/kshxaib/DSA-Java/tree/master/0215-kth-largest-element-in-an-array) |
 | [0240-search-a-2d-matrix-ii](https://github.com/kshxaib/DSA-Java/tree/master/0240-search-a-2d-matrix-ii) |
 | [0347-top-k-frequent-elements](https://github.com/kshxaib/DSA-Java/tree/master/0347-top-k-frequent-elements) |
+| [0973-k-closest-points-to-origin](https://github.com/kshxaib/DSA-Java/tree/master/0973-k-closest-points-to-origin) |
 ## Heap (Priority Queue)
 |  |
 | ------- |
@@ -102,6 +105,7 @@ It includes detailed examples, explanations, and solutions for a variety of DSA 
 | [0215-kth-largest-element-in-an-array](https://github.com/kshxaib/DSA-Java/tree/master/0215-kth-largest-element-in-an-array) |
 | [0239-sliding-window-maximum](https://github.com/kshxaib/DSA-Java/tree/master/0239-sliding-window-maximum) |
 | [0347-top-k-frequent-elements](https://github.com/kshxaib/DSA-Java/tree/master/0347-top-k-frequent-elements) |
+| [0973-k-closest-points-to-origin](https://github.com/kshxaib/DSA-Java/tree/master/0973-k-closest-points-to-origin) |
 | [1046-last-stone-weight](https://github.com/kshxaib/DSA-Java/tree/master/1046-last-stone-weight) |
 ## Bucket Sort
 |  |
@@ -116,6 +120,7 @@ It includes detailed examples, explanations, and solutions for a variety of DSA 
 | ------- |
 | [0215-kth-largest-element-in-an-array](https://github.com/kshxaib/DSA-Java/tree/master/0215-kth-largest-element-in-an-array) |
 | [0347-top-k-frequent-elements](https://github.com/kshxaib/DSA-Java/tree/master/0347-top-k-frequent-elements) |
+| [0973-k-closest-points-to-origin](https://github.com/kshxaib/DSA-Java/tree/master/0973-k-closest-points-to-origin) |
 ## Prefix Sum
 |  |
 | ------- |
@@ -229,6 +234,7 @@ It includes detailed examples, explanations, and solutions for a variety of DSA 
 | ------- |
 | [0002-add-two-numbers](https://github.com/kshxaib/DSA-Java/tree/master/0002-add-two-numbers) |
 | [0150-evaluate-reverse-polish-notation](https://github.com/kshxaib/DSA-Java/tree/master/0150-evaluate-reverse-polish-notation) |
+| [0973-k-closest-points-to-origin](https://github.com/kshxaib/DSA-Java/tree/master/0973-k-closest-points-to-origin) |
 ## Backtracking
 |  |
 | ------- |
@@ -371,4 +377,12 @@ It includes detailed examples, explanations, and solutions for a variety of DSA 
 | [0208-implement-trie-prefix-tree](https://github.com/kshxaib/DSA-Java/tree/master/0208-implement-trie-prefix-tree) |
 | [0211-design-add-and-search-words-data-structure](https://github.com/kshxaib/DSA-Java/tree/master/0211-design-add-and-search-words-data-structure) |
 | [0212-word-search-ii](https://github.com/kshxaib/DSA-Java/tree/master/0212-word-search-ii) |
+## Geometry
+|  |
+| ------- |
+| [0973-k-closest-points-to-origin](https://github.com/kshxaib/DSA-Java/tree/master/0973-k-closest-points-to-origin) |
+## K-D Tree
+|  |
+| ------- |
+| [0973-k-closest-points-to-origin](https://github.com/kshxaib/DSA-Java/tree/master/0973-k-closest-points-to-origin) |
 <!---LeetCode Topics End-->
