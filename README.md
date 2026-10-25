@@ -58,6 +58,7 @@ It includes detailed examples, explanations, and solutions for a variety of DSA 
 | [0217-contains-duplicate](https://github.com/kshxaib/DSA-Java/tree/master/0217-contains-duplicate) |
 | [0242-valid-anagram](https://github.com/kshxaib/DSA-Java/tree/master/0242-valid-anagram) |
 | [0347-top-k-frequent-elements](https://github.com/kshxaib/DSA-Java/tree/master/0347-top-k-frequent-elements) |
+| [0355-design-twitter](https://github.com/kshxaib/DSA-Java/tree/master/0355-design-twitter) |
 | [0424-longest-repeating-character-replacement](https://github.com/kshxaib/DSA-Java/tree/master/0424-longest-repeating-character-replacement) |
 | [0567-permutation-in-string](https://github.com/kshxaib/DSA-Java/tree/master/0567-permutation-in-string) |
 | [0621-task-scheduler](https://github.com/kshxaib/DSA-Java/tree/master/0621-task-scheduler) |
@@ -110,6 +111,7 @@ It includes detailed examples, explanations, and solutions for a variety of DSA 
 | [0239-sliding-window-maximum](https://github.com/kshxaib/DSA-Java/tree/master/0239-sliding-window-maximum) |
 | [0295-find-median-from-data-stream](https://github.com/kshxaib/DSA-Java/tree/master/0295-find-median-from-data-stream) |
 | [0347-top-k-frequent-elements](https://github.com/kshxaib/DSA-Java/tree/master/0347-top-k-frequent-elements) |
+| [0355-design-twitter](https://github.com/kshxaib/DSA-Java/tree/master/0355-design-twitter) |
 | [0621-task-scheduler](https://github.com/kshxaib/DSA-Java/tree/master/0621-task-scheduler) |
 | [0703-kth-largest-element-in-a-stream](https://github.com/kshxaib/DSA-Java/tree/master/0703-kth-largest-element-in-a-stream) |
 | [0973-k-closest-points-to-origin](https://github.com/kshxaib/DSA-Java/tree/master/0973-k-closest-points-to-origin) |
@@ -239,6 +241,7 @@ It includes detailed examples, explanations, and solutions for a variety of DSA 
 | [0211-design-add-and-search-words-data-structure](https://github.com/kshxaib/DSA-Java/tree/master/0211-design-add-and-search-words-data-structure) |
 | [0295-find-median-from-data-stream](https://github.com/kshxaib/DSA-Java/tree/master/0295-find-median-from-data-stream) |
 | [0297-serialize-and-deserialize-binary-tree](https://github.com/kshxaib/DSA-Java/tree/master/0297-serialize-and-deserialize-binary-tree) |
+| [0355-design-twitter](https://github.com/kshxaib/DSA-Java/tree/master/0355-design-twitter) |
 | [0703-kth-largest-element-in-a-stream](https://github.com/kshxaib/DSA-Java/tree/master/0703-kth-largest-element-in-a-stream) |
 | [0981-time-based-key-value-store](https://github.com/kshxaib/DSA-Java/tree/master/0981-time-based-key-value-store) |
 ## Math
@@ -264,6 +267,7 @@ It includes detailed examples, explanations, and solutions for a variety of DSA 
 | [0141-linked-list-cycle](https://github.com/kshxaib/DSA-Java/tree/master/0141-linked-list-cycle) |
 | [0143-reorder-list](https://github.com/kshxaib/DSA-Java/tree/master/0143-reorder-list) |
 | [0206-reverse-linked-list](https://github.com/kshxaib/DSA-Java/tree/master/0206-reverse-linked-list) |
+| [0355-design-twitter](https://github.com/kshxaib/DSA-Java/tree/master/0355-design-twitter) |
 ## Recursion
 |  |
 | ------- |
