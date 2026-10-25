@@ -25,6 +25,7 @@ It includes detailed examples, explanations, and solutions for a variety of DSA 
 | [0078-subsets](https://github.com/kshxaib/DSA-Java/tree/master/0078-subsets) |
 | [0084-largest-rectangle-in-histogram](https://github.com/kshxaib/DSA-Java/tree/master/0084-largest-rectangle-in-histogram) |
 | [0085-maximal-rectangle](https://github.com/kshxaib/DSA-Java/tree/master/0085-maximal-rectangle) |
+| [0090-subsets-ii](https://github.com/kshxaib/DSA-Java/tree/master/0090-subsets-ii) |
 | [0105-construct-binary-tree-from-preorder-and-inorder-traversal](https://github.com/kshxaib/DSA-Java/tree/master/0105-construct-binary-tree-from-preorder-and-inorder-traversal) |
 | [0121-best-time-to-buy-and-sell-stock](https://github.com/kshxaib/DSA-Java/tree/master/0121-best-time-to-buy-and-sell-stock) |
 | [0128-longest-consecutive-sequence](https://github.com/kshxaib/DSA-Java/tree/master/0128-longest-consecutive-sequence) |
@@ -262,6 +263,7 @@ It includes detailed examples, explanations, and solutions for a variety of DSA 
 | [0040-combination-sum-ii](https://github.com/kshxaib/DSA-Java/tree/master/0040-combination-sum-ii) |
 | [0046-permutations](https://github.com/kshxaib/DSA-Java/tree/master/0046-permutations) |
 | [0078-subsets](https://github.com/kshxaib/DSA-Java/tree/master/0078-subsets) |
+| [0090-subsets-ii](https://github.com/kshxaib/DSA-Java/tree/master/0090-subsets-ii) |
 | [0212-word-search-ii](https://github.com/kshxaib/DSA-Java/tree/master/0212-word-search-ii) |
 ## Linked List
 |  |
@@ -293,6 +295,7 @@ It includes detailed examples, explanations, and solutions for a variety of DSA 
 |  |
 | ------- |
 | [0078-subsets](https://github.com/kshxaib/DSA-Java/tree/master/0078-subsets) |
+| [0090-subsets-ii](https://github.com/kshxaib/DSA-Java/tree/master/0090-subsets-ii) |
 | [0287-find-the-duplicate-number](https://github.com/kshxaib/DSA-Java/tree/master/0287-find-the-duplicate-number) |
 ## Pigeonhole Principle
 |  |
