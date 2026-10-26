@@ -92,6 +92,7 @@ It includes detailed examples, explanations, and solutions for a variety of DSA 
 | [0049-group-anagrams](https://github.com/kshxaib/DSA-Java/tree/master/0049-group-anagrams) |
 | [0076-minimum-window-substring](https://github.com/kshxaib/DSA-Java/tree/master/0076-minimum-window-substring) |
 | [0125-valid-palindrome](https://github.com/kshxaib/DSA-Java/tree/master/0125-valid-palindrome) |
+| [0131-palindrome-partitioning](https://github.com/kshxaib/DSA-Java/tree/master/0131-palindrome-partitioning) |
 | [0208-implement-trie-prefix-tree](https://github.com/kshxaib/DSA-Java/tree/master/0208-implement-trie-prefix-tree) |
 | [0211-design-add-and-search-words-data-structure](https://github.com/kshxaib/DSA-Java/tree/master/0211-design-add-and-search-words-data-structure) |
 | [0212-word-search-ii](https://github.com/kshxaib/DSA-Java/tree/master/0212-word-search-ii) |
@@ -194,6 +195,7 @@ It includes detailed examples, explanations, and solutions for a variety of DSA 
 | [0085-maximal-rectangle](https://github.com/kshxaib/DSA-Java/tree/master/0085-maximal-rectangle) |
 | [0121-best-time-to-buy-and-sell-stock](https://github.com/kshxaib/DSA-Java/tree/master/0121-best-time-to-buy-and-sell-stock) |
 | [0124-binary-tree-maximum-path-sum](https://github.com/kshxaib/DSA-Java/tree/master/0124-binary-tree-maximum-path-sum) |
+| [0131-palindrome-partitioning](https://github.com/kshxaib/DSA-Java/tree/master/0131-palindrome-partitioning) |
 ## Stack
 |  |
 | ------- |
@@ -267,6 +269,7 @@ It includes detailed examples, explanations, and solutions for a variety of DSA 
 | [0046-permutations](https://github.com/kshxaib/DSA-Java/tree/master/0046-permutations) |
 | [0078-subsets](https://github.com/kshxaib/DSA-Java/tree/master/0078-subsets) |
 | [0090-subsets-ii](https://github.com/kshxaib/DSA-Java/tree/master/0090-subsets-ii) |
+| [0131-palindrome-partitioning](https://github.com/kshxaib/DSA-Java/tree/master/0131-palindrome-partitioning) |
 | [0212-word-search-ii](https://github.com/kshxaib/DSA-Java/tree/master/0212-word-search-ii) |
 ## Linked List
 |  |
