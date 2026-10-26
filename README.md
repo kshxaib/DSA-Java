@@ -23,6 +23,7 @@ It includes detailed examples, explanations, and solutions for a variety of DSA 
 | [0049-group-anagrams](https://github.com/kshxaib/DSA-Java/tree/master/0049-group-anagrams) |
 | [0074-search-a-2d-matrix](https://github.com/kshxaib/DSA-Java/tree/master/0074-search-a-2d-matrix) |
 | [0078-subsets](https://github.com/kshxaib/DSA-Java/tree/master/0078-subsets) |
+| [0079-word-search](https://github.com/kshxaib/DSA-Java/tree/master/0079-word-search) |
 | [0084-largest-rectangle-in-histogram](https://github.com/kshxaib/DSA-Java/tree/master/0084-largest-rectangle-in-histogram) |
 | [0085-maximal-rectangle](https://github.com/kshxaib/DSA-Java/tree/master/0085-maximal-rectangle) |
 | [0090-subsets-ii](https://github.com/kshxaib/DSA-Java/tree/master/0090-subsets-ii) |
@@ -91,6 +92,7 @@ It includes detailed examples, explanations, and solutions for a variety of DSA 
 | [0022-generate-parentheses](https://github.com/kshxaib/DSA-Java/tree/master/0022-generate-parentheses) |
 | [0049-group-anagrams](https://github.com/kshxaib/DSA-Java/tree/master/0049-group-anagrams) |
 | [0076-minimum-window-substring](https://github.com/kshxaib/DSA-Java/tree/master/0076-minimum-window-substring) |
+| [0079-word-search](https://github.com/kshxaib/DSA-Java/tree/master/0079-word-search) |
 | [0125-valid-palindrome](https://github.com/kshxaib/DSA-Java/tree/master/0125-valid-palindrome) |
 | [0131-palindrome-partitioning](https://github.com/kshxaib/DSA-Java/tree/master/0131-palindrome-partitioning) |
 | [0208-implement-trie-prefix-tree](https://github.com/kshxaib/DSA-Java/tree/master/0208-implement-trie-prefix-tree) |
@@ -148,6 +150,7 @@ It includes detailed examples, explanations, and solutions for a variety of DSA 
 | ------- |
 | [0036-valid-sudoku](https://github.com/kshxaib/DSA-Java/tree/master/0036-valid-sudoku) |
 | [0074-search-a-2d-matrix](https://github.com/kshxaib/DSA-Java/tree/master/0074-search-a-2d-matrix) |
+| [0079-word-search](https://github.com/kshxaib/DSA-Java/tree/master/0079-word-search) |
 | [0085-maximal-rectangle](https://github.com/kshxaib/DSA-Java/tree/master/0085-maximal-rectangle) |
 | [0212-word-search-ii](https://github.com/kshxaib/DSA-Java/tree/master/0212-word-search-ii) |
 | [0240-search-a-2d-matrix-ii](https://github.com/kshxaib/DSA-Java/tree/master/0240-search-a-2d-matrix-ii) |
@@ -268,6 +271,7 @@ It includes detailed examples, explanations, and solutions for a variety of DSA 
 | [0040-combination-sum-ii](https://github.com/kshxaib/DSA-Java/tree/master/0040-combination-sum-ii) |
 | [0046-permutations](https://github.com/kshxaib/DSA-Java/tree/master/0046-permutations) |
 | [0078-subsets](https://github.com/kshxaib/DSA-Java/tree/master/0078-subsets) |
+| [0079-word-search](https://github.com/kshxaib/DSA-Java/tree/master/0079-word-search) |
 | [0090-subsets-ii](https://github.com/kshxaib/DSA-Java/tree/master/0090-subsets-ii) |
 | [0131-palindrome-partitioning](https://github.com/kshxaib/DSA-Java/tree/master/0131-palindrome-partitioning) |
 | [0212-word-search-ii](https://github.com/kshxaib/DSA-Java/tree/master/0212-word-search-ii) |
@@ -337,6 +341,7 @@ It includes detailed examples, explanations, and solutions for a variety of DSA 
 ## Depth-First Search
 |  |
 | ------- |
+| [0079-word-search](https://github.com/kshxaib/DSA-Java/tree/master/0079-word-search) |
 | [0098-validate-binary-search-tree](https://github.com/kshxaib/DSA-Java/tree/master/0098-validate-binary-search-tree) |
 | [0100-same-tree](https://github.com/kshxaib/DSA-Java/tree/master/0100-same-tree) |
 | [0104-maximum-depth-of-binary-tree](https://github.com/kshxaib/DSA-Java/tree/master/0104-maximum-depth-of-binary-tree) |
