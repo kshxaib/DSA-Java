@@ -64,6 +64,7 @@ It includes detailed examples, explanations, and solutions for a variety of DSA 
 | [0049-group-anagrams](https://github.com/kshxaib/DSA-Java/tree/master/0049-group-anagrams) |
 | [0076-minimum-window-substring](https://github.com/kshxaib/DSA-Java/tree/master/0076-minimum-window-substring) |
 | [0105-construct-binary-tree-from-preorder-and-inorder-traversal](https://github.com/kshxaib/DSA-Java/tree/master/0105-construct-binary-tree-from-preorder-and-inorder-traversal) |
+| [0127-word-ladder](https://github.com/kshxaib/DSA-Java/tree/master/0127-word-ladder) |
 | [0128-longest-consecutive-sequence](https://github.com/kshxaib/DSA-Java/tree/master/0128-longest-consecutive-sequence) |
 | [0133-clone-graph](https://github.com/kshxaib/DSA-Java/tree/master/0133-clone-graph) |
 | [0138-copy-list-with-random-pointer](https://github.com/kshxaib/DSA-Java/tree/master/0138-copy-list-with-random-pointer) |
@@ -101,6 +102,7 @@ It includes detailed examples, explanations, and solutions for a variety of DSA 
 | [0076-minimum-window-substring](https://github.com/kshxaib/DSA-Java/tree/master/0076-minimum-window-substring) |
 | [0079-word-search](https://github.com/kshxaib/DSA-Java/tree/master/0079-word-search) |
 | [0125-valid-palindrome](https://github.com/kshxaib/DSA-Java/tree/master/0125-valid-palindrome) |
+| [0127-word-ladder](https://github.com/kshxaib/DSA-Java/tree/master/0127-word-ladder) |
 | [0131-palindrome-partitioning](https://github.com/kshxaib/DSA-Java/tree/master/0131-palindrome-partitioning) |
 | [0208-implement-trie-prefix-tree](https://github.com/kshxaib/DSA-Java/tree/master/0208-implement-trie-prefix-tree) |
 | [0211-design-add-and-search-words-data-structure](https://github.com/kshxaib/DSA-Java/tree/master/0211-design-add-and-search-words-data-structure) |
@@ -387,6 +389,7 @@ It includes detailed examples, explanations, and solutions for a variety of DSA 
 | [0100-same-tree](https://github.com/kshxaib/DSA-Java/tree/master/0100-same-tree) |
 | [0102-binary-tree-level-order-traversal](https://github.com/kshxaib/DSA-Java/tree/master/0102-binary-tree-level-order-traversal) |
 | [0104-maximum-depth-of-binary-tree](https://github.com/kshxaib/DSA-Java/tree/master/0104-maximum-depth-of-binary-tree) |
+| [0127-word-ladder](https://github.com/kshxaib/DSA-Java/tree/master/0127-word-ladder) |
 | [0130-surrounded-regions](https://github.com/kshxaib/DSA-Java/tree/master/0130-surrounded-regions) |
 | [0133-clone-graph](https://github.com/kshxaib/DSA-Java/tree/master/0133-clone-graph) |
 | [0199-binary-tree-right-side-view](https://github.com/kshxaib/DSA-Java/tree/master/0199-binary-tree-right-side-view) |
@@ -486,4 +489,8 @@ It includes detailed examples, explanations, and solutions for a variety of DSA 
 |  |
 | ------- |
 | [0207-course-schedule](https://github.com/kshxaib/DSA-Java/tree/master/0207-course-schedule) |
+## Bidirectional Search
+|  |
+| ------- |
+| [0127-word-ladder](https://github.com/kshxaib/DSA-Java/tree/master/0127-word-ladder) |
 <!---LeetCode Topics End-->
