@@ -172,6 +172,7 @@ It includes detailed examples, explanations, and solutions for a variety of DSA 
 | [0128-longest-consecutive-sequence](https://github.com/kshxaib/DSA-Java/tree/master/0128-longest-consecutive-sequence) |
 | [0130-surrounded-regions](https://github.com/kshxaib/DSA-Java/tree/master/0130-surrounded-regions) |
 | [0200-number-of-islands](https://github.com/kshxaib/DSA-Java/tree/master/0200-number-of-islands) |
+| [0684-redundant-connection](https://github.com/kshxaib/DSA-Java/tree/master/0684-redundant-connection) |
 | [0695-max-area-of-island](https://github.com/kshxaib/DSA-Java/tree/master/0695-max-area-of-island) |
 ## Two Pointers
 |  |
@@ -377,6 +378,7 @@ It includes detailed examples, explanations, and solutions for a variety of DSA 
 | [0417-pacific-atlantic-water-flow](https://github.com/kshxaib/DSA-Java/tree/master/0417-pacific-atlantic-water-flow) |
 | [0543-diameter-of-binary-tree](https://github.com/kshxaib/DSA-Java/tree/master/0543-diameter-of-binary-tree) |
 | [0572-subtree-of-another-tree](https://github.com/kshxaib/DSA-Java/tree/master/0572-subtree-of-another-tree) |
+| [0684-redundant-connection](https://github.com/kshxaib/DSA-Java/tree/master/0684-redundant-connection) |
 | [0695-max-area-of-island](https://github.com/kshxaib/DSA-Java/tree/master/0695-max-area-of-island) |
 | [1448-count-good-nodes-in-binary-tree](https://github.com/kshxaib/DSA-Java/tree/master/1448-count-good-nodes-in-binary-tree) |
 ## Breadth-First Search
@@ -394,6 +396,7 @@ It includes detailed examples, explanations, and solutions for a variety of DSA 
 | [0226-invert-binary-tree](https://github.com/kshxaib/DSA-Java/tree/master/0226-invert-binary-tree) |
 | [0297-serialize-and-deserialize-binary-tree](https://github.com/kshxaib/DSA-Java/tree/master/0297-serialize-and-deserialize-binary-tree) |
 | [0417-pacific-atlantic-water-flow](https://github.com/kshxaib/DSA-Java/tree/master/0417-pacific-atlantic-water-flow) |
+| [0684-redundant-connection](https://github.com/kshxaib/DSA-Java/tree/master/0684-redundant-connection) |
 | [0695-max-area-of-island](https://github.com/kshxaib/DSA-Java/tree/master/0695-max-area-of-island) |
 | [0994-rotting-oranges](https://github.com/kshxaib/DSA-Java/tree/master/0994-rotting-oranges) |
 | [1448-count-good-nodes-in-binary-tree](https://github.com/kshxaib/DSA-Java/tree/master/1448-count-good-nodes-in-binary-tree) |
@@ -473,6 +476,7 @@ It includes detailed examples, explanations, and solutions for a variety of DSA 
 | [0133-clone-graph](https://github.com/kshxaib/DSA-Java/tree/master/0133-clone-graph) |
 | [0207-course-schedule](https://github.com/kshxaib/DSA-Java/tree/master/0207-course-schedule) |
 | [0210-course-schedule-ii](https://github.com/kshxaib/DSA-Java/tree/master/0210-course-schedule-ii) |
+| [0684-redundant-connection](https://github.com/kshxaib/DSA-Java/tree/master/0684-redundant-connection) |
 ## Topological Sort
 |  |
 | ------- |
