@@ -44,6 +44,7 @@ It includes detailed examples, explanations, and solutions for a variety of DSA 
 | [0287-find-the-duplicate-number](https://github.com/kshxaib/DSA-Java/tree/master/0287-find-the-duplicate-number) |
 | [0347-top-k-frequent-elements](https://github.com/kshxaib/DSA-Java/tree/master/0347-top-k-frequent-elements) |
 | [0621-task-scheduler](https://github.com/kshxaib/DSA-Java/tree/master/0621-task-scheduler) |
+| [0695-max-area-of-island](https://github.com/kshxaib/DSA-Java/tree/master/0695-max-area-of-island) |
 | [0704-binary-search](https://github.com/kshxaib/DSA-Java/tree/master/0704-binary-search) |
 | [0739-daily-temperatures](https://github.com/kshxaib/DSA-Java/tree/master/0739-daily-temperatures) |
 | [0853-car-fleet](https://github.com/kshxaib/DSA-Java/tree/master/0853-car-fleet) |
@@ -157,11 +158,13 @@ It includes detailed examples, explanations, and solutions for a variety of DSA 
 | [0200-number-of-islands](https://github.com/kshxaib/DSA-Java/tree/master/0200-number-of-islands) |
 | [0212-word-search-ii](https://github.com/kshxaib/DSA-Java/tree/master/0212-word-search-ii) |
 | [0240-search-a-2d-matrix-ii](https://github.com/kshxaib/DSA-Java/tree/master/0240-search-a-2d-matrix-ii) |
+| [0695-max-area-of-island](https://github.com/kshxaib/DSA-Java/tree/master/0695-max-area-of-island) |
 ## Union-Find
 |  |
 | ------- |
 | [0128-longest-consecutive-sequence](https://github.com/kshxaib/DSA-Java/tree/master/0128-longest-consecutive-sequence) |
 | [0200-number-of-islands](https://github.com/kshxaib/DSA-Java/tree/master/0200-number-of-islands) |
+| [0695-max-area-of-island](https://github.com/kshxaib/DSA-Java/tree/master/0695-max-area-of-island) |
 ## Two Pointers
 |  |
 | ------- |
@@ -361,6 +364,7 @@ It includes detailed examples, explanations, and solutions for a variety of DSA 
 | [0297-serialize-and-deserialize-binary-tree](https://github.com/kshxaib/DSA-Java/tree/master/0297-serialize-and-deserialize-binary-tree) |
 | [0543-diameter-of-binary-tree](https://github.com/kshxaib/DSA-Java/tree/master/0543-diameter-of-binary-tree) |
 | [0572-subtree-of-another-tree](https://github.com/kshxaib/DSA-Java/tree/master/0572-subtree-of-another-tree) |
+| [0695-max-area-of-island](https://github.com/kshxaib/DSA-Java/tree/master/0695-max-area-of-island) |
 | [1448-count-good-nodes-in-binary-tree](https://github.com/kshxaib/DSA-Java/tree/master/1448-count-good-nodes-in-binary-tree) |
 ## Breadth-First Search
 |  |
@@ -372,6 +376,7 @@ It includes detailed examples, explanations, and solutions for a variety of DSA 
 | [0200-number-of-islands](https://github.com/kshxaib/DSA-Java/tree/master/0200-number-of-islands) |
 | [0226-invert-binary-tree](https://github.com/kshxaib/DSA-Java/tree/master/0226-invert-binary-tree) |
 | [0297-serialize-and-deserialize-binary-tree](https://github.com/kshxaib/DSA-Java/tree/master/0297-serialize-and-deserialize-binary-tree) |
+| [0695-max-area-of-island](https://github.com/kshxaib/DSA-Java/tree/master/0695-max-area-of-island) |
 | [1448-count-good-nodes-in-binary-tree](https://github.com/kshxaib/DSA-Java/tree/master/1448-count-good-nodes-in-binary-tree) |
 ## Binary Tree
 |  |
