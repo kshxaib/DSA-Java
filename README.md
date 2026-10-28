@@ -134,6 +134,7 @@ It includes detailed examples, explanations, and solutions for a variety of DSA 
 | [0621-task-scheduler](https://github.com/kshxaib/DSA-Java/tree/master/0621-task-scheduler) |
 | [0703-kth-largest-element-in-a-stream](https://github.com/kshxaib/DSA-Java/tree/master/0703-kth-largest-element-in-a-stream) |
 | [0743-network-delay-time](https://github.com/kshxaib/DSA-Java/tree/master/0743-network-delay-time) |
+| [0787-cheapest-flights-within-k-stops](https://github.com/kshxaib/DSA-Java/tree/master/0787-cheapest-flights-within-k-stops) |
 | [0973-k-closest-points-to-origin](https://github.com/kshxaib/DSA-Java/tree/master/0973-k-closest-points-to-origin) |
 | [1046-last-stone-weight](https://github.com/kshxaib/DSA-Java/tree/master/1046-last-stone-weight) |
 ## Bucket Sort
@@ -218,6 +219,7 @@ It includes detailed examples, explanations, and solutions for a variety of DSA 
 | [0121-best-time-to-buy-and-sell-stock](https://github.com/kshxaib/DSA-Java/tree/master/0121-best-time-to-buy-and-sell-stock) |
 | [0124-binary-tree-maximum-path-sum](https://github.com/kshxaib/DSA-Java/tree/master/0124-binary-tree-maximum-path-sum) |
 | [0131-palindrome-partitioning](https://github.com/kshxaib/DSA-Java/tree/master/0131-palindrome-partitioning) |
+| [0787-cheapest-flights-within-k-stops](https://github.com/kshxaib/DSA-Java/tree/master/0787-cheapest-flights-within-k-stops) |
 ## Stack
 |  |
 | ------- |
@@ -384,6 +386,7 @@ It includes detailed examples, explanations, and solutions for a variety of DSA 
 | [0684-redundant-connection](https://github.com/kshxaib/DSA-Java/tree/master/0684-redundant-connection) |
 | [0695-max-area-of-island](https://github.com/kshxaib/DSA-Java/tree/master/0695-max-area-of-island) |
 | [0743-network-delay-time](https://github.com/kshxaib/DSA-Java/tree/master/0743-network-delay-time) |
+| [0787-cheapest-flights-within-k-stops](https://github.com/kshxaib/DSA-Java/tree/master/0787-cheapest-flights-within-k-stops) |
 | [1448-count-good-nodes-in-binary-tree](https://github.com/kshxaib/DSA-Java/tree/master/1448-count-good-nodes-in-binary-tree) |
 ## Breadth-First Search
 |  |
@@ -404,6 +407,7 @@ It includes detailed examples, explanations, and solutions for a variety of DSA 
 | [0684-redundant-connection](https://github.com/kshxaib/DSA-Java/tree/master/0684-redundant-connection) |
 | [0695-max-area-of-island](https://github.com/kshxaib/DSA-Java/tree/master/0695-max-area-of-island) |
 | [0743-network-delay-time](https://github.com/kshxaib/DSA-Java/tree/master/0743-network-delay-time) |
+| [0787-cheapest-flights-within-k-stops](https://github.com/kshxaib/DSA-Java/tree/master/0787-cheapest-flights-within-k-stops) |
 | [0994-rotting-oranges](https://github.com/kshxaib/DSA-Java/tree/master/0994-rotting-oranges) |
 | [1448-count-good-nodes-in-binary-tree](https://github.com/kshxaib/DSA-Java/tree/master/1448-count-good-nodes-in-binary-tree) |
 ## Binary Tree
@@ -484,6 +488,7 @@ It includes detailed examples, explanations, and solutions for a variety of DSA 
 | [0210-course-schedule-ii](https://github.com/kshxaib/DSA-Java/tree/master/0210-course-schedule-ii) |
 | [0684-redundant-connection](https://github.com/kshxaib/DSA-Java/tree/master/0684-redundant-connection) |
 | [0743-network-delay-time](https://github.com/kshxaib/DSA-Java/tree/master/0743-network-delay-time) |
+| [0787-cheapest-flights-within-k-stops](https://github.com/kshxaib/DSA-Java/tree/master/0787-cheapest-flights-within-k-stops) |
 ## Topological Sort
 |  |
 | ------- |
@@ -501,6 +506,7 @@ It includes detailed examples, explanations, and solutions for a variety of DSA 
 |  |
 | ------- |
 | [0743-network-delay-time](https://github.com/kshxaib/DSA-Java/tree/master/0743-network-delay-time) |
+| [0787-cheapest-flights-within-k-stops](https://github.com/kshxaib/DSA-Java/tree/master/0787-cheapest-flights-within-k-stops) |
 ## Dijkstra's Algorithm
 |  |
 | ------- |
