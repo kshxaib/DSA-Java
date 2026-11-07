@@ -52,6 +52,7 @@ It includes detailed examples, explanations, and solutions for a variety of DSA 
 | [0778-swim-in-rising-water](https://github.com/kshxaib/DSA-Java/tree/master/0778-swim-in-rising-water) |
 | [0853-car-fleet](https://github.com/kshxaib/DSA-Java/tree/master/0853-car-fleet) |
 | [0875-koko-eating-bananas](https://github.com/kshxaib/DSA-Java/tree/master/0875-koko-eating-bananas) |
+| [0922-sort-array-by-parity-ii](https://github.com/kshxaib/DSA-Java/tree/master/0922-sort-array-by-parity-ii) |
 | [0973-k-closest-points-to-origin](https://github.com/kshxaib/DSA-Java/tree/master/0973-k-closest-points-to-origin) |
 | [0994-rotting-oranges](https://github.com/kshxaib/DSA-Java/tree/master/0994-rotting-oranges) |
 | [1046-last-stone-weight](https://github.com/kshxaib/DSA-Java/tree/master/1046-last-stone-weight) |
@@ -92,6 +93,7 @@ It includes detailed examples, explanations, and solutions for a variety of DSA 
 | [0347-top-k-frequent-elements](https://github.com/kshxaib/DSA-Java/tree/master/0347-top-k-frequent-elements) |
 | [0621-task-scheduler](https://github.com/kshxaib/DSA-Java/tree/master/0621-task-scheduler) |
 | [0853-car-fleet](https://github.com/kshxaib/DSA-Java/tree/master/0853-car-fleet) |
+| [0922-sort-array-by-parity-ii](https://github.com/kshxaib/DSA-Java/tree/master/0922-sort-array-by-parity-ii) |
 | [0973-k-closest-points-to-origin](https://github.com/kshxaib/DSA-Java/tree/master/0973-k-closest-points-to-origin) |
 ## String
 |  |
@@ -198,6 +200,7 @@ It includes detailed examples, explanations, and solutions for a variety of DSA 
 | [0287-find-the-duplicate-number](https://github.com/kshxaib/DSA-Java/tree/master/0287-find-the-duplicate-number) |
 | [0295-find-median-from-data-stream](https://github.com/kshxaib/DSA-Java/tree/master/0295-find-median-from-data-stream) |
 | [0567-permutation-in-string](https://github.com/kshxaib/DSA-Java/tree/master/0567-permutation-in-string) |
+| [0922-sort-array-by-parity-ii](https://github.com/kshxaib/DSA-Java/tree/master/0922-sort-array-by-parity-ii) |
 ## Binary Search
 |  |
 | ------- |
