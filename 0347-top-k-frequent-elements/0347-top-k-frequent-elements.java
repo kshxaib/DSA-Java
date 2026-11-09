@@ -6,7 +6,7 @@ class Solution {
             map.put(nums[i], map.getOrDefault(nums[i], 0) +1);
         }
 
-        Queue<Integer> heap = new PriorityQueue<>(
+        PriorityQueue<Integer> heap = new PriorityQueue<>(
             (a, b) -> map.get(a) - map.get(b)
         );
 
