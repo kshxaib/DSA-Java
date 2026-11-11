@@ -11,13 +11,13 @@ class Solution {
             if(height[left] < height[right]){
                 if(height[left] >= leftMax){
                     leftMax = height[left];
-                } else{
+                } else {
                     totalTrappedWtr += leftMax - height[left];
                 }
                 left++;
 
             } else {
-                if (height[right] >= rightMax) {
+                if(height[right] >= rightMax){
                     rightMax = height[right];
                 } else {
                     totalTrappedWtr += rightMax - height[right];
