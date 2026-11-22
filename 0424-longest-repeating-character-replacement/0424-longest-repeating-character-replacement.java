@@ -2,7 +2,7 @@ class Solution {
     public int characterReplacement(String s, int k) {
         int n = s.length();
         int freq[] = new int[26];
-        
+
         int left = 0;
         int right = 0;
 
@@ -10,7 +10,7 @@ class Solution {
         int maxLen = 0;
 
         while(right < n){
-            int currChar = s.charAt(right);
+            char currChar = s.charAt(right);
             freq[currChar - 'A']++;
 
             maxFreq = Math.max(maxFreq, freq[currChar - 'A']);
@@ -20,7 +20,9 @@ class Solution {
                 left++;
             }
 
-            maxLen = Math.max(maxLen, right - left +1);
+            int len = right - left +1;
+            maxLen = Math.max(maxLen, len);
+
             right++;
         }
 
