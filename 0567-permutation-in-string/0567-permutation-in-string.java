@@ -5,22 +5,20 @@ class Solution {
         }
 
         int s1Map[] = new int[26];
-        int s2Map[] = new int[26];
+        int s2Map[] = new int[26];  
 
-        // Initializing the freq maps for s1 and the first window of s2
         for(int i=0; i<s1.length(); i++){
             s1Map[s1.charAt(i) - 'a']++;
             s2Map[s2.charAt(i) - 'a']++;
         }
 
-        // slide the window through s2
         for(int i=0; i<s2.length() - s1.length(); i++){
             if(matches(s1Map, s2Map)){
                 return true;
             }
 
-            s2Map[s2.charAt(i) - 'a']--;    // remove old char
-            s2Map[s2.charAt(i + s1.length()) - 'a']++;  // add next char
+            s2Map[s2.charAt(i) - 'a']--;
+            s2Map[s2.charAt(i + s1.length()) - 'a']++;
         }
 
         return matches(s1Map, s2Map);
