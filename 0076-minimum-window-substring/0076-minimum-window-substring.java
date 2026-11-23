@@ -15,12 +15,12 @@ class Solution {
         }
 
         while(right < n){
-            char rightChar = s.charAt(right);
+            char currChar = s.charAt(right);
 
-            if(hash[rightChar] > 0){
+            if(hash[currChar] > 0){
                 count++;
             }
-            hash[rightChar]--;
+            hash[currChar]--;
 
             while(count == t.length()){
                 int len = right - left +1;
