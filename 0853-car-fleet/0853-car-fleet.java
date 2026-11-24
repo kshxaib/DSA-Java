@@ -10,16 +10,18 @@ class Solution {
 
         Arrays.sort(cars, (a, b) -> Double.compare(b[0], a[0]));
 
-        Stack<Double> stack = new Stack<>();
+        int count = 0;
+        double prevTime = 0;
 
         for(double car[] : cars){
             double time = car[1];
 
-            if(stack.isEmpty() || time > stack.peek()){
-                stack.push(time);
+            if(time > prevTime){
+                count++;
+                prevTime = time;
             }
         }
 
-        return stack.size();   
+        return count;   
     }
 }
